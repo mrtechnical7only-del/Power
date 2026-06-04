@@ -1,116 +1,97 @@
+```html
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AL Qarwashi International Trading SPC - Manpower Supply</title>
+    <title>AL Qurwashi International Trading SPC</title>
     
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Lucide Icons CDN -->
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- FontAwesome Icons CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <!-- Custom Tailwind Configuration (Taki colors perfect rahein) -->
+    <!-- Custom Colors Configuration (Tailwind) -->
     <script>
         tailwind.config = {
             theme: {
                 extend: {
-                    fontFamily: {
-                        sans: ['ui-sans-serif', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
+                    colors: {
+                        orange: {
+                            400: '#fb923c',
+                            500: '#f97316',
+                            600: '#ea580c',
+                        }
                     }
                 }
             }
         }
     </script>
 </head>
-<body class="min-h-screen bg-slate-50 font-sans text-slate-800 selection:bg-yellow-200 selection:text-slate-900">
+<body class="font-sans text-gray-800 bg-gray-50 min-h-screen">
 
-    <!-- Navigation Bar -->
-    <nav class="fixed w-full bg-white/95 backdrop-blur-md z-50 border-b border-yellow-100 shadow-sm">
+    <!-- Navigation Navbar -->
+    <nav class="bg-slate-900 text-white sticky top-0 z-50 shadow-lg">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-24">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <div>
+                        <h1 class="text-2xl font-bold tracking-wider text-orange-400">AL QURWASHI</h1>
+                        <p class="text-xs text-gray-300">INTERNATIONAL TRADING SPC</p>
+                    </div>
+                </div>
                 
-                <!-- Logo Area -->
-                <div class="flex-shrink-0 flex items-center cursor-pointer">
-                    <!-- Custom Gold Logo icon mimicking the uploaded image -->
-                    <div class="w-12 h-12 relative flex items-center justify-center mr-3">
-                        <div class="absolute inset-0 bg-yellow-600 transform rotate-45 opacity-20 rounded-sm"></div>
-                        <div class="absolute inset-2 bg-yellow-500 transform rotate-45 rounded-sm flex items-center justify-center">
-                            <span class="text-white font-bold text-sm transform -rotate-45">AQ</span>
-                        </div>
-                    </div>
-                    <div class="flex flex-col">
-                        <span class="font-bold text-xl md:text-2xl tracking-tight text-slate-900">
-                            AL Qarwashi
-                        </span>
-                        <span class="text-xs text-yellow-600 font-medium tracking-wider">
-                            International Trading SPC
-                        </span>
-                    </div>
+                <!-- Desktop Menu (Bade screens ke liye) -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="hover:text-orange-400 transition">Home</a>
+                    <a href="#about" class="hover:text-orange-400 transition">About</a>
+                    <a href="#services" class="hover:text-orange-400 transition">Services</a>
+                    <a href="#team" class="hover:text-orange-400 transition">Our Team</a>
+                    <a href="#clients" class="hover:text-orange-400 transition">Clients</a>
+                    <a href="#contact" class="hover:text-orange-400 transition">Contact</a>
                 </div>
 
-                <!-- Desktop Menu -->
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="#home" class="text-slate-600 hover:text-yellow-600 font-medium transition-colors">Home</a>
-                    <a href="#about" class="text-slate-600 hover:text-yellow-600 font-medium transition-colors">About Us</a>
-                    <a href="#services" class="text-slate-600 hover:text-yellow-600 font-medium transition-colors">Services</a>
-                    <a href="#contact" class="text-slate-600 hover:text-yellow-600 font-medium transition-colors">Contact</a>
-                    <a href="#contact" class="bg-yellow-500 hover:bg-yellow-600 text-slate-900 px-6 py-2.5 rounded-sm font-bold transition-all shadow-md">
-                        Request Manpower
-                    </a>
-                </div>
-
-                <!-- Mobile menu button -->
+                <!-- Mobile Menu Button -->
                 <div class="md:hidden flex items-center">
-                    <button id="mobile-menu-btn" class="text-slate-600 hover:text-slate-900 focus:outline-none p-2">
-                        <i data-lucide="menu" id="menu-icon"></i>
+                    <button id="mobile-menu-button" class="text-white hover:text-orange-400 focus:outline-none">
+                        <i class="fa-solid fa-bars text-2xl" id="menu-icon"></i>
                     </button>
                 </div>
             </div>
         </div>
 
-        <!-- Mobile Menu (Default hidden) -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-200 shadow-lg absolute w-full">
-            <div class="px-4 pt-2 pb-6 space-y-2">
-                <a href="#home" class="mobile-link block px-3 py-3 rounded-md text-base font-medium text-slate-700 hover:text-yellow-600 hover:bg-yellow-50">Home</a>
-                <a href="#about" class="mobile-link block px-3 py-3 rounded-md text-base font-medium text-slate-700 hover:text-yellow-600 hover:bg-yellow-50">About Us</a>
-                <a href="#services" class="mobile-link block px-3 py-3 rounded-md text-base font-medium text-slate-700 hover:text-yellow-600 hover:bg-yellow-50">Services</a>
-                <a href="#contact" class="mobile-link block px-3 py-3 rounded-md text-base font-medium text-slate-700 hover:text-yellow-600 hover:bg-yellow-50">Contact</a>
-            </div>
+        <!-- Mobile Menu (Chote screens ke liye, default hidden) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-slate-800 pb-4 px-4 space-y-2">
+            <a href="#home" class="mobile-link block py-2 hover:text-orange-400">Home</a>
+            <a href="#about" class="mobile-link block py-2 hover:text-orange-400">About</a>
+            <a href="#services" class="mobile-link block py-2 hover:text-orange-400">Services</a>
+            <a href="#team" class="mobile-link block py-2 hover:text-orange-400">Our Team</a>
+            <a href="#clients" class="mobile-link block py-2 hover:text-orange-400">Clients</a>
+            <a href="#contact" class="mobile-link block py-2 hover:text-orange-400">Contact</a>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="relative pt-32 pb-20 md:pt-48 md:pb-32 px-4 sm:px-6 lg:px-8 bg-slate-900 text-white overflow-hidden">
-        <!-- Background Image with Overlay -->
-        <div class="absolute inset-0 z-0">
-            <img 
-                src="https://images.unsplash.com/photo-1541888086925-0c770f4e7d18?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" 
-                alt="Construction Workers in Oman" 
-                class="w-full h-full object-cover opacity-30"
-            />
-            <div class="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/90 to-transparent"></div>
+    <!-- Hero Section (Sabse upar wala hissa) -->
+    <section id="home" class="relative bg-slate-800 text-white pb-20 pt-24 lg:pt-32">
+        <!-- Abstract background -->
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-br from-slate-900 to-slate-700 opacity-90"></div>
         </div>
-
-        <div class="relative z-10 max-w-7xl mx-auto">
-            <div class="max-w-3xl">
-                <div class="inline-flex items-center px-4 py-2 rounded-full bg-yellow-500/20 text-yellow-400 font-semibold text-sm mb-6 border border-yellow-500/30">
-                    <i data-lucide="award" class="mr-2 w-4 h-4"></i>
-                    Oman's Premier Manpower Supplier
-                </div>
-                <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-6">
-                    Empowering Your Business With <br/>
-                    <span class="text-yellow-500">Expert Manpower</span>
-                </h1>
-                <p class="text-lg md:text-xl text-slate-300 mb-10 max-w-2xl">
-                    AL Qarwashi International Trading SPC is a leading manpower supplier in Muscat, Oman. We provide highly skilled and unskilled workers dedicated to ensuring your projects are completed on time and with excellence.
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
+            <div class="text-center max-w-3xl mx-auto">
+                <h2 class="text-4xl tracking-tight font-extrabold sm:text-5xl md:text-6xl text-white mb-6">
+                    Leading the Way in <span class="text-orange-400">Oman's Industry</span>
+                </h2>
+                <p class="mt-3 text-base text-gray-300 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl">
+                    Delivering high standards of quality in Oil & Gas, EPC, Construction, Facility Management, and Engineering Services across the Sultanate of Oman.
                 </p>
-                <div class="flex flex-col sm:flex-row gap-4">
-                    <a href="#services" class="bg-yellow-500 hover:bg-yellow-600 text-slate-900 px-8 py-4 rounded-sm font-bold text-lg transition-all shadow-[0_0_20px_rgba(234,179,8,0.3)] flex items-center justify-center">
-                        Explore Services <i data-lucide="arrow-right" class="ml-2 w-5 h-5"></i>
+                <div class="mt-8 flex justify-center space-x-4">
+                    <a href="#services" class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-slate-900 bg-orange-400 hover:bg-orange-500 transition shadow-lg">
+                        Our Services
                     </a>
-                    <a href="#contact" class="bg-transparent hover:bg-white/10 text-white border-2 border-white/30 hover:border-white px-8 py-4 rounded-sm font-semibold text-lg transition-all flex items-center justify-center">
+                    <a href="#contact" class="inline-flex items-center justify-center px-8 py-3 border border-gray-300 text-base font-medium rounded-md text-white hover:bg-slate-700 transition">
                         Contact Us
                     </a>
                 </div>
@@ -118,332 +99,355 @@
         </div>
     </section>
 
-    <!-- Stats/Features Banner -->
-    <section class="bg-yellow-500 text-slate-900 py-10">
+    <!-- About & History Section -->
+    <section id="about" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <!-- Company Description -->
                 <div>
-                    <h3 class="text-4xl font-black mb-2">100%</h3>
-                    <p class="font-semibold text-slate-800">Legal & Compliant</p>
+                    <h3 class="text-orange-500 font-bold tracking-wide uppercase text-sm mb-2">About The Company</h3>
+                    <h2 class="text-3xl font-extrabold text-gray-900 mb-6">AL QURWASHI INTERNATIONAL TRADING SPC (QT)</h2>
+                    <p class="text-gray-600 mb-4 leading-relaxed">
+                        We are a leading Omani Company catering services to the Oil & Gas, EPC, Construction industry, Facility Management, Supply, Rental of Vehicles & Equipment's, Manpower, and Pipeline sectors. 
+                    </p>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        AL QURWASHI operates to high standards of Quality with Health, Safety and Environmental protection. We have located our assets strategically to be able to mobilize manpower, equipment, and provide other services to any part of the Sultanate of Oman.
+                    </p>
+                    
+                    <div class="bg-slate-50 p-6 rounded-lg border border-slate-100 shadow-sm mt-8">
+                        <h4 class="text-xl font-bold text-slate-800 mb-3 flex items-center">
+                            <i class="fa-solid fa-building text-orange-500 mr-2 text-2xl"></i>
+                            Our History
+                        </h4>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            AL QURWASHI is a leading 100% Omani owned group of companies with active participation in Oman's Hydrocarbon, Petrochemical, Building Construction, Facility Management, and Manpower Supply sector industries since 2014. 
+                            <br><br>
+                            Established initially as Al Qarwashi Manpower in 2014, and later Al Yaqoot Global for Business in 2019. In 2021, Al Qarwashi International Trading was created as a parent company grouping all branches under one sector, currently rated as one of the leading Omani Contractors in the Sultanate of Oman.
+                        </p>
+                    </div>
                 </div>
-                <div>
-                    <h3 class="text-4xl font-black mb-2">Fast</h3>
-                    <p class="font-semibold text-slate-800">Deployment Time</p>
-                </div>
-                <div>
-                    <h3 class="text-4xl font-black mb-2">1000+</h3>
-                    <p class="font-semibold text-slate-800">Workers Supplied</p>
-                </div>
-                <div>
-                    <h3 class="text-4xl font-black mb-2">24/7</h3>
-                    <p class="font-semibold text-slate-800">Client Support</p>
+                
+                <!-- Mission, Vision, Values -->
+                <div class="space-y-6">
+                    <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-100 transform transition hover:-translate-y-1">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-orange-100 p-3 rounded-full mr-4">
+                                <i class="fa-solid fa-bullseye text-orange-600 text-2xl"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-900">Our Mission</h3>
+                        </div>
+                        <p class="text-gray-600">
+                            Our mission statement reflects our commitment to offering the highest quality service to our clients, candidates, and stakeholders. We continually strive to go above and beyond to provide exceptional service and deliver our corporate social responsibility program to help the wider community.
+                        </p>
+                    </div>
+
+                    <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-100 transform transition hover:-translate-y-1">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                <i class="fa-solid fa-eye text-blue-600 text-2xl"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-900">Our Vision</h3>
+                        </div>
+                        <p class="text-gray-600">
+                            Our vision is to become The Trusted Partner of each of the people with whom we have a relationship, be they clients, employees, shareholders, suppliers, or members of the communities in which we are working.
+                        </p>
+                    </div>
+
+                    <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-100 transform transition hover:-translate-y-1">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-green-100 p-3 rounded-full mr-4">
+                                <i class="fa-solid fa-handshake text-green-600 text-2xl"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-900">Our Values</h3>
+                        </div>
+                        <ul class="text-gray-600 space-y-2">
+                            <li class="flex items-start">
+                                <i class="fa-solid fa-chevron-right text-green-500 mr-2 flex-shrink-0 mt-1"></i>
+                                <span>Provide qualified and suitable services to our customers.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa-solid fa-chevron-right text-green-500 mr-2 flex-shrink-0 mt-1"></i>
+                                <span>Guarantee customers to find, and retain staffing needs.</span>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="py-24 bg-slate-50">
+    <section id="services" class="py-20 bg-slate-100">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">What We Provide</h2>
-                <div class="w-24 h-1 bg-yellow-500 mx-auto mb-6"></div>
-                <p class="text-slate-600 max-w-2xl mx-auto text-lg">
-                    Every industry has unique requirements. At AL Qarwashi, we supply the best talent and labor tailored specifically to your project's needs.
+                <h3 class="text-orange-500 font-bold tracking-wide uppercase text-sm mb-2">What We Do</h3>
+                <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">Our Services</h2>
+                <p class="mt-4 max-w-2xl text-xl text-gray-500 mx-auto">
+                    Comprehensive solutions tailored for Oman's industrial and construction sectors.
                 </p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Services Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Service 1 -->
-                <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 border-t-4 border-yellow-500 group">
-                    <div class="w-16 h-16 bg-slate-100 rounded-full flex items-center justify-center mb-6 group-hover:bg-yellow-500 group-hover:text-white transition-colors">
-                        <i data-lucide="hard-hat" class="text-slate-700 group-hover:text-white w-8 h-8"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold text-slate-900 mb-3">Construction & Engineering</h3>
-                    <p class="text-slate-600 mb-4">
-                        We supply civil engineers, masons, carpenters, plumbers, and electricians trained for large-scale projects.
-                    </p>
-                    <ul class="space-y-2 text-slate-600 text-sm">
-                        <li class="flex items-center"><i data-lucide="check-circle" class="text-yellow-500 mr-2 w-4 h-4"></i> Skilled Labor</li>
-                        <li class="flex items-center"><i data-lucide="check-circle" class="text-yellow-500 mr-2 w-4 h-4"></i> Unskilled Labor</li>
-                        <li class="flex items-center"><i data-lucide="check-circle" class="text-yellow-500 mr-2 w-4 h-4"></i> Machine Operators</li>
-                    </ul>
+                <div class="bg-white rounded-lg p-8 shadow-sm hover:shadow-md transition border border-gray-100">
+                    <div class="text-orange-500 mb-4"><i class="fa-solid fa-wrench text-3xl"></i></div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-2">Mechanical Engineering</h3>
+                    <p class="text-gray-600">Expert mechanical services for industrial and construction applications.</p>
                 </div>
-
                 <!-- Service 2 -->
-                <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 border-t-4 border-yellow-500 group">
-                    <div class="w-16 h-16 bg-slate-100 rounded-full flex items-center justify-center mb-6 group-hover:bg-yellow-500 group-hover:text-white transition-colors">
-                        <i data-lucide="users" class="text-slate-700 group-hover:text-white w-8 h-8"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold text-slate-900 mb-3">Hospitality & Cleaning</h3>
-                    <p class="text-slate-600 mb-4">
-                        Professional staff for hotels, restaurants, and offices, specializing in hygiene, maintenance, and customer service.
-                    </p>
-                    <ul class="space-y-2 text-slate-600 text-sm">
-                        <li class="flex items-center"><i data-lucide="check-circle" class="text-yellow-500 mr-2 w-4 h-4"></i> Housekeeping Staff</li>
-                        <li class="flex items-center"><i data-lucide="check-circle" class="text-yellow-500 mr-2 w-4 h-4"></i> Cleaners & Janitors</li>
-                        <li class="flex items-center"><i data-lucide="check-circle" class="text-yellow-500 mr-2 w-4 h-4"></i> Waiters & Chefs</li>
-                    </ul>
+                <div class="bg-white rounded-lg p-8 shadow-sm hover:shadow-md transition border border-gray-100">
+                    <div class="text-orange-500 mb-4"><i class="fa-solid fa-helmet-safety text-3xl"></i></div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-2">Civil Engineering</h3>
+                    <p class="text-gray-600">Complete civil construction and infrastructure project management.</p>
                 </div>
-
                 <!-- Service 3 -->
-                <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 border-t-4 border-yellow-500 group">
-                    <div class="w-16 h-16 bg-slate-100 rounded-full flex items-center justify-center mb-6 group-hover:bg-yellow-500 group-hover:text-white transition-colors">
-                        <i data-lucide="briefcase" class="text-slate-700 group-hover:text-white w-8 h-8"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold text-slate-900 mb-3">Corporate & Admin</h3>
-                    <p class="text-slate-600 mb-4">
-                        Reliable office staff, data entry operators, and administrative personnel to keep your workplace running smoothly.
-                    </p>
-                    <ul class="space-y-2 text-slate-600 text-sm">
-                        <li class="flex items-center"><i data-lucide="check-circle" class="text-yellow-500 mr-2 w-4 h-4"></i> Office Boys</li>
-                        <li class="flex items-center"><i data-lucide="check-circle" class="text-yellow-500 mr-2 w-4 h-4"></i> Security Guards</li>
-                        <li class="flex items-center"><i data-lucide="check-circle" class="text-yellow-500 mr-2 w-4 h-4"></i> Admin Assistants</li>
-                    </ul>
+                <div class="bg-white rounded-lg p-8 shadow-sm hover:shadow-md transition border border-gray-100">
+                    <div class="text-orange-500 mb-4"><i class="fa-solid fa-bolt text-3xl"></i></div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-2">Electrical & Instrumentation</h3>
+                    <p class="text-gray-600">Reliable electrical installations and instrumentation engineering.</p>
+                </div>
+                <!-- Service 4 -->
+                <div class="bg-white rounded-lg p-8 shadow-sm hover:shadow-md transition border border-gray-100">
+                    <div class="text-orange-500 mb-4"><i class="fa-solid fa-building text-3xl"></i></div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-2">Facility Management</h3>
+                    <p class="text-gray-600">End-to-end management of corporate and industrial facilities.</p>
+                </div>
+                <!-- Service 5 -->
+                <div class="bg-white rounded-lg p-8 shadow-sm hover:shadow-md transition border border-gray-100">
+                    <div class="text-orange-500 mb-4"><i class="fa-solid fa-users text-3xl"></i></div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-2">Manpower Supply</h3>
+                    <p class="text-gray-600">Providing highly skilled and specialized workforce for your projects.</p>
+                </div>
+                <!-- Service 6 -->
+                <div class="bg-white rounded-lg p-8 shadow-sm hover:shadow-md transition border border-gray-100">
+                    <div class="text-orange-500 mb-4"><i class="fa-solid fa-truck text-3xl"></i></div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-2">Vehicles & Equipment Rental</h3>
+                    <p class="text-gray-600">Wide range of heavy machinery, equipment, and vehicles for rent.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- About Us Section -->
-    <section id="about" class="py-24 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col lg:flex-row items-center gap-16">
-                <div class="flex-1 relative">
-                    <div class="absolute -inset-4 bg-yellow-500 transform rotate-3 rounded-lg opacity-20"></div>
-                    <img 
-                        src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
-                        alt="Construction Team" 
-                        class="relative rounded-lg shadow-2xl z-10"
-                    />
-                </div>
-                <div class="flex-1">
-                    <h4 class="text-yellow-600 font-bold tracking-wider uppercase mb-2">About Us</h4>
-                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Your Trusted Manpower Partner in Oman</h2>
-                    <p class="text-slate-600 mb-6 text-lg leading-relaxed">
-                        <strong class="text-slate-900">AL Qarwashi International Trading SPC</strong> is a registered and progressive company built on the foundations of trust, quality, and relentless hard work.
-                    </p>
-                    <p class="text-slate-600 mb-8 text-lg leading-relaxed">
-                        We understand that the success of any project depends heavily on its workforce. That is why we adhere to a strict recruitment process, ensuring we supply only physically fit, hardworking, and highly proficient individuals to meet your demands.
-                    </p>
-                    
-                    <div class="grid grid-cols-2 gap-6">
-                        <div class="flex items-center">
-                            <div class="w-12 h-12 bg-slate-100 rounded-full flex items-center justify-center mr-4">
-                                <i data-lucide="check-circle" class="text-yellow-500 w-6 h-6"></i>
-                            </div>
-                            <span class="font-semibold text-slate-800">Verified Workers</span>
-                        </div>
-                        <div class="flex items-center">
-                            <div class="w-12 h-12 bg-slate-100 rounded-full flex items-center justify-center mr-4">
-                                <i data-lucide="check-circle" class="text-yellow-500 w-6 h-6"></i>
-                            </div>
-                            <span class="font-semibold text-slate-800">Medical Checked</span>
-                        </div>
-                        <div class="flex items-center">
-                            <div class="w-12 h-12 bg-slate-100 rounded-full flex items-center justify-center mr-4">
-                                <i data-lucide="check-circle" class="text-yellow-500 w-6 h-6"></i>
-                            </div>
-                            <span class="font-semibold text-slate-800">Visa Processing</span>
-                        </div>
-                        <div class="flex items-center">
-                            <div class="w-12 h-12 bg-slate-100 rounded-full flex items-center justify-center mr-4">
-                                <i data-lucide="check-circle" class="text-yellow-500 w-6 h-6"></i>
-                            </div>
-                            <span class="font-semibold text-slate-800">Accommodation Handled</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="py-24 bg-slate-900 text-white relative">
+    <!-- Team Section -->
+    <section id="team" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">Get In Touch</h2>
-                <div class="w-24 h-1 bg-yellow-500 mx-auto mb-6"></div>
-                <p class="text-slate-300 max-w-2xl mx-auto text-lg">
-                    Looking for reliable manpower? Send us a message today, and our team will get back to you promptly with the best solutions.
+                <h3 class="text-orange-500 font-bold tracking-wide uppercase text-sm mb-2">Our People</h3>
+                <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">Meet Our Team</h2>
+                <p class="mt-4 max-w-2xl text-lg text-gray-500 mx-auto italic">
+                    "We are not alone But we are the best"
                 </p>
             </div>
 
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-10 bg-slate-800 rounded-xl overflow-hidden shadow-2xl">
+            <!-- Leadership Team -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-slate-50 p-6 rounded-lg text-center border border-gray-200">
+                    <div class="w-20 h-20 bg-slate-200 rounded-full mx-auto mb-4 flex items-center justify-center text-slate-500">
+                        <i class="fa-solid fa-user text-3xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900">Hamad Alqurwashi</h3>
+                    <p class="text-orange-500 font-medium">Chairman</p>
+                </div>
                 
-                <!-- Contact Details -->
-                <div class="lg:col-span-1 bg-yellow-500 p-10 text-slate-900 flex flex-col justify-between">
-                    <div>
-                        <h3 class="text-2xl font-bold mb-6">Contact Information</h3>
-                        
-                        <div class="space-y-8">
-                            <div class="flex items-start">
-                                <div class="bg-slate-900/10 p-3 rounded-full mr-4">
-                                    <i data-lucide="map-pin" class="w-6 h-6"></i>
-                                </div>
-                                <div>
-                                    <p class="text-sm font-semibold uppercase tracking-wider mb-1">Address</p>
-                                    <p class="font-medium text-lg leading-snug">
-                                        Mabilah,<br />
-                                        Muscat, Oman<br />
-                                        Postal Code: 112
-                                    </p>
-                                </div>
-                            </div>
-                            
-                            <div class="flex items-start">
-                                <div class="bg-slate-900/10 p-3 rounded-full mr-4">
-                                    <i data-lucide="mail" class="w-6 h-6"></i>
-                                </div>
-                                <div>
-                                    <p class="text-sm font-semibold uppercase tracking-wider mb-1">Email</p>
-                                    <a href="mailto:Marwa@alqarwashi.com" class="font-medium text-lg hover:underline break-all">
-                                        Marwa@alqarwashi.com
-                                    </a>
-                                </div>
-                            </div>
-
-                            <div class="flex items-start">
-                                <div class="bg-slate-900/10 p-3 rounded-full mr-4">
-                                    <i data-lucide="phone" class="w-6 h-6"></i>
-                                </div>
-                                <div>
-                                    <p class="text-sm font-semibold uppercase tracking-wider mb-1">Phone</p>
-                                    <p class="font-medium text-lg">
-                                        +968 XXXX XXXX <br/>
-                                        <span class="text-sm opacity-80">(Available 24/7)</span>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
+                <div class="bg-slate-50 p-6 rounded-lg text-center border border-gray-200">
+                    <div class="w-20 h-20 bg-slate-200 rounded-full mx-auto mb-4 flex items-center justify-center text-slate-500">
+                        <i class="fa-solid fa-user-tie text-3xl"></i>
                     </div>
-                    
-                    <div class="mt-12 pt-8 border-t border-slate-900/20">
-                        <p class="font-bold">AL Qarwashi International Trading SPC</p>
-                        <p class="text-sm mt-1" dir="rtl">القرواشي العالمية للتجارة ش.ش.م</p>
-                    </div>
+                    <h3 class="text-lg font-bold text-gray-900">Marwa Nefzi</h3>
+                    <p class="text-orange-500 font-medium">General Manager</p>
                 </div>
 
-                <!-- Contact Form -->
-                <div class="lg:col-span-2 p-10">
-                    <h3 class="text-2xl font-bold mb-6 text-white">Send a Message</h3>
-                    <form class="space-y-6" onsubmit="event.preventDefault(); alert('Thank you for your message. We will get back to you soon!');">
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div>
-                                <label class="block text-sm font-medium text-slate-300 mb-2">Your Name</label>
-                                <input 
-                                    type="text" 
-                                    class="w-full px-4 py-3 rounded-sm bg-slate-900 border border-slate-700 text-white focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-all outline-none"
-                                    placeholder="e.g. John Doe"
-                                    required
-                                />
-                            </div>
-                            <div>
-                                <label class="block text-sm font-medium text-slate-300 mb-2">Company Name</label>
-                                <input 
-                                    type="text" 
-                                    class="w-full px-4 py-3 rounded-sm bg-slate-900 border border-slate-700 text-white focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-all outline-none"
-                                    placeholder="e.g. Muscat Builders LLC"
-                                />
-                            </div>
-                        </div>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div>
-                                <label class="block text-sm font-medium text-slate-300 mb-2">Email Address</label>
-                                <input 
-                                    type="email" 
-                                    class="w-full px-4 py-3 rounded-sm bg-slate-900 border border-slate-700 text-white focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-all outline-none"
-                                    placeholder="your@email.com"
-                                    required
-                                />
-                            </div>
-                            <div>
-                                <label class="block text-sm font-medium text-slate-300 mb-2">Phone / WhatsApp</label>
-                                <input 
-                                    type="tel" 
-                                    class="w-full px-4 py-3 rounded-sm bg-slate-900 border border-slate-700 text-white focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-all outline-none"
-                                    placeholder="+968 ..."
-                                    required
-                                />
-                            </div>
-                        </div>
-                        <div>
-                            <label class="block text-sm font-medium text-slate-300 mb-2">Manpower Requirements</label>
-                            <textarea 
-                                rows="4"
-                                class="w-full px-4 py-3 rounded-sm bg-slate-900 border border-slate-700 text-white focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-all outline-none resize-none"
-                                placeholder="Describe your requirements here (e.g., I need 20 masons for an upcoming project...)"
-                                required
-                            ></textarea>
-                        </div>
-                        <button type="submit" class="bg-yellow-500 hover:bg-yellow-600 text-slate-900 font-bold py-4 px-8 rounded-sm transition-colors shadow-md w-full md:w-auto">
-                            Send Message
-                        </button>
-                    </form>
+                <div class="bg-slate-50 p-6 rounded-lg text-center border border-gray-200">
+                    <div class="w-20 h-20 bg-slate-200 rounded-full mx-auto mb-4 flex items-center justify-center text-slate-500">
+                        <i class="fa-solid fa-shield-halved text-3xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900">Huda Vahedi</h3>
+                    <p class="text-orange-500 font-medium">HSE Manager</p>
                 </div>
 
+                <div class="bg-slate-50 p-6 rounded-lg text-center border border-gray-200">
+                    <div class="w-20 h-20 bg-slate-200 rounded-full mx-auto mb-4 flex items-center justify-center text-slate-500">
+                        <i class="fa-solid fa-calculator text-3xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900">Mohammad Shariq</h3>
+                    <p class="text-orange-500 font-medium">Accountant</p>
+                </div>
+            </div>
+
+            <!-- Other Departments -->
+            <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div class="bg-white border border-gray-200 p-6 rounded-lg shadow-sm">
+                    <h4 class="text-xl font-bold text-slate-800 mb-4 border-b pb-2">Engineering Team</h4>
+                    <ul class="space-y-3">
+                        <li class="flex items-center text-gray-700"><i class="fa-solid fa-chevron-right text-orange-500 mr-2 text-sm"></i> Vasanth kumar</li>
+                        <li class="flex items-center text-gray-700"><i class="fa-solid fa-chevron-right text-orange-500 mr-2 text-sm"></i> Nasser mohmmad</li>
+                    </ul>
+                </div>
+                
+                <div class="bg-white border border-gray-200 p-6 rounded-lg shadow-sm">
+                    <h4 class="text-xl font-bold text-slate-800 mb-4 border-b pb-2">Reception & Admin</h4>
+                    <ul class="space-y-3">
+                        <li class="flex items-center text-gray-700"><i class="fa-solid fa-chevron-right text-orange-500 mr-2 text-sm"></i> Muhanna Al alawi</li>
+                        <li class="flex items-center text-gray-700"><i class="fa-solid fa-chevron-right text-orange-500 mr-2 text-sm"></i> Mohamed shah</li>
+                        <li class="flex items-center text-gray-700"><i class="fa-solid fa-chevron-right text-orange-500 mr-2 text-sm"></i> Ruwaida al sheibani</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-slate-950 text-slate-400 py-12 border-t border-slate-900">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
-            <div class="flex flex-col items-center md:items-start">
-                <span class="font-bold text-2xl text-white">AL Qarwashi</span>
-                <span class="text-yellow-500 text-sm">International Trading SPC</span>
-                <span class="text-slate-500 text-xs mt-1" dir="rtl">القرواشي العالمية للتجارة ش.ش.م</span>
+    <!-- Clients Section -->
+    <section id="clients" class="py-20 bg-slate-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-extrabold sm:text-4xl">Our Valued Clients</h2>
+                <p class="mt-4 text-gray-400">Trusted by leading organizations in Oman and beyond.</p>
             </div>
-            
-            <div class="text-center md:text-right">
-                <p class="mb-2">&copy; 2026 AL Qarwashi. All rights reserved.</p>
-                <p class="text-sm">Location: Mabilah, Muscat, Oman | Postal Code: 112</p>
+
+            <!-- Clients Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                <div class="bg-slate-800 p-4 rounded text-sm text-gray-300 flex items-center border border-slate-700 hover:border-orange-500 transition duration-300">
+                    <div class="w-2 h-2 bg-orange-500 rounded-full mr-3 flex-shrink-0"></div> AGS: Block 57 (Petrolab) & Block 58
+                </div>
+                <div class="bg-slate-800 p-4 rounded text-sm text-gray-300 flex items-center border border-slate-700 hover:border-orange-500 transition duration-300">
+                    <div class="w-2 h-2 bg-orange-500 rounded-full mr-3 flex-shrink-0"></div> Al Saber Trading (Pipeline CCD)
+                </div>
+                <div class="bg-slate-800 p-4 rounded text-sm text-gray-300 flex items-center border border-slate-700 hover:border-orange-500 transition duration-300">
+                    <div class="w-2 h-2 bg-orange-500 rounded-full mr-3 flex-shrink-0"></div> Sinopec AL Dokum
+                </div>
+                <div class="bg-slate-800 p-4 rounded text-sm text-gray-300 flex items-center border border-slate-700 hover:border-orange-500 transition duration-300">
+                    <div class="w-2 h-2 bg-orange-500 rounded-full mr-3 flex-shrink-0"></div> ARGAS (OMN01 ENI Crew)
+                </div>
+                <div class="bg-slate-800 p-4 rounded text-sm text-gray-300 flex items-center border border-slate-700 hover:border-orange-500 transition duration-300">
+                    <div class="w-2 h-2 bg-orange-500 rounded-full mr-3 flex-shrink-0"></div> BGP (Crew B-OXY Project)
+                </div>
+                <div class="bg-slate-800 p-4 rounded text-sm text-gray-300 flex items-center border border-slate-700 hover:border-orange-500 transition duration-300">
+                    <div class="w-2 h-2 bg-orange-500 rounded-full mr-3 flex-shrink-0"></div> GALFAR (Nizwa-OQ project)
+                </div>
+                <div class="bg-slate-800 p-4 rounded text-sm text-gray-300 flex items-center border border-slate-700 hover:border-orange-500 transition duration-300">
+                    <div class="w-2 h-2 bg-orange-500 rounded-full mr-3 flex-shrink-0"></div> STS Oman
+                </div>
+                <div class="bg-slate-800 p-4 rounded text-sm text-gray-300 flex items-center border border-slate-700 hover:border-orange-500 transition duration-300">
+                    <div class="w-2 h-2 bg-orange-500 rounded-full mr-3 flex-shrink-0"></div> Al sarooj construction company
+                </div>
+                <div class="bg-slate-800 p-4 rounded text-sm text-gray-300 flex items-center border border-slate-700 hover:border-orange-500 transition duration-300">
+                    <div class="w-2 h-2 bg-orange-500 rounded-full mr-3 flex-shrink-0"></div> Arabian industries
+                </div>
+                <div class="bg-slate-800 p-4 rounded text-sm text-gray-300 flex items-center border border-slate-700 hover:border-orange-500 transition duration-300">
+                    <div class="w-2 h-2 bg-orange-500 rounded-full mr-3 flex-shrink-0"></div> Al khalili construction
+                </div>
+                <div class="bg-slate-800 p-4 rounded text-sm text-gray-300 flex items-center border border-slate-700 hover:border-orange-500 transition duration-300">
+                    <div class="w-2 h-2 bg-orange-500 rounded-full mr-3 flex-shrink-0"></div> International infra construction
+                </div>
+                <div class="bg-slate-800 p-4 rounded text-sm text-gray-300 flex items-center border border-slate-700 hover:border-orange-500 transition duration-300">
+                    <div class="w-2 h-2 bg-orange-500 rounded-full mr-3 flex-shrink-0"></div> SERKA CONTRACTING LLC
+                </div>
+                <div class="bg-slate-800 p-4 rounded text-sm text-gray-300 flex items-center border border-slate-700 hover:border-orange-500 transition duration-300">
+                    <div class="w-2 h-2 bg-orange-500 rounded-full mr-3 flex-shrink-0"></div> DHAHIYAT NAKHAL CONSTRUCTION LLC
+                </div>
+                <div class="bg-slate-800 p-4 rounded text-sm text-gray-300 flex items-center border border-slate-700 hover:border-orange-500 transition duration-300">
+                    <div class="w-2 h-2 bg-orange-500 rounded-full mr-3 flex-shrink-0"></div> AL MIRATH LLC
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Footer -->
+    <footer id="contact" class="bg-slate-950 text-white pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mb-12">
+                
+                <!-- Company Info -->
+                <div>
+                    <h3 class="text-2xl font-bold text-orange-400 mb-2">AL QURWASHI</h3>
+                    <p class="text-gray-400 mb-4 text-sm">INTERNATIONAL TRADING SPC</p>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                        القرواشي العالمية للتجارة ششم
+                    </p>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-6 border-b border-slate-800 pb-2">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#home" class="text-gray-400 hover:text-orange-400 transition">Home</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-orange-400 transition">About Us</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-orange-400 transition">Services</a></li>
+                        <li><a href="#team" class="text-gray-400 hover:text-orange-400 transition">Our Team</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Details -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-6 border-b border-slate-800 pb-2">Contact Us</h4>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-location-dot text-orange-400 mr-3 mt-1 flex-shrink-0 text-lg"></i>
+                            <span class="text-gray-400 text-sm">
+                                Al.khir street building number 6132, <br>
+                                al mabeelah Mascut, <br>
+                                Sultanate Of Oman
+                            </span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-phone text-orange-400 mr-3 mt-1 flex-shrink-0 text-lg"></i>
+                            <div class="text-gray-400 text-sm flex flex-col space-y-1">
+                                <a href="tel:+96824000112" class="hover:text-white">+968 24000112</a>
+                                <a href="tel:+96896105081" class="hover:text-white">+968 96105081</a>
+                                <a href="tel:+96896132591" class="hover:text-white">+968 96132591</a>
+                            </div>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fa-solid fa-envelope text-orange-400 mr-3 flex-shrink-0 text-lg"></i>
+                            <div class="text-gray-400 text-sm flex flex-col space-y-1">
+                                <a href="mailto:marwa@algarwashi.com" class="hover:text-white">marwa@algarwashi.com</a>
+                                <a href="mailto:info@algarwashi.com" class="hover:text-white">info@algarwashi.com</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Copyrights -->
+            <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
+                <p>&copy; 2026 AL QURWASHI International Trading SPC. All rights reserved.</p>
+                <p class="mt-2 md:mt-0">Sultanate of Oman</p>
             </div>
         </div>
     </footer>
 
-    <!-- JavaScript For Interactivity -->
+    <!-- JavaScript Mobile Menu ke liye -->
     <script>
-        // Initialize Lucide Icons
-        lucide.createIcons();
+        document.addEventListener('DOMContentLoaded', function() {
+            const btn = document.getElementById('mobile-menu-button');
+            const menu = document.getElementById('mobile-menu');
+            const icon = document.getElementById('menu-icon');
+            const mobileLinks = document.querySelectorAll('.mobile-link');
 
-        // Mobile Menu Toggle Logic
-        const btn = document.getElementById('mobile-menu-btn');
-        const menu = document.getElementById('mobile-menu');
-        const icon = document.getElementById('menu-icon');
-        const mobileLinks = document.querySelectorAll('.mobile-link');
-
-        let isMenuOpen = false;
-
-        function toggleMenu() {
-            isMenuOpen = !isMenuOpen;
-            
-            if(isMenuOpen) {
-                menu.classList.remove('hidden');
-                // Change icon to close (X)
-                icon.setAttribute('data-lucide', 'x');
-            } else {
-                menu.classList.add('hidden');
-                // Change icon back to menu
-                icon.setAttribute('data-lucide', 'menu');
-            }
-            // Re-render the specific icon
-            lucide.createIcons();
-        }
-
-        // Toggle button par click event
-        btn.addEventListener('click', toggleMenu);
-
-        // Jab mobile me kisi link par click karein, toh menu close ho jaye
-        mobileLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                if(isMenuOpen) {
-                    toggleMenu();
+            // Menu open/close toggle karne ke liye
+            btn.addEventListener('click', function() {
+                menu.classList.toggle('hidden');
+                if(menu.classList.contains('hidden')){
+                    icon.classList.remove('fa-xmark');
+                    icon.classList.add('fa-bars');
+                } else {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-xmark');
                 }
+            });
+
+            // Jab koi link click ho to menu band karne ke liye
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    menu.classList.add('hidden');
+                    icon.classList.remove('fa-xmark');
+                    icon.classList.add('fa-bars');
+                });
             });
         });
     </script>
 </body>
 </html>
 
-
+```
