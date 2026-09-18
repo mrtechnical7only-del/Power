@@ -1,453 +1,1733 @@
-```html
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AL Qurwashi International Trading SPC</title>
-    
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- FontAwesome Icons CDN -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <!-- Custom Colors Configuration (Tailwind) -->
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        orange: {
-                            400: '#fb923c',
-                            500: '#f97316',
-                            600: '#ea580c',
-                        }
-                    }
-                }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=devhjjice-width, initial-scale=1.0" />
+  <title>Packs_n_Bakes By Saleha | Ultra-Luxury 3D Confectionery Experience</title>
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              void: '#080206',
+              dark: '#11040e',
+              plum: '#1d0617',
+              velvet: '#2c0a23',
+              crimson: '#4a0e2e',
+              gold: '#e6ca65',
+              goldDeep: '#b88a28',
+              goldLight: '#fff2b2',
+              rose: '#f78da7',
+              ivory: '#fcf8f2'
             }
+          },
+          fontFamily: {
+            cinzel: ['"Cinzel Decorative"', 'Cinzel', 'serif'],
+            serif: ['"Playfair Display"', 'Georgia', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            script: ['"Great Vibes"', 'cursive']
+          },
+          boxShadow: {
+            'royal-glow': '0 0 50px -10px rgba(230, 202, 101, 0.35)',
+            'royal-glow-lg': '0 0 70px -5px rgba(230, 202, 101, 0.5)',
+            'glass-inset': 'inset 0 1px 1px 0 rgba(255, 255, 255, 0.15)',
+          }
         }
-    </script>
+      }
+    }
+  </script>
+
+  <!-- Google Web Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;600;700;800&family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Three.js (WebGL 3D Engine) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+  <style>
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 7px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #080206;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: linear-gradient(to bottom, #e6ca65, #b88a28);
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #fff2b2;
+    }
+
+    /* Royal Glass & Filigree Borders */
+    .royal-glass {
+      background: radial-gradient(130% 100% at 50% 0%, rgba(44, 10, 35, 0.6) 0%, rgba(17, 4, 14, 0.9) 100%);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(230, 202, 101, 0.25);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.75), inset 0 1px 1px rgba(255, 242, 178, 0.2);
+    }
+    .royal-glass-hover {
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .royal-glass-hover:hover {
+      border-color: rgba(230, 202, 101, 0.7);
+      transform: translateY(-5px);
+      box-shadow: 0 25px 60px -10px rgba(230, 202, 101, 0.3), inset 0 1px 2px rgba(255, 242, 178, 0.4);
+    }
+
+    /* Metallic Gold Shimmer Gradients */
+    .gold-shimmer-text {
+      background: linear-gradient(120deg, #fff2b2 0%, #e6ca65 25%, #ffd875 50%, #b88a28 75%, #fff2b2 100%);
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: shineText 7s linear infinite;
+    }
+    @keyframes shineText {
+      to { background-position: 200% center; }
+    }
+
+    .bg-palace-pattern {
+      background-image: 
+        radial-gradient(circle at 50% 5%, rgba(230, 202, 101, 0.14) 0%, transparent 60%),
+        radial-gradient(circle at 10% 65%, rgba(247, 141, 167, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 90% 75%, rgba(184, 138, 40, 0.12) 0%, transparent 55%);
+    }
+
+    /* Golden Stardust Cursor Trail */
+    .stardust {
+      position: fixed;
+      pointer-events: none;
+      width: 5px;
+      height: 5px;
+      background: #ffd875;
+      border-radius: 50%;
+      box-shadow: 0 0 12px #e6ca65, 0 0 22px #ffd875;
+      z-index: 99999;
+      transform: translate(-50%, -50%);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    @keyframes pulseGlow {
+      0%, 100% { opacity: 0.6; transform: scale(1); }
+      50% { opacity: 0.95; transform: scale(1.05); }
+    }
+    .animate-pulse-glow {
+      animation: pulseGlow 4s ease-in-out infinite;
+    }
+  </style>
 </head>
-<body class="font-sans text-gray-800 bg-gray-50 min-h-screen">
 
-    <!-- Navigation Navbar -->
-    <nav class="bg-slate-900 text-white sticky top-0 z-50 shadow-lg">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
-                <!-- Logo -->
-                <div class="flex-shrink-0 flex items-center">
-                    <div>
-                        <h1 class="text-2xl font-bold tracking-wider text-orange-400">AL QURWASHI</h1>
-                        <p class="text-xs text-gray-300">INTERNATIONAL TRADING SPC</p>
-                    </div>
-                </div>
-                
-                <!-- Desktop Menu (Bade screens ke liye) -->
-                <div class="hidden md:flex space-x-8">
-                    <a href="#home" class="hover:text-orange-400 transition">Home</a>
-                    <a href="#about" class="hover:text-orange-400 transition">About</a>
-                    <a href="#services" class="hover:text-orange-400 transition">Services</a>
-                    <a href="#team" class="hover:text-orange-400 transition">Our Team</a>
-                    <a href="#clients" class="hover:text-orange-400 transition">Clients</a>
-                    <a href="#contact" class="hover:text-orange-400 transition">Contact</a>
-                </div>
+<body class="bg-brand-void text-brand-ivory font-sans selection:bg-brand-gold selection:text-brand-void overflow-x-hidden antialiased bg-palace-pattern">
 
-                <!-- Mobile Menu Button -->
-                <div class="md:hidden flex items-center">
-                    <button id="mobile-menu-button" class="text-white hover:text-orange-400 focus:outline-none">
-                        <i class="fa-solid fa-bars text-2xl" id="menu-icon"></i>
-                    </button>
-                </div>
+  <!-- Ambient Audio Chime Button -->
+  <button id="soundToggleBtn" onclick="toggleAudio()" class="fixed bottom-6 left-6 z-40 royal-glass px-4 py-3 rounded-full text-brand-gold hover:text-brand-goldLight transition duration-300 flex items-center gap-2.5 group cursor-pointer shadow-royal-glow" title="Toggle Palace Ambient Atmosphere">
+    <i data-lucide="music" id="soundIcon" class="w-4 h-4"></i>
+    <span id="soundText" class="text-[11px] font-cinzel uppercase tracking-widest font-semibold">Palace Atmosphere: Off</span>
+  </button>
+
+  <!-- WhatsApp Floating Action with Pulsing Status -->
+  <a href="https://wa.me/919999999999?text=Hello%20Saleha%20(Packs_n_Bakes)%20✨%20I%20visited%20your%20luxury%203D%20website%20and%20would%20love%20to%20place%20a%20bespoke%20order!" target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 z-40 bg-gradient-to-r from-emerald-600 via-emerald-500 to-green-500 hover:from-emerald-500 hover:to-green-400 text-white px-5 py-3.5 rounded-full shadow-2xl flex items-center gap-3 transition transform hover:scale-105 border border-emerald-300/40 cursor-pointer" title="Chat Directly With Saleha">
+    <span class="relative flex h-3 w-3">
+      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-300 opacity-75"></span>
+      <span class="relative inline-flex rounded-full h-3 w-3 bg-white"></span>
+    </span>
+    <i data-lucide="message-circle" class="w-5 h-5"></i>
+    <span class="text-xs font-bold uppercase tracking-wider hidden sm:inline-block font-cinzel">WhatsApp Saleha</span>
+  </a>
+
+  <!-- Top Imperial Notice Bar -->
+  <div class="bg-gradient-to-r from-brand-void via-brand-plum to-brand-void border-b border-brand-gold/25 py-2.5 px-4 text-center text-xs tracking-widest uppercase font-semibold text-amber-200/90 flex items-center justify-center gap-4">
+    <span class="flex items-center gap-1.5"><i data-lucide="sparkles" class="w-3.5 h-3.5 text-brand-gold"></i> Home Baker | Nanded Studio 📍</span>
+    <span class="hidden md:inline text-brand-gold/40">•</span>
+    <span class="hidden sm:inline">🚚 Pan-India Shipping on Monogram Chocolates & Acrylic Hampers</span>
+    <span class="hidden md:inline text-brand-gold/40">•</span>
+    <span class="text-pink-300">🌸 100% Belgian Chocolate & Eggless Artisanal Sponges</span>
+  </div>
+
+  <header class="sticky top-0 z-50 backdrop-blur-xl bg-brand-void/85 border-b border-brand-gold/20 transition duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-24 flex items-center justify-between">
+      
+      <!-- Brand Logo & Imperial Monogram -->
+      <a href="#" class="flex items-center gap-3.5 group">
+        <div class="w-13 h-13 sm:w-14 sm:h-14 rounded-full border-2 border-brand-gold p-0.5 flex items-center justify-center bg-gradient-to-br from-brand-velvet via-brand-plum to-brand-dark shadow-royal-glow group-hover:scale-105 transition">
+          <div class="w-full h-full rounded-full border border-dashed border-brand-gold/70 flex items-center justify-center">
+            <span class="font-cinzel text-lg sm:text-xl font-bold gold-shimmer-text">PB</span>
+          </div>
+        </div>
+        <div>
+          <div class="font-cinzel text-lg sm:text-2xl font-bold tracking-wider gold-shimmer-text uppercase">
+            Packs_n_Bakes
+          </div>
+          <p class="text-[10px] tracking-[0.3em] text-pink-300/90 uppercase font-medium flex items-center gap-1">
+            <span>By Saleha</span>
+            <span>🦋✨</span>
+            <span class="hidden sm:inline text-slate-400">| Nanded, MH</span>
+          </p>
+        </div>
+      </a>
+
+      <!-- Navigation Links -->
+      <nav class="hidden lg:flex items-center space-x-9 text-[11px] uppercase tracking-[0.25em] font-cinzel text-slate-200">
+        <a href="#hero" class="hover:text-brand-gold transition duration-200">The Palace</a>
+        <a href="#stage-3d" class="hover:text-brand-gold transition duration-200 flex items-center gap-1.5">
+          <span>3D Studio</span>
+          <span class="text-[9px] bg-brand-gold/25 text-brand-gold px-1.5 py-0.5 rounded border border-brand-gold/50 font-bold">360° LIVE</span>
+        </a>
+        <a href="#creations" class="hover:text-brand-gold transition duration-200">Creations</a>
+        <a href="#bespoke-hampers" class="hover:text-brand-gold transition duration-200">Trousseau & Hampers</a>
+        <a href="#about" class="hover:text-brand-gold transition duration-200">The Craft</a>
+        <a href="#custom-quote" class="hover:text-brand-gold transition duration-200">Reserve Slot</a>
+      </nav>
+
+      <!-- Right Controls & Inquiries -->
+      <div class="flex items-center gap-4">
+        <button onclick="toggleCartDrawer()" class="relative p-2.5 text-slate-200 hover:text-brand-gold transition royal-glass rounded-full border-brand-gold/30 cursor-pointer" title="View Inquiry Tray">
+          <i data-lucide="shopping-bag" class="w-5 h-5 text-brand-gold"></i>
+          <span id="cartCountBadge" class="absolute -top-1 -right-1 bg-gradient-to-r from-brand-gold to-amber-500 text-brand-void text-[10px] font-extrabold w-5 h-5 rounded-full flex items-center justify-center shadow-lg">0</span>
+        </button>
+
+        <a href="#custom-quote" class="hidden sm:inline-flex items-center gap-2.5 border-2 border-brand-gold bg-gradient-to-r from-brand-gold/20 via-brand-gold/10 to-transparent hover:from-brand-gold hover:to-brand-goldDeep px-6 py-2.5 rounded-full text-xs font-cinzel font-bold uppercase tracking-widest text-brand-gold hover:text-brand-void transition duration-300 shadow-royal-glow">
+          <span>Book Custom Cake</span>
+          <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+        </a>
+
+        <button id="mobileNavToggle" onclick="toggleMobileMenu()" class="lg:hidden p-2.5 text-slate-300 hover:text-brand-gold royal-glass rounded-xl cursor-pointer">
+          <i data-lucide="menu" id="menuToggleIcon" class="w-6 h-6"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Dropdown Navigation -->
+    <div id="mobileMenuPanel" class="hidden lg:hidden bg-brand-plum/95 backdrop-blur-2xl border-b border-brand-gold/30 px-6 py-8 space-y-4 text-center font-cinzel">
+      <a href="#hero" onclick="toggleMobileMenu()" class="block text-sm uppercase tracking-widest text-slate-200 hover:text-brand-gold py-2">The Palace</a>
+      <a href="#stage-3d" onclick="toggleMobileMenu()" class="block text-sm uppercase tracking-widest text-brand-gold hover:text-brand-goldLight py-2">3D Interactive Studio ✨</a>
+      <a href="#creations" onclick="toggleMobileMenu()" class="block text-sm uppercase tracking-widest text-slate-200 hover:text-brand-gold py-2">Signature Creations</a>
+      <a href="#bespoke-hampers" onclick="toggleMobileMenu()" class="block text-sm uppercase tracking-widest text-slate-200 hover:text-brand-gold py-2">Trousseau & Hampers</a>
+      <a href="#about" onclick="toggleMobileMenu()" class="block text-sm uppercase tracking-widest text-slate-200 hover:text-brand-gold py-2">Saleha's Craft</a>
+      <a href="#custom-quote" onclick="toggleMobileMenu()" class="block text-sm uppercase tracking-widest text-slate-200 hover:text-brand-gold py-2">Book Order on WhatsApp</a>
+    </div>
+  </header>
+
+  <section id="hero" class="relative min-h-[92vh] flex items-center justify-center overflow-hidden px-4 sm:px-6">
+    <div class="absolute inset-0 bg-gradient-to-b from-brand-void via-brand-plum/70 to-brand-void z-0"></div>
+    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-amber-500/15 via-rose-950/20 to-transparent z-0 pointer-events-none"></div>
+
+    <div class="relative z-10 max-w-5xl mx-auto text-center py-12 sm:py-20">
+      
+      <!-- Royal Crest Monogram -->
+      <div class="inline-flex flex-col items-center mb-6">
+        <div class="w-20 h-20 rounded-full border-2 border-brand-gold p-1 flex items-center justify-center mb-3 shadow-royal-glow bg-gradient-to-b from-brand-velvet to-brand-void animate-pulse-glow">
+          <div class="w-full h-full rounded-full border border-dashed border-brand-gold/70 flex items-center justify-center">
+            <span class="font-cinzel text-3xl font-bold gold-shimmer-text">PB</span>
+          </div>
+        </div>
+        <div class="flex items-center gap-3 text-xs uppercase tracking-[0.4em] text-brand-gold font-cinzel font-semibold">
+          <span class="h-[1px] w-8 bg-brand-gold/50"></span>
+          <span>Bespoke Confectionery & Wedding Gifting</span>
+          <span class="h-[1px] w-8 bg-brand-gold/50"></span>
+        </div>
+      </div>
+
+      <!-- Main Headline -->
+      <h1 class="font-cinzel text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tight leading-[1.1] mb-6">
+        Baking Happiness <br />
+        <span class="font-serif italic font-normal gold-shimmer-text">In Every Royal Bite</span>
+      </h1>
+
+      <p class="text-slate-300 max-w-2xl mx-auto text-sm sm:text-base md:text-lg font-light leading-relaxed mb-10">
+        From multi-tiered wedding cakes in Nanded with real edible 24k gold leaf to acrylic fairy-lit anniversary hampers and monogram initials chocolates delivered across India.
+      </p>
+
+      <!-- Action Buttons -->
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-5">
+        <a href="#stage-3d" class="w-full sm:w-auto px-9 py-4 rounded-full bg-gradient-to-r from-brand-gold via-amber-400 to-brand-goldDeep text-brand-void font-cinzel font-bold text-xs uppercase tracking-[0.2em] hover:brightness-110 transition shadow-royal-glow flex items-center justify-center gap-3 transform hover:-translate-y-0.5 cursor-pointer">
+          <span>Enter 3D Studio & Customize</span>
+          <i data-lucide="sparkles" class="w-4 h-4"></i>
+        </a>
+        <a href="#creations" class="w-full sm:w-auto px-8 py-4 rounded-full royal-glass hover:border-brand-gold text-amber-200 hover:text-white font-cinzel font-semibold text-xs uppercase tracking-[0.2em] transition flex items-center justify-center gap-2 cursor-pointer">
+          <span>Explore Catalog</span>
+          <i data-lucide="chevron-down" class="w-4 h-4 text-brand-gold"></i>
+        </a>
+      </div>
+
+      <!-- Live Prestige Metrics -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16 max-w-4xl mx-auto pt-10 border-t border-brand-gold/20">
+        <div class="royal-glass p-4 rounded-2xl border-brand-gold/15">
+          <p class="font-cinzel text-2xl sm:text-3xl font-bold text-brand-gold">750+</p>
+          <p class="text-[11px] uppercase tracking-wider text-slate-300 mt-1">Bespoke Orders</p>
+        </div>
+        <div class="royal-glass p-4 rounded-2xl border-brand-gold/15">
+          <p class="font-cinzel text-2xl sm:text-3xl font-bold text-brand-gold">Nanded 📍</p>
+          <p class="text-[11px] uppercase tracking-wider text-slate-300 mt-1">Artisanal Studio</p>
+        </div>
+        <div class="royal-glass p-4 rounded-2xl border-brand-gold/15">
+          <p class="font-cinzel text-2xl sm:text-3xl font-bold text-brand-gold">Pan India 🚚</p>
+          <p class="text-[11px] uppercase tracking-wider text-slate-300 mt-1">Shockproof Logistics</p>
+        </div>
+        <div class="royal-glass p-4 rounded-2xl border-brand-gold/15">
+          <p class="font-cinzel text-2xl sm:text-3xl font-bold text-brand-gold">100% Pure</p>
+          <p class="text-[11px] uppercase tracking-wider text-slate-300 mt-1">Eggless Belgian</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="stage-3d" class="py-24 relative bg-gradient-to-b from-brand-void via-brand-velvet/60 to-brand-void border-t border-b border-brand-gold/25">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <span class="text-xs uppercase tracking-[0.35em] text-pink-300 font-cinzel font-semibold flex items-center justify-center gap-2">
+          <i data-lucide="gem" class="w-4 h-4 text-brand-gold"></i>
+          Interactive 360° Inspection Turntable
+        </span>
+        <h2 class="font-cinzel text-3xl sm:text-5xl font-bold mt-2 text-white">
+          Inspect & Engrave <span class="font-serif italic font-normal gold-shimmer-text">Your Masterpiece</span>
+        </h2>
+        <p class="text-slate-300 text-sm sm:text-base mt-3 max-w-2xl mx-auto">
+          Rotate with mouse or touch. Type your custom initials to see them dynamically engraved in gold foil on the cake tier or chocolate box in real-time!
+        </p>
+      </div>
+
+      <!-- Studio Layout Grid -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        
+        <!-- Left Customizer Controls -->
+        <div class="lg:col-span-4 space-y-6 order-2 lg:order-1">
+          
+          <!-- Selected Item Information Card -->
+          <div class="royal-glass rounded-3xl p-6 relative overflow-hidden border-brand-gold/40 shadow-royal-glow">
+            <div class="flex items-center justify-between mb-3">
+              <span id="modelBadge" class="bg-gradient-to-r from-brand-gold/25 to-amber-500/10 border border-brand-gold/60 text-brand-gold px-3 py-1 rounded-full text-[10px] font-cinzel font-bold tracking-widest uppercase">
+                Grandeur Edition
+              </span>
+              <span class="text-[11px] text-brand-gold flex items-center gap-1.5 font-medium">
+                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                WebGL 3D Active
+              </span>
             </div>
+
+            <h3 id="modelTitle" class="font-cinzel text-xl sm:text-2xl font-bold text-white mb-2">
+              Royal 3-Tier Pearl Cake
+            </h3>
+            <p id="modelDesc" class="text-slate-300 text-xs sm:text-sm leading-relaxed mb-5 font-light">
+              Architectural celebration cake coated in rich velvet glaze, 24k gold leaf piping, handcrafted pearls, and crowned with Saleha’s signature golden fluttering butterfly topper.
+            </p>
+
+            <!-- Price and Add to Inquiry Tray -->
+            <div class="pt-4 border-t border-brand-gold/20 flex items-center justify-between">
+              <div>
+                <span class="text-[10px] uppercase tracking-widest text-slate-400 block font-cinzel">Live Config Price</span>
+                <span id="modelPrice" class="font-cinzel text-2xl font-extrabold text-brand-gold">₹3,499</span>
+              </div>
+              <button onclick="addCurrent3DToCart()" class="bg-gradient-to-r from-brand-gold to-amber-500 hover:from-amber-400 hover:to-brand-gold text-brand-void px-5 py-2.5 rounded-full text-xs font-cinzel font-bold uppercase tracking-wider transition shadow-royal-glow flex items-center gap-2 cursor-pointer">
+                <i data-lucide="plus" class="w-4 h-4"></i> Add To Tray
+              </button>
+            </div>
+          </div>
+
+          <!-- 3D Studio Customization Panel -->
+          <div class="royal-glass rounded-3xl p-6 border-brand-gold/30 space-y-5">
+            <div>
+              <label class="text-xs uppercase tracking-[0.2em] text-amber-200/90 font-cinzel font-semibold block mb-2.5">
+                1. Select 3D Creation:
+              </label>
+              <div class="grid grid-cols-3 gap-2">
+                <button onclick="switch3DModel('wedding')" id="btn-wedding" class="px-2.5 py-2.5 rounded-xl text-xs font-cinzel font-bold border-2 border-brand-gold bg-brand-gold text-brand-void transition shadow-lg text-center cursor-pointer">
+                  🎂 Royal Cake
+                </button>
+                <button onclick="switch3DModel('hamper')" id="btn-hamper" class="px-2.5 py-2.5 rounded-xl text-xs font-cinzel font-bold border border-white/10 hover:border-brand-gold/60 bg-white/5 text-slate-200 transition text-center cursor-pointer">
+                  🎁 Luxe Hamper
+                </button>
+                <button onclick="switch3DModel('chocolates')" id="btn-chocolates" class="px-2.5 py-2.5 rounded-xl text-xs font-cinzel font-bold border border-white/10 hover:border-brand-gold/60 bg-white/5 text-slate-200 transition text-center cursor-pointer">
+                  🍫 Truffle Tier
+                </button>
+              </div>
+            </div>
+
+            <!-- Dynamic Monogram Live Engraving Input -->
+            <div class="pt-3 border-t border-brand-gold/15">
+              <label class="text-xs uppercase tracking-[0.2em] text-amber-200/90 font-cinzel font-semibold flex items-center justify-between mb-2">
+                <span>2. Couple Monogram Initials:</span>
+                <span class="text-[10px] text-pink-300 font-normal">Live 3D Texture</span>
+              </label>
+              <div class="flex gap-2">
+                <input type="text" id="monogramInput" maxlength="6" value="S & A" placeholder="e.g. S & A" class="w-full bg-brand-void/90 border border-brand-gold/40 rounded-xl px-3 py-2 text-sm text-brand-gold font-cinzel font-bold focus:outline-none focus:border-brand-gold uppercase text-center" oninput="updateMonogramTexture(this.value)" />
+                <button onclick="randomizeMonogram()" class="px-3 py-2 royal-glass text-xs font-cinzel text-brand-gold hover:text-white rounded-xl border border-brand-gold/40 cursor-pointer" title="Random Initials">
+                  🎲
+                </button>
+              </div>
+            </div>
+
+            <!-- Color Glaze Swatches -->
+            <div class="pt-3 border-t border-brand-gold/15">
+              <label class="text-xs uppercase tracking-[0.2em] text-amber-200/90 font-cinzel font-semibold block mb-2">
+                3. Glaze & Finish:
+              </label>
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                  <button onclick="change3DColor(0x2a081c, 'Burgundy Velvet')" class="w-7 h-7 rounded-full bg-[#2a081c] border-2 border-white/70 shadow-md hover:scale-110 transition cursor-pointer" title="Burgundy Velvet"></button>
+                  <button onclick="change3DColor(0xd4af37, '24K Imperial Gold')" class="w-7 h-7 rounded-full bg-[#d4af37] border-2 border-white/70 shadow-md hover:scale-110 transition cursor-pointer" title="Imperial Gold"></button>
+                  <button onclick="change3DColor(0x1a0d0a, 'Belgian Dark Truffle')" class="w-7 h-7 rounded-full bg-[#1a0d0a] border-2 border-white/70 shadow-md hover:scale-110 transition cursor-pointer" title="Belgian Dark Truffle"></button>
+                  <button onclick="change3DColor(0xf4b4c7, 'French Rose Blush')" class="w-7 h-7 rounded-full bg-[#f4b4c7] border-2 border-white/70 shadow-md hover:scale-110 transition cursor-pointer" title="French Rose Blush"></button>
+                  <button onclick="change3DColor(0xfffdf7, 'Ivory Champagne')" class="w-7 h-7 rounded-full bg-[#fffdf7] border-2 border-white/70 shadow-md hover:scale-110 transition cursor-pointer" title="Ivory Champagne"></button>
+                </div>
+                <span id="activeColorName" class="text-[10px] text-brand-gold font-cinzel">Burgundy Velvet</span>
+              </div>
+            </div>
+
+            <!-- Toppings & Effects Toggles -->
+            <div class="pt-3 border-t border-brand-gold/15 space-y-2.5">
+              <label class="text-xs uppercase tracking-[0.2em] text-amber-200/90 font-cinzel font-semibold block">
+                4. Luxury Accents:
+              </label>
+              <div class="grid grid-cols-2 gap-2">
+                <button id="toggleSparklerBtn" onclick="toggleCelebrationFountain()" class="px-2.5 py-2 rounded-xl text-[11px] font-cinzel border border-brand-gold/40 royal-glass text-amber-200 hover:text-white flex items-center justify-center gap-1.5 cursor-pointer">
+                  <i data-lucide="flame" class="w-3.5 h-3.5 text-amber-400"></i> Sparkler: <span id="sparklerLabel">OFF</span>
+                </button>
+                <button id="toggleLightingBtn" onclick="cycleStudioLighting()" class="px-2.5 py-2 rounded-xl text-[11px] font-cinzel border border-brand-gold/40 royal-glass text-amber-200 hover:text-white flex items-center justify-center gap-1.5 cursor-pointer">
+                  <i data-lucide="sun" class="w-3.5 h-3.5 text-brand-gold"></i> Mood: <span id="lightMoodLabel">Palace</span>
+                </button>
+              </div>
+            </div>
+
+          </div>
         </div>
 
-        <!-- Mobile Menu (Chote screens ke liye, default hidden) -->
-        <div id="mobile-menu" class="hidden md:hidden bg-slate-800 pb-4 px-4 space-y-2">
-            <a href="#home" class="mobile-link block py-2 hover:text-orange-400">Home</a>
-            <a href="#about" class="mobile-link block py-2 hover:text-orange-400">About</a>
-            <a href="#services" class="mobile-link block py-2 hover:text-orange-400">Services</a>
-            <a href="#team" class="mobile-link block py-2 hover:text-orange-400">Our Team</a>
-            <a href="#clients" class="mobile-link block py-2 hover:text-orange-400">Clients</a>
-            <a href="#contact" class="mobile-link block py-2 hover:text-orange-400">Contact</a>
+        <!-- Center 3D Stage Container -->
+        <div class="lg:col-span-8 order-1 lg:order-2 flex flex-col items-center">
+          <div class="relative w-full h-[440px] sm:h-[530px] md:h-[600px] rounded-3xl royal-glass overflow-hidden shadow-2xl border-2 border-brand-gold/40 group">
+            
+            <!-- Three.js Canvas -->
+            <canvas id="threeCanvas" class="w-full h-full cursor-grab active:cursor-grabbing touch-none"></canvas>
+
+            <!-- Top Left Status Pill -->
+            <div class="absolute top-5 left-5 royal-glass px-3.5 py-1.5 rounded-full border border-brand-gold/40 text-[11px] font-cinzel text-brand-gold flex items-center gap-2 pointer-events-none">
+              <i data-lucide="crown" class="w-3.5 h-3.5"></i>
+              <span>Packs_n_Bakes Royal Turntable</span>
+            </div>
+
+            <!-- Top Right Camera View Presets -->
+            <div class="absolute top-5 right-5 flex items-center gap-2">
+              <button onclick="setCameraPreset('front')" class="royal-glass hover:bg-brand-plum/90 border border-brand-gold/40 text-brand-gold text-[10px] px-2.5 py-1.5 rounded-lg transition font-cinzel cursor-pointer" title="Front Camera">Front</button>
+              <button onclick="setCameraPreset('isometric')" class="royal-glass hover:bg-brand-plum/90 border border-brand-gold/40 text-brand-gold text-[10px] px-2.5 py-1.5 rounded-lg transition font-cinzel cursor-pointer" title="Isometric 45°">45° View</button>
+              <button onclick="setCameraPreset('top')" class="royal-glass hover:bg-brand-plum/90 border border-brand-gold/40 text-brand-gold text-[10px] px-2.5 py-1.5 rounded-lg transition font-cinzel cursor-pointer" title="Top Down View">Top</button>
+              
+              <button onclick="toggleAutoRotate()" id="rotateToggleBtn" class="royal-glass hover:bg-brand-plum/90 border border-brand-gold/40 text-brand-gold text-xs px-3 py-1.5 rounded-lg transition flex items-center gap-1.5 cursor-pointer">
+                <i data-lucide="rotate-cw" class="w-3.5 h-3.5"></i>
+                <span id="rotateStatus" class="font-cinzel text-[10px]">Spin: ON</span>
+              </button>
+            </div>
+
+            <!-- Bottom Floating Guidance and Monogram Overlay Indicator -->
+            <div class="absolute bottom-5 left-1/2 transform -translate-x-1/2 royal-glass px-5 py-2 rounded-full border border-brand-gold/40 text-xs text-amber-200/90 flex items-center gap-2 pointer-events-none backdrop-blur-md whitespace-nowrap shadow-lg">
+              <i data-lucide="move" class="w-4 h-4 text-brand-gold"></i>
+              <span class="font-cinzel">Drag 360° | Scroll to Zoom | Butterfly Flutters Live</span>
+            </div>
+
+          </div>
         </div>
-    </nav>
 
-    <!-- Hero Section (Sabse upar wala hissa) -->
-    <section id="home" class="relative bg-slate-800 text-white pb-20 pt-24 lg:pt-32">
-        <!-- Abstract background -->
-        <div class="absolute inset-0 overflow-hidden">
-            <div class="absolute inset-0 bg-gradient-to-br from-slate-900 to-slate-700 opacity-90"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="creations" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-3xl mx-auto mb-14">
+      <span class="text-xs uppercase tracking-[0.35em] text-pink-300 font-cinzel font-semibold flex items-center justify-center gap-2">
+        <i data-lucide="sparkles" class="w-4 h-4 text-brand-gold"></i>
+        Saleha's Signature Creations
+      </span>
+      <h2 class="font-cinzel text-3xl sm:text-5xl font-bold mt-2 text-white">
+        Crafted For <span class="font-serif italic font-normal gold-shimmer-text">Unforgettable Celebrations</span>
+      </h2>
+      <p class="text-slate-300 text-sm sm:text-base mt-3">
+        From engagement party monogram chocolate boxes to transparent LED acrylic gift hampers, multi-tiered wedding cakes, and Lotus Biscoff fudge brownies.
+      </p>
+
+      <!-- Category Filter Pills -->
+      <div class="flex flex-wrap items-center justify-center gap-2.5 mt-9">
+        <button onclick="filterCategory('all', event)" class="cat-pill active px-6 py-2.5 rounded-full text-xs font-cinzel font-bold tracking-widest uppercase border-2 border-brand-gold bg-brand-gold text-brand-void transition cursor-pointer">
+          All Collections
+        </button>
+        <button onclick="filterCategory('chocolates', event)" class="cat-pill px-6 py-2.5 rounded-full text-xs font-cinzel font-bold tracking-widest uppercase border border-white/10 hover:border-brand-gold/50 bg-white/5 text-slate-300 transition cursor-pointer">
+          Monogram Chocolates 🍪
+        </button>
+        <button onclick="filterCategory('hampers', event)" class="cat-pill px-6 py-2.5 rounded-full text-xs font-cinzel font-bold tracking-widest uppercase border border-white/10 hover:border-brand-gold/50 bg-white/5 text-slate-300 transition cursor-pointer">
+          Wedding Hampers 🎀
+        </button>
+        <button onclick="filterCategory('cakes', event)" class="cat-pill px-6 py-2.5 rounded-full text-xs font-cinzel font-bold tracking-widest uppercase border border-white/10 hover:border-brand-gold/50 bg-white/5 text-slate-300 transition cursor-pointer">
+          Custom Cakes 🌸
+        </button>
+        <button onclick="filterCategory('brownies', event)" class="cat-pill px-6 py-2.5 rounded-full text-xs font-cinzel font-bold tracking-widest uppercase border border-white/10 hover:border-brand-gold/50 bg-white/5 text-slate-300 transition cursor-pointer">
+          Brownies & Jars 🧁
+        </button>
+      </div>
+    </div>
+
+    <!-- Product Grid -->
+    <div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Injected via JavaScript -->
+    </div>
+  </section>
+
+  <section id="bespoke-hampers" class="py-20 bg-gradient-to-b from-brand-void via-brand-plum/40 to-brand-void border-t border-brand-gold/20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="royal-glass rounded-3xl p-8 sm:p-14 border-2 border-brand-gold/40 shadow-royal-glow relative overflow-hidden">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+          
+          <div class="lg:col-span-7 space-y-6">
+            <span class="text-xs uppercase tracking-[0.35em] text-pink-300 font-cinzel font-semibold flex items-center gap-2">
+              <i data-lucide="sparkles" class="w-4 h-4 text-brand-gold"></i>
+              Trousseau & Gift Hamper Services
+            </span>
+            <h2 class="font-cinzel text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight">
+              Luminescent Acrylic <br />
+              <span class="font-serif italic font-normal gold-shimmer-text">& Bridal Keepsake Boxes</span>
+            </h2>
+            <p class="text-slate-300 text-sm sm:text-base leading-relaxed font-light">
+              Elevate your bridal giveaways, Nikah favors, and anniversary surprises with our signature clear acrylic boxes, fitted with warm micro-LED fairy lights, imported double-faced satin ribbons, and bespoke monogram stationery.
+            </p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+              <div class="flex items-start gap-3 p-3.5 rounded-2xl bg-white/5 border border-white/10">
+                <i data-lucide="package-check" class="w-5 h-5 text-brand-gold flex-shrink-0 mt-0.5"></i>
+                <div class="text-xs">
+                  <strong class="font-cinzel text-white block">Custom Name Calligraphy</strong>
+                  <span class="text-slate-400 font-light">Gold-foiled couple monograms printed on velvet parchment.</span>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3 p-3.5 rounded-2xl bg-white/5 border border-white/10">
+                <i data-lucide="truck" class="w-5 h-5 text-brand-gold flex-shrink-0 mt-0.5"></i>
+                <div class="text-xs">
+                  <strong class="font-cinzel text-white block">Pan-India Express Transit</strong>
+                  <span class="text-slate-400 font-light">Shockproof multi-layer thermocol cushioning for safe shipping.</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="pt-2 flex flex-wrap gap-4">
+              <a href="#custom-quote" class="px-7 py-3.5 rounded-full bg-gradient-to-r from-brand-gold to-amber-500 text-brand-void font-cinzel font-bold text-xs uppercase tracking-wider hover:brightness-110 transition shadow-royal-glow inline-flex items-center gap-2">
+                <i data-lucide="gift" class="w-4 h-4"></i> Inquire Hamper Slot
+              </a>
+              <button onclick="switch3DModel('hamper')" class="px-6 py-3.5 rounded-full royal-glass hover:border-brand-gold text-amber-200 hover:text-white font-cinzel font-bold text-xs uppercase tracking-wider transition inline-flex items-center gap-2 cursor-pointer">
+                <span>View 3D Hamper Box</span>
+                <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="lg:col-span-5">
+            <div class="aspect-square rounded-3xl overflow-hidden royal-glass border-2 border-brand-gold/40 shadow-2xl relative group">
+              <img src="https://images.unsplash.com/photo-1513201099705-a9746e1e201f?q=80&w=900&auto=format&fit=crop" alt="Packs and Bakes Gift Hamper" class="w-full h-full object-cover group-hover:scale-105 transition duration-700" onerror="this.src='https://images.unsplash.com/photo-1549007994-cb92caebd54b?q=80&w=800&auto=format&fit=crop'" />
+              <div class="absolute inset-0 bg-gradient-to-t from-brand-void via-transparent to-transparent opacity-80"></div>
+              <div class="absolute bottom-5 left-5 right-5">
+                <span class="bg-brand-void/80 border border-brand-gold/50 text-brand-gold px-3 py-1 rounded-full text-[10px] font-cinzel font-bold tracking-widest uppercase mb-2 inline-block">
+                  Handmade in Nanded
+                </span>
+                <p class="font-cinzel text-lg font-bold text-white">Illuminated Keepsake Gift Box</p>
+              </div>
+            </div>
+          </div>
+
         </div>
-        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
-            <div class="text-center max-w-3xl mx-auto">
-                <h2 class="text-4xl tracking-tight font-extrabold sm:text-5xl md:text-6xl text-white mb-6">
-                    Leading the Way in <span class="text-orange-400">Oman's Industry</span>
-                </h2>
-                <p class="mt-3 text-base text-gray-300 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl">
-                    Delivering high standards of quality in Oil & Gas, EPC, Construction, Facility Management, and Engineering Services across the Sultanate of Oman.
-                </p>
-                <div class="mt-8 flex justify-center space-x-4">
-                    <a href="#services" class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-slate-900 bg-orange-400 hover:bg-orange-500 transition shadow-lg">
-                        Our Services
-                    </a>
-                    <a href="#contact" class="inline-flex items-center justify-center px-8 py-3 border border-gray-300 text-base font-medium rounded-md text-white hover:bg-slate-700 transition">
-                        Contact Us
-                    </a>
-                </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="about" class="py-24 bg-gradient-to-b from-brand-void via-brand-velvet/40 to-brand-void border-t border-brand-gold/20 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left Visual Frame with Gold Filigree -->
+        <div class="lg:col-span-6 relative">
+          <div class="aspect-[4/3] rounded-3xl overflow-hidden royal-glass border-2 border-brand-gold/40 shadow-2xl relative group">
+            <img src="https://images.unsplash.com/photo-1535141192574-5d4897c13136?q=80&w=1200&auto=format&fit=crop" alt="Packs and Bakes Artistry" class="w-full h-full object-cover group-hover:scale-105 transition duration-700 brightness-95" onerror="this.src='https://images.unsplash.com/photo-1578985545062-69928b1d9587?q=80&w=1000&auto=format&fit=crop'" />
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-void via-transparent to-transparent opacity-85"></div>
+            
+            <div class="absolute bottom-6 left-6 right-6">
+              <span class="bg-gradient-to-r from-brand-gold to-amber-500 text-brand-void font-cinzel font-bold text-[10px] tracking-widest uppercase px-3.5 py-1 rounded-full mb-2 inline-block">
+                Nanded Artisanal Studio 🦋
+              </span>
+              <h4 class="font-cinzel text-xl sm:text-2xl font-bold text-white">Handcrafted With Supreme Love</h4>
+              <p class="text-xs text-slate-300 mt-1 font-light">Every sponge baked fresh against order, flower sculpted by hand, and ribbon tied by Saleha personally.</p>
             </div>
+          </div>
+
+          <!-- Royal Medal Badge -->
+          <div class="absolute -bottom-6 -right-4 royal-glass border-2 border-brand-gold px-6 py-4 rounded-2xl shadow-2xl flex items-center gap-3 backdrop-blur-xl hidden sm:flex">
+            <i data-lucide="award" class="w-9 h-9 text-brand-gold"></i>
+            <div>
+              <p class="text-xs font-cinzel font-bold text-white">Artisanal Quality</p>
+              <p class="text-[11px] text-amber-200">100% Belgian Chocolate & Eggless Excellence</p>
+            </div>
+          </div>
         </div>
-    </section>
 
-    <!-- About & History Section -->
-    <section id="about" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-                <!-- Company Description -->
-                <div>
-                    <h3 class="text-orange-500 font-bold tracking-wide uppercase text-sm mb-2">About The Company</h3>
-                    <h2 class="text-3xl font-extrabold text-gray-900 mb-6">AL QURWASHI INTERNATIONAL TRADING SPC (QT)</h2>
-                    <p class="text-gray-600 mb-4 leading-relaxed">
-                        We are a leading Omani Company catering services to the Oil & Gas, EPC, Construction industry, Facility Management, Supply, Rental of Vehicles & Equipment's, Manpower, and Pipeline sectors. 
-                    </p>
-                    <p class="text-gray-600 mb-6 leading-relaxed">
-                        AL QURWASHI operates to high standards of Quality with Health, Safety and Environmental protection. We have located our assets strategically to be able to mobilize manpower, equipment, and provide other services to any part of the Sultanate of Oman.
-                    </p>
-                    
-                    <div class="bg-slate-50 p-6 rounded-lg border border-slate-100 shadow-sm mt-8">
-                        <h4 class="text-xl font-bold text-slate-800 mb-3 flex items-center">
-                            <i class="fa-solid fa-building text-orange-500 mr-2 text-2xl"></i>
-                            Our History
-                        </h4>
-                        <p class="text-gray-600 text-sm leading-relaxed">
-                            AL QURWASHI is a leading 100% Omani owned group of companies with active participation in Oman's Hydrocarbon, Petrochemical, Building Construction, Facility Management, and Manpower Supply sector industries since 2014. 
-                            <br><br>
-                            Established initially as Al Qarwashi Manpower in 2014, and later Al Yaqoot Global for Business in 2019. In 2021, Al Qarwashi International Trading was created as a parent company grouping all branches under one sector, currently rated as one of the leading Omani Contractors in the Sultanate of Oman.
-                        </p>
-                    </div>
-                </div>
-                
-                <!-- Mission, Vision, Values -->
-                <div class="space-y-6">
-                    <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-100 transform transition hover:-translate-y-1">
-                        <div class="flex items-center mb-4">
-                            <div class="bg-orange-100 p-3 rounded-full mr-4">
-                                <i class="fa-solid fa-bullseye text-orange-600 text-2xl"></i>
-                            </div>
-                            <h3 class="text-2xl font-bold text-gray-900">Our Mission</h3>
-                        </div>
-                        <p class="text-gray-600">
-                            Our mission statement reflects our commitment to offering the highest quality service to our clients, candidates, and stakeholders. We continually strive to go above and beyond to provide exceptional service and deliver our corporate social responsibility program to help the wider community.
-                        </p>
-                    </div>
+        <!-- Right Story Copy -->
+        <div class="lg:col-span-6 space-y-6">
+          <span class="text-xs uppercase tracking-[0.35em] text-pink-300 font-cinzel font-semibold flex items-center gap-2">
+            <i data-lucide="sparkles" class="w-4 h-4 text-brand-gold"></i>
+            The Artisan Behind The Taste
+          </span>
+          <h2 class="font-cinzel text-3xl sm:text-5xl font-bold text-white leading-tight">
+            Where Sweetest Moments Turn Into <span class="font-serif italic font-normal gold-shimmer-text">Timeless Keepsakes</span>
+          </h2>
+          <p class="text-slate-300 text-sm sm:text-base leading-relaxed font-light">
+            Founded in Nanded by Saleha, <strong>Packs_n_Bakes</strong> was born from a singular passion: celebrating life's sweetest milestones with confectionery that is as visually majestic as it is unforgettable to the palate.
+          </p>
+          <p class="text-slate-300 text-sm sm:text-base leading-relaxed font-light">
+            Whether it's an intimate Nikah celebration, grand wedding reception, baby announcement, or milestone anniversary, every single cake and fairy-lit acrylic box is designed with custom monogram details, edible gold accents, and genuine premium ingredients.
+          </p>
 
-                    <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-100 transform transition hover:-translate-y-1">
-                        <div class="flex items-center mb-4">
-                            <div class="bg-blue-100 p-3 rounded-full mr-4">
-                                <i class="fa-solid fa-eye text-blue-600 text-2xl"></i>
-                            </div>
-                            <h3 class="text-2xl font-bold text-gray-900">Our Vision</h3>
-                        </div>
-                        <p class="text-gray-600">
-                            Our vision is to become The Trusted Partner of each of the people with whom we have a relationship, be they clients, employees, shareholders, suppliers, or members of the communities in which we are working.
-                        </p>
-                    </div>
-
-                    <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-100 transform transition hover:-translate-y-1">
-                        <div class="flex items-center mb-4">
-                            <div class="bg-green-100 p-3 rounded-full mr-4">
-                                <i class="fa-solid fa-handshake text-green-600 text-2xl"></i>
-                            </div>
-                            <h3 class="text-2xl font-bold text-gray-900">Our Values</h3>
-                        </div>
-                        <ul class="text-gray-600 space-y-2">
-                            <li class="flex items-start">
-                                <i class="fa-solid fa-chevron-right text-green-500 mr-2 flex-shrink-0 mt-1"></i>
-                                <span>Provide qualified and suitable services to our customers.</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fa-solid fa-chevron-right text-green-500 mr-2 flex-shrink-0 mt-1"></i>
-                                <span>Guarantee customers to find, and retain staffing needs.</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+            <div class="p-5 rounded-2xl royal-glass border-brand-gold/20">
+              <div class="text-brand-gold mb-2.5"><i data-lucide="gift" class="w-6 h-6"></i></div>
+              <h4 class="text-sm font-cinzel font-bold text-white">Trousseau & Favors</h4>
+              <p class="text-xs text-slate-400 mt-1 font-light">Engagement, wedding & bridal trousseau hampers with acrylic fairy-lights.</p>
             </div>
+            <div class="p-5 rounded-2xl royal-glass border-brand-gold/20">
+              <div class="text-brand-gold mb-2.5"><i data-lucide="shield-check" class="w-6 h-6"></i></div>
+              <h4 class="text-sm font-cinzel font-bold text-white">Safe Courier Packing</h4>
+              <p class="text-xs text-slate-400 mt-1 font-light">Custom temperature-safe and shockproof boxing across India.</p>
+            </div>
+          </div>
+
+          <div class="pt-3">
+            <a href="https://www.instagram.com/packs_n_bakes" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3 border-2 border-brand-gold royal-glass px-7 py-3.5 rounded-full text-xs font-cinzel font-bold uppercase tracking-widest text-brand-gold hover:bg-brand-gold hover:text-brand-void transition duration-300 shadow-royal-glow">
+              <i data-lucide="instagram" class="w-4 h-4 text-pink-400"></i>
+              <span>Follow @packs_n_bakes On Instagram</span>
+            </a>
+          </div>
         </div>
-    </section>
 
-    <!-- Services Section -->
-    <section id="services" class="py-20 bg-slate-100">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h3 class="text-orange-500 font-bold tracking-wide uppercase text-sm mb-2">What We Do</h3>
-                <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">Our Services</h2>
-                <p class="mt-4 max-w-2xl text-xl text-gray-500 mx-auto">
-                    Comprehensive solutions tailored for Oman's industrial and construction sectors.
-                </p>
-            </div>
+      </div>
+    </div>
+  </section>
 
-            <!-- Services Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Service 1 -->
-                <div class="bg-white rounded-lg p-8 shadow-sm hover:shadow-md transition border border-gray-100">
-                    <div class="text-orange-500 mb-4"><i class="fa-solid fa-wrench text-3xl"></i></div>
-                    <h3 class="text-xl font-bold text-slate-800 mb-2">Mechanical Engineering</h3>
-                    <p class="text-gray-600">Expert mechanical services for industrial and construction applications.</p>
-                </div>
-                <!-- Service 2 -->
-                <div class="bg-white rounded-lg p-8 shadow-sm hover:shadow-md transition border border-gray-100">
-                    <div class="text-orange-500 mb-4"><i class="fa-solid fa-helmet-safety text-3xl"></i></div>
-                    <h3 class="text-xl font-bold text-slate-800 mb-2">Civil Engineering</h3>
-                    <p class="text-gray-600">Complete civil construction and infrastructure project management.</p>
-                </div>
-                <!-- Service 3 -->
-                <div class="bg-white rounded-lg p-8 shadow-sm hover:shadow-md transition border border-gray-100">
-                    <div class="text-orange-500 mb-4"><i class="fa-solid fa-bolt text-3xl"></i></div>
-                    <h3 class="text-xl font-bold text-slate-800 mb-2">Electrical & Instrumentation</h3>
-                    <p class="text-gray-600">Reliable electrical installations and instrumentation engineering.</p>
-                </div>
-                <!-- Service 4 -->
-                <div class="bg-white rounded-lg p-8 shadow-sm hover:shadow-md transition border border-gray-100">
-                    <div class="text-orange-500 mb-4"><i class="fa-solid fa-building text-3xl"></i></div>
-                    <h3 class="text-xl font-bold text-slate-800 mb-2">Facility Management</h3>
-                    <p class="text-gray-600">End-to-end management of corporate and industrial facilities.</p>
-                </div>
-                <!-- Service 5 -->
-                <div class="bg-white rounded-lg p-8 shadow-sm hover:shadow-md transition border border-gray-100">
-                    <div class="text-orange-500 mb-4"><i class="fa-solid fa-users text-3xl"></i></div>
-                    <h3 class="text-xl font-bold text-slate-800 mb-2">Manpower Supply</h3>
-                    <p class="text-gray-600">Providing highly skilled and specialized workforce for your projects.</p>
-                </div>
-                <!-- Service 6 -->
-                <div class="bg-white rounded-lg p-8 shadow-sm hover:shadow-md transition border border-gray-100">
-                    <div class="text-orange-500 mb-4"><i class="fa-solid fa-truck text-3xl"></i></div>
-                    <h3 class="text-xl font-bold text-slate-800 mb-2">Vehicles & Equipment Rental</h3>
-                    <p class="text-gray-600">Wide range of heavy machinery, equipment, and vehicles for rent.</p>
-                </div>
-            </div>
+  <section id="custom-quote" class="py-24 max-w-4xl mx-auto px-4 sm:px-6">
+    <div class="royal-glass rounded-3xl p-8 sm:p-14 border-2 border-brand-gold/40 shadow-2xl relative overflow-hidden">
+      <!-- Glow Accents -->
+      <div class="absolute -top-24 -right-24 w-72 h-72 bg-amber-500/15 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="absolute -bottom-24 -left-24 w-72 h-72 bg-pink-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="text-center max-w-xl mx-auto mb-10">
+        <span class="text-xs uppercase tracking-[0.35em] text-pink-300 font-cinzel font-semibold">Bespoke Concierge</span>
+        <h2 class="font-cinzel text-3xl sm:text-4xl font-bold mt-2 text-white">
+          Reserve Your <span class="font-serif italic font-normal gold-shimmer-text">Custom Creation</span>
+        </h2>
+        <p class="text-slate-300 text-xs sm:text-sm mt-3 font-light">
+          Specify your celebration requirements below. Submitting automatically opens WhatsApp with Saleha with your customized brief prepared!
+        </p>
+      </div>
+
+      <form id="customOrderForm" onsubmit="handleCustomOrderSubmit(event)" class="space-y-6">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div>
+            <label class="block text-xs uppercase tracking-widest text-slate-300 font-cinzel font-semibold mb-2">Your Name</label>
+            <input type="text" id="custName" required placeholder="e.g. Farhan Khan" class="w-full bg-brand-void/80 border border-brand-gold/30 rounded-2xl px-5 py-3.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-brand-gold transition" />
+          </div>
+          <div>
+            <label class="block text-xs uppercase tracking-widest text-slate-300 font-cinzel font-semibold mb-2">Celebration Occasion</label>
+            <select id="custOccasion" class="w-full bg-brand-void/80 border border-brand-gold/30 rounded-2xl px-5 py-3.5 text-sm text-white focus:outline-none focus:border-brand-gold transition">
+              <option value="Wedding / Reception Grand Cake">Wedding / Reception Grand Cake</option>
+              <option value="Engagement / Monogram Initials Chocolates">Engagement / Monogram Initials Chocolates</option>
+              <option value="Anniversary LED Fairy-Light Hamper">Anniversary LED Fairy-Light Hamper</option>
+              <option value="Birthday Celebration Cake">Birthday Celebration Cake</option>
+              <option value="Festival / Eid / Diwali Hamper">Festival / Eid / Diwali Hamper</option>
+              <option value="Bridal Trousseau Packing Set">Bridal Trousseau Packing Set</option>
+            </select>
+          </div>
         </div>
-    </section>
 
-    <!-- Team Section -->
-    <section id="team" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h3 class="text-orange-500 font-bold tracking-wide uppercase text-sm mb-2">Our People</h3>
-                <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">Meet Our Team</h2>
-                <p class="mt-4 max-w-2xl text-lg text-gray-500 mx-auto italic">
-                    "We are not alone But we are the best"
-                </p>
-            </div>
-
-            <!-- Leadership Team -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="bg-slate-50 p-6 rounded-lg text-center border border-gray-200">
-                    <div class="w-20 h-20 bg-slate-200 rounded-full mx-auto mb-4 flex items-center justify-center text-slate-500">
-                        <i class="fa-solid fa-user text-3xl"></i>
-                    </div>
-                    <h3 class="text-lg font-bold text-gray-900">Hamad Alqurwashi</h3>
-                    <p class="text-orange-500 font-medium">Chairman</p>
-                </div>
-                
-                <div class="bg-slate-50 p-6 rounded-lg text-center border border-gray-200">
-                    <div class="w-20 h-20 bg-slate-200 rounded-full mx-auto mb-4 flex items-center justify-center text-slate-500">
-                        <i class="fa-solid fa-user-tie text-3xl"></i>
-                    </div>
-                    <h3 class="text-lg font-bold text-gray-900">Marwa Nefzi</h3>
-                    <p class="text-orange-500 font-medium">General Manager</p>
-                </div>
-
-                <div class="bg-slate-50 p-6 rounded-lg text-center border border-gray-200">
-                    <div class="w-20 h-20 bg-slate-200 rounded-full mx-auto mb-4 flex items-center justify-center text-slate-500">
-                        <i class="fa-solid fa-shield-halved text-3xl"></i>
-                    </div>
-                    <h3 class="text-lg font-bold text-gray-900">Huda Vahedi</h3>
-                    <p class="text-orange-500 font-medium">HSE Manager</p>
-                </div>
-
-                <div class="bg-slate-50 p-6 rounded-lg text-center border border-gray-200">
-                    <div class="w-20 h-20 bg-slate-200 rounded-full mx-auto mb-4 flex items-center justify-center text-slate-500">
-                        <i class="fa-solid fa-calculator text-3xl"></i>
-                    </div>
-                    <h3 class="text-lg font-bold text-gray-900">Mohammad Shariq</h3>
-                    <p class="text-orange-500 font-medium">Accountant</p>
-                </div>
-            </div>
-
-            <!-- Other Departments -->
-            <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                <div class="bg-white border border-gray-200 p-6 rounded-lg shadow-sm">
-                    <h4 class="text-xl font-bold text-slate-800 mb-4 border-b pb-2">Engineering Team</h4>
-                    <ul class="space-y-3">
-                        <li class="flex items-center text-gray-700"><i class="fa-solid fa-chevron-right text-orange-500 mr-2 text-sm"></i> Vasanth kumar</li>
-                        <li class="flex items-center text-gray-700"><i class="fa-solid fa-chevron-right text-orange-500 mr-2 text-sm"></i> Nasser mohmmad</li>
-                    </ul>
-                </div>
-                
-                <div class="bg-white border border-gray-200 p-6 rounded-lg shadow-sm">
-                    <h4 class="text-xl font-bold text-slate-800 mb-4 border-b pb-2">Reception & Admin</h4>
-                    <ul class="space-y-3">
-                        <li class="flex items-center text-gray-700"><i class="fa-solid fa-chevron-right text-orange-500 mr-2 text-sm"></i> Muhanna Al alawi</li>
-                        <li class="flex items-center text-gray-700"><i class="fa-solid fa-chevron-right text-orange-500 mr-2 text-sm"></i> Mohamed shah</li>
-                        <li class="flex items-center text-gray-700"><i class="fa-solid fa-chevron-right text-orange-500 mr-2 text-sm"></i> Ruwaida al sheibani</li>
-                    </ul>
-                </div>
-            </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div>
+            <label class="block text-xs uppercase tracking-widest text-slate-300 font-cinzel font-semibold mb-2">Design & Flavours</label>
+            <select id="custFlavor" class="w-full bg-brand-void/80 border border-brand-gold/30 rounded-2xl px-5 py-3.5 text-sm text-white focus:outline-none focus:border-brand-gold transition">
+              <option value="Royal Burgundy Velvet & Berries">Royal Burgundy Velvet & Berries</option>
+              <option value="Belgian Dark Chocolate Truffle & Gold Leaf">Belgian Dark Chocolate Truffle & Gold Leaf</option>
+              <option value="Custom Initials Monogram Chocolates (Gold Foil)">Custom Initials Monogram Chocolates (Gold Foil)</option>
+              <option value="Transparent Acrylic Box With Warm Fairy Lights">Transparent Acrylic Box With Warm Fairy Lights</option>
+              <option value="Lotus Biscoff & Roasted Walnut Brownie Tower">Lotus Biscoff & Roasted Walnut Brownie Tower</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-xs uppercase tracking-widest text-slate-300 font-cinzel font-semibold mb-2">Delivery Destination</label>
+            <select id="custLocation" class="w-full bg-brand-void/80 border border-brand-gold/30 rounded-2xl px-5 py-3.5 text-sm text-white focus:outline-none focus:border-brand-gold transition">
+              <option value="Nanded (Local Studio Hand Delivery / Pickup)">Nanded (Local Studio Hand Delivery / Pickup)</option>
+              <option value="Pan-India Courier (Hampers & Chocolates)">Pan-India Courier (Hampers & Chocolates)</option>
+            </select>
+          </div>
         </div>
-    </section>
 
-    <!-- Clients Section -->
-    <section id="clients" class="py-20 bg-slate-900 text-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-extrabold sm:text-4xl">Our Valued Clients</h2>
-                <p class="mt-4 text-gray-400">Trusted by leading organizations in Oman and beyond.</p>
-            </div>
-
-            <!-- Clients Grid -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                <div class="bg-slate-800 p-4 rounded text-sm text-gray-300 flex items-center border border-slate-700 hover:border-orange-500 transition duration-300">
-                    <div class="w-2 h-2 bg-orange-500 rounded-full mr-3 flex-shrink-0"></div> AGS: Block 57 (Petrolab) & Block 58
-                </div>
-                <div class="bg-slate-800 p-4 rounded text-sm text-gray-300 flex items-center border border-slate-700 hover:border-orange-500 transition duration-300">
-                    <div class="w-2 h-2 bg-orange-500 rounded-full mr-3 flex-shrink-0"></div> Al Saber Trading (Pipeline CCD)
-                </div>
-                <div class="bg-slate-800 p-4 rounded text-sm text-gray-300 flex items-center border border-slate-700 hover:border-orange-500 transition duration-300">
-                    <div class="w-2 h-2 bg-orange-500 rounded-full mr-3 flex-shrink-0"></div> Sinopec AL Dokum
-                </div>
-                <div class="bg-slate-800 p-4 rounded text-sm text-gray-300 flex items-center border border-slate-700 hover:border-orange-500 transition duration-300">
-                    <div class="w-2 h-2 bg-orange-500 rounded-full mr-3 flex-shrink-0"></div> ARGAS (OMN01 ENI Crew)
-                </div>
-                <div class="bg-slate-800 p-4 rounded text-sm text-gray-300 flex items-center border border-slate-700 hover:border-orange-500 transition duration-300">
-                    <div class="w-2 h-2 bg-orange-500 rounded-full mr-3 flex-shrink-0"></div> BGP (Crew B-OXY Project)
-                </div>
-                <div class="bg-slate-800 p-4 rounded text-sm text-gray-300 flex items-center border border-slate-700 hover:border-orange-500 transition duration-300">
-                    <div class="w-2 h-2 bg-orange-500 rounded-full mr-3 flex-shrink-0"></div> GALFAR (Nizwa-OQ project)
-                </div>
-                <div class="bg-slate-800 p-4 rounded text-sm text-gray-300 flex items-center border border-slate-700 hover:border-orange-500 transition duration-300">
-                    <div class="w-2 h-2 bg-orange-500 rounded-full mr-3 flex-shrink-0"></div> STS Oman
-                </div>
-                <div class="bg-slate-800 p-4 rounded text-sm text-gray-300 flex items-center border border-slate-700 hover:border-orange-500 transition duration-300">
-                    <div class="w-2 h-2 bg-orange-500 rounded-full mr-3 flex-shrink-0"></div> Al sarooj construction company
-                </div>
-                <div class="bg-slate-800 p-4 rounded text-sm text-gray-300 flex items-center border border-slate-700 hover:border-orange-500 transition duration-300">
-                    <div class="w-2 h-2 bg-orange-500 rounded-full mr-3 flex-shrink-0"></div> Arabian industries
-                </div>
-                <div class="bg-slate-800 p-4 rounded text-sm text-gray-300 flex items-center border border-slate-700 hover:border-orange-500 transition duration-300">
-                    <div class="w-2 h-2 bg-orange-500 rounded-full mr-3 flex-shrink-0"></div> Al khalili construction
-                </div>
-                <div class="bg-slate-800 p-4 rounded text-sm text-gray-300 flex items-center border border-slate-700 hover:border-orange-500 transition duration-300">
-                    <div class="w-2 h-2 bg-orange-500 rounded-full mr-3 flex-shrink-0"></div> International infra construction
-                </div>
-                <div class="bg-slate-800 p-4 rounded text-sm text-gray-300 flex items-center border border-slate-700 hover:border-orange-500 transition duration-300">
-                    <div class="w-2 h-2 bg-orange-500 rounded-full mr-3 flex-shrink-0"></div> SERKA CONTRACTING LLC
-                </div>
-                <div class="bg-slate-800 p-4 rounded text-sm text-gray-300 flex items-center border border-slate-700 hover:border-orange-500 transition duration-300">
-                    <div class="w-2 h-2 bg-orange-500 rounded-full mr-3 flex-shrink-0"></div> DHAHIYAT NAKHAL CONSTRUCTION LLC
-                </div>
-                <div class="bg-slate-800 p-4 rounded text-sm text-gray-300 flex items-center border border-slate-700 hover:border-orange-500 transition duration-300">
-                    <div class="w-2 h-2 bg-orange-500 rounded-full mr-3 flex-shrink-0"></div> AL MIRATH LLC
-                </div>
-            </div>
+        <div>
+          <label class="block text-xs uppercase tracking-widest text-slate-300 font-cinzel font-semibold mb-2">Personalized Initials / Event Date / Notes</label>
+          <textarea id="custNotes" rows="3" placeholder="e.g. Need monogram 'S & F' printed on chocolate wrappers with golden fairy lights for our engagement on 24th Oct..." class="w-full bg-brand-void/80 border border-brand-gold/30 rounded-2xl p-4 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-brand-gold transition"></textarea>
         </div>
-    </section>
 
-    <!-- Contact & Footer -->
-    <footer id="contact" class="bg-slate-950 text-white pt-16 pb-8">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mb-12">
-                
-                <!-- Company Info -->
-                <div>
-                    <h3 class="text-2xl font-bold text-orange-400 mb-2">AL QURWASHI</h3>
-                    <p class="text-gray-400 mb-4 text-sm">INTERNATIONAL TRADING SPC</p>
-                    <p class="text-gray-400 text-sm leading-relaxed mb-6">
-                        القرواشي العالمية للتجارة ششم
-                    </p>
-                </div>
+        <button type="submit" class="w-full py-4 rounded-2xl bg-gradient-to-r from-brand-gold via-amber-400 to-brand-goldDeep text-brand-void font-cinzel font-bold text-xs uppercase tracking-[0.25em] hover:brightness-110 transition shadow-royal-glow flex items-center justify-center gap-3 cursor-pointer">
+          <i data-lucide="send" class="w-4 h-4"></i>
+          <span>Send Inquiries Directly on WhatsApp</span>
+        </button>
+      </form>
+    </div>
+  </section>
 
-                <!-- Quick Links -->
-                <div>
-                    <h4 class="text-lg font-semibold mb-6 border-b border-slate-800 pb-2">Quick Links</h4>
-                    <ul class="space-y-3">
-                        <li><a href="#home" class="text-gray-400 hover:text-orange-400 transition">Home</a></li>
-                        <li><a href="#about" class="text-gray-400 hover:text-orange-400 transition">About Us</a></li>
-                        <li><a href="#services" class="text-gray-400 hover:text-orange-400 transition">Services</a></li>
-                        <li><a href="#team" class="text-gray-400 hover:text-orange-400 transition">Our Team</a></li>
-                    </ul>
-                </div>
-
-                <!-- Contact Details -->
-                <div>
-                    <h4 class="text-lg font-semibold mb-6 border-b border-slate-800 pb-2">Contact Us</h4>
-                    <ul class="space-y-4">
-                        <li class="flex items-start">
-                            <i class="fa-solid fa-location-dot text-orange-400 mr-3 mt-1 flex-shrink-0 text-lg"></i>
-                            <span class="text-gray-400 text-sm">
-                                Al.khir street building number 6132, <br>
-                                al mabeelah Mascut, <br>
-                                Sultanate Of Oman
-                            </span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fa-solid fa-phone text-orange-400 mr-3 mt-1 flex-shrink-0 text-lg"></i>
-                            <div class="text-gray-400 text-sm flex flex-col space-y-1">
-                                <a href="tel:+96824000112" class="hover:text-white">+968 24000112</a>
-                                <a href="tel:+96896105081" class="hover:text-white">+968 96105081</a>
-                                <a href="tel:+96896132591" class="hover:text-white">+968 96132591</a>
-                            </div>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fa-solid fa-envelope text-orange-400 mr-3 flex-shrink-0 text-lg"></i>
-                            <div class="text-gray-400 text-sm flex flex-col space-y-1">
-                                <a href="mailto:marwa@algarwashi.com" class="hover:text-white">marwa@algarwashi.com</a>
-                                <a href="mailto:info@algarwashi.com" class="hover:text-white">info@algarwashi.com</a>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
+  <footer class="bg-brand-void border-t border-brand-gold/25 pt-20 pb-14">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-12 pb-14 border-b border-brand-gold/20">
+        
+        <!-- Studio Brand Profile -->
+        <div class="space-y-4">
+          <div class="flex items-center gap-3.5">
+            <div class="w-12 h-12 rounded-full border border-brand-gold flex items-center justify-center bg-brand-velvet text-brand-gold">
+              <span class="font-cinzel text-lg font-bold">PB</span>
             </div>
-
-            <!-- Copyrights -->
-            <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
-                <p>&copy; 2026 AL QURWASHI International Trading SPC. All rights reserved.</p>
-                <p class="mt-2 md:mt-0">Sultanate of Oman</p>
+            <div>
+              <span class="font-cinzel text-xl font-bold gold-shimmer-text uppercase">Packs_n_Bakes</span>
+              <p class="text-[10px] text-pink-300 uppercase tracking-widest">By Saleha 🦋✨</p>
             </div>
+          </div>
+          <p class="text-xs text-slate-300 leading-relaxed font-light">
+            Baking happiness in every bite. Artisanal custom multi-tier wedding cakes, engagement initials monogram chocolates, and trousseau hampers from Nanded, Maharashtra.
+          </p>
+          <div class="pt-2 text-xs text-slate-400 space-y-2">
+            <p class="flex items-center gap-2.5">
+              <i data-lucide="map-pin" class="w-4 h-4 text-brand-gold"></i>
+              <span>Nanded, Maharashtra, India 📍</span>
+            </p>
+            <p class="flex items-center gap-2.5">
+              <i data-lucide="clock" class="w-4 h-4 text-brand-gold"></i>
+              <span>Monday – Saturday: 10:00 AM – 9:00 PM</span>
+            </p>
+          </div>
         </div>
-    </footer>
 
-    <!-- JavaScript Mobile Menu ke liye -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const btn = document.getElementById('mobile-menu-button');
-            const menu = document.getElementById('mobile-menu');
-            const icon = document.getElementById('menu-icon');
-            const mobileLinks = document.querySelectorAll('.mobile-link');
+        <!-- Studio Location Hub -->
+        <div class="royal-glass rounded-3xl p-5 border border-brand-gold/20 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-xs font-cinzel uppercase tracking-wider text-brand-gold font-bold">Bakery Studio Hub</span>
+              <span class="text-[10px] bg-emerald-500/20 text-emerald-300 px-3 py-0.5 rounded-full border border-emerald-500/30 font-medium">Pre-Orders Active</span>
+            </div>
+            <p class="text-xs text-slate-300 font-light">Fresh bakes whipped against advance pre-orders. Pan-India safe shipping on gift hampers and monogram chocolate boxes.</p>
+          </div>
 
-            // Menu open/close toggle karne ke liye
-            btn.addEventListener('click', function() {
-                menu.classList.toggle('hidden');
-                if(menu.classList.contains('hidden')){
-                    icon.classList.remove('fa-xmark');
-                    icon.classList.add('fa-bars');
-                } else {
-                    icon.classList.remove('fa-bars');
-                    icon.classList.add('fa-xmark');
-                }
-            });
+          <!-- Stylized Map Visualizer -->
+          <div class="mt-4 rounded-2xl overflow-hidden border border-brand-gold/30 h-40 bg-[#160613] relative flex items-center justify-center group">
+            <div class="absolute inset-0 opacity-40 bg-[radial-gradient(#e6ca65_1px,transparent_1px)] [background-size:16px_16px]"></div>
+            <div class="relative z-10 text-center p-3">
+              <i data-lucide="navigation" class="w-7 h-7 text-brand-gold mx-auto mb-1 animate-bounce"></i>
+              <span class="text-xs font-cinzel font-bold text-white block">Nanded Artisanal Studio</span>
+              <span class="text-[10px] text-pink-300">Maharashtra, India</span>
+            </div>
+          </div>
+        </div>
 
-            // Jab koi link click ho to menu band karne ke liye
-            mobileLinks.forEach(link => {
-                link.addEventListener('click', () => {
-                    menu.classList.add('hidden');
-                    icon.classList.remove('fa-xmark');
-                    icon.classList.add('fa-bars');
-                });
-            });
+        <!-- Direct Connect -->
+        <div class="space-y-4">
+          <h4 class="font-cinzel text-lg font-bold text-white">Direct Connect</h4>
+          <p class="text-xs text-slate-400 font-light">Custom cake orders require 24 to 48 hours advance booking. Direct inquiry via WhatsApp or Instagram:</p>
+          
+          <div class="flex flex-col gap-3">
+            <a href="https://www.instagram.com/packs_n_bakes" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 p-3.5 rounded-2xl royal-glass hover:border-brand-gold text-xs text-slate-200 transition">
+              <i data-lucide="instagram" class="w-4 h-4 text-pink-400"></i>
+              <span class="font-cinzel">@packs_n_bakes (Instagram)</span>
+            </a>
+            <a href="https://wa.me/919999999999" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 p-3.5 rounded-2xl royal-glass hover:border-brand-gold text-xs text-slate-200 transition">
+              <i data-lucide="phone" class="w-4 h-4 text-emerald-400"></i>
+              <span class="font-cinzel">WhatsApp Concierge Desk</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Copyright & Brand Credits -->
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-4">
+        <p>© 2026 Packs_n_Bakes By Saleha. All Rights Reserved.</p>
+        <p class="text-[11px] text-amber-200/80 font-cinzel">The Royal Palace & Delizia 3D WebGL Edition</p>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Toast Notification Box -->
+  <div id="toastNotification" class="fixed top-6 right-6 z-50 transform translate-x-96 transition duration-300 royal-glass border border-brand-gold text-white px-6 py-4 rounded-2xl shadow-2xl flex items-center gap-3">
+    <i data-lucide="check-circle" class="w-5 h-5 text-brand-gold"></i>
+    <span id="toastMessage" class="text-xs font-cinzel font-medium">Item added to your quote tray!</span>
+  </div>
+
+  <!-- Cart / Inquiry Tray Drawer -->
+  <div id="cartDrawer" class="fixed inset-0 z-50 hidden">
+    <div onclick="toggleCartDrawer()" class="absolute inset-0 bg-black/80 backdrop-blur-md"></div>
+    <div class="absolute right-0 top-0 bottom-0 w-full max-w-md bg-brand-void/95 border-l-2 border-brand-gold/40 p-6 sm:p-8 flex flex-col justify-between shadow-2xl overflow-y-auto">
+      <div>
+        <div class="flex items-center justify-between pb-5 border-b border-brand-gold/25">
+          <div class="flex items-center gap-3">
+            <i data-lucide="shopping-bag" class="w-6 h-6 text-brand-gold"></i>
+            <h3 class="font-cinzel text-xl font-bold text-white">Your Inquiry Tray</h3>
+          </div>
+          <button onclick="toggleCartDrawer()" class="text-slate-400 hover:text-white p-1 cursor-pointer">
+            <i data-lucide="x" class="w-6 h-6"></i>
+          </button>
+        </div>
+
+        <!-- Items List -->
+        <div id="cartItemsContainer" class="py-6 space-y-3.5">
+          <p class="text-xs text-slate-400 text-center py-10 font-light">Your inquiry tray is empty. Explore our 3D showroom or catalogue above!</p>
+        </div>
+      </div>
+
+      <div class="pt-6 border-t border-brand-gold/25 space-y-4">
+        <div class="flex justify-between items-center">
+          <span class="text-xs uppercase tracking-wider font-cinzel text-slate-300">Estimated Total:</span>
+          <span id="cartTotalSum" class="font-cinzel text-2xl font-bold text-brand-gold">₹0</span>
+        </div>
+        <p class="text-[11px] text-slate-400 font-light">*Final quote confirmed based on custom weight, packaging and delivery location.</p>
+        <button onclick="sendTrayToWhatsApp()" class="w-full py-4 rounded-full bg-gradient-to-r from-emerald-600 via-emerald-500 to-green-500 text-white font-cinzel font-bold text-xs uppercase tracking-wider hover:brightness-110 transition shadow-xl flex items-center justify-center gap-2.5 cursor-pointer">
+          <i data-lucide="message-circle" class="w-4 h-4"></i>
+          <span>Send Tray to Saleha on WhatsApp</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const productsData = [
+      {
+        id: 'prod-1',
+        title: 'Engagement Monogram Chocolates',
+        category: 'chocolates',
+        price: 1499,
+        badge: 'Trending ✨',
+        desc: 'Custom couple initials printed & gold-foil wrapped Belgian chocolate pieces placed in a luxury presentation keepsake box.',
+        img: 'https://images.unsplash.com/photo-1549007994-cb92caebd54b?q=80&w=800&auto=format&fit=crop'
+      },
+      {
+        id: 'prod-2',
+        title: 'Illuminated Fairy-Light Anniversary Hamper',
+        category: 'hampers',
+        price: 2499,
+        badge: 'Best Seller 🎀',
+        desc: 'Crystal-clear acrylic box with warm LED micro fairy lights, preserved floral arrangement, personalized messages & treats.',
+        img: 'https://images.unsplash.com/photo-1513201099705-a9746e1e201f?q=80&w=800&auto=format&fit=crop'
+      },
+      {
+        id: 'prod-3',
+        title: 'Berry Chantilly Velvet Cake',
+        category: 'cakes',
+        price: 1899,
+        badge: 'Signature 🌸',
+        desc: 'Layers of moist sponge infused with fresh strawberry compote, chantilly cream, edible gold leaf, and handpicked berries.',
+        img: 'https://images.unsplash.com/photo-1565958011703-44f9829ba187?q=80&w=800&auto=format&fit=crop'
+      },
+      {
+        id: 'prod-4',
+        title: 'Belgian Truffle Fudge Drip Cake',
+        category: 'cakes',
+        price: 2199,
+        badge: 'Chocoholic 🍫',
+        desc: 'Dark 55% Belgian chocolate sponge with silky chocolate truffle ganache, drip glaze, and artisanal French macarons.',
+        img: 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?q=80&w=800&auto=format&fit=crop'
+      },
+      {
+        id: 'prod-5',
+        title: 'Bridal Trousseau & Petals Hamper',
+        category: 'hampers',
+        price: 3299,
+        badge: 'Wedding Luxe 💍',
+        desc: 'Exquisite trousseau packing for wedding giveaways, embellished with satin ribbons, butterflies, and gourmet sweets.',
+        img: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?q=80&w=800&auto=format&fit=crop'
+      },
+      {
+        id: 'prod-6',
+        title: 'Fudgy Walnut & Lotus Biscoff Brownies',
+        category: 'brownies',
+        price: 799,
+        badge: 'Box of 6 🧁',
+        desc: 'Ultra-crinkly top, gooey dark chocolate center loaded with roasted walnuts and creamy Lotus Biscoff swirl.',
+        img: 'https://images.unsplash.com/photo-1606313564200-e75d5e30476c?q=80&w=800&auto=format&fit=crop'
+      }
+    ];
+
+    let cart = [];
+
+    function renderProducts(items) {
+      const grid = document.getElementById('productGrid');
+      grid.innerHTML = items.map(p => `
+        <div class="royal-glass royal-glass-hover rounded-3xl overflow-hidden flex flex-col justify-between transition duration-300">
+          <div class="relative h-60 overflow-hidden">
+            <img src="${p.img}" alt="${p.title}" class="w-full h-full object-cover transition duration-700 hover:scale-105" onerror="this.src='https://images.unsplash.com/photo-1588195538326-c5b1e9f80a1b?q=80&w=800&auto=format&fit=crop'" />
+            <span class="absolute top-3.5 left-3.5 bg-brand-void/85 backdrop-blur-md border border-brand-gold/40 text-brand-gold text-[10px] font-cinzel font-bold px-3.5 py-1 rounded-full uppercase tracking-wider">
+              ${p.badge}
+            </span>
+          </div>
+
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <div>
+              <h3 class="font-cinzel text-lg font-bold text-white mb-1.5">${p.title}</h3>
+              <p class="text-slate-300 text-xs font-light line-clamp-2 leading-relaxed mb-5">${p.desc}</p>
+            </div>
+
+            <div class="pt-4 border-t border-brand-gold/15 flex items-center justify-between">
+              <div>
+                <span class="text-[10px] uppercase tracking-widest text-slate-400 block font-cinzel">Price</span>
+                <span class="font-cinzel text-xl font-bold text-brand-gold">₹${p.price.toLocaleString('en-IN')}</span>
+              </div>
+              <button onclick="addToCart('${p.id}')" class="bg-brand-gold/20 hover:bg-brand-gold border border-brand-gold/70 text-brand-gold hover:text-brand-void p-3 rounded-full transition shadow-royal-glow cursor-pointer" title="Add To Tray">
+                <i data-lucide="plus" class="w-4 h-4"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      `).join('');
+
+      lucide.createIcons();
+    }
+
+    function filterCategory(cat, ev) {
+      document.querySelectorAll('.cat-pill').forEach(btn => {
+        btn.classList.remove('bg-brand-gold', 'text-brand-void', 'border-2', 'border-brand-gold');
+        btn.classList.add('bg-white/5', 'text-slate-300', 'border-white/10');
+      });
+      if (ev && ev.currentTarget) {
+        ev.currentTarget.classList.remove('bg-white/5', 'text-slate-300', 'border-white/10');
+        ev.currentTarget.classList.add('bg-brand-gold', 'text-brand-void', 'border-2', 'border-brand-gold');
+      }
+
+      if (cat === 'all') {
+        renderProducts(productsData);
+      } else {
+        const filtered = productsData.filter(p => p.category === cat);
+        renderProducts(filtered);
+      }
+    }
+
+    function addToCart(productId) {
+      const product = productsData.find(p => p.id === productId);
+      if (product) {
+        cart.push(product);
+        updateCartUI();
+        showToast(`Added "${product.title}" to inquiry tray!`);
+      }
+    }
+
+    function addCurrent3DToCart() {
+      const title = document.getElementById('modelTitle').innerText;
+      const priceText = document.getElementById('modelPrice').innerText.replace('₹', '').replace(',', '');
+      const currentMonogram = document.getElementById('monogramInput').value.trim() || 'Custom';
+      const customItem = {
+        id: '3d-' + Date.now(),
+        title: `${title} (Engraved: ${currentMonogram})`,
+        price: parseInt(priceText) || 3499,
+        desc: `3D Configured with ${document.getElementById('activeColorName').innerText} glaze`
+      };
+      cart.push(customItem);
+      updateCartUI();
+      showToast(`Added custom 3D "${customItem.title}" to your tray!`);
+    }
+
+    function removeFromCart(index) {
+      cart.splice(index, 1);
+      updateCartUI();
+    }
+
+    function updateCartUI() {
+      document.getElementById('cartCountBadge').innerText = cart.length;
+      const list = document.getElementById('cartItemsContainer');
+      if (cart.length === 0) {
+        list.innerHTML = `<p class="text-xs text-slate-400 text-center py-10 font-light">Your inquiry tray is empty. Explore our 3D showroom or catalogue above!</p>`;
+        document.getElementById('cartTotalSum').innerText = '₹0';
+        return;
+      }
+
+      let total = 0;
+      list.innerHTML = cart.map((item, index) => {
+        total += item.price;
+        return `
+          <div class="flex items-center justify-between p-4 rounded-2xl bg-white/5 border border-white/10 text-xs">
+            <div>
+              <p class="font-cinzel font-bold text-white">${item.title}</p>
+              <p class="text-brand-gold font-cinzel text-sm mt-0.5 font-bold">₹${item.price.toLocaleString('en-IN')}</p>
+            </div>
+            <button onclick="removeFromCart(${index})" class="text-rose-400 hover:text-rose-300 p-1.5 cursor-pointer">
+              <i data-lucide="trash-2" class="w-4 h-4"></i>
+            </button>
+          </div>
+        `;
+      }).join('');
+
+      document.getElementById('cartTotalSum').innerText = `₹${total.toLocaleString('en-IN')}`;
+      lucide.createIcons();
+    }
+
+    function toggleCartDrawer() {
+      document.getElementById('cartDrawer').classList.toggle('hidden');
+    }
+
+    function toggleMobileMenu() {
+      document.getElementById('mobileMenuPanel').classList.toggle('hidden');
+    }
+
+    function sendTrayToWhatsApp() {
+      if (cart.length === 0) {
+        showToast('Please add items to your tray first!');
+        return;
+      }
+      let text = "Hello Saleha (Packs_n_Bakes By Saleha)! 🌸✨%0A%0AI would like to order / inquire about these bespoke creations:%0A";
+      let total = 0;
+      cart.forEach((it, i) => {
+        text += `${i + 1}. *${it.title}* - ₹${it.price}%0A`;
+        total += it.price;
+      });
+      text += `%0A*Estimated Total:* ₹${total}%0A*Delivery City:* Nanded / Other%0APlease let me know the availability and date slot!`;
+      window.open(`https://wa.me/919999999999?text=${text}`, '_blank');
+    }
+
+    function handleCustomOrderSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('custName').value;
+      const occasion = document.getElementById('custOccasion').value;
+      const flavor = document.getElementById('custFlavor').value;
+      const location = document.getElementById('custLocation').value;
+      const notes = document.getElementById('custNotes').value || 'None';
+
+      const message = `Hello Saleha (Packs_n_Bakes By Saleha)! ✨%0A%0A*Name:* ${encodeURIComponent(name)}%0A*Occasion:* ${encodeURIComponent(occasion)}%0A*Selection:* ${encodeURIComponent(flavor)}%0A*Location:* ${encodeURIComponent(location)}%0A*Notes/Initials:* ${encodeURIComponent(notes)}%0A%0APlease share quotation and availability!`;
+      
+      window.open(`https://wa.me/919999999999?text=${message}`, '_blank');
+    }
+
+    function showToast(msg) {
+      const toast = document.getElementById('toastNotification');
+      document.getElementById('toastMessage').innerText = msg;
+      toast.classList.remove('translate-x-96');
+      toast.classList.add('translate-x-0');
+      setTimeout(() => {
+        toast.classList.remove('translate-x-0');
+        toast.classList.add('translate-x-96');
+      }, 3400);
+    }
+
+    let audioCtx = null;
+    let isAudioActive = false;
+    let harpInterval = null;
+
+    function toggleAudio() {
+      if (!audioCtx) {
+        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      }
+      isAudioActive = !isAudioActive;
+      const soundIcon = document.getElementById('soundIcon');
+      const soundText = document.getElementById('soundText');
+
+      if (isAudioActive) {
+        if (audioCtx.state === 'suspended') {
+          audioCtx.resume();
+        }
+        playRoyalHarpChime();
+        harpInterval = setInterval(playRoyalHarpChime, 7000);
+        soundIcon.classList.add('text-brand-goldLight');
+        soundText.innerText = "Palace Atmosphere: ON";
+        showToast('Palace Atmosphere: Playing 🎶');
+      } else {
+        clearInterval(harpInterval);
+        soundIcon.classList.remove('text-brand-goldLight');
+        soundText.innerText = "Palace Atmosphere: OFF";
+        showToast('Atmosphere: Muted');
+      }
+    }
+
+    function playRoyalHarpChime() {
+      if (!audioCtx || !isAudioActive) return;
+      const chord = [293.66, 349.23, 440.00, 523.25, 659.25, 880.00];
+      chord.forEach((freq, index) => {
+        setTimeout(() => {
+          if (!isAudioActive) return;
+          const osc = audioCtx.createOscillator();
+          const gain = audioCtx.createGain();
+          osc.type = index % 2 === 0 ? 'sine' : 'triangle';
+          osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
+
+          gain.gain.setValueAtTime(0.001, audioCtx.currentTime);
+          gain.gain.exponentialRampToValueAtTime(0.035, audioCtx.currentTime + 0.12);
+          gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 3.0);
+
+          osc.connect(gain);
+          gain.connect(audioCtx.destination);
+
+          osc.start();
+          osc.stop(audioCtx.currentTime + 3.1);
+        }, index * 240);
+      });
+    }
+
+    let scene, camera, renderer, currentGroup, sparkleParticles, studioPedestal;
+    let autoRotate = true;
+    let isDragging = false;
+    let previousMousePosition = { x: 0, y: 0 };
+    let currentModelType = 'wedding';
+    let currentColorHex = 0x2a081c;
+    let butterflyWings = [];
+    let fairyLightsArray = [];
+    let sparklerParticles = null;
+    let isSparklerActive = false;
+    let currentLightingMood = 0; // 0: Palace, 1: Candlelight, 2: Sunburst
+    let mainSpot, rimLight, ambientLight;
+    let monogramTexture = null;
+
+    function createMarbleTexture() {
+      const canvas = document.createElement('canvas');
+      canvas.width = 512;
+      canvas.height = 512;
+      const ctx = canvas.getContext('2d');
+
+      ctx.fillStyle = '#140612';
+      ctx.fillRect(0, 0, 512, 512);
+
+      ctx.lineWidth = 3;
+      for (let i = 0; i < 24; i++) {
+        ctx.strokeStyle = i % 2 === 0 ? 'rgba(230, 202, 101, 0.28)' : 'rgba(247, 141, 167, 0.16)';
+        ctx.beginPath();
+        let x = Math.random() * 512;
+        let y = Math.random() * 512;
+        ctx.moveTo(x, y);
+        for (let j = 0; j < 5; j++) {
+          x += (Math.random() - 0.5) * 140;
+          y += (Math.random() - 0.5) * 140;
+          ctx.lineTo(x, y);
+        }
+        ctx.stroke();
+      }
+      return new THREE.CanvasTexture(canvas);
+    }
+
+    function createMonogramCanvasTexture(text) {
+      const canvas = document.createElement('canvas');
+      canvas.width = 512;
+      canvas.height = 256;
+      const ctx = canvas.getContext('2d');
+
+      // Transparent luxury background
+      ctx.clearRect(0, 0, 512, 256);
+
+      // Gold Filigree Border
+      ctx.strokeStyle = '#e6ca65';
+      ctx.lineWidth = 6;
+      ctx.strokeRect(20, 20, 472, 216);
+
+      ctx.lineWidth = 2;
+      ctx.strokeRect(28, 28, 456, 200);
+
+      // Royal Corner Ornaments
+      ctx.fillStyle = '#e6ca65';
+      ctx.font = '28px serif';
+      ctx.fillText('✦', 36, 56);
+      ctx.fillText('✦', 450, 56);
+      ctx.fillText('✦', 36, 212);
+      ctx.fillText('✦', 450, 212);
+
+      // Monogram Text
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.font = 'bold 58px "Cinzel Decorative", Cinzel, serif';
+
+      // Golden gradient fill
+      const grad = ctx.createLinearGradient(100, 0, 400, 0);
+      grad.addColorStop(0, '#fff2b2');
+      grad.addColorStop(0.5, '#e6ca65');
+      grad.addColorStop(1, '#b88a28');
+      ctx.fillStyle = grad;
+      ctx.shadowColor = 'rgba(230, 202, 101, 0.8)';
+      ctx.shadowBlur = 14;
+
+      ctx.fillText(text.toUpperCase(), 256, 128);
+
+      const texture = new THREE.CanvasTexture(canvas);
+      texture.needsUpdate = true;
+      return texture;
+    }
+
+    function updateMonogramTexture(text) {
+      monogramTexture = createMonogramCanvasTexture(text || 'PB');
+      if (currentModelType === 'wedding') buildWeddingCake(currentColorHex);
+      else if (currentModelType === 'hamper') buildHamperBox(currentColorHex);
+      else if (currentModelType === 'chocolates') buildChocolateTier(currentColorHex);
+    }
+
+    function randomizeMonogram() {
+      const pairs = ['S & A', 'R & F', 'Z & M', 'A & K', 'N & H', 'PB ✨'];
+      const pick = pairs[Math.floor(Math.random() * pairs.length)];
+      document.getElementById('monogramInput').value = pick;
+      updateMonogramTexture(pick);
+      showToast(`Engraved initials: "${pick}"`);
+    }
+
+    function initThreeJS() {
+      const container = document.getElementById('threeCanvas');
+      const width = container.clientWidth || 700;
+      const height = container.clientHeight || 550;
+
+      scene = new THREE.Scene();
+      camera = new THREE.PerspectiveCamera(42, width / height, 0.1, 1000);
+      camera.position.set(0, 2.6, 7.8);
+
+      renderer = new THREE.WebGLRenderer({ canvas: container, alpha: true, antialias: true });
+      renderer.setSize(width, height);
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+      renderer.toneMapping = THREE.ACESFilmicToneMapping;
+      renderer.toneMappingExposure = 1.35;
+
+      // Studio Lighting
+      ambientLight = new THREE.AmbientLight(0xfff3e6, 1.4);
+      scene.add(ambientLight);
+
+      mainSpot = new THREE.SpotLight(0xffe28a, 3.2);
+      mainSpot.position.set(5, 12, 8);
+      mainSpot.angle = Math.PI / 3.5;
+      mainSpot.penumbra = 0.6;
+      scene.add(mainSpot);
+
+      rimLight = new THREE.PointLight(0xff99bb, 2.2, 25);
+      rimLight.position.set(-6, 5, -5);
+      scene.add(rimLight);
+
+      const secondaryLight = new THREE.DirectionalLight(0xd4af37, 1.0);
+      secondaryLight.position.set(0, -5, 5);
+      scene.add(secondaryLight);
+
+      // Pedestal Setup
+      studioPedestal = new THREE.Group();
+      const marbleTex = createMarbleTexture();
+      
+      const pedestalGeo = new THREE.CylinderGeometry(2.7, 3.0, 0.38, 64);
+      const pedestalMat = new THREE.MeshStandardMaterial({
+        map: marbleTex,
+        roughness: 0.25,
+        metalness: 0.4
+      });
+      const pedestal = new THREE.Mesh(pedestalGeo, pedestalMat);
+      pedestal.position.y = -1.8;
+      studioPedestal.add(pedestal);
+
+      const goldMat = new THREE.MeshStandardMaterial({
+        color: 0xe6ca65,
+        metalness: 0.95,
+        roughness: 0.15
+      });
+      const ringTop = new THREE.Mesh(new THREE.TorusGeometry(2.72, 0.06, 16, 64), goldMat);
+      ringTop.rotation.x = Math.PI / 2;
+      ringTop.position.y = -1.61;
+      studioPedestal.add(ringTop);
+
+      scene.add(studioPedestal);
+
+      // Ambient Gold Sparkle Particles
+      const particleGeo = new THREE.BufferGeometry();
+      const count = 160;
+      const positions = new Float32Array(count * 3);
+      for (let i = 0; i < count * 3; i += 3) {
+        positions[i] = (Math.random() - 0.5) * 10;
+        positions[i + 1] = (Math.random() - 0.2) * 7;
+        positions[i + 2] = (Math.random() - 0.5) * 10;
+      }
+      particleGeo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+      const particleMat = new THREE.PointsMaterial({
+        size: 0.09,
+        color: 0xffea9f,
+        transparent: true,
+        opacity: 0.85
+      });
+      sparkleParticles = new THREE.Points(particleGeo, particleMat);
+      scene.add(sparkleParticles);
+
+      // Model Holder Group
+      currentGroup = new THREE.Group();
+      scene.add(currentGroup);
+
+      // Monogram Texture
+      monogramTexture = createMonogramCanvasTexture('S & A');
+
+      // Build Default Royal Cake
+      buildWeddingCake(currentColorHex);
+
+      const canvas = renderer.domElement;
+
+      canvas.addEventListener('mousedown', (e) => {
+        isDragging = true;
+        autoRotate = false;
+        document.getElementById('rotateStatus').innerText = 'Spin: OFF';
+        previousMousePosition = { x: e.clientX, y: e.clientY };
+      });
+
+      window.addEventListener('mouseup', () => { isDragging = false; });
+
+      canvas.addEventListener('mousemove', (e) => {
+        if (!isDragging) return;
+        const deltaX = e.clientX - previousMousePosition.x;
+        const deltaY = e.clientY - previousMousePosition.y;
+        currentGroup.rotation.y += deltaX * 0.009;
+        currentGroup.rotation.x += deltaY * 0.004;
+        currentGroup.rotation.x = Math.max(-0.4, Math.min(0.4, currentGroup.rotation.x));
+        previousMousePosition = { x: e.clientX, y: e.clientY };
+      });
+
+      canvas.addEventListener('touchstart', (e) => {
+        if (e.touches.length === 1) {
+          isDragging = true;
+          autoRotate = false;
+          document.getElementById('rotateStatus').innerText = 'Spin: OFF';
+          previousMousePosition = { x: e.touches[0].clientX, y: e.touches[0].clientY };
+        }
+      }, { passive: true });
+
+      canvas.addEventListener('touchmove', (e) => {
+        if (!isDragging || e.touches.length !== 1) return;
+        const deltaX = e.touches[0].clientX - previousMousePosition.x;
+        const deltaY = e.touches[0].clientY - previousMousePosition.y;
+        currentGroup.rotation.y += deltaX * 0.012;
+        currentGroup.rotation.x += deltaY * 0.005;
+        currentGroup.rotation.x = Math.max(-0.4, Math.min(0.4, currentGroup.rotation.x));
+        previousMousePosition = { x: e.touches[0].clientX, y: e.touches[0].clientY };
+      }, { passive: true });
+
+      canvas.addEventListener('touchend', () => { isDragging = false; });
+
+      canvas.addEventListener('wheel', (e) => {
+        e.preventDefault();
+        camera.position.z += e.deltaY * 0.003;
+        camera.position.z = Math.max(5.0, Math.min(10.5, camera.position.z));
+      }, { passive: false });
+
+      window.addEventListener('resize', onWindowResize);
+    }
+
+    function onWindowResize() {
+      const container = document.getElementById('threeCanvas');
+      if (!container) return;
+      const width = container.clientWidth;
+      const height = container.clientHeight;
+      camera.aspect = width / height;
+      camera.updateProjectionMatrix();
+      renderer.setSize(width, height);
+    }
+
+    function buildWeddingCake(colorHex) {
+      clearCurrentGroup();
+      butterflyWings = [];
+      fairyLightsArray = [];
+
+      const goldMat = new THREE.MeshStandardMaterial({
+        color: 0xe6ca65,
+        metalness: 0.95,
+        roughness: 0.18
+      });
+
+      const velvetCakeMat = new THREE.MeshStandardMaterial({
+        color: colorHex,
+        roughness: 0.45,
+        metalness: 0.15
+      });
+
+      const creamPearlMat = new THREE.MeshStandardMaterial({
+        color: 0xfffcf7,
+        roughness: 0.25,
+        metalness: 0.1
+      });
+
+      // Bottom Tier
+      const tier1 = new THREE.Mesh(new THREE.CylinderGeometry(2.1, 2.1, 1.15, 64), velvetCakeMat);
+      tier1.position.y = -1.0;
+      currentGroup.add(tier1);
+
+      // Middle Tier with Engraved Monogram Plaque
+      const tier2 = new THREE.Mesh(new THREE.CylinderGeometry(1.5, 1.5, 0.98, 64), velvetCakeMat);
+      tier2.position.y = 0.05;
+      currentGroup.add(tier2);
+
+      // Monogram Curvature Plaque on Middle Tier
+      const plaqueMat = new THREE.MeshBasicMaterial({
+        map: monogramTexture,
+        transparent: true,
+        side: THREE.DoubleSide
+      });
+      const plaque = new THREE.Mesh(new THREE.CylinderGeometry(1.52, 1.52, 0.65, 32, 1, true, -Math.PI / 4, Math.PI / 2), plaqueMat);
+      plaque.position.y = 0.05;
+      currentGroup.add(plaque);
+
+      // Top Tier
+      const tier3 = new THREE.Mesh(new THREE.CylinderGeometry(0.95, 0.95, 0.88, 64), velvetCakeMat);
+      tier3.position.y = 0.98;
+      currentGroup.add(tier3);
+
+      // 24K Gold Tier Piping Ribbons
+      [ -0.42, 0.54, 1.42 ].forEach((yPos, i) => {
+        const radius = [2.12, 1.52, 0.97][i];
+        const rim = new THREE.Mesh(new THREE.TorusGeometry(radius, 0.05, 16, 64), goldMat);
+        rim.rotation.x = Math.PI / 2;
+        rim.position.y = yPos;
+        currentGroup.add(rim);
+      });
+
+      // Sculpted Pearl Beading Around Rim
+      for (let i = 0; i < 16; i++) {
+        const angle = (i / 16) * Math.PI * 2;
+        const pearl = new THREE.Mesh(new THREE.SphereGeometry(0.08, 16, 16), creamPearlMat);
+        pearl.position.set(Math.cos(angle) * 1.51, 0.55, Math.sin(angle) * 1.51);
+        currentGroup.add(pearl);
+      }
+
+      // Golden Butterfly Topper 🦋
+      const butterflyGroup = new THREE.Group();
+      butterflyGroup.position.y = 1.55;
+
+      const body = new THREE.Mesh(new THREE.CylinderGeometry(0.03, 0.03, 0.25, 12), goldMat);
+      body.rotation.z = Math.PI / 2;
+      butterflyGroup.add(body);
+
+      const wingGeo = new THREE.CircleGeometry(0.28, 24, 0, Math.PI);
+      const wingMat = new THREE.MeshStandardMaterial({
+        color: 0xffe28a,
+        metalness: 0.9,
+        roughness: 0.2,
+        side: THREE.DoubleSide
+      });
+
+      const leftWing = new THREE.Mesh(wingGeo, wingMat);
+      leftWing.rotation.x = Math.PI / 2;
+      leftWing.position.x = 0.03;
+      butterflyGroup.add(leftWing);
+
+      const rightWing = new THREE.Mesh(wingGeo, wingMat);
+      rightWing.rotation.x = Math.PI / 2;
+      rightWing.rotation.z = Math.PI;
+      rightWing.position.x = -0.03;
+      butterflyGroup.add(rightWing);
+
+      butterflyWings.push({ left: leftWing, right: rightWing });
+      currentGroup.add(butterflyGroup);
+
+      if (isSparklerActive) createCelebrationSparkler();
+    }
+
+    function buildHamperBox(colorHex) {
+      clearCurrentGroup();
+      butterflyWings = [];
+      fairyLightsArray = [];
+
+      // Transparent Acrylic Box Frame
+      const boxMat = new THREE.MeshPhysicalMaterial({
+        color: 0xffffff,
+        transparent: true,
+        opacity: 0.38,
+        roughness: 0.08,
+        transmission: 0.85,
+        thickness: 0.6
+      });
+      const box = new THREE.Mesh(new THREE.BoxGeometry(2.8, 2.5, 2.8), boxMat);
+      box.position.y = -0.35;
+      currentGroup.add(box);
+
+      // Gold Trim Edges and Base
+      const goldMat = new THREE.MeshStandardMaterial({ color: 0xe6ca65, metalness: 0.95, roughness: 0.15 });
+      const baseTray = new THREE.Mesh(new THREE.BoxGeometry(2.9, 0.18, 2.9), goldMat);
+      baseTray.position.y = -1.6;
+      currentGroup.add(baseTray);
+
+      // Satin Ribbon
+      const ribbonMat = new THREE.MeshStandardMaterial({ color: colorHex, roughness: 0.35 });
+      const ribbonV = new THREE.Mesh(new THREE.BoxGeometry(0.35, 2.52, 2.84), ribbonMat);
+      ribbonV.position.y = -0.35;
+      currentGroup.add(ribbonV);
+
+      const ribbonH = new THREE.Mesh(new THREE.BoxGeometry(2.84, 2.52, 0.35), ribbonMat);
+      ribbonH.position.y = -0.35;
+      currentGroup.add(ribbonH);
+
+      // Monogram Gift Card Inside
+      const cardMat = new THREE.MeshBasicMaterial({ map: monogramTexture });
+      const card = new THREE.Mesh(new THREE.PlaneGeometry(1.6, 0.8), cardMat);
+      card.position.set(0, -0.4, 0.4);
+      card.rotation.x = -0.2;
+      currentGroup.add(card);
+
+      // LED Micro Fairy Lights Inside
+      for (let i = 0; i < 24; i++) {
+        const lightOrb = new THREE.Mesh(
+          new THREE.SphereGeometry(0.05, 12, 12),
+          new THREE.MeshBasicMaterial({ color: 0xffec99 })
+        );
+        lightOrb.position.set(
+          (Math.random() - 0.5) * 2.1,
+          -1.2 + Math.random() * 1.8,
+          (Math.random() - 0.5) * 2.1
+        );
+        currentGroup.add(lightOrb);
+        fairyLightsArray.push(lightOrb);
+      }
+    }
+
+    function buildChocolateTier(colorHex) {
+      clearCurrentGroup();
+      butterflyWings = [];
+      fairyLightsArray = [];
+
+      const chocoMat = new THREE.MeshStandardMaterial({ color: 0x180b06, roughness: 0.3, metalness: 0.15 });
+      const goldMat = new THREE.MeshStandardMaterial({ color: 0xe6ca65, metalness: 0.95, roughness: 0.15 });
+
+      // Chocolate Tier Base
+      const cake = new THREE.Mesh(new THREE.CylinderGeometry(1.9, 2.0, 1.45, 64), chocoMat);
+      cake.position.y = -0.8;
+      currentGroup.add(cake);
+
+      // Golden Drip Rim
+      const drip = new THREE.Mesh(new THREE.TorusGeometry(1.92, 0.12, 16, 64), goldMat);
+      drip.rotation.x = Math.PI / 2;
+      drip.position.y = -0.08;
+      currentGroup.add(drip);
+
+      // Monogram Plaque on Front
+      const plaqueMat = new THREE.MeshBasicMaterial({ map: monogramTexture, transparent: true });
+      const plaque = new THREE.Mesh(new THREE.CylinderGeometry(1.93, 1.93, 0.6, 32, 1, true, -Math.PI / 4, Math.PI / 2), plaqueMat);
+      plaque.position.y = -0.8;
+      currentGroup.add(plaque);
+
+      // Individual Monogram Initial Chocolates on Top
+      for (let i = 0; i < 8; i++) {
+        const angle = (i / 8) * Math.PI * 2;
+        const square = new THREE.Mesh(new THREE.BoxGeometry(0.42, 0.22, 0.42), goldMat);
+        square.position.set(Math.cos(angle) * 1.25, 0.12, Math.sin(angle) * 1.25);
+        square.rotation.y = angle;
+        currentGroup.add(square);
+      }
+
+      // Centerpiece Truffle Pyramid
+      const centerTruffle = new THREE.Mesh(new THREE.SphereGeometry(0.45, 32, 32), chocoMat);
+      centerTruffle.position.y = 0.4;
+      currentGroup.add(centerTruffle);
+    }
+
+    function clearCurrentGroup() {
+      while (currentGroup.children.length > 0) {
+        const obj = currentGroup.children[0];
+        if (obj.geometry) obj.geometry.dispose();
+        if (obj.material) {
+          if (Array.isArray(obj.material)) obj.material.forEach(m => m.dispose());
+          else obj.material.dispose();
+        }
+        currentGroup.remove(obj);
+      }
+    }
+
+    function switch3DModel(type) {
+      currentModelType = type;
+      ['wedding', 'hamper', 'chocolates'].forEach(t => {
+        const btn = document.getElementById(`btn-${t}`);
+        btn.classList.remove('bg-brand-gold', 'text-brand-void', 'border-2', 'border-brand-gold');
+        btn.classList.add('bg-white/5', 'text-slate-200', 'border', 'border-white/10');
+      });
+      const activeBtn = document.getElementById(`btn-${type}`);
+      activeBtn.classList.remove('bg-white/5', 'text-slate-200', 'border', 'border-white/10');
+      activeBtn.classList.add('bg-brand-gold', 'text-brand-void', 'border-2', 'border-brand-gold');
+
+      if (type === 'wedding') {
+        buildWeddingCake(currentColorHex);
+        document.getElementById('modelBadge').innerText = 'Grandeur Edition';
+        document.getElementById('modelTitle').innerText = 'Royal 3-Tier Pearl Cake';
+        document.getElementById('modelDesc').innerText = 'Architectural 3-tier celebration cake coated in rich velvet glaze, 24k gold leaf piping, handcrafted pearls, and crowned with Saleha’s golden signature fluttering butterfly.';
+        document.getElementById('modelPrice').innerText = '₹3,499';
+      } else if (type === 'hamper') {
+        buildHamperBox(currentColorHex);
+        document.getElementById('modelBadge').innerText = 'Trousseau & Gifting';
+        document.getElementById('modelTitle').innerText = 'Illuminated Acrylic Hamper';
+        document.getElementById('modelDesc').innerText = 'Crystal-clear luxury acrylic keepsake box with glowing micro fairy lights, custom couple name envelopes, artisanal truffles, and satin floral ties. Pan-India shipping safe.';
+        document.getElementById('modelPrice').innerText = '₹2,499';
+      } else if (type === 'chocolates') {
+        buildChocolateTier(currentColorHex);
+        document.getElementById('modelBadge').innerText = 'Belgian Craft';
+        document.getElementById('modelTitle').innerText = 'Monogram Truffle Drip';
+        document.getElementById('modelDesc').innerText = 'Gourmet 55% dark chocolate drip cake adorned with individual personalized initial chocolates. Ideal for intimate engagements, Nikah giveaways, and anniversary dinners.';
+        document.getElementById('modelPrice').innerText = '₹2,199';
+      }
+    }
+
+    function change3DColor(hex, label) {
+      currentColorHex = hex;
+      document.getElementById('activeColorName').innerText = label;
+      if (currentModelType === 'wedding') buildWeddingCake(hex);
+      else if (currentModelType === 'hamper') buildHamperBox(hex);
+      else if (currentModelType === 'chocolates') buildChocolateTier(hex);
+      showToast(`Switched finish to ${label}!`);
+    }
+
+    function setCameraPreset(view) {
+      if (view === 'front') {
+        camera.position.set(0, 0.4, 7.2);
+      } else if (view === 'isometric') {
+        camera.position.set(3.5, 3.2, 6.8);
+      } else if (view === 'top') {
+        camera.position.set(0, 7.5, 3.2);
+      }
+      camera.lookAt(0, 0, 0);
+    }
+
+    function toggleAutoRotate() {
+      autoRotate = !autoRotate;
+      document.getElementById('rotateStatus').innerText = `Spin: ${autoRotate ? 'ON' : 'OFF'}`;
+    }
+
+    function toggleCelebrationFountain() {
+      isSparklerActive = !isSparklerActive;
+      const btn = document.getElementById('sparklerLabel');
+      if (isSparklerActive) {
+        btn.innerText = 'ON';
+        createCelebrationSparkler();
+        showToast('Sparkler Fountain: Sparking! ✨');
+      } else {
+        btn.innerText = 'OFF';
+        removeCelebrationSparkler();
+        showToast('Sparkler: Extinguished');
+      }
+    }
+
+    function createCelebrationSparkler() {
+      removeCelebrationSparkler();
+      const sparkCount = 80;
+      const sparkGeo = new THREE.BufferGeometry();
+      const sparkPos = new Float32Array(sparkCount * 3);
+      for (let i = 0; i < sparkCount * 3; i += 3) {
+        sparkPos[i] = (Math.random() - 0.5) * 0.4;
+        sparkPos[i + 1] = 1.6 + Math.random() * 0.8;
+        sparkPos[i + 2] = (Math.random() - 0.5) * 0.4;
+      }
+      sparkGeo.setAttribute('position', new THREE.BufferAttribute(sparkPos, 3));
+      const sparkMat = new THREE.PointsMaterial({
+        size: 0.12,
+        color: 0xfff2b2,
+        transparent: true,
+        opacity: 0.95
+      });
+      sparklerParticles = new THREE.Points(sparkGeo, sparkMat);
+      currentGroup.add(sparklerParticles);
+    }
+
+    function removeCelebrationSparkler() {
+      if (sparklerParticles) {
+        currentGroup.remove(sparklerParticles);
+        sparklerParticles.geometry.dispose();
+        sparklerParticles.material.dispose();
+        sparklerParticles = null;
+      }
+    }
+
+    function cycleStudioLighting() {
+      currentLightingMood = (currentLightingMood + 1) % 3;
+      const label = document.getElementById('lightMoodLabel');
+      if (currentLightingMood === 0) {
+        label.innerText = 'Palace';
+        ambientLight.color.setHex(0xfff3e6);
+        mainSpot.color.setHex(0xffe28a);
+        rimLight.color.setHex(0xff99bb);
+      } else if (currentLightingMood === 1) {
+        label.innerText = 'Candle';
+        ambientLight.color.setHex(0xffcc88);
+        mainSpot.color.setHex(0xff9933);
+        rimLight.color.setHex(0xff6644);
+      } else {
+        label.innerText = 'Golden';
+        ambientLight.color.setHex(0xfffae0);
+        mainSpot.color.setHex(0xffd700);
+        rimLight.color.setHex(0xe6ca65);
+      }
+      showToast(`Studio Lighting: ${label.innerText} Mood`);
+    }
+
+    if (window.innerWidth > 1024) {
+      let lastTime = 0;
+      window.addEventListener('mousemove', (e) => {
+        const now = Date.now();
+        if (now - lastTime > 45) {
+          lastTime = now;
+          const dust = document.createElement('div');
+          dust.className = 'stardust';
+          dust.style.left = e.clientX + 'px';
+          dust.style.top = e.clientY + 'px';
+          document.body.appendChild(dust);
+          setTimeout(() => {
+            dust.style.opacity = '0';
+            dust.style.transform = 'translate(-50%, -50%) scale(0.2)';
+          }, 50);
+          setTimeout(() => dust.remove(), 700);
+        }
+      });
+    }
+
+    let clock = 0;
+    function animate() {
+      requestAnimationFrame(animate);
+      clock += 0.025;
+
+      if (currentGroup && autoRotate) {
+        currentGroup.rotation.y += 0.007;
+      }
+
+      if (studioPedestal && autoRotate) {
+        studioPedestal.rotation.y -= 0.002;
+      }
+
+      if (sparkleParticles) {
+        sparkleParticles.rotation.y += 0.0015;
+        sparkleParticles.rotation.x += 0.0008;
+      }
+
+      if (butterflyWings.length > 0) {
+        butterflyWings.forEach(w => {
+          const flutter = Math.sin(clock * 10) * 0.45;
+          w.left.rotation.y = flutter;
+          w.right.rotation.y = -flutter;
         });
-    </script>
-</body>
-</html>
+      }
 
-```
+      if (fairyLightsArray.length > 0) {
+        fairyLightsArray.forEach((light, i) => {
+          light.scale.setScalar(0.8 + Math.sin(clock * 3 + i) * 0.35);
+        });
+      }
+
+      if (sparklerParticles) {
+        const pos = sparklerParticles.geometry.attributes.position.array;
+        for (let i = 1; i < pos.length; i += 3) {
+          pos[i] += (Math.random() - 0.4) * 0.04;
+          if (pos[i] > 2.6) pos[i] = 1.5;
+        }
+        sparklerParticles.geometry.attributes.position.needsUpdate = true;
+      }
+
+      renderer.render(scene, camera);
+    }
+
+    window.onload = function() {
+      initThreeJS();
+      animate();
+      renderProducts(productsData);
+      lucide.createIcons();
+    };
+  </script>
+</body>
+    </html>
