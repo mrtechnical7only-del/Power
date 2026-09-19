@@ -1,8 +1,9 @@
+```html
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=devhjjice-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Packs_n_Bakes By Saleha | Ultra-Luxury 3D Confectionery Experience</title>
   
   <!-- Tailwind CSS -->
@@ -13,16 +14,18 @@
         extend: {
           colors: {
             brand: {
-              void: '#080206',
-              dark: '#11040e',
-              plum: '#1d0617',
-              velvet: '#2c0a23',
-              crimson: '#4a0e2e',
-              gold: '#e6ca65',
-              goldDeep: '#b88a28',
-              goldLight: '#fff2b2',
-              rose: '#f78da7',
-              ivory: '#fcf8f2'
+              void: '#fff0f5',       /* Dreamy Light Baby Pink Canvas */
+              blush: '#ffe4ee',      /* Soft Powder Blush */
+              petal: '#ffd6e5',      /* Light Rose Petal */
+              velvet: '#fce7f1',     /* Baby Pink Tint */
+              crimson: '#e0538a',    /* Vibrant Rose Accent */
+              berry: '#3b0d27',      /* Imperial Royal Berry Text */
+              berryLight: '#6d234d', /* Plum contrast text */
+              gold: '#b8860b',       /* Patisserie French Gold */
+              goldDeep: '#8c6200',
+              goldLight: '#fef3c7',
+              rose: '#f472b6',
+              ivory: '#ffffff'
             }
           },
           fontFamily: {
@@ -32,9 +35,9 @@
             script: ['"Great Vibes"', 'cursive']
           },
           boxShadow: {
-            'royal-glow': '0 0 50px -10px rgba(230, 202, 101, 0.35)',
-            'royal-glow-lg': '0 0 70px -5px rgba(230, 202, 101, 0.5)',
-            'glass-inset': 'inset 0 1px 1px 0 rgba(255, 255, 255, 0.15)',
+            'royal-glow': '0 0 35px -5px rgba(244, 114, 182, 0.35)',
+            'royal-glow-lg': '0 0 55px -5px rgba(212, 175, 55, 0.38)',
+            'glass-inset': 'inset 0 1px 2px 0 rgba(255, 255, 255, 0.95)',
           }
         }
       }
@@ -58,36 +61,36 @@
       width: 7px;
     }
     ::-webkit-scrollbar-track {
-      background: #080206;
+      background: #fff0f5;
     }
     ::-webkit-scrollbar-thumb {
-      background: linear-gradient(to bottom, #e6ca65, #b88a28);
+      background: linear-gradient(to bottom, #f472b6, #d4af37);
       border-radius: 9999px;
     }
     ::-webkit-scrollbar-thumb:hover {
-      background: #fff2b2;
+      background: #e0538a;
     }
 
-    /* Royal Glass & Filigree Borders */
+    /* Luxury Baby Pink & White Glass */
     .royal-glass {
-      background: radial-gradient(130% 100% at 50% 0%, rgba(44, 10, 35, 0.6) 0%, rgba(17, 4, 14, 0.9) 100%);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border: 1px solid rgba(230, 202, 101, 0.25);
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.75), inset 0 1px 1px rgba(255, 242, 178, 0.2);
+      background: radial-gradient(130% 100% at 50% 0%, rgba(255, 255, 255, 0.95) 0%, rgba(255, 240, 247, 0.90) 100%);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(244, 114, 182, 0.35);
+      box-shadow: 0 12px 35px rgba(224, 83, 138, 0.12), inset 0 1px 2px rgba(255, 255, 255, 0.95);
     }
     .royal-glass-hover {
-      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
     }
     .royal-glass-hover:hover {
-      border-color: rgba(230, 202, 101, 0.7);
+      border-color: rgba(212, 175, 55, 0.85);
       transform: translateY(-5px);
-      box-shadow: 0 25px 60px -10px rgba(230, 202, 101, 0.3), inset 0 1px 2px rgba(255, 242, 178, 0.4);
+      box-shadow: 0 20px 45px rgba(244, 114, 182, 0.28), inset 0 1px 3px rgba(255, 255, 255, 1);
     }
 
-    /* Metallic Gold Shimmer Gradients */
+    /* Metallic Gold Shimmer Gradients for Baby Pink Palette */
     .gold-shimmer-text {
-      background: linear-gradient(120deg, #fff2b2 0%, #e6ca65 25%, #ffd875 50%, #b88a28 75%, #fff2b2 100%);
+      background: linear-gradient(120deg, #996d00 0%, #d4af37 25%, #f472b6 50%, #8c6200 75%, #996d00 100%);
       background-size: 200% auto;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -99,306 +102,356 @@
 
     .bg-palace-pattern {
       background-image: 
-        radial-gradient(circle at 50% 5%, rgba(230, 202, 101, 0.14) 0%, transparent 60%),
-        radial-gradient(circle at 10% 65%, rgba(247, 141, 167, 0.08) 0%, transparent 50%),
-        radial-gradient(circle at 90% 75%, rgba(184, 138, 40, 0.12) 0%, transparent 55%);
+        radial-gradient(circle at 50% 5%, rgba(255, 192, 215, 0.45) 0%, transparent 60%),
+        radial-gradient(circle at 10% 45%, rgba(255, 224, 238, 0.55) 0%, transparent 50%),
+        radial-gradient(circle at 90% 65%, rgba(254, 236, 195, 0.35) 0%, transparent 55%),
+        radial-gradient(circle at 50% 95%, rgba(255, 205, 225, 0.45) 0%, transparent 60%);
     }
 
-    /* Golden Stardust Cursor Trail */
+    /* Golden & Rose Stardust Cursor Trail */
     .stardust {
       position: fixed;
       pointer-events: none;
-      width: 5px;
-      height: 5px;
-      background: #ffd875;
+      width: 6px;
+      height: 6px;
+      background: #f472b6;
       border-radius: 50%;
-      box-shadow: 0 0 12px #e6ca65, 0 0 22px #ffd875;
+      box-shadow: 0 0 12px #f472b6, 0 0 20px #ffd700;
       z-index: 99999;
       transform: translate(-50%, -50%);
-      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+      transition: opacity 0.5s ease-out, transform 0.5s ease-out;
     }
 
     @keyframes pulseGlow {
-      0%, 100% { opacity: 0.6; transform: scale(1); }
-      50% { opacity: 0.95; transform: scale(1.05); }
+      0%, 100% { opacity: 0.8; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.04); }
     }
     .animate-pulse-glow {
       animation: pulseGlow 4s ease-in-out infinite;
     }
+
+    .polaroid-card {
+      background: #ffffff;
+      padding: 12px 12px 24px 12px;
+      box-shadow: 0 16px 36px rgba(224, 83, 138, 0.15);
+      position: relative;
+      border-radius: 16px;
+      border: 1px solid rgba(251, 207, 232, 0.85);
+    }
+    .washi-tape {
+      position: absolute;
+      top: -10px;
+      left: 50%;
+      transform: translateX(-50%) rotate(-2deg);
+      width: 90px;
+      height: 22px;
+      background: rgba(251, 207, 232, 0.9);
+      border: 1px dashed rgba(244, 114, 182, 0.5);
+      border-radius: 4px;
+    }
   </style>
 </head>
 
-<body class="bg-brand-void text-brand-ivory font-sans selection:bg-brand-gold selection:text-brand-void overflow-x-hidden antialiased bg-palace-pattern">
+<body class="bg-brand-void text-brand-berry font-sans selection:bg-brand-rose selection:text-white overflow-x-hidden antialiased bg-palace-pattern pb-16 lg:pb-0">
 
-  <!-- Ambient Audio Chime Button -->
-  <button id="soundToggleBtn" onclick="toggleAudio()" class="fixed bottom-6 left-6 z-40 royal-glass px-4 py-3 rounded-full text-brand-gold hover:text-brand-goldLight transition duration-300 flex items-center gap-2.5 group cursor-pointer shadow-royal-glow" title="Toggle Palace Ambient Atmosphere">
-    <i data-lucide="music" id="soundIcon" class="w-4 h-4"></i>
-    <span id="soundText" class="text-[11px] font-cinzel uppercase tracking-widest font-semibold">Palace Atmosphere: Off</span>
-  </button>
+  <!-- Ambient Falling Petals Canvas -->
+  <canvas id="petalCanvas" class="fixed inset-0 pointer-events-none z-30 w-full h-full"></canvas>
 
-  <!-- WhatsApp Floating Action with Pulsing Status -->
-  <a href="https://wa.me/919999999999?text=Hello%20Saleha%20(Packs_n_Bakes)%20✨%20I%20visited%20your%20luxury%203D%20website%20and%20would%20love%20to%20place%20a%20bespoke%20order!" target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 z-40 bg-gradient-to-r from-emerald-600 via-emerald-500 to-green-500 hover:from-emerald-500 hover:to-green-400 text-white px-5 py-3.5 rounded-full shadow-2xl flex items-center gap-3 transition transform hover:scale-105 border border-emerald-300/40 cursor-pointer" title="Chat Directly With Saleha">
+  <!-- Ambient Audio Chime & Petal Shower Floating Controls (Bottom Left) -->
+  <div class="fixed bottom-20 sm:bottom-6 left-4 sm:left-6 z-40 flex flex-col gap-2.5">
+    <button id="soundToggleBtn" onclick="toggleAudio()" class="royal-glass px-3.5 sm:px-4 py-2.5 rounded-full text-pink-700 hover:text-pink-900 transition duration-300 flex items-center gap-2 cursor-pointer shadow-royal-glow" title="Toggle Palace Ambient Music">
+      <i data-lucide="music" id="soundIcon" class="w-4 h-4 text-pink-500"></i>
+      <span id="soundText" class="text-[10px] sm:text-[11px] font-cinzel uppercase tracking-widest font-bold">Atmosphere: Off</span>
+    </button>
+    <button onclick="togglePetalRain()" id="petalRainBtn" class="royal-glass px-3.5 sm:px-4 py-2.5 rounded-full text-pink-700 hover:text-pink-900 transition duration-300 flex items-center gap-2 cursor-pointer shadow-royal-glow" title="Toggle Floating Rose Petals">
+      <span class="text-xs">🌸</span>
+      <span id="petalRainText" class="text-[10px] sm:text-[11px] font-cinzel uppercase tracking-widest font-bold">Petals: On</span>
+    </button>
+  </div>
+
+  <!-- WhatsApp Floating Action (Desktop & Tablet) -->
+  <a href="https://wa.me/919999999999?text=Hello%20Saleha%20(Packs_n_Bakes)%20✨%20I%20visited%20your%20luxury%203D%20website%20and%20would%20love%20to%20place%20a%20bespoke%20order!" target="_blank" rel="noopener noreferrer" class="hidden sm:flex fixed bottom-6 right-6 z-40 bg-gradient-to-r from-pink-500 via-rose-500 to-amber-500 hover:from-pink-600 hover:to-amber-600 text-white px-5 py-3.5 rounded-full shadow-2xl items-center gap-3 transition transform hover:scale-105 border border-white/80 cursor-pointer" title="Chat Directly With Saleha">
     <span class="relative flex h-3 w-3">
-      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-300 opacity-75"></span>
+      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-pink-200 opacity-75"></span>
       <span class="relative inline-flex rounded-full h-3 w-3 bg-white"></span>
     </span>
     <i data-lucide="message-circle" class="w-5 h-5"></i>
-    <span class="text-xs font-bold uppercase tracking-wider hidden sm:inline-block font-cinzel">WhatsApp Saleha</span>
+    <span class="text-xs font-bold uppercase tracking-wider font-cinzel">WhatsApp Saleha</span>
   </a>
 
-  <!-- Top Imperial Notice Bar -->
-  <div class="bg-gradient-to-r from-brand-void via-brand-plum to-brand-void border-b border-brand-gold/25 py-2.5 px-4 text-center text-xs tracking-widest uppercase font-semibold text-amber-200/90 flex items-center justify-center gap-4">
-    <span class="flex items-center gap-1.5"><i data-lucide="sparkles" class="w-3.5 h-3.5 text-brand-gold"></i> Home Baker | Nanded Studio 📍</span>
-    <span class="hidden md:inline text-brand-gold/40">•</span>
-    <span class="hidden sm:inline">🚚 Pan-India Shipping on Monogram Chocolates & Acrylic Hampers</span>
-    <span class="hidden md:inline text-brand-gold/40">•</span>
-    <span class="text-pink-300">🌸 100% Belgian Chocolate & Eggless Artisanal Sponges</span>
+  <!-- Mobile Bottom Sticky Navigation Bar -->
+  <div class="sm:hidden fixed bottom-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-xl border-t border-pink-200 px-4 py-2.5 flex items-center justify-around shadow-2xl">
+    <a href="#stage-3d" class="flex flex-col items-center text-pink-700 hover:text-pink-900">
+      <span class="text-base">✨</span>
+      <span class="text-[9px] font-cinzel font-bold uppercase tracking-wider mt-0.5">3D Studio</span>
+    </a>
+    <a href="#creations" class="flex flex-col items-center text-pink-700 hover:text-pink-900">
+      <span class="text-base">🌸</span>
+      <span class="text-[9px] font-cinzel font-bold uppercase tracking-wider mt-0.5">Catalog</span>
+    </a>
+    <button onclick="toggleCartDrawer()" class="flex flex-col items-center text-pink-700 relative">
+      <span class="text-base">🎀</span>
+      <span class="text-[9px] font-cinzel font-bold uppercase tracking-wider mt-0.5">My Tray</span>
+      <span id="mobileCartBadge" class="absolute -top-1 right-1 bg-pink-500 text-white text-[9px] font-bold rounded-full w-4 h-4 flex items-center justify-center">0</span>
+    </button>
+    <a href="https://wa.me/919999999999?text=Hello%20Saleha%20(Packs_n_Bakes)%20✨%20I%20love%20your%20cakes%20and%20want%20to%20order!" target="_blank" class="flex items-center gap-1.5 bg-gradient-to-r from-pink-500 to-rose-500 text-white px-3.5 py-1.5 rounded-full shadow-md text-[10px] font-cinzel font-bold">
+      <i data-lucide="message-circle" class="w-3.5 h-3.5"></i>
+      <span>Order</span>
+    </a>
   </div>
 
-  <header class="sticky top-0 z-50 backdrop-blur-xl bg-brand-void/85 border-b border-brand-gold/20 transition duration-300">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-24 flex items-center justify-between">
+  <!-- Top Imperial Notice Bar -->
+  <div class="bg-gradient-to-r from-pink-100 via-rose-50 to-pink-100 border-b border-pink-200/80 py-2.5 px-4 text-center text-xs tracking-widest uppercase font-semibold text-brand-berryLight flex items-center justify-center gap-4">
+    <span class="flex items-center gap-1.5"><span class="text-pink-500">🌸</span> Artisanal Studio | Nanded 📍</span>
+    <span class="hidden md:inline text-pink-300">•</span>
+    <span class="hidden sm:inline">🚚 Pan-India Express Delivery on Monogram Chocolates & Hampers</span>
+    <span class="hidden md:inline text-pink-300">•</span>
+    <span class="text-pink-600 font-bold">✨ 100% Belgian Chocolate & Eggless Delicacies</span>
+  </div>
+
+  <header class="sticky top-0 z-50 backdrop-blur-xl bg-white/85 border-b border-pink-200/80 transition duration-300 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 sm:h-24 flex items-center justify-between">
       
       <!-- Brand Logo & Imperial Monogram -->
-      <a href="#" class="flex items-center gap-3.5 group">
-        <div class="w-13 h-13 sm:w-14 sm:h-14 rounded-full border-2 border-brand-gold p-0.5 flex items-center justify-center bg-gradient-to-br from-brand-velvet via-brand-plum to-brand-dark shadow-royal-glow group-hover:scale-105 transition">
+      <a href="#" class="flex items-center gap-3 group">
+        <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-full border-2 border-brand-gold p-0.5 flex items-center justify-center bg-gradient-to-br from-pink-100 via-pink-200 to-rose-100 shadow-royal-glow group-hover:scale-105 transition">
           <div class="w-full h-full rounded-full border border-dashed border-brand-gold/70 flex items-center justify-center">
             <span class="font-cinzel text-lg sm:text-xl font-bold gold-shimmer-text">PB</span>
           </div>
         </div>
         <div>
-          <div class="font-cinzel text-lg sm:text-2xl font-bold tracking-wider gold-shimmer-text uppercase">
+          <div class="font-cinzel text-lg sm:text-2xl font-bold tracking-wider gold-shimmer-text uppercase leading-none">
             Packs_n_Bakes
           </div>
-          <p class="text-[10px] tracking-[0.3em] text-pink-300/90 uppercase font-medium flex items-center gap-1">
+          <p class="text-[10px] tracking-[0.25em] text-pink-600 uppercase font-semibold flex items-center gap-1 mt-1">
             <span>By Saleha</span>
             <span>🦋✨</span>
-            <span class="hidden sm:inline text-slate-400">| Nanded, MH</span>
+            <span class="hidden sm:inline text-brand-berryLight/70">| Nanded, MH</span>
           </p>
         </div>
       </a>
 
       <!-- Navigation Links -->
-      <nav class="hidden lg:flex items-center space-x-9 text-[11px] uppercase tracking-[0.25em] font-cinzel text-slate-200">
-        <a href="#hero" class="hover:text-brand-gold transition duration-200">The Palace</a>
-        <a href="#stage-3d" class="hover:text-brand-gold transition duration-200 flex items-center gap-1.5">
+      <nav class="hidden lg:flex items-center space-x-8 text-[11px] uppercase tracking-[0.22em] font-cinzel text-brand-berry font-bold">
+        <a href="#hero" class="hover:text-pink-600 transition duration-200">The Palace</a>
+        <a href="#stage-3d" class="hover:text-pink-600 transition duration-200 flex items-center gap-1.5">
           <span>3D Studio</span>
-          <span class="text-[9px] bg-brand-gold/25 text-brand-gold px-1.5 py-0.5 rounded border border-brand-gold/50 font-bold">360° LIVE</span>
+          <span class="text-[9px] bg-pink-100 text-pink-600 px-1.5 py-0.5 rounded-full border border-pink-300 font-bold">360° LIVE</span>
         </a>
-        <a href="#creations" class="hover:text-brand-gold transition duration-200">Creations</a>
-        <a href="#bespoke-hampers" class="hover:text-brand-gold transition duration-200">Trousseau & Hampers</a>
-        <a href="#about" class="hover:text-brand-gold transition duration-200">The Craft</a>
-        <a href="#custom-quote" class="hover:text-brand-gold transition duration-200">Reserve Slot</a>
+        <a href="#creations" class="hover:text-pink-600 transition duration-200">Creations</a>
+        <a href="#about" class="hover:text-pink-600 transition duration-200">The Craft</a>
+        <a href="#custom-quote" class="hover:text-pink-600 transition duration-200">Reserve Slot</a>
       </nav>
 
-      <!-- Right Controls & Inquiries -->
-      <div class="flex items-center gap-4">
-        <button onclick="toggleCartDrawer()" class="relative p-2.5 text-slate-200 hover:text-brand-gold transition royal-glass rounded-full border-brand-gold/30 cursor-pointer" title="View Inquiry Tray">
-          <i data-lucide="shopping-bag" class="w-5 h-5 text-brand-gold"></i>
-          <span id="cartCountBadge" class="absolute -top-1 -right-1 bg-gradient-to-r from-brand-gold to-amber-500 text-brand-void text-[10px] font-extrabold w-5 h-5 rounded-full flex items-center justify-center shadow-lg">0</span>
+      <!-- Right Controls -->
+      <div class="flex items-center gap-3 sm:gap-4">
+        <button onclick="toggleCartDrawer()" class="relative p-2.5 text-brand-berry hover:text-pink-600 transition royal-glass rounded-full border-pink-300 cursor-pointer" title="View Inquiry Tray">
+          <i data-lucide="shopping-bag" class="w-5 h-5 text-pink-600"></i>
+          <span id="cartCountBadge" class="absolute -top-1 -right-1 bg-gradient-to-r from-pink-500 to-rose-500 text-white text-[10px] font-extrabold w-5 h-5 rounded-full flex items-center justify-center shadow-md">0</span>
         </button>
 
-        <a href="#custom-quote" class="hidden sm:inline-flex items-center gap-2.5 border-2 border-brand-gold bg-gradient-to-r from-brand-gold/20 via-brand-gold/10 to-transparent hover:from-brand-gold hover:to-brand-goldDeep px-6 py-2.5 rounded-full text-xs font-cinzel font-bold uppercase tracking-widest text-brand-gold hover:text-brand-void transition duration-300 shadow-royal-glow">
+        <a href="#custom-quote" class="hidden sm:inline-flex items-center gap-2 border-2 border-brand-gold bg-gradient-to-r from-pink-100 via-rose-50 to-amber-50 hover:from-brand-gold hover:to-brand-goldDeep px-5 py-2.5 rounded-full text-xs font-cinzel font-bold uppercase tracking-widest text-brand-gold hover:text-white transition duration-300 shadow-sm">
           <span>Book Custom Cake</span>
           <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
         </a>
 
-        <button id="mobileNavToggle" onclick="toggleMobileMenu()" class="lg:hidden p-2.5 text-slate-300 hover:text-brand-gold royal-glass rounded-xl cursor-pointer">
+        <button id="mobileNavToggle" onclick="toggleMobileMenu()" class="lg:hidden p-2.5 text-brand-berry hover:text-pink-600 royal-glass rounded-xl cursor-pointer">
           <i data-lucide="menu" id="menuToggleIcon" class="w-6 h-6"></i>
         </button>
       </div>
     </div>
 
     <!-- Mobile Dropdown Navigation -->
-    <div id="mobileMenuPanel" class="hidden lg:hidden bg-brand-plum/95 backdrop-blur-2xl border-b border-brand-gold/30 px-6 py-8 space-y-4 text-center font-cinzel">
-      <a href="#hero" onclick="toggleMobileMenu()" class="block text-sm uppercase tracking-widest text-slate-200 hover:text-brand-gold py-2">The Palace</a>
-      <a href="#stage-3d" onclick="toggleMobileMenu()" class="block text-sm uppercase tracking-widest text-brand-gold hover:text-brand-goldLight py-2">3D Interactive Studio ✨</a>
-      <a href="#creations" onclick="toggleMobileMenu()" class="block text-sm uppercase tracking-widest text-slate-200 hover:text-brand-gold py-2">Signature Creations</a>
-      <a href="#bespoke-hampers" onclick="toggleMobileMenu()" class="block text-sm uppercase tracking-widest text-slate-200 hover:text-brand-gold py-2">Trousseau & Hampers</a>
-      <a href="#about" onclick="toggleMobileMenu()" class="block text-sm uppercase tracking-widest text-slate-200 hover:text-brand-gold py-2">Saleha's Craft</a>
-      <a href="#custom-quote" onclick="toggleMobileMenu()" class="block text-sm uppercase tracking-widest text-slate-200 hover:text-brand-gold py-2">Book Order on WhatsApp</a>
+    <div id="mobileMenuPanel" class="hidden lg:hidden bg-white/95 backdrop-blur-2xl border-b border-pink-200 px-6 py-6 space-y-3 text-center font-cinzel shadow-xl">
+      <a href="#hero" onclick="toggleMobileMenu()" class="block text-sm uppercase tracking-widest text-brand-berry hover:text-pink-600 py-2 font-bold">The Palace</a>
+      <a href="#stage-3d" onclick="toggleMobileMenu()" class="block text-sm uppercase tracking-widest text-pink-600 hover:text-pink-700 py-2 font-bold">3D Interactive Studio ✨</a>
+      <a href="#creations" onclick="toggleMobileMenu()" class="block text-sm uppercase tracking-widest text-brand-berry hover:text-pink-600 py-2 font-bold">Signature Creations</a>
+      <a href="#about" onclick="toggleMobileMenu()" class="block text-sm uppercase tracking-widest text-brand-berry hover:text-pink-600 py-2 font-bold">Saleha's Craft</a>
+      <a href="#custom-quote" onclick="toggleMobileMenu()" class="block text-sm uppercase tracking-widest text-brand-berry hover:text-pink-600 py-2 font-bold">Book Order on WhatsApp</a>
     </div>
   </header>
 
-  <section id="hero" class="relative min-h-[92vh] flex items-center justify-center overflow-hidden px-4 sm:px-6">
-    <div class="absolute inset-0 bg-gradient-to-b from-brand-void via-brand-plum/70 to-brand-void z-0"></div>
-    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-amber-500/15 via-rose-950/20 to-transparent z-0 pointer-events-none"></div>
-
-    <div class="relative z-10 max-w-5xl mx-auto text-center py-12 sm:py-20">
+  <!-- Hero Section -->
+  <section id="hero" class="relative min-h-[85vh] flex items-center justify-center overflow-hidden px-4 sm:px-6">
+    <div class="relative z-10 max-w-5xl mx-auto text-center py-10 sm:py-16">
       
       <!-- Royal Crest Monogram -->
-      <div class="inline-flex flex-col items-center mb-6">
-        <div class="w-20 h-20 rounded-full border-2 border-brand-gold p-1 flex items-center justify-center mb-3 shadow-royal-glow bg-gradient-to-b from-brand-velvet to-brand-void animate-pulse-glow">
+      <div class="inline-flex flex-col items-center mb-5">
+        <div class="w-18 h-18 sm:w-20 sm:h-20 rounded-full border-2 border-brand-gold p-1 flex items-center justify-center mb-3 shadow-royal-glow bg-gradient-to-b from-white via-pink-100 to-rose-100 animate-pulse-glow">
           <div class="w-full h-full rounded-full border border-dashed border-brand-gold/70 flex items-center justify-center">
-            <span class="font-cinzel text-3xl font-bold gold-shimmer-text">PB</span>
+            <span class="font-cinzel text-2xl sm:text-3xl font-bold gold-shimmer-text">PB</span>
           </div>
         </div>
-        <div class="flex items-center gap-3 text-xs uppercase tracking-[0.4em] text-brand-gold font-cinzel font-semibold">
-          <span class="h-[1px] w-8 bg-brand-gold/50"></span>
+        <div class="flex items-center gap-2 sm:gap-3 text-xs uppercase tracking-[0.35em] text-pink-700 font-cinzel font-bold">
+          <span class="h-[1px] w-6 sm:w-8 bg-pink-300"></span>
           <span>Bespoke Confectionery & Wedding Gifting</span>
-          <span class="h-[1px] w-8 bg-brand-gold/50"></span>
+          <span class="h-[1px] w-6 sm:w-8 bg-pink-300"></span>
         </div>
       </div>
 
       <!-- Main Headline -->
-      <h1 class="font-cinzel text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tight leading-[1.1] mb-6">
+      <h1 class="font-cinzel text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight leading-[1.15] mb-5 text-brand-berry">
         Baking Happiness <br />
         <span class="font-serif italic font-normal gold-shimmer-text">In Every Royal Bite</span>
       </h1>
 
-      <p class="text-slate-300 max-w-2xl mx-auto text-sm sm:text-base md:text-lg font-light leading-relaxed mb-10">
-        From multi-tiered wedding cakes in Nanded with real edible 24k gold leaf to acrylic fairy-lit anniversary hampers and monogram initials chocolates delivered across India.
+      <p class="text-brand-berryLight max-w-2xl mx-auto text-sm sm:text-base font-normal leading-relaxed mb-8">
+        From multi-tiered wedding cakes in Nanded with edible 24k gold leaf to acrylic fairy-lit anniversary hampers and monogram initials chocolates delivered across India.
       </p>
 
       <!-- Action Buttons -->
-      <div class="flex flex-col sm:flex-row items-center justify-center gap-5">
-        <a href="#stage-3d" class="w-full sm:w-auto px-9 py-4 rounded-full bg-gradient-to-r from-brand-gold via-amber-400 to-brand-goldDeep text-brand-void font-cinzel font-bold text-xs uppercase tracking-[0.2em] hover:brightness-110 transition shadow-royal-glow flex items-center justify-center gap-3 transform hover:-translate-y-0.5 cursor-pointer">
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="#stage-3d" class="w-full sm:w-auto px-8 py-3.5 rounded-full bg-gradient-to-r from-pink-500 via-rose-400 to-amber-400 text-white font-cinzel font-bold text-xs uppercase tracking-[0.2em] hover:brightness-105 transition shadow-lg flex items-center justify-center gap-2.5 transform hover:-translate-y-0.5 cursor-pointer">
           <span>Enter 3D Studio & Customize</span>
           <i data-lucide="sparkles" class="w-4 h-4"></i>
         </a>
-        <a href="#creations" class="w-full sm:w-auto px-8 py-4 rounded-full royal-glass hover:border-brand-gold text-amber-200 hover:text-white font-cinzel font-semibold text-xs uppercase tracking-[0.2em] transition flex items-center justify-center gap-2 cursor-pointer">
+        <a href="#creations" class="w-full sm:w-auto px-7 py-3.5 rounded-full royal-glass hover:border-pink-400 text-brand-berry font-cinzel font-bold text-xs uppercase tracking-[0.2em] transition flex items-center justify-center gap-2 cursor-pointer">
           <span>Explore Catalog</span>
-          <i data-lucide="chevron-down" class="w-4 h-4 text-brand-gold"></i>
+          <i data-lucide="chevron-down" class="w-4 h-4 text-pink-500"></i>
         </a>
       </div>
 
       <!-- Live Prestige Metrics -->
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16 max-w-4xl mx-auto pt-10 border-t border-brand-gold/20">
-        <div class="royal-glass p-4 rounded-2xl border-brand-gold/15">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 mt-12 max-w-4xl mx-auto pt-8 border-t border-pink-200">
+        <div class="royal-glass p-4 rounded-2xl border-pink-200">
           <p class="font-cinzel text-2xl sm:text-3xl font-bold text-brand-gold">750+</p>
-          <p class="text-[11px] uppercase tracking-wider text-slate-300 mt-1">Bespoke Orders</p>
+          <p class="text-[11px] uppercase tracking-wider text-brand-berryLight font-semibold mt-1">Bespoke Orders</p>
         </div>
-        <div class="royal-glass p-4 rounded-2xl border-brand-gold/15">
-          <p class="font-cinzel text-2xl sm:text-3xl font-bold text-brand-gold">Nanded 📍</p>
-          <p class="text-[11px] uppercase tracking-wider text-slate-300 mt-1">Artisanal Studio</p>
+        <div class="royal-glass p-4 rounded-2xl border-pink-200">
+          <p class="font-cinzel text-2xl sm:text-3xl font-bold text-pink-600">Nanded 📍</p>
+          <p class="text-[11px] uppercase tracking-wider text-brand-berryLight font-semibold mt-1">Artisanal Studio</p>
         </div>
-        <div class="royal-glass p-4 rounded-2xl border-brand-gold/15">
+        <div class="royal-glass p-4 rounded-2xl border-pink-200">
           <p class="font-cinzel text-2xl sm:text-3xl font-bold text-brand-gold">Pan India 🚚</p>
-          <p class="text-[11px] uppercase tracking-wider text-slate-300 mt-1">Shockproof Logistics</p>
+          <p class="text-[11px] uppercase tracking-wider text-brand-berryLight font-semibold mt-1">Hamper Logistics</p>
         </div>
-        <div class="royal-glass p-4 rounded-2xl border-brand-gold/15">
-          <p class="font-cinzel text-2xl sm:text-3xl font-bold text-brand-gold">100% Pure</p>
-          <p class="text-[11px] uppercase tracking-wider text-slate-300 mt-1">Eggless Belgian</p>
+        <div class="royal-glass p-4 rounded-2xl border-pink-200">
+          <p class="font-cinzel text-2xl sm:text-3xl font-bold text-pink-600">100% Pure</p>
+          <p class="text-[11px] uppercase tracking-wider text-brand-berryLight font-semibold mt-1">Eggless & Belgian</p>
         </div>
       </div>
 
     </div>
   </section>
 
-  <section id="stage-3d" class="py-24 relative bg-gradient-to-b from-brand-void via-brand-velvet/60 to-brand-void border-t border-b border-brand-gold/25">
+  <!-- 3D Interactive Studio Section -->
+  <section id="stage-3d" class="py-16 sm:py-20 relative bg-gradient-to-b from-brand-void via-pink-100/40 to-brand-void border-t border-b border-pink-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <!-- Section Header -->
-      <div class="text-center max-w-3xl mx-auto mb-12">
-        <span class="text-xs uppercase tracking-[0.35em] text-pink-300 font-cinzel font-semibold flex items-center justify-center gap-2">
-          <i data-lucide="gem" class="w-4 h-4 text-brand-gold"></i>
-          Interactive 360° Inspection Turntable
+      <div class="text-center max-w-3xl mx-auto mb-10">
+        <span class="text-xs uppercase tracking-[0.35em] text-pink-600 font-cinzel font-bold flex items-center justify-center gap-2">
+          <span>🌸</span> Interactive 360° Studio Turntable
         </span>
-        <h2 class="font-cinzel text-3xl sm:text-5xl font-bold mt-2 text-white">
-          Inspect & Engrave <span class="font-serif italic font-normal gold-shimmer-text">Your Masterpiece</span>
+        <h2 class="font-cinzel text-3xl sm:text-5xl font-bold mt-2 text-brand-berry">
+          Customize Your <span class="font-serif italic font-normal gold-shimmer-text">Royal Creation</span>
         </h2>
-        <p class="text-slate-300 text-sm sm:text-base mt-3 max-w-2xl mx-auto">
-          Rotate with mouse or touch. Type your custom initials to see them dynamically engraved in gold foil on the cake tier or chocolate box in real-time!
+        <p class="text-brand-berryLight text-xs sm:text-sm mt-2 max-w-xl mx-auto">
+          Rotate with mouse or touch. Switch between cakes, flower boxes, acrylic hampers, and chocolate tiers. Type couple initials to engrave in real-time gold foil!
         </p>
       </div>
 
       <!-- Studio Layout Grid -->
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
         
         <!-- Left Customizer Controls -->
-        <div class="lg:col-span-4 space-y-6 order-2 lg:order-1">
+        <div class="lg:col-span-4 space-y-5 order-2 lg:order-1">
           
           <!-- Selected Item Information Card -->
-          <div class="royal-glass rounded-3xl p-6 relative overflow-hidden border-brand-gold/40 shadow-royal-glow">
+          <div class="royal-glass rounded-3xl p-6 relative overflow-hidden border-brand-gold/30">
             <div class="flex items-center justify-between mb-3">
-              <span id="modelBadge" class="bg-gradient-to-r from-brand-gold/25 to-amber-500/10 border border-brand-gold/60 text-brand-gold px-3 py-1 rounded-full text-[10px] font-cinzel font-bold tracking-widest uppercase">
+              <span id="modelBadge" class="bg-pink-100 border border-pink-300 text-pink-700 px-3 py-1 rounded-full text-[10px] font-cinzel font-bold tracking-widest uppercase shadow-sm">
                 Grandeur Edition
               </span>
-              <span class="text-[11px] text-brand-gold flex items-center gap-1.5 font-medium">
-                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                WebGL 3D Active
+              <span class="text-[11px] text-pink-700 flex items-center gap-1.5 font-bold">
+                <span class="w-2 h-2 rounded-full bg-pink-500 animate-pulse"></span>
+                WebGL 3D Live
               </span>
             </div>
 
-            <h3 id="modelTitle" class="font-cinzel text-xl sm:text-2xl font-bold text-white mb-2">
-              Royal 3-Tier Pearl Cake
+            <h3 id="modelTitle" class="font-cinzel text-2xl font-bold text-brand-berry mb-1.5">
+              Royal 3-Tier Floral Cake
             </h3>
-            <p id="modelDesc" class="text-slate-300 text-xs sm:text-sm leading-relaxed mb-5 font-light">
-              Architectural celebration cake coated in rich velvet glaze, 24k gold leaf piping, handcrafted pearls, and crowned with Saleha’s signature golden fluttering butterfly topper.
+            <p id="modelDesc" class="text-brand-berryLight text-xs leading-relaxed mb-5 font-normal">
+              Architectural 3-tier celebration cake coated in rich velvet glaze, 24k gold leaf piping, sculpted sugar roses, handcrafted pearls, and crowned with Saleha’s golden fluttering butterfly.
             </p>
 
-            <!-- Price and Add to Inquiry Tray -->
-            <div class="pt-4 border-t border-brand-gold/20 flex items-center justify-between">
+            <div class="pt-4 border-t border-pink-200 flex items-center justify-between">
               <div>
-                <span class="text-[10px] uppercase tracking-widest text-slate-400 block font-cinzel">Live Config Price</span>
+                <span class="text-[10px] uppercase tracking-widest text-brand-berryLight/80 block font-cinzel font-bold">Price</span>
                 <span id="modelPrice" class="font-cinzel text-2xl font-extrabold text-brand-gold">₹3,499</span>
               </div>
-              <button onclick="addCurrent3DToCart()" class="bg-gradient-to-r from-brand-gold to-amber-500 hover:from-amber-400 hover:to-brand-gold text-brand-void px-5 py-2.5 rounded-full text-xs font-cinzel font-bold uppercase tracking-wider transition shadow-royal-glow flex items-center gap-2 cursor-pointer">
+              <button onclick="addCurrent3DToCart()" class="bg-gradient-to-r from-pink-500 via-rose-500 to-amber-500 text-white hover:brightness-105 px-5 py-2.5 rounded-full text-xs font-cinzel font-bold uppercase tracking-wider transition shadow-md flex items-center gap-2 cursor-pointer">
                 <i data-lucide="plus" class="w-4 h-4"></i> Add To Tray
               </button>
             </div>
           </div>
 
-          <!-- 3D Studio Customization Panel -->
-          <div class="royal-glass rounded-3xl p-6 border-brand-gold/30 space-y-5">
+          <!-- 3D Studio Customization Controls Panel -->
+          <div class="royal-glass rounded-3xl p-6 border-brand-gold/30 space-y-4">
             <div>
-              <label class="text-xs uppercase tracking-[0.2em] text-amber-200/90 font-cinzel font-semibold block mb-2.5">
-                1. Select 3D Creation:
+              <label class="text-xs uppercase tracking-[0.2em] text-pink-700 font-cinzel font-bold block mb-2 flex items-center justify-between">
+                <span>1. Select 3D Creation:</span>
+                <span class="text-[10px] text-pink-500 font-bold">4 Models</span>
               </label>
-              <div class="grid grid-cols-3 gap-2">
-                <button onclick="switch3DModel('wedding')" id="btn-wedding" class="px-2.5 py-2.5 rounded-xl text-xs font-cinzel font-bold border-2 border-brand-gold bg-brand-gold text-brand-void transition shadow-lg text-center cursor-pointer">
-                  🎂 Royal Cake
+              <div class="grid grid-cols-2 sm:grid-cols-4 gap-2">
+                <button onclick="switch3DModel('wedding')" id="btn-wedding" class="px-2 py-2.5 rounded-xl text-[11px] font-cinzel font-bold border-2 border-pink-500 bg-pink-500 text-white transition shadow-md text-center cursor-pointer">
+                  🎂 Floral Cake
                 </button>
-                <button onclick="switch3DModel('hamper')" id="btn-hamper" class="px-2.5 py-2.5 rounded-xl text-xs font-cinzel font-bold border border-white/10 hover:border-brand-gold/60 bg-white/5 text-slate-200 transition text-center cursor-pointer">
-                  🎁 Luxe Hamper
+                <button onclick="switch3DModel('flowerBox')" id="btn-flowerBox" class="px-2 py-2.5 rounded-xl text-[11px] font-cinzel font-bold border border-pink-200 hover:border-pink-400 bg-white/80 text-brand-berry transition text-center cursor-pointer">
+                  🌸 Rose Box
                 </button>
-                <button onclick="switch3DModel('chocolates')" id="btn-chocolates" class="px-2.5 py-2.5 rounded-xl text-xs font-cinzel font-bold border border-white/10 hover:border-brand-gold/60 bg-white/5 text-slate-200 transition text-center cursor-pointer">
+                <button onclick="switch3DModel('hamper')" id="btn-hamper" class="px-2 py-2.5 rounded-xl text-[11px] font-cinzel font-bold border border-pink-200 hover:border-pink-400 bg-white/80 text-brand-berry transition text-center cursor-pointer">
+                  🎁 Fairy Hamper
+                </button>
+                <button onclick="switch3DModel('chocolates')" id="btn-chocolates" class="px-2 py-2.5 rounded-xl text-[11px] font-cinzel font-bold border border-pink-200 hover:border-pink-400 bg-white/80 text-brand-berry transition text-center cursor-pointer">
                   🍫 Truffle Tier
                 </button>
               </div>
             </div>
 
             <!-- Dynamic Monogram Live Engraving Input -->
-            <div class="pt-3 border-t border-brand-gold/15">
-              <label class="text-xs uppercase tracking-[0.2em] text-amber-200/90 font-cinzel font-semibold flex items-center justify-between mb-2">
+            <div class="pt-3 border-t border-pink-200">
+              <label class="text-xs uppercase tracking-[0.2em] text-pink-700 font-cinzel font-bold flex items-center justify-between mb-2">
                 <span>2. Couple Monogram Initials:</span>
-                <span class="text-[10px] text-pink-300 font-normal">Live 3D Texture</span>
+                <span class="text-[10px] text-pink-500 font-bold">Live 3D Gold Foil</span>
               </label>
               <div class="flex gap-2">
-                <input type="text" id="monogramInput" maxlength="6" value="S & A" placeholder="e.g. S & A" class="w-full bg-brand-void/90 border border-brand-gold/40 rounded-xl px-3 py-2 text-sm text-brand-gold font-cinzel font-bold focus:outline-none focus:border-brand-gold uppercase text-center" oninput="updateMonogramTexture(this.value)" />
-                <button onclick="randomizeMonogram()" class="px-3 py-2 royal-glass text-xs font-cinzel text-brand-gold hover:text-white rounded-xl border border-brand-gold/40 cursor-pointer" title="Random Initials">
+                <input type="text" id="monogramInput" maxlength="6" value="S & A" placeholder="e.g. S & A" class="w-full bg-white/95 border border-pink-300 rounded-xl px-3 py-2 text-sm text-brand-gold font-cinzel font-bold focus:outline-none focus:border-pink-500 uppercase text-center shadow-inner" oninput="updateMonogramTexture(this.value)" />
+                <button onclick="randomizeMonogram()" class="px-3 py-2 royal-glass text-xs font-cinzel text-pink-700 hover:text-pink-900 rounded-xl border border-pink-300 cursor-pointer" title="Randomize Initials">
                   🎲
                 </button>
               </div>
             </div>
 
             <!-- Color Glaze Swatches -->
-            <div class="pt-3 border-t border-brand-gold/15">
-              <label class="text-xs uppercase tracking-[0.2em] text-amber-200/90 font-cinzel font-semibold block mb-2">
-                3. Glaze & Finish:
+            <div class="pt-3 border-t border-pink-200">
+              <label class="text-xs uppercase tracking-[0.2em] text-pink-700 font-cinzel font-bold block mb-2">
+                3. Velvet Glaze & Finish:
               </label>
               <div class="flex items-center justify-between">
                 <div class="flex items-center gap-2">
-                  <button onclick="change3DColor(0x2a081c, 'Burgundy Velvet')" class="w-7 h-7 rounded-full bg-[#2a081c] border-2 border-white/70 shadow-md hover:scale-110 transition cursor-pointer" title="Burgundy Velvet"></button>
-                  <button onclick="change3DColor(0xd4af37, '24K Imperial Gold')" class="w-7 h-7 rounded-full bg-[#d4af37] border-2 border-white/70 shadow-md hover:scale-110 transition cursor-pointer" title="Imperial Gold"></button>
-                  <button onclick="change3DColor(0x1a0d0a, 'Belgian Dark Truffle')" class="w-7 h-7 rounded-full bg-[#1a0d0a] border-2 border-white/70 shadow-md hover:scale-110 transition cursor-pointer" title="Belgian Dark Truffle"></button>
-                  <button onclick="change3DColor(0xf4b4c7, 'French Rose Blush')" class="w-7 h-7 rounded-full bg-[#f4b4c7] border-2 border-white/70 shadow-md hover:scale-110 transition cursor-pointer" title="French Rose Blush"></button>
-                  <button onclick="change3DColor(0xfffdf7, 'Ivory Champagne')" class="w-7 h-7 rounded-full bg-[#fffdf7] border-2 border-white/70 shadow-md hover:scale-110 transition cursor-pointer" title="Ivory Champagne"></button>
+                  <button onclick="change3DColor(0xfbcfe8, 'Baby Pink Velvet')" class="w-7 h-7 rounded-full bg-[#fbcfe8] border-2 border-pink-400 shadow-md hover:scale-110 transition cursor-pointer" title="Baby Pink Velvet"></button>
+                  <button onclick="change3DColor(0xf472b6, 'French Rose Blush')" class="w-7 h-7 rounded-full bg-[#f472b6] border-2 border-pink-500 shadow-md hover:scale-110 transition cursor-pointer" title="French Rose Blush"></button>
+                  <button onclick="change3DColor(0xffe4e6, 'Pastel Cherry Blossom')" class="w-7 h-7 rounded-full bg-[#ffe4e6] border-2 border-rose-300 shadow-md hover:scale-110 transition cursor-pointer" title="Cherry Blossom"></button>
+                  <button onclick="change3DColor(0xd4af37, '24K Imperial Gold')" class="w-7 h-7 rounded-full bg-[#d4af37] border-2 border-amber-400 shadow-md hover:scale-110 transition cursor-pointer" title="Imperial Gold"></button>
+                  <button onclick="change3DColor(0xfffdfa, 'Ivory Champagne')" class="w-7 h-7 rounded-full bg-[#fffdfa] border-2 border-amber-200 shadow-md hover:scale-110 transition cursor-pointer" title="Ivory Champagne"></button>
                 </div>
-                <span id="activeColorName" class="text-[10px] text-brand-gold font-cinzel">Burgundy Velvet</span>
+                <span id="activeColorName" class="text-[10px] text-pink-700 font-cinzel font-bold">Baby Pink Velvet</span>
               </div>
             </div>
 
             <!-- Toppings & Effects Toggles -->
-            <div class="pt-3 border-t border-brand-gold/15 space-y-2.5">
-              <label class="text-xs uppercase tracking-[0.2em] text-amber-200/90 font-cinzel font-semibold block">
-                4. Luxury Accents:
+            <div class="pt-3 border-t border-pink-200 space-y-2">
+              <label class="text-xs uppercase tracking-[0.2em] text-pink-700 font-cinzel font-bold block">
+                4. Luxury Accents & Petal Showers:
               </label>
               <div class="grid grid-cols-2 gap-2">
-                <button id="toggleSparklerBtn" onclick="toggleCelebrationFountain()" class="px-2.5 py-2 rounded-xl text-[11px] font-cinzel border border-brand-gold/40 royal-glass text-amber-200 hover:text-white flex items-center justify-center gap-1.5 cursor-pointer">
-                  <i data-lucide="flame" class="w-3.5 h-3.5 text-amber-400"></i> Sparkler: <span id="sparklerLabel">OFF</span>
+                <button id="toggleSparklerBtn" onclick="toggleCelebrationFountain()" class="px-2.5 py-2 rounded-xl text-[11px] font-cinzel border border-pink-300 royal-glass text-brand-berry hover:text-pink-600 flex items-center justify-center gap-1.5 cursor-pointer font-bold">
+                  <i data-lucide="flame" class="w-3.5 h-3.5 text-amber-500"></i> Sparkler: <span id="sparklerLabel">OFF</span>
                 </button>
-                <button id="toggleLightingBtn" onclick="cycleStudioLighting()" class="px-2.5 py-2 rounded-xl text-[11px] font-cinzel border border-brand-gold/40 royal-glass text-amber-200 hover:text-white flex items-center justify-center gap-1.5 cursor-pointer">
-                  <i data-lucide="sun" class="w-3.5 h-3.5 text-brand-gold"></i> Mood: <span id="lightMoodLabel">Palace</span>
+                <button id="toggleSugarFlowerBtn" onclick="toggleSugarPetalShower()" class="px-2.5 py-2 rounded-xl text-[11px] font-cinzel border border-pink-300 royal-glass text-brand-berry hover:text-pink-600 flex items-center justify-center gap-1.5 cursor-pointer font-bold">
+                  <span>🌸</span> 3D Petals: <span id="sugarPetalLabel">ON</span>
                 </button>
               </div>
             </div>
@@ -408,32 +461,32 @@
 
         <!-- Center 3D Stage Container -->
         <div class="lg:col-span-8 order-1 lg:order-2 flex flex-col items-center">
-          <div class="relative w-full h-[440px] sm:h-[530px] md:h-[600px] rounded-3xl royal-glass overflow-hidden shadow-2xl border-2 border-brand-gold/40 group">
+          <div class="relative w-full h-[400px] sm:h-[500px] md:h-[560px] rounded-3xl royal-glass overflow-hidden shadow-2xl border-2 border-brand-gold/40 group bg-gradient-to-b from-white/90 via-pink-50/80 to-rose-100/60">
             
             <!-- Three.js Canvas -->
-            <canvas id="threeCanvas" class="w-full h-full cursor-grab active:cursor-grabbing touch-none"></canvas>
+            <canvas id="threeCanvas" class="w-full h-full cursor-grab active:cursor-grabbing touch-none block"></canvas>
 
             <!-- Top Left Status Pill -->
-            <div class="absolute top-5 left-5 royal-glass px-3.5 py-1.5 rounded-full border border-brand-gold/40 text-[11px] font-cinzel text-brand-gold flex items-center gap-2 pointer-events-none">
-              <i data-lucide="crown" class="w-3.5 h-3.5"></i>
+            <div class="absolute top-4 left-4 sm:top-5 sm:left-5 royal-glass px-3.5 py-1.5 rounded-full border border-pink-300 text-[10px] sm:text-[11px] font-cinzel text-pink-700 font-bold flex items-center gap-2 pointer-events-none shadow-sm">
+              <i data-lucide="crown" class="w-3.5 h-3.5 text-brand-gold"></i>
               <span>Packs_n_Bakes Royal Turntable</span>
             </div>
 
             <!-- Top Right Camera View Presets -->
-            <div class="absolute top-5 right-5 flex items-center gap-2">
-              <button onclick="setCameraPreset('front')" class="royal-glass hover:bg-brand-plum/90 border border-brand-gold/40 text-brand-gold text-[10px] px-2.5 py-1.5 rounded-lg transition font-cinzel cursor-pointer" title="Front Camera">Front</button>
-              <button onclick="setCameraPreset('isometric')" class="royal-glass hover:bg-brand-plum/90 border border-brand-gold/40 text-brand-gold text-[10px] px-2.5 py-1.5 rounded-lg transition font-cinzel cursor-pointer" title="Isometric 45°">45° View</button>
-              <button onclick="setCameraPreset('top')" class="royal-glass hover:bg-brand-plum/90 border border-brand-gold/40 text-brand-gold text-[10px] px-2.5 py-1.5 rounded-lg transition font-cinzel cursor-pointer" title="Top Down View">Top</button>
+            <div class="absolute top-4 right-4 sm:top-5 sm:right-5 flex items-center gap-1.5 sm:gap-2">
+              <button onclick="setCameraPreset('front')" class="royal-glass hover:bg-pink-100 border border-pink-300 text-brand-berry text-[9px] sm:text-[10px] px-2 sm:px-2.5 py-1.5 rounded-lg transition font-cinzel font-bold cursor-pointer" title="Front Camera">Front</button>
+              <button onclick="setCameraPreset('isometric')" class="royal-glass hover:bg-pink-100 border border-pink-300 text-brand-berry text-[9px] sm:text-[10px] px-2 sm:px-2.5 py-1.5 rounded-lg transition font-cinzel font-bold cursor-pointer" title="Isometric 45°">45°</button>
+              <button onclick="setCameraPreset('top')" class="royal-glass hover:bg-pink-100 border border-pink-300 text-brand-berry text-[9px] sm:text-[10px] px-2 sm:px-2.5 py-1.5 rounded-lg transition font-cinzel font-bold cursor-pointer" title="Top Down View">Top</button>
               
-              <button onclick="toggleAutoRotate()" id="rotateToggleBtn" class="royal-glass hover:bg-brand-plum/90 border border-brand-gold/40 text-brand-gold text-xs px-3 py-1.5 rounded-lg transition flex items-center gap-1.5 cursor-pointer">
-                <i data-lucide="rotate-cw" class="w-3.5 h-3.5"></i>
-                <span id="rotateStatus" class="font-cinzel text-[10px]">Spin: ON</span>
+              <button onclick="toggleAutoRotate()" id="rotateToggleBtn" class="royal-glass hover:bg-pink-100 border border-pink-300 text-pink-700 text-xs px-2.5 sm:px-3 py-1.5 rounded-lg transition flex items-center gap-1 cursor-pointer font-bold">
+                <i data-lucide="rotate-cw" class="w-3.5 h-3.5 text-pink-500"></i>
+                <span id="rotateStatus" class="font-cinzel text-[9px] sm:text-[10px]">Spin: ON</span>
               </button>
             </div>
 
-            <!-- Bottom Floating Guidance and Monogram Overlay Indicator -->
-            <div class="absolute bottom-5 left-1/2 transform -translate-x-1/2 royal-glass px-5 py-2 rounded-full border border-brand-gold/40 text-xs text-amber-200/90 flex items-center gap-2 pointer-events-none backdrop-blur-md whitespace-nowrap shadow-lg">
-              <i data-lucide="move" class="w-4 h-4 text-brand-gold"></i>
+            <!-- Bottom Floating Guidance -->
+            <div class="absolute bottom-4 sm:bottom-5 left-1/2 transform -translate-x-1/2 royal-glass px-4 sm:px-5 py-2 rounded-full border border-pink-300 text-[10px] sm:text-xs text-brand-berry font-bold flex items-center gap-2 pointer-events-none backdrop-blur-md whitespace-nowrap shadow-md">
+              <i data-lucide="move" class="w-3.5 h-3.5 sm:w-4 sm:h-4 text-pink-500"></i>
               <span class="font-cinzel">Drag 360° | Scroll to Zoom | Butterfly Flutters Live</span>
             </div>
 
@@ -444,207 +497,246 @@
     </div>
   </section>
 
-  <section id="creations" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center max-w-3xl mx-auto mb-14">
-      <span class="text-xs uppercase tracking-[0.35em] text-pink-300 font-cinzel font-semibold flex items-center justify-center gap-2">
-        <i data-lucide="sparkles" class="w-4 h-4 text-brand-gold"></i>
+  <!-- Creations Catalog Section -->
+  <section id="creations" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-3xl mx-auto mb-12">
+      <span class="text-xs uppercase tracking-[0.35em] text-pink-600 font-cinzel font-bold flex items-center justify-center gap-2">
+        <span class="text-pink-500">🌸</span>
         Saleha's Signature Creations
       </span>
-      <h2 class="font-cinzel text-3xl sm:text-5xl font-bold mt-2 text-white">
+      <h2 class="font-cinzel text-3xl sm:text-5xl font-bold mt-2 text-brand-berry">
         Crafted For <span class="font-serif italic font-normal gold-shimmer-text">Unforgettable Celebrations</span>
       </h2>
-      <p class="text-slate-300 text-sm sm:text-base mt-3">
+      <p class="text-brand-berryLight text-xs sm:text-sm mt-3">
         From engagement party monogram chocolate boxes to transparent LED acrylic gift hampers, multi-tiered wedding cakes, and Lotus Biscoff fudge brownies.
       </p>
 
       <!-- Category Filter Pills -->
-      <div class="flex flex-wrap items-center justify-center gap-2.5 mt-9">
-        <button onclick="filterCategory('all', event)" class="cat-pill active px-6 py-2.5 rounded-full text-xs font-cinzel font-bold tracking-widest uppercase border-2 border-brand-gold bg-brand-gold text-brand-void transition cursor-pointer">
+      <div class="flex flex-wrap items-center justify-center gap-2 mt-8">
+        <button onclick="filterCategory('all', event)" class="cat-pill active px-5 py-2 rounded-full text-xs font-cinzel font-bold tracking-widest uppercase border-2 border-pink-500 bg-pink-500 text-white transition cursor-pointer shadow-sm">
           All Collections
         </button>
-        <button onclick="filterCategory('chocolates', event)" class="cat-pill px-6 py-2.5 rounded-full text-xs font-cinzel font-bold tracking-widest uppercase border border-white/10 hover:border-brand-gold/50 bg-white/5 text-slate-300 transition cursor-pointer">
+        <button onclick="filterCategory('chocolates', event)" class="cat-pill px-5 py-2 rounded-full text-xs font-cinzel font-bold tracking-widest uppercase border border-pink-200 hover:border-pink-400 bg-white/80 text-brand-berry transition cursor-pointer">
           Monogram Chocolates 🍪
         </button>
-        <button onclick="filterCategory('hampers', event)" class="cat-pill px-6 py-2.5 rounded-full text-xs font-cinzel font-bold tracking-widest uppercase border border-white/10 hover:border-brand-gold/50 bg-white/5 text-slate-300 transition cursor-pointer">
+        <button onclick="filterCategory('hampers', event)" class="cat-pill px-5 py-2 rounded-full text-xs font-cinzel font-bold tracking-widest uppercase border border-pink-200 hover:border-pink-400 bg-white/80 text-brand-berry transition cursor-pointer">
           Wedding Hampers 🎀
         </button>
-        <button onclick="filterCategory('cakes', event)" class="cat-pill px-6 py-2.5 rounded-full text-xs font-cinzel font-bold tracking-widest uppercase border border-white/10 hover:border-brand-gold/50 bg-white/5 text-slate-300 transition cursor-pointer">
+        <button onclick="filterCategory('cakes', event)" class="cat-pill px-5 py-2 rounded-full text-xs font-cinzel font-bold tracking-widest uppercase border border-pink-200 hover:border-pink-400 bg-white/80 text-brand-berry transition cursor-pointer">
           Custom Cakes 🌸
         </button>
-        <button onclick="filterCategory('brownies', event)" class="cat-pill px-6 py-2.5 rounded-full text-xs font-cinzel font-bold tracking-widest uppercase border border-white/10 hover:border-brand-gold/50 bg-white/5 text-slate-300 transition cursor-pointer">
+        <button onclick="filterCategory('brownies', event)" class="cat-pill px-5 py-2 rounded-full text-xs font-cinzel font-bold tracking-widest uppercase border border-pink-200 hover:border-pink-400 bg-white/80 text-brand-berry transition cursor-pointer">
           Brownies & Jars 🧁
         </button>
       </div>
     </div>
 
     <!-- Product Grid -->
-    <div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
       <!-- Injected via JavaScript -->
     </div>
   </section>
 
-  <section id="bespoke-hampers" class="py-20 bg-gradient-to-b from-brand-void via-brand-plum/40 to-brand-void border-t border-brand-gold/20">
+  <!-- Sweetest Flavours & Fillings Palette -->
+  <section class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-2xl mx-auto mb-10">
+      <span class="text-xs uppercase tracking-[0.35em] text-pink-600 font-cinzel font-bold flex items-center justify-center gap-2">
+        <span>🧁</span> Gourmet Flavour Palette
+      </span>
+      <h3 class="font-cinzel text-3xl sm:text-4xl font-bold mt-2 text-brand-berry">
+        Wholesome Sponges & <span class="font-serif italic font-normal gold-shimmer-text">Melt-In-Mouth Fillings</span>
+      </h3>
+      <p class="text-brand-berryLight text-xs sm:text-sm mt-2 font-normal">
+        Every layer is crafted 100% fresh in Nanded using Belgian Callebaut chocolate, French fruit compotes, and silky buttercream.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4">
+      <div class="royal-glass p-4 sm:p-5 rounded-2xl text-center border-pink-200 hover:scale-105 transition duration-300">
+        <div class="w-10 h-10 sm:w-12 sm:h-12 mx-auto mb-2 sm:mb-3 rounded-full bg-pink-100 flex items-center justify-center text-xl shadow-inner">🍓</div>
+        <h4 class="font-cinzel text-xs font-bold text-brand-berry">Strawberry Rose</h4>
+        <p class="text-[10px] text-pink-700 mt-1 font-medium">Fresh berry compote & rose cream</p>
+      </div>
+      <div class="royal-glass p-4 sm:p-5 rounded-2xl text-center border-pink-200 hover:scale-105 transition duration-300">
+        <div class="w-10 h-10 sm:w-12 sm:h-12 mx-auto mb-2 sm:mb-3 rounded-full bg-amber-100 flex items-center justify-center text-xl shadow-inner">🍫</div>
+        <h4 class="font-cinzel text-xs font-bold text-brand-berry">Belgian Truffle</h4>
+        <p class="text-[10px] text-pink-700 mt-1 font-medium">55% dark chocolate silk ganache</p>
+      </div>
+      <div class="royal-glass p-4 sm:p-5 rounded-2xl text-center border-pink-200 hover:scale-105 transition duration-300">
+        <div class="w-10 h-10 sm:w-12 sm:h-12 mx-auto mb-2 sm:mb-3 rounded-full bg-pink-100 flex items-center justify-center text-xl shadow-inner">🍪</div>
+        <h4 class="font-cinzel text-xs font-bold text-brand-berry">Lotus Biscoff</h4>
+        <p class="text-[10px] text-pink-700 mt-1 font-medium">Spiced caramel swirl & crumble</p>
+      </div>
+      <div class="royal-glass p-4 sm:p-5 rounded-2xl text-center border-pink-200 hover:scale-105 transition duration-300">
+        <div class="w-10 h-10 sm:w-12 sm:h-12 mx-auto mb-2 sm:mb-3 rounded-full bg-rose-100 flex items-center justify-center text-xl shadow-inner">✨</div>
+        <h4 class="font-cinzel text-xs font-bold text-brand-berry">Vanilla Bean</h4>
+        <p class="text-[10px] text-pink-700 mt-1 font-medium">Madagascar vanilla Chantilly</p>
+      </div>
+      <div class="royal-glass p-4 sm:p-5 rounded-2xl text-center border-pink-200 hover:scale-105 transition duration-300">
+        <div class="w-10 h-10 sm:w-12 sm:h-12 mx-auto mb-2 sm:mb-3 rounded-full bg-pink-100 flex items-center justify-center text-xl shadow-inner">🌸</div>
+        <h4 class="font-cinzel text-xs font-bold text-brand-berry">Pistachio Rose</h4>
+        <p class="text-[10px] text-pink-700 mt-1 font-medium">Roasted Iranian pistachio & petals</p>
+      </div>
+      <div class="royal-glass p-4 sm:p-5 rounded-2xl text-center border-pink-200 hover:scale-105 transition duration-300">
+        <div class="w-10 h-10 sm:w-12 sm:h-12 mx-auto mb-2 sm:mb-3 rounded-full bg-amber-100 flex items-center justify-center text-xl shadow-inner">🌰</div>
+        <h4 class="font-cinzel text-xs font-bold text-brand-berry">Ferrero Rocher</h4>
+        <p class="text-[10px] text-pink-700 mt-1 font-medium">Roasted hazelnuts & praline</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Customer Love Notes & Polaroid Keepsakes -->
+  <section class="py-16 bg-gradient-to-b from-brand-void via-pink-100/40 to-brand-void border-t border-pink-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <span class="text-xs uppercase tracking-[0.35em] text-pink-600 font-cinzel font-bold flex items-center justify-center gap-2">
+          <span>💌</span> Bride & Client Love Notes
+        </span>
+        <h3 class="font-cinzel text-3xl sm:text-4xl font-bold mt-2 text-brand-berry">
+          Words From Our <span class="font-serif italic font-normal gold-shimmer-text">Princess Celebrations</span>
+        </h3>
+        <p class="text-brand-berryLight text-xs sm:text-sm mt-2">
+          Over 750+ smiles shared in Nanded and delivered to doorsteps across India.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+        <!-- Polaroid Card 1 -->
+        <div class="polaroid-card group hover:-translate-y-1.5 transition duration-300">
+          <div class="washi-tape"></div>
+          <div class="h-52 rounded-xl overflow-hidden mb-3">
+            <img src="https://images.unsplash.com/photo-1535141192574-5d4897c13136?q=80&w=800&auto=format&fit=crop" alt="Bridal Cake Review" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
+          </div>
+          <div class="flex items-center gap-1 text-amber-400 text-xs mb-2">★★★★★</div>
+          <p class="text-xs text-brand-berryLight font-normal leading-relaxed italic mb-3">
+            "Saleha made my dream wedding cake! The golden butterfly and pastel pink pearls looked straight out of a royal fairy tale. Everyone at the reception kept taking pictures!"
+          </p>
+          <div class="flex items-center justify-between border-t border-pink-100 pt-2.5">
+            <span class="font-cinzel text-xs font-bold text-pink-700">Ayesha & Zaid</span>
+            <span class="text-[10px] text-brand-berryLight/70 font-semibold">Nanded Wedding 💍</span>
+          </div>
+        </div>
+
+        <!-- Polaroid Card 2 -->
+        <div class="polaroid-card group hover:-translate-y-1.5 transition duration-300">
+          <div class="washi-tape"></div>
+          <div class="h-52 rounded-xl overflow-hidden mb-3">
+            <img src="https://images.unsplash.com/photo-1549007994-cb92caebd54b?q=80&w=800&auto=format&fit=crop" alt="Monogram Chocolates" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
+          </div>
+          <div class="flex items-center gap-1 text-amber-400 text-xs mb-2">★★★★★</div>
+          <p class="text-xs text-brand-berryLight font-normal leading-relaxed italic mb-3">
+            "The initial monogram chocolates arrived in Mumbai in pristine condition! Shockproof packing was so secure and the Belgian chocolate taste was super rich and authentic."
+          </p>
+          <div class="flex items-center justify-between border-t border-pink-100 pt-2.5">
+            <span class="font-cinzel text-xs font-bold text-pink-700">Sana Khan</span>
+            <span class="text-[10px] text-brand-berryLight/70 font-semibold">Mumbai Courier 🚚</span>
+          </div>
+        </div>
+
+        <!-- Polaroid Card 3 -->
+        <div class="polaroid-card group hover:-translate-y-1.5 transition duration-300">
+          <div class="washi-tape"></div>
+          <div class="h-52 rounded-xl overflow-hidden mb-3">
+            <img src="https://images.unsplash.com/photo-1513201099705-a9746e1e201f?q=80&w=800&auto=format&fit=crop" alt="Fairy Hamper Review" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
+          </div>
+          <div class="flex items-center gap-1 text-amber-400 text-xs mb-2">★★★★★</div>
+          <p class="text-xs text-brand-berryLight font-normal leading-relaxed italic mb-3">
+            "The acrylic LED hamper with fairy lights made my sister cry happy tears on her engagement! Saleha’s attention to ribbons, stickers and rose petals is simply unmatched."
+          </p>
+          <div class="flex items-center justify-between border-t border-pink-100 pt-2.5">
+            <span class="font-cinzel text-xs font-bold text-pink-700">Fariha Patel</span>
+            <span class="text-[10px] text-brand-berryLight/70 font-semibold">Hyderabad 🌸</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Story & Craftsmanship Section -->
+  <section id="about" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
       
-      <div class="royal-glass rounded-3xl p-8 sm:p-14 border-2 border-brand-gold/40 shadow-royal-glow relative overflow-hidden">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+      <!-- Visual Frame -->
+      <div class="lg:col-span-6 relative">
+        <div class="aspect-[4/3] rounded-3xl overflow-hidden royal-glass border-2 border-brand-gold/40 shadow-xl relative group">
+          <img src="https://images.unsplash.com/photo-1535141192574-5d4897c13136?q=80&w=1200&auto=format&fit=crop" alt="Packs and Bakes Artistry" class="w-full h-full object-cover group-hover:scale-105 transition duration-700" onerror="this.src='https://images.unsplash.com/photo-1578985545062-69928b1d9587?q=80&w=1000&auto=format&fit=crop'" />
+          <div class="absolute inset-0 bg-gradient-to-t from-pink-950/70 via-transparent to-transparent"></div>
           
-          <div class="lg:col-span-7 space-y-6">
-            <span class="text-xs uppercase tracking-[0.35em] text-pink-300 font-cinzel font-semibold flex items-center gap-2">
-              <i data-lucide="sparkles" class="w-4 h-4 text-brand-gold"></i>
-              Trousseau & Gift Hamper Services
+          <div class="absolute bottom-6 left-6 right-6">
+            <span class="bg-gradient-to-r from-pink-500 to-amber-500 text-white font-cinzel font-bold text-[10px] tracking-widest uppercase px-3.5 py-1 rounded-full mb-2 inline-block">
+              Nanded Artisanal Studio 🦋
             </span>
-            <h2 class="font-cinzel text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight">
-              Luminescent Acrylic <br />
-              <span class="font-serif italic font-normal gold-shimmer-text">& Bridal Keepsake Boxes</span>
-            </h2>
-            <p class="text-slate-300 text-sm sm:text-base leading-relaxed font-light">
-              Elevate your bridal giveaways, Nikah favors, and anniversary surprises with our signature clear acrylic boxes, fitted with warm micro-LED fairy lights, imported double-faced satin ribbons, and bespoke monogram stationery.
-            </p>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-              <div class="flex items-start gap-3 p-3.5 rounded-2xl bg-white/5 border border-white/10">
-                <i data-lucide="package-check" class="w-5 h-5 text-brand-gold flex-shrink-0 mt-0.5"></i>
-                <div class="text-xs">
-                  <strong class="font-cinzel text-white block">Custom Name Calligraphy</strong>
-                  <span class="text-slate-400 font-light">Gold-foiled couple monograms printed on velvet parchment.</span>
-                </div>
-              </div>
-
-              <div class="flex items-start gap-3 p-3.5 rounded-2xl bg-white/5 border border-white/10">
-                <i data-lucide="truck" class="w-5 h-5 text-brand-gold flex-shrink-0 mt-0.5"></i>
-                <div class="text-xs">
-                  <strong class="font-cinzel text-white block">Pan-India Express Transit</strong>
-                  <span class="text-slate-400 font-light">Shockproof multi-layer thermocol cushioning for safe shipping.</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="pt-2 flex flex-wrap gap-4">
-              <a href="#custom-quote" class="px-7 py-3.5 rounded-full bg-gradient-to-r from-brand-gold to-amber-500 text-brand-void font-cinzel font-bold text-xs uppercase tracking-wider hover:brightness-110 transition shadow-royal-glow inline-flex items-center gap-2">
-                <i data-lucide="gift" class="w-4 h-4"></i> Inquire Hamper Slot
-              </a>
-              <button onclick="switch3DModel('hamper')" class="px-6 py-3.5 rounded-full royal-glass hover:border-brand-gold text-amber-200 hover:text-white font-cinzel font-bold text-xs uppercase tracking-wider transition inline-flex items-center gap-2 cursor-pointer">
-                <span>View 3D Hamper Box</span>
-                <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
-              </button>
-            </div>
+            <h4 class="font-cinzel text-xl sm:text-2xl font-bold text-white">Handcrafted With Supreme Love</h4>
+            <p class="text-xs text-pink-100 mt-1 font-light">Every sponge baked fresh and flower sculpted by Saleha personally.</p>
           </div>
+        </div>
+      </div>
 
-          <div class="lg:col-span-5">
-            <div class="aspect-square rounded-3xl overflow-hidden royal-glass border-2 border-brand-gold/40 shadow-2xl relative group">
-              <img src="https://images.unsplash.com/photo-1513201099705-a9746e1e201f?q=80&w=900&auto=format&fit=crop" alt="Packs and Bakes Gift Hamper" class="w-full h-full object-cover group-hover:scale-105 transition duration-700" onerror="this.src='https://images.unsplash.com/photo-1549007994-cb92caebd54b?q=80&w=800&auto=format&fit=crop'" />
-              <div class="absolute inset-0 bg-gradient-to-t from-brand-void via-transparent to-transparent opacity-80"></div>
-              <div class="absolute bottom-5 left-5 right-5">
-                <span class="bg-brand-void/80 border border-brand-gold/50 text-brand-gold px-3 py-1 rounded-full text-[10px] font-cinzel font-bold tracking-widest uppercase mb-2 inline-block">
-                  Handmade in Nanded
-                </span>
-                <p class="font-cinzel text-lg font-bold text-white">Illuminated Keepsake Gift Box</p>
-              </div>
-            </div>
+      <!-- Story Copy -->
+      <div class="lg:col-span-6 space-y-5">
+        <span class="text-xs uppercase tracking-[0.35em] text-pink-600 font-cinzel font-bold flex items-center gap-2">
+          <span>🌸</span> The Artisan Behind The Taste
+        </span>
+        <h2 class="font-cinzel text-3xl sm:text-4xl font-bold text-brand-berry leading-tight">
+          Where Sweetest Moments Turn Into <span class="font-serif italic font-normal gold-shimmer-text">Timeless Keepsakes</span>
+        </h2>
+        <p class="text-brand-berryLight text-xs sm:text-sm leading-relaxed">
+          Founded in Nanded by Saleha, <strong>Packs_n_Bakes</strong> celebrates life's most precious milestones with confectionery that is as visually enchanting as it is delicious.
+        </p>
+        <p class="text-brand-berryLight text-xs sm:text-sm leading-relaxed">
+          Whether it is an intimate Nikah ceremony, grand reception, or milestone birthday, every cake and fairy-lit acrylic hamper is custom tailored with bespoke couple monograms and fine ribbons.
+        </p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-2">
+          <div class="p-4 rounded-2xl royal-glass border-pink-200">
+            <div class="text-pink-600 mb-2"><i data-lucide="gift" class="w-5 h-5"></i></div>
+            <h4 class="text-xs font-cinzel font-bold text-brand-berry">Bridal Trousseau Packing</h4>
+            <p class="text-[11px] text-brand-berryLight mt-0.5">Engagement, wedding & trousseau hampers with acrylic fairy-lights.</p>
           </div>
+          <div class="p-4 rounded-2xl royal-glass border-pink-200">
+            <div class="text-pink-600 mb-2"><i data-lucide="truck" class="w-5 h-5"></i></div>
+            <h4 class="text-xs font-cinzel font-bold text-brand-berry">Shockproof Pan-India Shipping</h4>
+            <p class="text-[11px] text-brand-berryLight mt-0.5">Multi-layer protective boxing ensuring safe arrival across India.</p>
+          </div>
+        </div>
 
+        <div class="pt-2">
+          <a href="https://www.instagram.com/packs_n_bakes" target="_blank" class="inline-flex items-center gap-2.5 border-2 border-brand-gold royal-glass px-6 py-3 rounded-full text-xs font-cinzel font-bold uppercase tracking-widest text-brand-gold hover:bg-brand-gold hover:text-white transition duration-300 shadow-md">
+            <i data-lucide="instagram" class="w-4 h-4 text-pink-500"></i>
+            <span>Follow @packs_n_bakes On Instagram</span>
+          </a>
         </div>
       </div>
 
     </div>
   </section>
 
-  <section id="about" class="py-24 bg-gradient-to-b from-brand-void via-brand-velvet/40 to-brand-void border-t border-brand-gold/20 relative">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-        
-        <!-- Left Visual Frame with Gold Filigree -->
-        <div class="lg:col-span-6 relative">
-          <div class="aspect-[4/3] rounded-3xl overflow-hidden royal-glass border-2 border-brand-gold/40 shadow-2xl relative group">
-            <img src="https://images.unsplash.com/photo-1535141192574-5d4897c13136?q=80&w=1200&auto=format&fit=crop" alt="Packs and Bakes Artistry" class="w-full h-full object-cover group-hover:scale-105 transition duration-700 brightness-95" onerror="this.src='https://images.unsplash.com/photo-1578985545062-69928b1d9587?q=80&w=1000&auto=format&fit=crop'" />
-            <div class="absolute inset-0 bg-gradient-to-t from-brand-void via-transparent to-transparent opacity-85"></div>
-            
-            <div class="absolute bottom-6 left-6 right-6">
-              <span class="bg-gradient-to-r from-brand-gold to-amber-500 text-brand-void font-cinzel font-bold text-[10px] tracking-widest uppercase px-3.5 py-1 rounded-full mb-2 inline-block">
-                Nanded Artisanal Studio 🦋
-              </span>
-              <h4 class="font-cinzel text-xl sm:text-2xl font-bold text-white">Handcrafted With Supreme Love</h4>
-              <p class="text-xs text-slate-300 mt-1 font-light">Every sponge baked fresh against order, flower sculpted by hand, and ribbon tied by Saleha personally.</p>
-            </div>
-          </div>
-
-          <!-- Royal Medal Badge -->
-          <div class="absolute -bottom-6 -right-4 royal-glass border-2 border-brand-gold px-6 py-4 rounded-2xl shadow-2xl flex items-center gap-3 backdrop-blur-xl hidden sm:flex">
-            <i data-lucide="award" class="w-9 h-9 text-brand-gold"></i>
-            <div>
-              <p class="text-xs font-cinzel font-bold text-white">Artisanal Quality</p>
-              <p class="text-[11px] text-amber-200">100% Belgian Chocolate & Eggless Excellence</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Right Story Copy -->
-        <div class="lg:col-span-6 space-y-6">
-          <span class="text-xs uppercase tracking-[0.35em] text-pink-300 font-cinzel font-semibold flex items-center gap-2">
-            <i data-lucide="sparkles" class="w-4 h-4 text-brand-gold"></i>
-            The Artisan Behind The Taste
-          </span>
-          <h2 class="font-cinzel text-3xl sm:text-5xl font-bold text-white leading-tight">
-            Where Sweetest Moments Turn Into <span class="font-serif italic font-normal gold-shimmer-text">Timeless Keepsakes</span>
-          </h2>
-          <p class="text-slate-300 text-sm sm:text-base leading-relaxed font-light">
-            Founded in Nanded by Saleha, <strong>Packs_n_Bakes</strong> was born from a singular passion: celebrating life's sweetest milestones with confectionery that is as visually majestic as it is unforgettable to the palate.
-          </p>
-          <p class="text-slate-300 text-sm sm:text-base leading-relaxed font-light">
-            Whether it's an intimate Nikah celebration, grand wedding reception, baby announcement, or milestone anniversary, every single cake and fairy-lit acrylic box is designed with custom monogram details, edible gold accents, and genuine premium ingredients.
-          </p>
-
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-            <div class="p-5 rounded-2xl royal-glass border-brand-gold/20">
-              <div class="text-brand-gold mb-2.5"><i data-lucide="gift" class="w-6 h-6"></i></div>
-              <h4 class="text-sm font-cinzel font-bold text-white">Trousseau & Favors</h4>
-              <p class="text-xs text-slate-400 mt-1 font-light">Engagement, wedding & bridal trousseau hampers with acrylic fairy-lights.</p>
-            </div>
-            <div class="p-5 rounded-2xl royal-glass border-brand-gold/20">
-              <div class="text-brand-gold mb-2.5"><i data-lucide="shield-check" class="w-6 h-6"></i></div>
-              <h4 class="text-sm font-cinzel font-bold text-white">Safe Courier Packing</h4>
-              <p class="text-xs text-slate-400 mt-1 font-light">Custom temperature-safe and shockproof boxing across India.</p>
-            </div>
-          </div>
-
-          <div class="pt-3">
-            <a href="https://www.instagram.com/packs_n_bakes" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3 border-2 border-brand-gold royal-glass px-7 py-3.5 rounded-full text-xs font-cinzel font-bold uppercase tracking-widest text-brand-gold hover:bg-brand-gold hover:text-brand-void transition duration-300 shadow-royal-glow">
-              <i data-lucide="instagram" class="w-4 h-4 text-pink-400"></i>
-              <span>Follow @packs_n_bakes On Instagram</span>
-            </a>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <section id="custom-quote" class="py-24 max-w-4xl mx-auto px-4 sm:px-6">
-    <div class="royal-glass rounded-3xl p-8 sm:p-14 border-2 border-brand-gold/40 shadow-2xl relative overflow-hidden">
+  <!-- Custom Order & WhatsApp Quote Builder -->
+  <section id="custom-quote" class="py-20 max-w-4xl mx-auto px-4 sm:px-6">
+    <div class="royal-glass rounded-3xl p-6 sm:p-12 border-2 border-brand-gold/40 shadow-2xl relative overflow-hidden">
       <!-- Glow Accents -->
-      <div class="absolute -top-24 -right-24 w-72 h-72 bg-amber-500/15 rounded-full blur-3xl pointer-events-none"></div>
-      <div class="absolute -bottom-24 -left-24 w-72 h-72 bg-pink-500/10 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="absolute -top-24 -right-24 w-72 h-72 bg-pink-300/30 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="absolute -bottom-24 -left-24 w-72 h-72 bg-amber-300/25 rounded-full blur-3xl pointer-events-none"></div>
 
-      <div class="text-center max-w-xl mx-auto mb-10">
-        <span class="text-xs uppercase tracking-[0.35em] text-pink-300 font-cinzel font-semibold">Bespoke Concierge</span>
-        <h2 class="font-cinzel text-3xl sm:text-4xl font-bold mt-2 text-white">
+      <div class="text-center max-w-xl mx-auto mb-8">
+        <span class="text-xs uppercase tracking-[0.35em] text-pink-600 font-cinzel font-bold">Bespoke Concierge</span>
+        <h2 class="font-cinzel text-2xl sm:text-4xl font-bold mt-1.5 text-brand-berry">
           Reserve Your <span class="font-serif italic font-normal gold-shimmer-text">Custom Creation</span>
         </h2>
-        <p class="text-slate-300 text-xs sm:text-sm mt-3 font-light">
+        <p class="text-brand-berryLight text-xs sm:text-sm mt-2">
           Specify your celebration requirements below. Submitting automatically opens WhatsApp with Saleha with your customized brief prepared!
         </p>
       </div>
 
-      <form id="customOrderForm" onsubmit="handleCustomOrderSubmit(event)" class="space-y-6">
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+      <form id="customOrderForm" onsubmit="handleCustomOrderSubmit(event)" class="space-y-5">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
           <div>
-            <label class="block text-xs uppercase tracking-widest text-slate-300 font-cinzel font-semibold mb-2">Your Name</label>
-            <input type="text" id="custName" required placeholder="e.g. Farhan Khan" class="w-full bg-brand-void/80 border border-brand-gold/30 rounded-2xl px-5 py-3.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-brand-gold transition" />
+            <label class="block text-xs uppercase tracking-widest text-brand-berry font-cinzel font-bold mb-1.5">Your Name</label>
+            <input type="text" id="custName" required placeholder="e.g. Farhan Khan" class="w-full bg-white/95 border border-pink-300 rounded-2xl px-4 py-3 text-sm text-brand-berry placeholder-pink-300 focus:outline-none focus:border-pink-500 transition shadow-inner" />
           </div>
           <div>
-            <label class="block text-xs uppercase tracking-widest text-slate-300 font-cinzel font-semibold mb-2">Celebration Occasion</label>
-            <select id="custOccasion" class="w-full bg-brand-void/80 border border-brand-gold/30 rounded-2xl px-5 py-3.5 text-sm text-white focus:outline-none focus:border-brand-gold transition">
+            <label class="block text-xs uppercase tracking-widest text-brand-berry font-cinzel font-bold mb-1.5">Celebration Occasion</label>
+            <select id="custOccasion" class="w-full bg-white/95 border border-pink-300 rounded-2xl px-4 py-3 text-sm text-brand-berry focus:outline-none focus:border-pink-500 transition shadow-inner">
               <option value="Wedding / Reception Grand Cake">Wedding / Reception Grand Cake</option>
               <option value="Engagement / Monogram Initials Chocolates">Engagement / Monogram Initials Chocolates</option>
               <option value="Anniversary LED Fairy-Light Hamper">Anniversary LED Fairy-Light Hamper</option>
@@ -655,11 +747,11 @@
           </div>
         </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
           <div>
-            <label class="block text-xs uppercase tracking-widest text-slate-300 font-cinzel font-semibold mb-2">Design & Flavours</label>
-            <select id="custFlavor" class="w-full bg-brand-void/80 border border-brand-gold/30 rounded-2xl px-5 py-3.5 text-sm text-white focus:outline-none focus:border-brand-gold transition">
-              <option value="Royal Burgundy Velvet & Berries">Royal Burgundy Velvet & Berries</option>
+            <label class="block text-xs uppercase tracking-widest text-brand-berry font-cinzel font-bold mb-1.5">Design & Flavours</label>
+            <select id="custFlavor" class="w-full bg-white/95 border border-pink-300 rounded-2xl px-4 py-3 text-sm text-brand-berry focus:outline-none focus:border-pink-500 transition shadow-inner">
+              <option value="Baby Pink Velvet & Fresh Berries">Baby Pink Velvet & Fresh Berries</option>
               <option value="Belgian Dark Chocolate Truffle & Gold Leaf">Belgian Dark Chocolate Truffle & Gold Leaf</option>
               <option value="Custom Initials Monogram Chocolates (Gold Foil)">Custom Initials Monogram Chocolates (Gold Foil)</option>
               <option value="Transparent Acrylic Box With Warm Fairy Lights">Transparent Acrylic Box With Warm Fairy Lights</option>
@@ -667,8 +759,8 @@
             </select>
           </div>
           <div>
-            <label class="block text-xs uppercase tracking-widest text-slate-300 font-cinzel font-semibold mb-2">Delivery Destination</label>
-            <select id="custLocation" class="w-full bg-brand-void/80 border border-brand-gold/30 rounded-2xl px-5 py-3.5 text-sm text-white focus:outline-none focus:border-brand-gold transition">
+            <label class="block text-xs uppercase tracking-widest text-brand-berry font-cinzel font-bold mb-1.5">Delivery Destination</label>
+            <select id="custLocation" class="w-full bg-white/95 border border-pink-300 rounded-2xl px-4 py-3 text-sm text-brand-berry focus:outline-none focus:border-pink-500 transition shadow-inner">
               <option value="Nanded (Local Studio Hand Delivery / Pickup)">Nanded (Local Studio Hand Delivery / Pickup)</option>
               <option value="Pan-India Courier (Hampers & Chocolates)">Pan-India Courier (Hampers & Chocolates)</option>
             </select>
@@ -676,11 +768,11 @@
         </div>
 
         <div>
-          <label class="block text-xs uppercase tracking-widest text-slate-300 font-cinzel font-semibold mb-2">Personalized Initials / Event Date / Notes</label>
-          <textarea id="custNotes" rows="3" placeholder="e.g. Need monogram 'S & F' printed on chocolate wrappers with golden fairy lights for our engagement on 24th Oct..." class="w-full bg-brand-void/80 border border-brand-gold/30 rounded-2xl p-4 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-brand-gold transition"></textarea>
+          <label class="block text-xs uppercase tracking-widest text-brand-berry font-cinzel font-bold mb-1.5">Personalized Initials / Event Date / Notes</label>
+          <textarea id="custNotes" rows="3" placeholder="e.g. Need monogram 'S & F' printed on chocolate wrappers with golden fairy lights for our engagement on 24th Oct..." class="w-full bg-white/95 border border-pink-300 rounded-2xl p-3.5 text-sm text-brand-berry placeholder-pink-300 focus:outline-none focus:border-pink-500 transition shadow-inner"></textarea>
         </div>
 
-        <button type="submit" class="w-full py-4 rounded-2xl bg-gradient-to-r from-brand-gold via-amber-400 to-brand-goldDeep text-brand-void font-cinzel font-bold text-xs uppercase tracking-[0.25em] hover:brightness-110 transition shadow-royal-glow flex items-center justify-center gap-3 cursor-pointer">
+        <button type="submit" class="w-full py-4 rounded-2xl bg-gradient-to-r from-pink-500 via-rose-500 to-amber-500 text-white font-cinzel font-bold text-xs uppercase tracking-[0.22em] hover:brightness-105 transition shadow-lg flex items-center justify-center gap-2.5 cursor-pointer">
           <i data-lucide="send" class="w-4 h-4"></i>
           <span>Send Inquiries Directly on WhatsApp</span>
         </button>
@@ -688,70 +780,70 @@
     </div>
   </section>
 
-  <footer class="bg-brand-void border-t border-brand-gold/25 pt-20 pb-14">
+  <!-- Footer -->
+  <footer class="bg-white border-t border-pink-200 pt-16 pb-12 shadow-inner">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-12 pb-14 border-b border-brand-gold/20">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10 pb-12 border-b border-pink-200">
         
         <!-- Studio Brand Profile -->
-        <div class="space-y-4">
-          <div class="flex items-center gap-3.5">
-            <div class="w-12 h-12 rounded-full border border-brand-gold flex items-center justify-center bg-brand-velvet text-brand-gold">
-              <span class="font-cinzel text-lg font-bold">PB</span>
+        <div class="space-y-3">
+          <div class="flex items-center gap-3">
+            <div class="w-11 h-11 rounded-full border border-brand-gold flex items-center justify-center bg-pink-100 text-brand-gold font-bold">
+              <span class="font-cinzel text-base">PB</span>
             </div>
             <div>
-              <span class="font-cinzel text-xl font-bold gold-shimmer-text uppercase">Packs_n_Bakes</span>
-              <p class="text-[10px] text-pink-300 uppercase tracking-widest">By Saleha 🦋✨</p>
+              <span class="font-cinzel text-lg font-bold gold-shimmer-text uppercase">Packs_n_Bakes</span>
+              <p class="text-[10px] text-pink-600 uppercase tracking-widest font-semibold">By Saleha 🦋✨</p>
             </div>
           </div>
-          <p class="text-xs text-slate-300 leading-relaxed font-light">
-            Baking happiness in every bite. Artisanal custom multi-tier wedding cakes, engagement initials monogram chocolates, and trousseau hampers from Nanded, Maharashtra.
+          <p class="text-xs text-brand-berryLight leading-relaxed">
+            Baking happiness in every bite. Artisanal custom multi-tier wedding cakes, engagement monogram chocolates, and trousseau hampers from Nanded, Maharashtra.
           </p>
-          <div class="pt-2 text-xs text-slate-400 space-y-2">
-            <p class="flex items-center gap-2.5">
-              <i data-lucide="map-pin" class="w-4 h-4 text-brand-gold"></i>
+          <div class="pt-2 text-xs text-brand-berryLight space-y-1.5">
+            <p class="flex items-center gap-2">
+              <i data-lucide="map-pin" class="w-4 h-4 text-pink-500"></i>
               <span>Nanded, Maharashtra, India 📍</span>
             </p>
-            <p class="flex items-center gap-2.5">
-              <i data-lucide="clock" class="w-4 h-4 text-brand-gold"></i>
+            <p class="flex items-center gap-2">
+              <i data-lucide="clock" class="w-4 h-4 text-pink-500"></i>
               <span>Monday – Saturday: 10:00 AM – 9:00 PM</span>
             </p>
           </div>
         </div>
 
         <!-- Studio Location Hub -->
-        <div class="royal-glass rounded-3xl p-5 border border-brand-gold/20 flex flex-col justify-between">
+        <div class="royal-glass rounded-3xl p-5 border border-pink-200 flex flex-col justify-between">
           <div>
-            <div class="flex items-center justify-between mb-3">
-              <span class="text-xs font-cinzel uppercase tracking-wider text-brand-gold font-bold">Bakery Studio Hub</span>
-              <span class="text-[10px] bg-emerald-500/20 text-emerald-300 px-3 py-0.5 rounded-full border border-emerald-500/30 font-medium">Pre-Orders Active</span>
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-xs font-cinzel uppercase tracking-wider text-pink-700 font-bold">Bakery Studio Hub</span>
+              <span class="text-[10px] bg-emerald-100 text-emerald-700 px-3 py-0.5 rounded-full border border-emerald-300 font-bold">Pre-Orders Active</span>
             </div>
-            <p class="text-xs text-slate-300 font-light">Fresh bakes whipped against advance pre-orders. Pan-India safe shipping on gift hampers and monogram chocolate boxes.</p>
+            <p class="text-xs text-brand-berryLight">Fresh bakes whipped against advance pre-orders. Pan-India safe shipping on gift hampers and monogram chocolate boxes.</p>
           </div>
 
-          <!-- Stylized Map Visualizer -->
-          <div class="mt-4 rounded-2xl overflow-hidden border border-brand-gold/30 h-40 bg-[#160613] relative flex items-center justify-center group">
-            <div class="absolute inset-0 opacity-40 bg-[radial-gradient(#e6ca65_1px,transparent_1px)] [background-size:16px_16px]"></div>
+          <div class="mt-4 rounded-2xl overflow-hidden border border-pink-300 h-36 bg-pink-50 relative flex items-center justify-center">
+            <div class="absolute inset-0 opacity-40 bg-[radial-gradient(#f472b6_1px,transparent_1px)] [background-size:16px_16px]"></div>
             <div class="relative z-10 text-center p-3">
-              <i data-lucide="navigation" class="w-7 h-7 text-brand-gold mx-auto mb-1 animate-bounce"></i>
-              <span class="text-xs font-cinzel font-bold text-white block">Nanded Artisanal Studio</span>
-              <span class="text-[10px] text-pink-300">Maharashtra, India</span>
+              <i data-lucide="navigation" class="w-6 h-6 text-pink-600 mx-auto mb-1 animate-bounce"></i>
+              <span class="text-xs font-cinzel font-bold text-brand-berry block">Nanded Artisanal Studio</span>
+              <span class="text-[10px] text-pink-600 font-bold">Maharashtra, India</span>
             </div>
           </div>
         </div>
 
         <!-- Direct Connect -->
-        <div class="space-y-4">
-          <h4 class="font-cinzel text-lg font-bold text-white">Direct Connect</h4>
-          <p class="text-xs text-slate-400 font-light">Custom cake orders require 24 to 48 hours advance booking. Direct inquiry via WhatsApp or Instagram:</p>
+        <div class="space-y-3">
+          <h4 class="font-cinzel text-base font-bold text-brand-berry">Direct Connect</h4>
+          <p class="text-xs text-brand-berryLight">Custom cake orders require 24 to 48 hours advance booking. Direct inquiry via WhatsApp or Instagram:</p>
           
-          <div class="flex flex-col gap-3">
-            <a href="https://www.instagram.com/packs_n_bakes" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 p-3.5 rounded-2xl royal-glass hover:border-brand-gold text-xs text-slate-200 transition">
-              <i data-lucide="instagram" class="w-4 h-4 text-pink-400"></i>
+          <div class="flex flex-col gap-2.5">
+            <a href="https://www.instagram.com/packs_n_bakes" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 p-3 rounded-2xl royal-glass hover:border-pink-400 text-xs text-brand-berry transition font-bold">
+              <i data-lucide="instagram" class="w-4 h-4 text-pink-500"></i>
               <span class="font-cinzel">@packs_n_bakes (Instagram)</span>
             </a>
-            <a href="https://wa.me/919999999999" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 p-3.5 rounded-2xl royal-glass hover:border-brand-gold text-xs text-slate-200 transition">
-              <i data-lucide="phone" class="w-4 h-4 text-emerald-400"></i>
+            <a href="https://wa.me/919999999999" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 p-3 rounded-2xl royal-glass hover:border-pink-400 text-xs text-brand-berry transition font-bold">
+              <i data-lucide="phone" class="w-4 h-4 text-emerald-600"></i>
               <span class="font-cinzel">WhatsApp Concierge Desk</span>
             </a>
           </div>
@@ -759,49 +851,49 @@
 
       </div>
 
-      <!-- Copyright & Brand Credits -->
-      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-4">
+      <!-- Copyright -->
+      <div class="pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-brand-berryLight gap-3 font-medium">
         <p>© 2026 Packs_n_Bakes By Saleha. All Rights Reserved.</p>
-        <p class="text-[11px] text-amber-200/80 font-cinzel">The Royal Palace & Delizia 3D WebGL Edition</p>
+        <p class="text-[11px] text-pink-700 font-cinzel font-bold">The Royal Palace Baby Pink 3D Edition</p>
       </div>
 
     </div>
   </footer>
 
   <!-- Toast Notification Box -->
-  <div id="toastNotification" class="fixed top-6 right-6 z-50 transform translate-x-96 transition duration-300 royal-glass border border-brand-gold text-white px-6 py-4 rounded-2xl shadow-2xl flex items-center gap-3">
-    <i data-lucide="check-circle" class="w-5 h-5 text-brand-gold"></i>
+  <div id="toastNotification" class="fixed top-6 right-6 z-50 transform translate-x-96 transition duration-300 royal-glass border border-pink-400 text-brand-berry px-6 py-3.5 rounded-2xl shadow-2xl flex items-center gap-3 font-bold">
+    <i data-lucide="check-circle" class="w-5 h-5 text-pink-600"></i>
     <span id="toastMessage" class="text-xs font-cinzel font-medium">Item added to your quote tray!</span>
   </div>
 
   <!-- Cart / Inquiry Tray Drawer -->
   <div id="cartDrawer" class="fixed inset-0 z-50 hidden">
-    <div onclick="toggleCartDrawer()" class="absolute inset-0 bg-black/80 backdrop-blur-md"></div>
-    <div class="absolute right-0 top-0 bottom-0 w-full max-w-md bg-brand-void/95 border-l-2 border-brand-gold/40 p-6 sm:p-8 flex flex-col justify-between shadow-2xl overflow-y-auto">
+    <div onclick="toggleCartDrawer()" class="absolute inset-0 bg-pink-950/40 backdrop-blur-sm"></div>
+    <div class="absolute right-0 top-0 bottom-0 w-full max-w-md bg-white/95 border-l-2 border-pink-300 p-6 sm:p-8 flex flex-col justify-between shadow-2xl overflow-y-auto">
       <div>
-        <div class="flex items-center justify-between pb-5 border-b border-brand-gold/25">
-          <div class="flex items-center gap-3">
-            <i data-lucide="shopping-bag" class="w-6 h-6 text-brand-gold"></i>
-            <h3 class="font-cinzel text-xl font-bold text-white">Your Inquiry Tray</h3>
+        <div class="flex items-center justify-between pb-4 border-b border-pink-200">
+          <div class="flex items-center gap-2.5">
+            <i data-lucide="shopping-bag" class="w-5 h-5 text-pink-600"></i>
+            <h3 class="font-cinzel text-xl font-bold text-brand-berry">Your Inquiry Tray</h3>
           </div>
-          <button onclick="toggleCartDrawer()" class="text-slate-400 hover:text-white p-1 cursor-pointer">
-            <i data-lucide="x" class="w-6 h-6"></i>
+          <button onclick="toggleCartDrawer()" class="text-pink-400 hover:text-pink-600 p-1 cursor-pointer">
+            <i data-lucide="x" class="w-5 h-5"></i>
           </button>
         </div>
 
         <!-- Items List -->
-        <div id="cartItemsContainer" class="py-6 space-y-3.5">
-          <p class="text-xs text-slate-400 text-center py-10 font-light">Your inquiry tray is empty. Explore our 3D showroom or catalogue above!</p>
+        <div id="cartItemsContainer" class="py-6 space-y-3">
+          <p class="text-xs text-brand-berryLight text-center py-10 font-normal">Your inquiry tray is empty. Explore our 3D showroom or catalogue above!</p>
         </div>
       </div>
 
-      <div class="pt-6 border-t border-brand-gold/25 space-y-4">
+      <div class="pt-5 border-t border-pink-200 space-y-3.5">
         <div class="flex justify-between items-center">
-          <span class="text-xs uppercase tracking-wider font-cinzel text-slate-300">Estimated Total:</span>
+          <span class="text-xs uppercase tracking-wider font-cinzel text-brand-berry font-bold">Estimated Total:</span>
           <span id="cartTotalSum" class="font-cinzel text-2xl font-bold text-brand-gold">₹0</span>
         </div>
-        <p class="text-[11px] text-slate-400 font-light">*Final quote confirmed based on custom weight, packaging and delivery location.</p>
-        <button onclick="sendTrayToWhatsApp()" class="w-full py-4 rounded-full bg-gradient-to-r from-emerald-600 via-emerald-500 to-green-500 text-white font-cinzel font-bold text-xs uppercase tracking-wider hover:brightness-110 transition shadow-xl flex items-center justify-center gap-2.5 cursor-pointer">
+        <p class="text-[10px] text-brand-berryLight font-normal">*Final quote confirmed based on custom weight, packaging and delivery location.</p>
+        <button onclick="sendTrayToWhatsApp()" class="w-full py-3.5 rounded-full bg-gradient-to-r from-pink-500 via-rose-500 to-emerald-500 text-white font-cinzel font-bold text-xs uppercase tracking-wider hover:brightness-105 transition shadow-xl flex items-center justify-center gap-2 cursor-pointer">
           <i data-lucide="message-circle" class="w-4 h-4"></i>
           <span>Send Tray to Saleha on WhatsApp</span>
         </button>
@@ -871,27 +963,28 @@
 
     function renderProducts(items) {
       const grid = document.getElementById('productGrid');
+      if (!grid) return;
       grid.innerHTML = items.map(p => `
         <div class="royal-glass royal-glass-hover rounded-3xl overflow-hidden flex flex-col justify-between transition duration-300">
-          <div class="relative h-60 overflow-hidden">
+          <div class="relative h-56 sm:h-60 overflow-hidden">
             <img src="${p.img}" alt="${p.title}" class="w-full h-full object-cover transition duration-700 hover:scale-105" onerror="this.src='https://images.unsplash.com/photo-1588195538326-c5b1e9f80a1b?q=80&w=800&auto=format&fit=crop'" />
-            <span class="absolute top-3.5 left-3.5 bg-brand-void/85 backdrop-blur-md border border-brand-gold/40 text-brand-gold text-[10px] font-cinzel font-bold px-3.5 py-1 rounded-full uppercase tracking-wider">
+            <span class="absolute top-3 left-3 bg-white/95 backdrop-blur-md border border-pink-300 text-pink-700 text-[10px] font-cinzel font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-sm">
               ${p.badge}
             </span>
           </div>
 
-          <div class="p-6 flex-1 flex flex-col justify-between">
+          <div class="p-5 sm:p-6 flex-1 flex flex-col justify-between">
             <div>
-              <h3 class="font-cinzel text-lg font-bold text-white mb-1.5">${p.title}</h3>
-              <p class="text-slate-300 text-xs font-light line-clamp-2 leading-relaxed mb-5">${p.desc}</p>
+              <h3 class="font-cinzel text-base sm:text-lg font-bold text-brand-berry mb-1">${p.title}</h3>
+              <p class="text-brand-berryLight text-xs font-normal line-clamp-2 leading-relaxed mb-4">${p.desc}</p>
             </div>
 
-            <div class="pt-4 border-t border-brand-gold/15 flex items-center justify-between">
+            <div class="pt-3 border-t border-pink-200 flex items-center justify-between">
               <div>
-                <span class="text-[10px] uppercase tracking-widest text-slate-400 block font-cinzel">Price</span>
-                <span class="font-cinzel text-xl font-bold text-brand-gold">₹${p.price.toLocaleString('en-IN')}</span>
+                <span class="text-[9px] uppercase tracking-widest text-brand-berryLight/80 block font-cinzel font-bold">Price</span>
+                <span class="font-cinzel text-lg sm:text-xl font-bold text-brand-gold">₹${p.price.toLocaleString('en-IN')}</span>
               </div>
-              <button onclick="addToCart('${p.id}')" class="bg-brand-gold/20 hover:bg-brand-gold border border-brand-gold/70 text-brand-gold hover:text-brand-void p-3 rounded-full transition shadow-royal-glow cursor-pointer" title="Add To Tray">
+              <button onclick="addToCart('${p.id}')" class="bg-pink-100 hover:bg-pink-500 border border-pink-300 text-pink-700 hover:text-white p-2.5 rounded-full transition shadow-md cursor-pointer" title="Add To Tray">
                 <i data-lucide="plus" class="w-4 h-4"></i>
               </button>
             </div>
@@ -899,17 +992,17 @@
         </div>
       `).join('');
 
-      lucide.createIcons();
+      if (window.lucide) lucide.createIcons();
     }
 
     function filterCategory(cat, ev) {
       document.querySelectorAll('.cat-pill').forEach(btn => {
-        btn.classList.remove('bg-brand-gold', 'text-brand-void', 'border-2', 'border-brand-gold');
-        btn.classList.add('bg-white/5', 'text-slate-300', 'border-white/10');
+        btn.classList.remove('bg-pink-500', 'text-white', 'border-2', 'border-pink-500');
+        btn.classList.add('bg-white/80', 'text-brand-berry', 'border', 'border-pink-200');
       });
       if (ev && ev.currentTarget) {
-        ev.currentTarget.classList.remove('bg-white/5', 'text-slate-300', 'border-white/10');
-        ev.currentTarget.classList.add('bg-brand-gold', 'text-brand-void', 'border-2', 'border-brand-gold');
+        ev.currentTarget.classList.remove('bg-white/80', 'text-brand-berry', 'border', 'border-pink-200');
+        ev.currentTarget.classList.add('bg-pink-500', 'text-white', 'border-2', 'border-pink-500');
       }
 
       if (cat === 'all') {
@@ -935,7 +1028,7 @@
       const currentMonogram = document.getElementById('monogramInput').value.trim() || 'Custom';
       const customItem = {
         id: '3d-' + Date.now(),
-        title: `${title} (Engraved: ${currentMonogram})`,
+        title: `${title} (${currentMonogram})`,
         price: parseInt(priceText) || 3499,
         desc: `3D Configured with ${document.getElementById('activeColorName').innerText} glaze`
       };
@@ -951,9 +1044,12 @@
 
     function updateCartUI() {
       document.getElementById('cartCountBadge').innerText = cart.length;
+      const mobileBadge = document.getElementById('mobileCartBadge');
+      if (mobileBadge) mobileBadge.innerText = cart.length;
+
       const list = document.getElementById('cartItemsContainer');
       if (cart.length === 0) {
-        list.innerHTML = `<p class="text-xs text-slate-400 text-center py-10 font-light">Your inquiry tray is empty. Explore our 3D showroom or catalogue above!</p>`;
+        list.innerHTML = `<p class="text-xs text-brand-berryLight text-center py-10 font-normal">Your inquiry tray is empty. Explore our 3D showroom or catalogue above!</p>`;
         document.getElementById('cartTotalSum').innerText = '₹0';
         return;
       }
@@ -962,12 +1058,12 @@
       list.innerHTML = cart.map((item, index) => {
         total += item.price;
         return `
-          <div class="flex items-center justify-between p-4 rounded-2xl bg-white/5 border border-white/10 text-xs">
+          <div class="flex items-center justify-between p-3.5 rounded-2xl bg-pink-50 border border-pink-200 text-xs">
             <div>
-              <p class="font-cinzel font-bold text-white">${item.title}</p>
+              <p class="font-cinzel font-bold text-brand-berry">${item.title}</p>
               <p class="text-brand-gold font-cinzel text-sm mt-0.5 font-bold">₹${item.price.toLocaleString('en-IN')}</p>
             </div>
-            <button onclick="removeFromCart(${index})" class="text-rose-400 hover:text-rose-300 p-1.5 cursor-pointer">
+            <button onclick="removeFromCart(${index})" class="text-rose-500 hover:text-rose-700 p-1.5 cursor-pointer">
               <i data-lucide="trash-2" class="w-4 h-4"></i>
             </button>
           </div>
@@ -975,7 +1071,7 @@
       }).join('');
 
       document.getElementById('cartTotalSum').innerText = `₹${total.toLocaleString('en-IN')}`;
-      lucide.createIcons();
+      if (window.lucide) lucide.createIcons();
     }
 
     function toggleCartDrawer() {
@@ -1025,6 +1121,7 @@
       }, 3400);
     }
 
+    /* Ambient Web Audio Synthesizer */
     let audioCtx = null;
     let isAudioActive = false;
     let harpInterval = null;
@@ -1043,13 +1140,13 @@
         }
         playRoyalHarpChime();
         harpInterval = setInterval(playRoyalHarpChime, 7000);
-        soundIcon.classList.add('text-brand-goldLight');
-        soundText.innerText = "Palace Atmosphere: ON";
+        soundIcon.classList.add('text-pink-600');
+        soundText.innerText = "Atmosphere: On";
         showToast('Palace Atmosphere: Playing 🎶');
       } else {
         clearInterval(harpInterval);
-        soundIcon.classList.remove('text-brand-goldLight');
-        soundText.innerText = "Palace Atmosphere: OFF";
+        soundIcon.classList.remove('text-pink-600');
+        soundText.innerText = "Atmosphere: Off";
         showToast('Atmosphere: Muted');
       }
     }
@@ -1078,32 +1175,109 @@
       });
     }
 
+    /* Falling Petals Background Canvas */
+    let petalCanvas, petalCtx;
+    let petals = [];
+    let isPetalRainActive = true;
+
+    function initPetalCanvas() {
+      petalCanvas = document.getElementById('petalCanvas');
+      if (!petalCanvas) return;
+      petalCtx = petalCanvas.getContext('2d');
+
+      function resize() {
+        petalCanvas.width = window.innerWidth;
+        petalCanvas.height = window.innerHeight;
+      }
+      window.addEventListener('resize', resize);
+      resize();
+
+      const petalCount = window.innerWidth < 768 ? 22 : 40;
+      petals = [];
+      for (let i = 0; i < petalCount; i++) {
+        petals.push({
+          x: Math.random() * petalCanvas.width,
+          y: Math.random() * petalCanvas.height,
+          size: 7 + Math.random() * 10,
+          speedY: 0.6 + Math.random() * 1.3,
+          speedX: -0.4 + Math.random() * 0.8,
+          rotation: Math.random() * 360,
+          rotationSpeed: (Math.random() - 0.5) * 1.6,
+          color: ['#fbcfe8', '#ffd6e7', '#f472b6', '#ffe4ee'][Math.floor(Math.random() * 4)],
+          opacity: 0.45 + Math.random() * 0.4
+        });
+      }
+
+      function drawPetals() {
+        if (!isPetalRainActive) {
+          petalCtx.clearRect(0, 0, petalCanvas.width, petalCanvas.height);
+          requestAnimationFrame(drawPetals);
+          return;
+        }
+
+        petalCtx.clearRect(0, 0, petalCanvas.width, petalCanvas.height);
+        petals.forEach(p => {
+          petalCtx.save();
+          petalCtx.translate(p.x, p.y);
+          petalCtx.rotate((p.rotation * Math.PI) / 180);
+          petalCtx.beginPath();
+          petalCtx.ellipse(0, 0, p.size * 0.55, p.size, Math.PI / 4, 0, Math.PI * 2);
+          petalCtx.fillStyle = p.color;
+          petalCtx.globalAlpha = p.opacity;
+          petalCtx.fill();
+          petalCtx.restore();
+
+          p.y += p.speedY;
+          p.x += p.speedX;
+          p.rotation += p.rotationSpeed;
+
+          if (p.y > petalCanvas.height + 20) {
+            p.y = -20;
+            p.x = Math.random() * petalCanvas.width;
+          }
+          if (p.x > petalCanvas.width + 20) p.x = -20;
+          if (p.x < -20) p.x = petalCanvas.width + 20;
+        });
+
+        requestAnimationFrame(drawPetals);
+      }
+      drawPetals();
+    }
+
+    function togglePetalRain() {
+      isPetalRainActive = !isPetalRainActive;
+      document.getElementById('petalRainText').innerText = `Petals: ${isPetalRainActive ? 'On' : 'Off'}`;
+      showToast(isPetalRainActive ? 'Petal Shower: Blooming 🌸' : 'Petal Shower: Hidden');
+    }
+
+    /* THREE.JS ULTRA-LUXURY 3D STUDIO ENGINE */
     let scene, camera, renderer, currentGroup, sparkleParticles, studioPedestal;
     let autoRotate = true;
     let isDragging = false;
     let previousMousePosition = { x: 0, y: 0 };
     let currentModelType = 'wedding';
-    let currentColorHex = 0x2a081c;
+    let currentColorHex = 0xfbcfe8; // Default Baby Pink Velvet
     let butterflyWings = [];
     let fairyLightsArray = [];
+    let sugarPetalsArray = [];
+    let isSugarPetalActive = true;
     let sparklerParticles = null;
     let isSparklerActive = false;
-    let currentLightingMood = 0; // 0: Palace, 1: Candlelight, 2: Sunburst
-    let mainSpot, rimLight, ambientLight;
     let monogramTexture = null;
 
+    /* Procedural Carrara Rose Marble Texture */
     function createMarbleTexture() {
       const canvas = document.createElement('canvas');
       canvas.width = 512;
       canvas.height = 512;
       const ctx = canvas.getContext('2d');
 
-      ctx.fillStyle = '#140612';
+      ctx.fillStyle = '#fff6f9';
       ctx.fillRect(0, 0, 512, 512);
 
       ctx.lineWidth = 3;
       for (let i = 0; i < 24; i++) {
-        ctx.strokeStyle = i % 2 === 0 ? 'rgba(230, 202, 101, 0.28)' : 'rgba(247, 141, 167, 0.16)';
+        ctx.strokeStyle = i % 2 === 0 ? 'rgba(212, 175, 55, 0.35)' : 'rgba(244, 114, 182, 0.28)';
         ctx.beginPath();
         let x = Math.random() * 512;
         let y = Math.random() * 512;
@@ -1124,19 +1298,18 @@
       canvas.height = 256;
       const ctx = canvas.getContext('2d');
 
-      // Transparent luxury background
       ctx.clearRect(0, 0, 512, 256);
 
-      // Gold Filigree Border
-      ctx.strokeStyle = '#e6ca65';
+      // Gold & Rose Filigree Border
+      ctx.strokeStyle = '#d4af37';
       ctx.lineWidth = 6;
       ctx.strokeRect(20, 20, 472, 216);
 
       ctx.lineWidth = 2;
       ctx.strokeRect(28, 28, 456, 200);
 
-      // Royal Corner Ornaments
-      ctx.fillStyle = '#e6ca65';
+      // Corner Ornaments
+      ctx.fillStyle = '#d4af37';
       ctx.font = '28px serif';
       ctx.fillText('✦', 36, 56);
       ctx.fillText('✦', 450, 56);
@@ -1146,18 +1319,17 @@
       // Monogram Text
       ctx.textAlign = 'center';
       ctx.textBaseline = 'middle';
-      ctx.font = 'bold 58px "Cinzel Decorative", Cinzel, serif';
+      ctx.font = 'bold 54px "Cinzel Decorative", Cinzel, serif';
 
-      // Golden gradient fill
       const grad = ctx.createLinearGradient(100, 0, 400, 0);
-      grad.addColorStop(0, '#fff2b2');
-      grad.addColorStop(0.5, '#e6ca65');
-      grad.addColorStop(1, '#b88a28');
+      grad.addColorStop(0, '#fef08a');
+      grad.addColorStop(0.5, '#d4af37');
+      grad.addColorStop(1, '#a16207');
       ctx.fillStyle = grad;
-      ctx.shadowColor = 'rgba(230, 202, 101, 0.8)';
-      ctx.shadowBlur = 14;
+      ctx.shadowColor = 'rgba(212, 175, 55, 0.7)';
+      ctx.shadowBlur = 10;
 
-      ctx.fillText(text.toUpperCase(), 256, 128);
+      ctx.fillText((text || 'PB').toUpperCase(), 256, 128);
 
       const texture = new THREE.CanvasTexture(canvas);
       texture.needsUpdate = true;
@@ -1167,6 +1339,7 @@
     function updateMonogramTexture(text) {
       monogramTexture = createMonogramCanvasTexture(text || 'PB');
       if (currentModelType === 'wedding') buildWeddingCake(currentColorHex);
+      else if (currentModelType === 'flowerBox') buildFlowerBox(currentColorHex);
       else if (currentModelType === 'hamper') buildHamperBox(currentColorHex);
       else if (currentModelType === 'chocolates') buildChocolateTier(currentColorHex);
     }
@@ -1179,8 +1352,452 @@
       showToast(`Engraved initials: "${pick}"`);
     }
 
+    function createSugarRose(scale = 0.22, color = 0xf472b6) {
+      const flowerGroup = new THREE.Group();
+      const petalMat = new THREE.MeshStandardMaterial({
+        color: color,
+        roughness: 0.4,
+        metalness: 0.1,
+        side: THREE.DoubleSide
+      });
+      const centerMat = new THREE.MeshStandardMaterial({
+        color: 0xfde047,
+        roughness: 0.3,
+        metalness: 0.3
+      });
+
+      const core = new THREE.Mesh(new THREE.SphereGeometry(scale * 0.45, 12, 12), centerMat);
+      flowerGroup.add(core);
+
+      const petalCount = 7;
+      for (let i = 0; i < petalCount; i++) {
+        const angle = (i / petalCount) * Math.PI * 2;
+        const petalGeo = new THREE.CircleGeometry(scale * 0.7, 12, 0, Math.PI);
+        const petal = new THREE.Mesh(petalGeo, petalMat);
+        petal.position.set(Math.cos(angle) * scale * 0.4, 0.05, Math.sin(angle) * scale * 0.4);
+        petal.rotation.x = Math.PI / 2 + 0.35;
+        petal.rotation.z = angle + Math.PI / 2;
+        flowerGroup.add(petal);
+      }
+
+      for (let i = 0; i < 9; i++) {
+        const angle = (i / 9) * Math.PI * 2;
+        const petalGeo = new THREE.CircleGeometry(scale * 0.95, 12, 0, Math.PI);
+        const petal = new THREE.Mesh(petalGeo, petalMat);
+        petal.position.set(Math.cos(angle) * scale * 0.75, 0.02, Math.sin(angle) * scale * 0.75);
+        petal.rotation.x = Math.PI / 2 + 0.55;
+        petal.rotation.z = angle + Math.PI / 2;
+        flowerGroup.add(petal);
+      }
+      return flowerGroup;
+    }
+
+    function clearCurrentGroup() {
+      if (!currentGroup) return;
+      while (currentGroup.children.length > 0) {
+        const obj = currentGroup.children[0];
+        if (obj.geometry) obj.geometry.dispose();
+        if (obj.material) {
+          if (Array.isArray(obj.material)) obj.material.forEach(m => m.dispose());
+          else obj.material.dispose();
+        }
+        currentGroup.remove(obj);
+      }
+    }
+
+    function buildWeddingCake(colorHex) {
+      clearCurrentGroup();
+      butterflyWings = [];
+      fairyLightsArray = [];
+      sugarPetalsArray = [];
+
+      const goldMat = new THREE.MeshStandardMaterial({
+        color: 0xd4af37,
+        metalness: 0.95,
+        roughness: 0.18
+      });
+
+      const velvetCakeMat = new THREE.MeshStandardMaterial({
+        color: colorHex,
+        roughness: 0.35,
+        metalness: 0.1
+      });
+
+      const creamPearlMat = new THREE.MeshStandardMaterial({
+        color: 0xfffdfa,
+        roughness: 0.2,
+        metalness: 0.1
+      });
+
+      // Bottom Tier
+      const tier1 = new THREE.Mesh(new THREE.CylinderGeometry(2.1, 2.1, 1.15, 64), velvetCakeMat);
+      tier1.position.y = -1.0;
+      currentGroup.add(tier1);
+
+      // Middle Tier with Engraved Monogram Plaque
+      const tier2 = new THREE.Mesh(new THREE.CylinderGeometry(1.5, 1.5, 0.98, 64), velvetCakeMat);
+      tier2.position.y = 0.05;
+      currentGroup.add(tier2);
+
+      // Monogram Curvature Plaque on Middle Tier
+      const plaqueMat = new THREE.MeshBasicMaterial({
+        map: monogramTexture,
+        transparent: true,
+        side: THREE.DoubleSide
+      });
+      const plaque = new THREE.Mesh(new THREE.CylinderGeometry(1.52, 1.52, 0.65, 32, 1, true, -Math.PI / 4, Math.PI / 2), plaqueMat);
+      plaque.position.y = 0.05;
+      currentGroup.add(plaque);
+
+      // Top Tier
+      const tier3 = new THREE.Mesh(new THREE.CylinderGeometry(0.95, 0.95, 0.88, 64), velvetCakeMat);
+      tier3.position.y = 0.98;
+      currentGroup.add(tier3);
+
+      // 24K Gold Tier Piping Ribbons
+      [ -0.42, 0.54, 1.42 ].forEach((yPos, i) => {
+        const radius = [2.12, 1.52, 0.97][i];
+        const rim = new THREE.Mesh(new THREE.TorusGeometry(radius, 0.05, 16, 64), goldMat);
+        rim.rotation.x = Math.PI / 2;
+        rim.position.y = yPos;
+        currentGroup.add(rim);
+      });
+
+      // Sculpted Pearl Beading Around Rim
+      for (let i = 0; i < 16; i++) {
+        const angle = (i / 16) * Math.PI * 2;
+        const pearl = new THREE.Mesh(new THREE.SphereGeometry(0.08, 16, 16), creamPearlMat);
+        pearl.position.set(Math.cos(angle) * 1.51, 0.55, Math.sin(angle) * 1.51);
+        currentGroup.add(pearl);
+      }
+
+      // Sculpted 3D Sugar Roses Cascading Down the Tier
+      const rosePositions = [
+        { x: 1.42, y: 0.65, z: 0.5, scale: 0.22, color: 0xf472b6 },
+        { x: 1.55, y: 0.45, z: 0.25, scale: 0.18, color: 0xfbcfe8 },
+        { x: 1.62, y: 0.18, z: 0.05, scale: 0.24, color: 0xffe4e6 },
+        { x: 1.88, y: -0.35, z: 0.4, scale: 0.26, color: 0xf472b6 },
+        { x: 1.95, y: -0.65, z: 0.65, scale: 0.20, color: 0xfbcfe8 }
+      ];
+      rosePositions.forEach(p => {
+        const rose = createSugarRose(p.scale, p.color);
+        rose.position.set(p.x, p.y, p.z);
+        rose.lookAt(p.x * 2, p.y, p.z * 2);
+        currentGroup.add(rose);
+      });
+
+      // Golden Butterfly Topper
+      const butterflyGroup = new THREE.Group();
+      butterflyGroup.position.y = 1.55;
+
+      const body = new THREE.Mesh(new THREE.CylinderGeometry(0.03, 0.03, 0.25, 12), goldMat);
+      body.rotation.z = Math.PI / 2;
+      butterflyGroup.add(body);
+
+      const wingGeo = new THREE.CircleGeometry(0.28, 24, 0, Math.PI);
+      const wingMat = new THREE.MeshStandardMaterial({
+        color: 0xfde047,
+        metalness: 0.9,
+        roughness: 0.2,
+        side: THREE.DoubleSide
+      });
+
+      const leftWing = new THREE.Mesh(wingGeo, wingMat);
+      leftWing.rotation.x = Math.PI / 2;
+      leftWing.position.x = 0.03;
+      butterflyGroup.add(leftWing);
+
+      const rightWing = new THREE.Mesh(wingGeo, wingMat);
+      rightWing.rotation.x = Math.PI / 2;
+      rightWing.rotation.z = Math.PI;
+      rightWing.position.x = -0.03;
+      butterflyGroup.add(rightWing);
+
+      butterflyWings.push({ left: leftWing, right: rightWing });
+      currentGroup.add(butterflyGroup);
+
+      // Floating Sugar Petals
+      if (isSugarPetalActive) {
+        for (let i = 0; i < 24; i++) {
+          const petalGeo = new THREE.CircleGeometry(0.08, 8);
+          const petalMat = new THREE.MeshBasicMaterial({
+            color: i % 2 === 0 ? 0xf472b6 : 0xfbcfe8,
+            side: THREE.DoubleSide,
+            transparent: true,
+            opacity: 0.8
+          });
+          const petal = new THREE.Mesh(petalGeo, petalMat);
+          petal.position.set(
+            (Math.random() - 0.5) * 3.6,
+            -1.3 + Math.random() * 2.8,
+            (Math.random() - 0.5) * 3.6
+          );
+          petal.rotation.set(Math.random() * Math.PI, Math.random() * Math.PI, Math.random() * Math.PI);
+          currentGroup.add(petal);
+          sugarPetalsArray.push({ mesh: petal, speedY: 0.005 + Math.random() * 0.008, rotSpeed: 0.02 });
+        }
+      }
+
+      if (isSparklerActive) createCelebrationSparkler();
+    }
+
+    function buildFlowerBox(colorHex) {
+      clearCurrentGroup();
+      butterflyWings = [];
+      fairyLightsArray = [];
+      sugarPetalsArray = [];
+
+      const boxMat = new THREE.MeshStandardMaterial({ color: colorHex, roughness: 0.35 });
+      const goldMat = new THREE.MeshStandardMaterial({ color: 0xd4af37, metalness: 0.95, roughness: 0.15 });
+
+      const box = new THREE.Mesh(new THREE.CylinderGeometry(2.0, 2.0, 1.4, 64), boxMat);
+      box.position.y = -0.7;
+      currentGroup.add(box);
+
+      const rim = new THREE.Mesh(new THREE.TorusGeometry(2.02, 0.06, 16, 64), goldMat);
+      rim.rotation.x = Math.PI / 2;
+      currentGroup.add(rim);
+
+      const plaqueMat = new THREE.MeshBasicMaterial({ map: monogramTexture, transparent: true });
+      const plaque = new THREE.Mesh(new THREE.CylinderGeometry(2.03, 2.03, 0.6, 32, 1, true, -Math.PI / 4, Math.PI / 2), plaqueMat);
+      plaque.position.y = -0.65;
+      currentGroup.add(plaque);
+
+      for (let i = 0; i < 9; i++) {
+        const angle = (i / 9) * Math.PI * 2;
+        const dist = 0.95 + (i % 2) * 0.45;
+        const rose = createSugarRose(0.24, i % 2 === 0 ? 0xf472b6 : 0xfbcfe8);
+        rose.position.set(Math.cos(angle) * dist, 0.18, Math.sin(angle) * dist);
+        rose.rotation.y = angle;
+        currentGroup.add(rose);
+      }
+
+      const centerRose = createSugarRose(0.3, 0xd4af37);
+      centerRose.position.set(0, 0.28, 0);
+      currentGroup.add(centerRose);
+
+      const macaronMat = new THREE.MeshStandardMaterial({ color: 0xffdfeb, roughness: 0.3 });
+      for (let i = 0; i < 4; i++) {
+        const angle = (i / 4) * Math.PI * 2 + 0.4;
+        const mac = new THREE.Mesh(new THREE.CylinderGeometry(0.2, 0.2, 0.14, 16), macaronMat);
+        mac.position.set(Math.cos(angle) * 1.5, 0.15, Math.sin(angle) * 1.5);
+        currentGroup.add(mac);
+      }
+    }
+
+    function buildHamperBox(colorHex) {
+      clearCurrentGroup();
+      butterflyWings = [];
+      fairyLightsArray = [];
+      sugarPetalsArray = [];
+
+      const boxMat = new THREE.MeshPhysicalMaterial({
+        color: 0xffffff,
+        transparent: true,
+        opacity: 0.45,
+        roughness: 0.05,
+        transmission: 0.9,
+        thickness: 0.6
+      });
+      const box = new THREE.Mesh(new THREE.BoxGeometry(2.8, 2.5, 2.8), boxMat);
+      box.position.y = -0.35;
+      currentGroup.add(box);
+
+      const goldMat = new THREE.MeshStandardMaterial({ color: 0xd4af37, metalness: 0.95, roughness: 0.15 });
+      const baseTray = new THREE.Mesh(new THREE.BoxGeometry(2.9, 0.18, 2.9), goldMat);
+      baseTray.position.y = -1.6;
+      currentGroup.add(baseTray);
+
+      const ribbonMat = new THREE.MeshStandardMaterial({ color: colorHex, roughness: 0.35 });
+      const ribbonV = new THREE.Mesh(new THREE.BoxGeometry(0.35, 2.52, 2.84), ribbonMat);
+      ribbonV.position.y = -0.35;
+      currentGroup.add(ribbonV);
+
+      const ribbonH = new THREE.Mesh(new THREE.BoxGeometry(2.84, 2.52, 0.35), ribbonMat);
+      ribbonH.position.y = -0.35;
+      currentGroup.add(ribbonH);
+
+      const cardMat = new THREE.MeshBasicMaterial({ map: monogramTexture });
+      const card = new THREE.Mesh(new THREE.PlaneGeometry(1.6, 0.8), cardMat);
+      card.position.set(0, -0.4, 0.4);
+      card.rotation.x = -0.2;
+      currentGroup.add(card);
+
+      for (let i = 0; i < 22; i++) {
+        const lightOrb = new THREE.Mesh(
+          new THREE.SphereGeometry(0.05, 12, 12),
+          new THREE.MeshBasicMaterial({ color: 0xffe28a })
+        );
+        lightOrb.position.set(
+          (Math.random() - 0.5) * 2.1,
+          -1.2 + Math.random() * 1.8,
+          (Math.random() - 0.5) * 2.1
+        );
+        currentGroup.add(lightOrb);
+        fairyLightsArray.push(lightOrb);
+      }
+    }
+
+    function buildChocolateTier(colorHex) {
+      clearCurrentGroup();
+      butterflyWings = [];
+      fairyLightsArray = [];
+      sugarPetalsArray = [];
+
+      const chocoMat = new THREE.MeshStandardMaterial({ color: 0x2e0d1e, roughness: 0.3, metalness: 0.15 });
+      const goldMat = new THREE.MeshStandardMaterial({ color: 0xd4af37, metalness: 0.95, roughness: 0.15 });
+
+      const cake = new THREE.Mesh(new THREE.CylinderGeometry(1.9, 2.0, 1.45, 64), chocoMat);
+      cake.position.y = -0.8;
+      currentGroup.add(cake);
+
+      const drip = new THREE.Mesh(new THREE.TorusGeometry(1.92, 0.12, 16, 64), goldMat);
+      drip.rotation.x = Math.PI / 2;
+      drip.position.y = -0.08;
+      currentGroup.add(drip);
+
+      const plaqueMat = new THREE.MeshBasicMaterial({ map: monogramTexture, transparent: true });
+      const plaque = new THREE.Mesh(new THREE.CylinderGeometry(1.93, 1.93, 0.6, 32, 1, true, -Math.PI / 4, Math.PI / 2), plaqueMat);
+      plaque.position.y = -0.8;
+      currentGroup.add(plaque);
+
+      for (let i = 0; i < 8; i++) {
+        const angle = (i / 8) * Math.PI * 2;
+        const square = new THREE.Mesh(new THREE.BoxGeometry(0.42, 0.22, 0.42), goldMat);
+        square.position.set(Math.cos(angle) * 1.25, 0.12, Math.sin(angle) * 1.25);
+        square.rotation.y = angle;
+        currentGroup.add(square);
+      }
+
+      const centerTruffle = new THREE.Mesh(new THREE.SphereGeometry(0.45, 32, 32), chocoMat);
+      centerTruffle.position.y = 0.4;
+      currentGroup.add(centerTruffle);
+    }
+
+    function switch3DModel(type) {
+      currentModelType = type;
+      ['wedding', 'flowerBox', 'hamper', 'chocolates'].forEach(t => {
+        const btn = document.getElementById(`btn-${t}`);
+        if (btn) {
+          btn.classList.remove('bg-pink-500', 'text-white', 'border-2', 'border-pink-500');
+          btn.classList.add('bg-white/80', 'text-brand-berry', 'border', 'border-pink-200');
+        }
+      });
+      const activeBtn = document.getElementById(`btn-${type}`);
+      if (activeBtn) {
+        activeBtn.classList.remove('bg-white/80', 'text-brand-berry', 'border', 'border-pink-200');
+        activeBtn.classList.add('bg-pink-500', 'text-white', 'border-2', 'border-pink-500');
+      }
+
+      if (type === 'wedding') {
+        buildWeddingCake(currentColorHex);
+        document.getElementById('modelBadge').innerText = 'Grandeur Edition';
+        document.getElementById('modelTitle').innerText = 'Royal 3-Tier Floral Cake';
+        document.getElementById('modelDesc').innerText = 'Architectural 3-tier celebration cake coated in rich velvet glaze, 24k gold leaf piping, sculpted sugar roses, handcrafted pearls, and crowned with Saleha’s signature fluttering butterfly.';
+        document.getElementById('modelPrice').innerText = '₹3,499';
+      } else if (type === 'flowerBox') {
+        buildFlowerBox(currentColorHex);
+        document.getElementById('modelBadge').innerText = 'Bridal Keepsake 🌸';
+        document.getElementById('modelTitle').innerText = 'Rose & Macaron Floral Box';
+        document.getElementById('modelDesc').innerText = 'Parisian round keepsake box filled with freshly sculpted pink sugar roses, edible gold blooms, French macarons, and personalized couple initials engraved on the front.';
+        document.getElementById('modelPrice').innerText = '₹2,899';
+      } else if (type === 'hamper') {
+        buildHamperBox(currentColorHex);
+        document.getElementById('modelBadge').innerText = 'Trousseau & Gifting';
+        document.getElementById('modelTitle').innerText = 'Illuminated Acrylic Hamper';
+        document.getElementById('modelDesc').innerText = 'Crystal-clear luxury acrylic keepsake box with glowing micro fairy lights, custom couple name envelopes, artisanal truffles, and satin floral ties. Pan-India shipping safe.';
+        document.getElementById('modelPrice').innerText = '₹2,499';
+      } else if (type === 'chocolates') {
+        buildChocolateTier(currentColorHex);
+        document.getElementById('modelBadge').innerText = 'Belgian Craft';
+        document.getElementById('modelTitle').innerText = 'Monogram Truffle Drip';
+        document.getElementById('modelDesc').innerText = 'Gourmet 55% dark chocolate drip cake adorned with individual personalized initial chocolates. Ideal for intimate engagements, Nikah giveaways, and anniversary dinners.';
+        document.getElementById('modelPrice').innerText = '₹2,199';
+      }
+    }
+
+    function change3DColor(hex, label) {
+      currentColorHex = hex;
+      document.getElementById('activeColorName').innerText = label;
+      if (currentModelType === 'wedding') buildWeddingCake(hex);
+      else if (currentModelType === 'flowerBox') buildFlowerBox(hex);
+      else if (currentModelType === 'hamper') buildHamperBox(hex);
+      else if (currentModelType === 'chocolates') buildChocolateTier(hex);
+      showToast(`Switched finish to ${label}!`);
+    }
+
+    function toggleSugarPetalShower() {
+      isSugarPetalActive = !isSugarPetalActive;
+      document.getElementById('sugarPetalLabel').innerText = isSugarPetalActive ? 'ON' : 'OFF';
+      if (currentModelType === 'wedding') buildWeddingCake(currentColorHex);
+      else if (currentModelType === 'flowerBox') buildFlowerBox(currentColorHex);
+      showToast(isSugarPetalActive ? '3D Sugar Petals: Flowing 🌸' : '3D Sugar Petals: Paused');
+    }
+
+    function toggleCelebrationFountain() {
+      isSparklerActive = !isSparklerActive;
+      const btn = document.getElementById('sparklerLabel');
+      if (isSparklerActive) {
+        btn.innerText = 'ON';
+        createCelebrationSparkler();
+        showToast('Sparkler Fountain: Sparking! ✨');
+      } else {
+        btn.innerText = 'OFF';
+        removeCelebrationSparkler();
+        showToast('Sparkler: Extinguished');
+      }
+    }
+
+    function createCelebrationSparkler() {
+      removeCelebrationSparkler();
+      const sparkCount = 80;
+      const sparkGeo = new THREE.BufferGeometry();
+      const sparkPos = new Float32Array(sparkCount * 3);
+      for (let i = 0; i < sparkCount * 3; i += 3) {
+        sparkPos[i] = (Math.random() - 0.5) * 0.4;
+        sparkPos[i + 1] = 1.6 + Math.random() * 0.8;
+        sparkPos[i + 2] = (Math.random() - 0.5) * 0.4;
+      }
+      sparkGeo.setAttribute('position', new THREE.BufferAttribute(sparkPos, 3));
+      const sparkMat = new THREE.PointsMaterial({
+        size: 0.12,
+        color: 0xffd700,
+        transparent: true,
+        opacity: 0.95
+      });
+      sparklerParticles = new THREE.Points(sparkGeo, sparkMat);
+      currentGroup.add(sparklerParticles);
+    }
+
+    function removeCelebrationSparkler() {
+      if (sparklerParticles && currentGroup) {
+        currentGroup.remove(sparklerParticles);
+        sparklerParticles.geometry.dispose();
+        sparklerParticles.material.dispose();
+        sparklerParticles = null;
+      }
+    }
+
+    function setCameraPreset(view) {
+      if (!camera) return;
+      if (view === 'front') {
+        camera.position.set(0, 0.4, 7.2);
+      } else if (view === 'isometric') {
+        camera.position.set(3.5, 3.2, 6.8);
+      } else if (view === 'top') {
+        camera.position.set(0, 7.5, 3.2);
+      }
+      camera.lookAt(0, 0, 0);
+    }
+
+    function toggleAutoRotate() {
+      autoRotate = !autoRotate;
+      document.getElementById('rotateStatus').innerText = `Spin: ${autoRotate ? 'ON' : 'OFF'}`;
+    }
+
     function initThreeJS() {
       const container = document.getElementById('threeCanvas');
+      if (!container) return;
       const width = container.clientWidth || 700;
       const height = container.clientHeight || 550;
 
@@ -1192,19 +1809,18 @@
       renderer.setSize(width, height);
       renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
       renderer.toneMapping = THREE.ACESFilmicToneMapping;
-      renderer.toneMappingExposure = 1.35;
+      renderer.toneMappingExposure = 1.25;
 
-      // Studio Lighting
-      ambientLight = new THREE.AmbientLight(0xfff3e6, 1.4);
+      const ambientLight = new THREE.AmbientLight(0xfff5f8, 1.8);
       scene.add(ambientLight);
 
-      mainSpot = new THREE.SpotLight(0xffe28a, 3.2);
+      const mainSpot = new THREE.SpotLight(0xffecd2, 2.6);
       mainSpot.position.set(5, 12, 8);
       mainSpot.angle = Math.PI / 3.5;
       mainSpot.penumbra = 0.6;
       scene.add(mainSpot);
 
-      rimLight = new THREE.PointLight(0xff99bb, 2.2, 25);
+      const rimLight = new THREE.PointLight(0xf472b6, 2.0, 25);
       rimLight.position.set(-6, 5, -5);
       scene.add(rimLight);
 
@@ -1212,22 +1828,22 @@
       secondaryLight.position.set(0, -5, 5);
       scene.add(secondaryLight);
 
-      // Pedestal Setup
+      // Pedestal
       studioPedestal = new THREE.Group();
       const marbleTex = createMarbleTexture();
       
       const pedestalGeo = new THREE.CylinderGeometry(2.7, 3.0, 0.38, 64);
       const pedestalMat = new THREE.MeshStandardMaterial({
         map: marbleTex,
-        roughness: 0.25,
-        metalness: 0.4
+        roughness: 0.2,
+        metalness: 0.25
       });
       const pedestal = new THREE.Mesh(pedestalGeo, pedestalMat);
       pedestal.position.y = -1.8;
       studioPedestal.add(pedestal);
 
       const goldMat = new THREE.MeshStandardMaterial({
-        color: 0xe6ca65,
+        color: 0xd4af37,
         metalness: 0.95,
         roughness: 0.15
       });
@@ -1238,7 +1854,7 @@
 
       scene.add(studioPedestal);
 
-      // Ambient Gold Sparkle Particles
+      // Ambient Gold & Rose Sparkle Particles
       const particleGeo = new THREE.BufferGeometry();
       const count = 160;
       const positions = new Float32Array(count * 3);
@@ -1250,21 +1866,17 @@
       particleGeo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
       const particleMat = new THREE.PointsMaterial({
         size: 0.09,
-        color: 0xffea9f,
+        color: 0xf472b6,
         transparent: true,
-        opacity: 0.85
+        opacity: 0.8
       });
       sparkleParticles = new THREE.Points(particleGeo, particleMat);
       scene.add(sparkleParticles);
 
-      // Model Holder Group
       currentGroup = new THREE.Group();
       scene.add(currentGroup);
 
-      // Monogram Texture
       monogramTexture = createMonogramCanvasTexture('S & A');
-
-      // Build Default Royal Cake
       buildWeddingCake(currentColorHex);
 
       const canvas = renderer.domElement;
@@ -1320,7 +1932,7 @@
 
     function onWindowResize() {
       const container = document.getElementById('threeCanvas');
-      if (!container) return;
+      if (!container || !camera || !renderer) return;
       const width = container.clientWidth;
       const height = container.clientHeight;
       camera.aspect = width / height;
@@ -1328,336 +1940,7 @@
       renderer.setSize(width, height);
     }
 
-    function buildWeddingCake(colorHex) {
-      clearCurrentGroup();
-      butterflyWings = [];
-      fairyLightsArray = [];
-
-      const goldMat = new THREE.MeshStandardMaterial({
-        color: 0xe6ca65,
-        metalness: 0.95,
-        roughness: 0.18
-      });
-
-      const velvetCakeMat = new THREE.MeshStandardMaterial({
-        color: colorHex,
-        roughness: 0.45,
-        metalness: 0.15
-      });
-
-      const creamPearlMat = new THREE.MeshStandardMaterial({
-        color: 0xfffcf7,
-        roughness: 0.25,
-        metalness: 0.1
-      });
-
-      // Bottom Tier
-      const tier1 = new THREE.Mesh(new THREE.CylinderGeometry(2.1, 2.1, 1.15, 64), velvetCakeMat);
-      tier1.position.y = -1.0;
-      currentGroup.add(tier1);
-
-      // Middle Tier with Engraved Monogram Plaque
-      const tier2 = new THREE.Mesh(new THREE.CylinderGeometry(1.5, 1.5, 0.98, 64), velvetCakeMat);
-      tier2.position.y = 0.05;
-      currentGroup.add(tier2);
-
-      // Monogram Curvature Plaque on Middle Tier
-      const plaqueMat = new THREE.MeshBasicMaterial({
-        map: monogramTexture,
-        transparent: true,
-        side: THREE.DoubleSide
-      });
-      const plaque = new THREE.Mesh(new THREE.CylinderGeometry(1.52, 1.52, 0.65, 32, 1, true, -Math.PI / 4, Math.PI / 2), plaqueMat);
-      plaque.position.y = 0.05;
-      currentGroup.add(plaque);
-
-      // Top Tier
-      const tier3 = new THREE.Mesh(new THREE.CylinderGeometry(0.95, 0.95, 0.88, 64), velvetCakeMat);
-      tier3.position.y = 0.98;
-      currentGroup.add(tier3);
-
-      // 24K Gold Tier Piping Ribbons
-      [ -0.42, 0.54, 1.42 ].forEach((yPos, i) => {
-        const radius = [2.12, 1.52, 0.97][i];
-        const rim = new THREE.Mesh(new THREE.TorusGeometry(radius, 0.05, 16, 64), goldMat);
-        rim.rotation.x = Math.PI / 2;
-        rim.position.y = yPos;
-        currentGroup.add(rim);
-      });
-
-      // Sculpted Pearl Beading Around Rim
-      for (let i = 0; i < 16; i++) {
-        const angle = (i / 16) * Math.PI * 2;
-        const pearl = new THREE.Mesh(new THREE.SphereGeometry(0.08, 16, 16), creamPearlMat);
-        pearl.position.set(Math.cos(angle) * 1.51, 0.55, Math.sin(angle) * 1.51);
-        currentGroup.add(pearl);
-      }
-
-      // Golden Butterfly Topper 🦋
-      const butterflyGroup = new THREE.Group();
-      butterflyGroup.position.y = 1.55;
-
-      const body = new THREE.Mesh(new THREE.CylinderGeometry(0.03, 0.03, 0.25, 12), goldMat);
-      body.rotation.z = Math.PI / 2;
-      butterflyGroup.add(body);
-
-      const wingGeo = new THREE.CircleGeometry(0.28, 24, 0, Math.PI);
-      const wingMat = new THREE.MeshStandardMaterial({
-        color: 0xffe28a,
-        metalness: 0.9,
-        roughness: 0.2,
-        side: THREE.DoubleSide
-      });
-
-      const leftWing = new THREE.Mesh(wingGeo, wingMat);
-      leftWing.rotation.x = Math.PI / 2;
-      leftWing.position.x = 0.03;
-      butterflyGroup.add(leftWing);
-
-      const rightWing = new THREE.Mesh(wingGeo, wingMat);
-      rightWing.rotation.x = Math.PI / 2;
-      rightWing.rotation.z = Math.PI;
-      rightWing.position.x = -0.03;
-      butterflyGroup.add(rightWing);
-
-      butterflyWings.push({ left: leftWing, right: rightWing });
-      currentGroup.add(butterflyGroup);
-
-      if (isSparklerActive) createCelebrationSparkler();
-    }
-
-    function buildHamperBox(colorHex) {
-      clearCurrentGroup();
-      butterflyWings = [];
-      fairyLightsArray = [];
-
-      // Transparent Acrylic Box Frame
-      const boxMat = new THREE.MeshPhysicalMaterial({
-        color: 0xffffff,
-        transparent: true,
-        opacity: 0.38,
-        roughness: 0.08,
-        transmission: 0.85,
-        thickness: 0.6
-      });
-      const box = new THREE.Mesh(new THREE.BoxGeometry(2.8, 2.5, 2.8), boxMat);
-      box.position.y = -0.35;
-      currentGroup.add(box);
-
-      // Gold Trim Edges and Base
-      const goldMat = new THREE.MeshStandardMaterial({ color: 0xe6ca65, metalness: 0.95, roughness: 0.15 });
-      const baseTray = new THREE.Mesh(new THREE.BoxGeometry(2.9, 0.18, 2.9), goldMat);
-      baseTray.position.y = -1.6;
-      currentGroup.add(baseTray);
-
-      // Satin Ribbon
-      const ribbonMat = new THREE.MeshStandardMaterial({ color: colorHex, roughness: 0.35 });
-      const ribbonV = new THREE.Mesh(new THREE.BoxGeometry(0.35, 2.52, 2.84), ribbonMat);
-      ribbonV.position.y = -0.35;
-      currentGroup.add(ribbonV);
-
-      const ribbonH = new THREE.Mesh(new THREE.BoxGeometry(2.84, 2.52, 0.35), ribbonMat);
-      ribbonH.position.y = -0.35;
-      currentGroup.add(ribbonH);
-
-      // Monogram Gift Card Inside
-      const cardMat = new THREE.MeshBasicMaterial({ map: monogramTexture });
-      const card = new THREE.Mesh(new THREE.PlaneGeometry(1.6, 0.8), cardMat);
-      card.position.set(0, -0.4, 0.4);
-      card.rotation.x = -0.2;
-      currentGroup.add(card);
-
-      // LED Micro Fairy Lights Inside
-      for (let i = 0; i < 24; i++) {
-        const lightOrb = new THREE.Mesh(
-          new THREE.SphereGeometry(0.05, 12, 12),
-          new THREE.MeshBasicMaterial({ color: 0xffec99 })
-        );
-        lightOrb.position.set(
-          (Math.random() - 0.5) * 2.1,
-          -1.2 + Math.random() * 1.8,
-          (Math.random() - 0.5) * 2.1
-        );
-        currentGroup.add(lightOrb);
-        fairyLightsArray.push(lightOrb);
-      }
-    }
-
-    function buildChocolateTier(colorHex) {
-      clearCurrentGroup();
-      butterflyWings = [];
-      fairyLightsArray = [];
-
-      const chocoMat = new THREE.MeshStandardMaterial({ color: 0x180b06, roughness: 0.3, metalness: 0.15 });
-      const goldMat = new THREE.MeshStandardMaterial({ color: 0xe6ca65, metalness: 0.95, roughness: 0.15 });
-
-      // Chocolate Tier Base
-      const cake = new THREE.Mesh(new THREE.CylinderGeometry(1.9, 2.0, 1.45, 64), chocoMat);
-      cake.position.y = -0.8;
-      currentGroup.add(cake);
-
-      // Golden Drip Rim
-      const drip = new THREE.Mesh(new THREE.TorusGeometry(1.92, 0.12, 16, 64), goldMat);
-      drip.rotation.x = Math.PI / 2;
-      drip.position.y = -0.08;
-      currentGroup.add(drip);
-
-      // Monogram Plaque on Front
-      const plaqueMat = new THREE.MeshBasicMaterial({ map: monogramTexture, transparent: true });
-      const plaque = new THREE.Mesh(new THREE.CylinderGeometry(1.93, 1.93, 0.6, 32, 1, true, -Math.PI / 4, Math.PI / 2), plaqueMat);
-      plaque.position.y = -0.8;
-      currentGroup.add(plaque);
-
-      // Individual Monogram Initial Chocolates on Top
-      for (let i = 0; i < 8; i++) {
-        const angle = (i / 8) * Math.PI * 2;
-        const square = new THREE.Mesh(new THREE.BoxGeometry(0.42, 0.22, 0.42), goldMat);
-        square.position.set(Math.cos(angle) * 1.25, 0.12, Math.sin(angle) * 1.25);
-        square.rotation.y = angle;
-        currentGroup.add(square);
-      }
-
-      // Centerpiece Truffle Pyramid
-      const centerTruffle = new THREE.Mesh(new THREE.SphereGeometry(0.45, 32, 32), chocoMat);
-      centerTruffle.position.y = 0.4;
-      currentGroup.add(centerTruffle);
-    }
-
-    function clearCurrentGroup() {
-      while (currentGroup.children.length > 0) {
-        const obj = currentGroup.children[0];
-        if (obj.geometry) obj.geometry.dispose();
-        if (obj.material) {
-          if (Array.isArray(obj.material)) obj.material.forEach(m => m.dispose());
-          else obj.material.dispose();
-        }
-        currentGroup.remove(obj);
-      }
-    }
-
-    function switch3DModel(type) {
-      currentModelType = type;
-      ['wedding', 'hamper', 'chocolates'].forEach(t => {
-        const btn = document.getElementById(`btn-${t}`);
-        btn.classList.remove('bg-brand-gold', 'text-brand-void', 'border-2', 'border-brand-gold');
-        btn.classList.add('bg-white/5', 'text-slate-200', 'border', 'border-white/10');
-      });
-      const activeBtn = document.getElementById(`btn-${type}`);
-      activeBtn.classList.remove('bg-white/5', 'text-slate-200', 'border', 'border-white/10');
-      activeBtn.classList.add('bg-brand-gold', 'text-brand-void', 'border-2', 'border-brand-gold');
-
-      if (type === 'wedding') {
-        buildWeddingCake(currentColorHex);
-        document.getElementById('modelBadge').innerText = 'Grandeur Edition';
-        document.getElementById('modelTitle').innerText = 'Royal 3-Tier Pearl Cake';
-        document.getElementById('modelDesc').innerText = 'Architectural 3-tier celebration cake coated in rich velvet glaze, 24k gold leaf piping, handcrafted pearls, and crowned with Saleha’s golden signature fluttering butterfly.';
-        document.getElementById('modelPrice').innerText = '₹3,499';
-      } else if (type === 'hamper') {
-        buildHamperBox(currentColorHex);
-        document.getElementById('modelBadge').innerText = 'Trousseau & Gifting';
-        document.getElementById('modelTitle').innerText = 'Illuminated Acrylic Hamper';
-        document.getElementById('modelDesc').innerText = 'Crystal-clear luxury acrylic keepsake box with glowing micro fairy lights, custom couple name envelopes, artisanal truffles, and satin floral ties. Pan-India shipping safe.';
-        document.getElementById('modelPrice').innerText = '₹2,499';
-      } else if (type === 'chocolates') {
-        buildChocolateTier(currentColorHex);
-        document.getElementById('modelBadge').innerText = 'Belgian Craft';
-        document.getElementById('modelTitle').innerText = 'Monogram Truffle Drip';
-        document.getElementById('modelDesc').innerText = 'Gourmet 55% dark chocolate drip cake adorned with individual personalized initial chocolates. Ideal for intimate engagements, Nikah giveaways, and anniversary dinners.';
-        document.getElementById('modelPrice').innerText = '₹2,199';
-      }
-    }
-
-    function change3DColor(hex, label) {
-      currentColorHex = hex;
-      document.getElementById('activeColorName').innerText = label;
-      if (currentModelType === 'wedding') buildWeddingCake(hex);
-      else if (currentModelType === 'hamper') buildHamperBox(hex);
-      else if (currentModelType === 'chocolates') buildChocolateTier(hex);
-      showToast(`Switched finish to ${label}!`);
-    }
-
-    function setCameraPreset(view) {
-      if (view === 'front') {
-        camera.position.set(0, 0.4, 7.2);
-      } else if (view === 'isometric') {
-        camera.position.set(3.5, 3.2, 6.8);
-      } else if (view === 'top') {
-        camera.position.set(0, 7.5, 3.2);
-      }
-      camera.lookAt(0, 0, 0);
-    }
-
-    function toggleAutoRotate() {
-      autoRotate = !autoRotate;
-      document.getElementById('rotateStatus').innerText = `Spin: ${autoRotate ? 'ON' : 'OFF'}`;
-    }
-
-    function toggleCelebrationFountain() {
-      isSparklerActive = !isSparklerActive;
-      const btn = document.getElementById('sparklerLabel');
-      if (isSparklerActive) {
-        btn.innerText = 'ON';
-        createCelebrationSparkler();
-        showToast('Sparkler Fountain: Sparking! ✨');
-      } else {
-        btn.innerText = 'OFF';
-        removeCelebrationSparkler();
-        showToast('Sparkler: Extinguished');
-      }
-    }
-
-    function createCelebrationSparkler() {
-      removeCelebrationSparkler();
-      const sparkCount = 80;
-      const sparkGeo = new THREE.BufferGeometry();
-      const sparkPos = new Float32Array(sparkCount * 3);
-      for (let i = 0; i < sparkCount * 3; i += 3) {
-        sparkPos[i] = (Math.random() - 0.5) * 0.4;
-        sparkPos[i + 1] = 1.6 + Math.random() * 0.8;
-        sparkPos[i + 2] = (Math.random() - 0.5) * 0.4;
-      }
-      sparkGeo.setAttribute('position', new THREE.BufferAttribute(sparkPos, 3));
-      const sparkMat = new THREE.PointsMaterial({
-        size: 0.12,
-        color: 0xfff2b2,
-        transparent: true,
-        opacity: 0.95
-      });
-      sparklerParticles = new THREE.Points(sparkGeo, sparkMat);
-      currentGroup.add(sparklerParticles);
-    }
-
-    function removeCelebrationSparkler() {
-      if (sparklerParticles) {
-        currentGroup.remove(sparklerParticles);
-        sparklerParticles.geometry.dispose();
-        sparklerParticles.material.dispose();
-        sparklerParticles = null;
-      }
-    }
-
-    function cycleStudioLighting() {
-      currentLightingMood = (currentLightingMood + 1) % 3;
-      const label = document.getElementById('lightMoodLabel');
-      if (currentLightingMood === 0) {
-        label.innerText = 'Palace';
-        ambientLight.color.setHex(0xfff3e6);
-        mainSpot.color.setHex(0xffe28a);
-        rimLight.color.setHex(0xff99bb);
-      } else if (currentLightingMood === 1) {
-        label.innerText = 'Candle';
-        ambientLight.color.setHex(0xffcc88);
-        mainSpot.color.setHex(0xff9933);
-        rimLight.color.setHex(0xff6644);
-      } else {
-        label.innerText = 'Golden';
-        ambientLight.color.setHex(0xfffae0);
-        mainSpot.color.setHex(0xffd700);
-        rimLight.color.setHex(0xe6ca65);
-      }
-      showToast(`Studio Lighting: ${label.innerText} Mood`);
-    }
-
+    // Cursor Trail
     if (window.innerWidth > 1024) {
       let lastTime = 0;
       window.addEventListener('mousemove', (e) => {
@@ -1673,7 +1956,7 @@
             dust.style.opacity = '0';
             dust.style.transform = 'translate(-50%, -50%) scale(0.2)';
           }, 50);
-          setTimeout(() => dust.remove(), 700);
+          setTimeout(() => dust.remove(), 600);
         }
       });
     }
@@ -1719,15 +2002,32 @@
         sparklerParticles.geometry.attributes.position.needsUpdate = true;
       }
 
-      renderer.render(scene, camera);
+      if (sugarPetalsArray.length > 0) {
+        sugarPetalsArray.forEach(p => {
+          p.mesh.position.y -= p.speedY;
+          p.mesh.rotation.x += p.rotSpeed;
+          p.mesh.rotation.y += p.rotSpeed * 0.6;
+          if (p.mesh.position.y < -1.7) {
+            p.mesh.position.y = 1.6;
+            p.mesh.position.x = (Math.random() - 0.5) * 3.6;
+            p.mesh.position.z = (Math.random() - 0.5) * 3.6;
+          }
+        });
+      }
+
+      if (renderer && scene && camera) {
+        renderer.render(scene, camera);
+      }
     }
 
     window.onload = function() {
       initThreeJS();
       animate();
+      initPetalCanvas();
       renderProducts(productsData);
-      lucide.createIcons();
+      if (window.lucide) lucide.createIcons();
     };
   </script>
 </body>
-                  </html>
+</html>
+```
