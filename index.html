@@ -225,17 +225,17 @@
     /* Cross-Stamp straddling the photo box border (Image 2 Style & Size) */
     .cross-stamp-overlay {
       position: absolute;
-      bottom: -24px;
-      right: -36px;
-      width: 155px;
+      bottom: -30px;
+      right: -46px;
+      width: 215px;
       height: auto;
-      max-height: 115px;
+      max-height: 150px;
       object-fit: contain;
       z-index: 15;
       pointer-events: none;
       mix-blend-mode: multiply;
       transform: rotate(-6deg);
-      opacity: 0.95;
+      opacity: 0.96;
     }
 
     /* Resident Signature Box */
@@ -278,30 +278,18 @@
       overflow: hidden;
     }
 
-    .certifier-sig-img {
-      position: absolute;
-      top: 2px;
-      left: 50%;
-      transform: translateX(-50%);
-      max-width: 60%;
-      max-height: 18mm;
-      object-fit: contain;
-      mix-blend-mode: multiply;
-      z-index: 3;
-    }
-
     .certifier-stamp-img {
       position: absolute;
-      top: 48%;
+      top: 46%;
       left: 50%;
       transform: translate(-50%, -52%);
-      width: 175px;
-      max-width: 85%;
-      max-height: 23mm;
+      width: 225px;
+      max-width: 92%;
+      max-height: 24mm;
       object-fit: contain;
       mix-blend-mode: multiply;
       z-index: 2;
-      opacity: 0.95;
+      opacity: 0.96;
     }
 
     /* Responsive Scaling for Small Screens */
@@ -736,7 +724,6 @@
 
                 <!-- Signature & Stamp of the Certifier Box (Single full un-cropped stamp) -->
                 <div class="certifier-sig-box">
-                  <img id="img-certifierSignature" src="" alt="" class="certifier-sig-img hidden" />
                   <img id="img-certifierStamp" src="" alt="" class="certifier-stamp-img hidden" />
                   <div class="text-[7pt] text-center text-slate-800 z-10 bg-white/80 px-1.5">
                     Signature &amp; Stamp of the Certifier
@@ -982,13 +969,7 @@
             id: 'officeStamp',
             label: '3. Official Stamp (Photo Cross-Stamp + Single Stamp in Certifier Box)',
             type: 'image_upload',
-            hint: 'Renders large cross-stamp on Photo edge (Image 2 style) AND single stamp inside Certifier box.'
-          },
-          {
-            id: 'certifierSignature',
-            label: "4. Certifier's Separate Signature (Optional — leave empty if stamp already includes sign)",
-            type: 'image_upload',
-            hint: "Only upload if you want a separate signature image above the stamp."
+            hint: 'Renders large cross-stamp on Photo edge (Image 2 style) AND a single stamp inside Certifier box.'
           }
         ]
       },
@@ -1086,7 +1067,6 @@
       sessionImages: {
         residentPhoto: '',
         residentSignature: '',
-        certifierSignature: '',
         officeStamp: ''
       }
     };
@@ -1615,10 +1595,6 @@
         const img = document.getElementById('img-residentSignature');
         img.src = dataUrl || '';
         img.classList.toggle('hidden', !dataUrl);
-      } else if (imageKey === 'certifierSignature') {
-        const img = document.getElementById('img-certifierSignature');
-        img.src = dataUrl || '';
-        img.classList.toggle('hidden', !dataUrl);
       } else if (imageKey === 'officeStamp') {
         // Render stamp TWICE:
         // 1) Cross-stamping straddling the edge of the Resident Photograph box
@@ -1626,7 +1602,7 @@
         crossImg.src = dataUrl || '';
         crossImg.classList.toggle('hidden', !dataUrl);
 
-        // 2) Full un-cropped stamp inside the Certifier's Signature & Stamp box
+        // 2) Single full un-cropped stamp inside the Certifier's Signature & Stamp box
         const certStampImg = document.getElementById('img-certifierStamp');
         certStampImg.src = dataUrl || '';
         certStampImg.classList.toggle('hidden', !dataUrl);
@@ -1726,7 +1702,6 @@
       const samples = generateSampleSVGAssets();
       applyImageToPreview('residentPhoto', samples.photoSvg);
       applyImageToPreview('residentSignature', samples.resSigSvg);
-      applyImageToPreview('certifierSignature', '');
       applyImageToPreview('officeStamp', samples.stampSvg);
 
       showToast('✨ Sample data & Image-2 style stamp loaded!');
