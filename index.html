@@ -1,4 +1,4 @@
-```html
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -218,23 +218,20 @@
       inset: 0;
       width: 100%;
       height: 100%;
-      object-fit: cover;
-      z-index: 2;
-    }
-
-    /* Cross-Stamp straddling the photo box border */
+    /* Cross-Stamp straddling the photo box border (Image 2 Style & Size) */
     .cross-stamp-overlay {
       position: absolute;
-      bottom: -14px;
-      left: -34px;
-      width: 105px;
-      height: 105px;
+      bottom: -22px;
+      right: -38px;
+      width: 155px;
+      height: auto;
+      max-height: 115px;
       object-fit: contain;
       z-index: 10;
       pointer-events: none;
       mix-blend-mode: multiply;
-      transform: rotate(-12deg);
-      opacity: 0.92;
+      transform: rotate(-6deg);
+      opacity: 0.94;
     }
 
     /* Resident Signature Box */
@@ -262,7 +259,7 @@
       mix-blend-mode: multiply;
     }
 
-    /* Certifier Signature & Stamp Box */
+    /* Certifier Signature & Stamp Box (Single Large Centered Stamp) */
     .certifier-sig-box {
       border: 1px solid #222222;
       height: 29mm;
@@ -278,10 +275,11 @@
 
     .certifier-sig-img {
       position: absolute;
-      top: 4px;
-      left: 16%;
-      max-width: 46%;
-      max-height: 20mm;
+      top: 2px;
+      left: 50%;
+      transform: translateX(-50%);
+      max-width: 60%;
+      max-height: 18mm;
       object-fit: contain;
       mix-blend-mode: multiply;
       z-index: 3;
@@ -289,14 +287,16 @@
 
     .certifier-stamp-img {
       position: absolute;
-      top: 2px;
-      right: 12%;
-      width: 24mm;
-      height: 24mm;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -56%);
+      width: 175px;
+      max-width: 85%;
+      max-height: 24mm;
       object-fit: contain;
       mix-blend-mode: multiply;
       z-index: 2;
-      opacity: 0.92;
+      opacity: 0.94;
     }
 
     /* Responsive Scaling for Small Screens */
@@ -729,7 +729,7 @@
                   </div>
                 </div>
 
-                <!-- Signature & Stamp of the Certifier Box (Full un-cropped stamp + certifier signature) -->
+                <!-- Signature & Stamp of the Certifier Box (Single full un-cropped stamp) -->
                 <div class="certifier-sig-box">
                   <img id="img-certifierSignature" src="" alt="" class="certifier-sig-img hidden" />
                   <img id="img-certifierStamp" src="" alt="" class="certifier-stamp-img hidden" />
@@ -753,6 +753,48 @@
 
   <script>
     /* ==========================================================================
+       0. MAHARASHTRA DISTRICTS & SUB-DISTRICTS (TALUKAS) MASTER DATA (36 DISTRICTS)
+       ========================================================================== */
+    const MAHARASHTRA_LOCATIONS = {
+      "AHILYANAGAR": ["NAGAR", "AKOLE", "JAMKHED", "KARJAT", "KOPARGAON", "NEVASA", "PARNER", "PATHARDI", "RAHATA", "RAHURI", "SANGAMNER", "SHEVGAON", "SHRIGONDA", "SHRIRAMPUR"],
+      "AKOLA": ["AKOLA", "AKOT", "BALAPUR", "BARSHITAKLI", "MURTIJAPUR", "PATUR", "TELHARA"],
+      "AMRAVATI": ["AMRAVATI", "ACHALPUR", "ANJANGAON SURJI", "BHATKULI", "CHANDUR BAZAR", "CHANDUR RAILWAY", "CHIKHALDARA", "DARYAPUR", "DHAMANGAON RAILWAY", "DHARNI", "MORSHI", "NANDGAON KHANDESHWAR", "TEOSA", "WARUD"],
+      "BEED": ["BEED", "AMBAJOGAI", "ASHTI", "DHARUR", "GEORAI", "KAIJ", "MAJALGAON", "PARLI", "PATODA", "SHIRUR KASAR", "WADWANI"],
+      "BHANDARA": ["BHANDARA", "LAKHANDUR", "LAKHANI", "MOHADI", "PAUNI", "SAKOLI", "TUMSAR"],
+      "BULDHANA": ["BULDHANA", "CHIKHLI", "DEULGAON RAJA", "JALGAON JAMOD", "KHAMGAON", "LONAR", "MALKAPUR", "MEHKAR", "MOTALA", "NANDURA", "SANGRAMPUR", "SHEGAON", "SINDKHED RAJA"],
+      "CHANDRAPUR": ["CHANDRAPUR", "BALLARPUR", "BHADRAWATI", "BRAHMAPURI", "CHIMUR", "GONDPIPRI", "JIWATI", "KORPANA", "MUL", "NAGBHID", "POMBHURNA", "RAJURA", "SAOLI", "SINDEWAHI", "WARORA"],
+      "CHHATRAPATI SAMBHAJINAGAR": ["CHHATRAPATI SAMBHAJINAGAR", "GANGAPUR", "KANNAD", "KHULDABAD", "PAITHAN", "PHULAMBRI", "SILLOD", "SOEGAON", "VAIJAPUR"],
+      "DHARASHIV": ["DHARASHIV", "BHOOM", "KALAMB", "LOHARA", "OMERGA", "PARANDA", "TULJAPUR", "WASHI"],
+      "DHULE": ["DHULE", "SAKRI", "SHIRPUR", "SINDKHEDA"],
+      "GADCHIROLI": ["GADCHIROLI", "AHERI", "ARMORI", "BHAMRAGAD", "CHAMORSHI", "DESAIGANJ", "DHANORA", "ETAPALLI", "KORCHI", "KURKHEDA", "MULCHERA", "SIRONCHA"],
+      "GONDIA": ["GONDIA", "AMGAON", "ARJUNI MORGAON", "DEORI", "GOREGAON", "SADAK ARJUNI", "SALEKASA", "TIRORA"],
+      "HINGOLI": ["HINGOLI", "AUNDHA NAGNATH", "BASMATH", "KALAMNURI", "SENGAON"],
+      "JALGAON": ["JALGAON", "AMALNER", "BHADGAON", "BHUSAWAL", "BODWAD", "CHALISGAON", "CHOPDA", "DHARANGAON", "ERANDOL", "JAMNER", "MUKTAINAGAR", "PACHORA", "PAROLA", "RAVER", "YAWAL"],
+      "JALNA": ["JALNA", "AMBAD", "BADNAPUR", "BHOKARDAN", "GHANSAWANGI", "JAFRABAD", "MANTHA", "PARTUR"],
+      "KOLHAPUR": ["KARVEER", "AJRA", "BHUDARGAD", "CHANDGAD", "GADHINGLAJ", "GAGANBAWADA", "HATKANANGALE", "KAGAL", "PANHALA", "RADHANAGARI", "SHAHUWADI", "SHIROL"],
+      "LATUR": ["LATUR", "AHMEDPUR", "AUSA", "CHAKUR", "DEONI", "JALKOT", "NILANGA", "RENAPUR", "SHIRUR ANANTPAL", "UDGIR"],
+      "MUMBAI CITY": ["MUMBAI CITY", "COLABA", "BYCULLA", "DADAR", "MATUNGA", "SION", "WORLI"],
+      "MUMBAI SUBURBAN": ["ANDHERI", "BORIVALI", "KURLA"],
+      "NAGPUR": ["NAGPUR URBAN", "NAGPUR RURAL", "BHIWAPUR", "HINGNA", "KALAMESHWAR", "KAMPTEE", "KATOL", "KUHI", "MAUDA", "NARKHED", "PARSEONI", "RAMTEK", "SAVNER", "UMRED"],
+      "NANDED": ["NANDED", "ARDHAPUR", "BHOKAR", "BILOLI", "DEGLOOR", "DHARMABAD", "HADGAON", "HIMAYATNAGAR", "KANDHAR", "KINWAT", "LOHA", "MAHOOR", "MUDKHED", "MUKHED", "NAIGAON", "UMRI"],
+      "NANDURBAR": ["NANDURBAR", "AKKALKUWA", "AKRANI", "NAWAPUR", "SHAHADA", "TALODA"],
+      "NASHIK": ["NASHIK", "BAGLAN", "CHANDWAD", "DEOLA", "DINDORI", "IGATPURI", "KALWAN", "MALEGAON", "NANDGAON", "NIPHAD", "PEINT", "SINNAR", "SURGANA", "TRIMBAKESHWAR", "YEOLA"],
+      "PALGHAR": ["PALGHAR", "DAHANU", "JAWHAR", "MOKHADA", "TALASARI", "VASAI", "VIKRAMGAD", "WADA"],
+      "PARBHANI": ["PARBHANI", "GANGAKHED", "JINTUR", "MANWATH", "PALAM", "PATHRI", "PURNA", "SAILU", "SONPETH"],
+      "PUNE": ["PUNE CITY", "HAVELI", "AMBEGAON", "BARAMATI", "BHOR", "DAUND", "INDAPUR", "JUNNAR", "KHED", "MAVAL", "MULSHI", "PURANDAR", "SHIRUR", "VELHE"],
+      "RAIGAD": ["ALIBAG", "KARJAT", "KHALAPUR", "MAHAD", "MANGAON", "MHASLA", "MURUD", "PANVEL", "PEN", "POLADPUR", "ROHA", "SHRIVARDHAN", "SUDHAGAD", "TALA", "URAN"],
+      "RATNAGIRI": ["RATNAGIRI", "CHIPLUN", "DAPOLI", "GUHAGAR", "KHED", "LANJA", "MANDANGAD", "RAJAPUR", "SANGAMESHWAR"],
+      "SANGLI": ["MIRAJ", "ATPADI", "JAT", "KADEGAON", "KAVATHE MAHANKAL", "KHANAPUR", "PALUS", "SHIRALA", "TASGAON", "WALWA"],
+      "SATARA": ["SATARA", "JAOLI", "KARAD", "KHANDALA", "KHATAV", "KOREGAON", "MAHABALESHWAR", "MAN", "PATAN", "PHALTAN", "WAI"],
+      "SINDHUDURG": ["KUDAL", "DEVGAD", "DODAMARG", "KANKAVLI", "MALWAN", "SAWANTWADI", "VAIBHAVWADI", "VENGURLA"],
+      "SOLAPUR": ["SOLAPUR NORTH", "SOLAPUR SOUTH", "AKKALKOT", "BARSHI", "KARMALA", "MADHA", "MALSHIRAS", "MANGALVEDHE", "MOHOL", "PANDHARPUR", "SANGOLE"],
+      "THANE": ["THANE", "AMBARNATH", "BHIWANDI", "KALYAN", "MURBAD", "SHAHAPUR", "ULHASNAGAR"],
+      "WARDHA": ["WARDHA", "ARVI", "ASHTI", "DEOLI", "HINGANGHAT", "KARANJA", "SAMUDRAPUR", "SELOO"],
+      "WASHIM": ["WASHIM", "KARANJA", "MALEGAON", "MANGRULPIR", "MANORA", "RISOD"],
+      "YAVATMAL": ["YAVATMAL", "ARNI", "BABHULGAON", "DARWHA", "DIGRAS", "GHATANJI", "KALAMB", "KELAPUR", "MAHAGAON", "MAREGAON", "NER", "PUSAD", "RALEGAON", "UMARKHED", "WANI", "ZARI JAMANI"]
+    };
+
+    /* ==========================================================================
        1. EDITABLE FORM CONFIGURATION SCHEMA
        Edit labels, box counts, options, or add/remove fields right here!
        ========================================================================== */
@@ -766,7 +808,7 @@
             label: 'Date of Issue (DD/MM/YYYY)',
             type: 'date_split',
             placeholder: 'DD/MM/YYYY',
-            sample: '14/10/2020'
+            sample: '22/08/2025'
           },
           {
             id: 'residency',
@@ -804,8 +846,8 @@
               id: 'hideAadhaar',
               label: 'Hide Aadhaar Number on form (Optional for New Enrolment)'
             },
-            placeholder: '123456789012',
-            sample: '123456789012'
+            placeholder: '365020539909',
+            sample: '365020539909'
           },
           {
             id: 'fullName',
@@ -813,88 +855,88 @@
             type: 'boxes_multiline',
             rows: 2,
             boxesPerRow: 26,
-            placeholder: 'E.G. MOHAN KUMAR',
-            sample: 'MOHAN KUMAR'
+            placeholder: 'E.G. RAFATH PASHA SHAIKH PASHA',
+            sample: 'RAFATH PASHA SHAIKH PASHA'
           },
           {
             id: 'careOf',
             label: 'C/o (Care of)',
             type: 'boxes',
             boxes: 26,
-            placeholder: 'E.G. MAHESH KUMAR',
-            sample: 'MAHESH KUMAR'
+            placeholder: 'E.G. SHAIKH PASHA',
+            sample: 'SHAIKH PASHA'
           },
           {
             id: 'houseNo',
             label: 'House No./ Bldg./ Apt',
             type: 'boxes',
             boxes: 26,
-            placeholder: 'E.G. A-312/5',
-            sample: 'A-312/5'
+            placeholder: 'E.G. H NO 7-3-685/10',
+            sample: 'H NO 7-3-685/10'
           },
           {
             id: 'street',
             label: 'Street/ Road/ Lane',
             type: 'boxes',
             boxes: 26,
-            placeholder: 'E.G. BLOCK-D4',
-            sample: 'BLOCK-D4'
+            placeholder: 'E.G. CHOWPALA ROAD',
+            sample: 'CHOWPALA ROAD'
           },
           {
             id: 'landmark',
             label: 'Landmark',
             type: 'boxes',
             boxes: 26,
-            placeholder: 'E.G. NEAR OXFORD LIBRARY',
-            sample: 'NEAR OXFORD LIBRARY'
+            placeholder: 'E.G. MADINA MANZIL',
+            sample: 'MADINA MANZIL'
           },
           {
             id: 'area',
             label: 'Area/ Locality/ Sector',
             type: 'boxes',
             boxes: 26,
-            placeholder: 'E.G. MOHAN NAGAR',
-            sample: 'MOHAN NAGAR'
+            placeholder: 'E.G. DESHMUKH COLONY, SAI NAGAR',
+            sample: 'DESHMUKH COLONY, SAI NAGAR'
+          },
+          {
+            id: 'state',
+            label: 'State (Select or Type)',
+            type: 'location_state',
+            boxes: 18,
+            placeholder: 'MAHARASHTRA',
+            sample: 'MAHARASHTRA'
+          },
+          {
+            id: 'district',
+            label: 'District (Maharashtra All 36 Districts)',
+            type: 'location_district',
+            boxes: 18,
+            placeholder: 'SELECT OR TYPE DISTRICT',
+            sample: 'NANDED'
+          },
+          {
+            id: 'subDistrict',
+            label: 'Sub-District / Taluka (Auto-filtered by District)',
+            type: 'location_subdistrict',
+            boxes: 18,
+            placeholder: 'SELECT OR TYPE SUB-DISTRICT',
+            sample: 'NANDED'
           },
           {
             id: 'city',
             label: 'Village/ Town/ City',
-            type: 'boxes',
+            type: 'location_city',
             boxes: 26,
-            placeholder: 'E.G. INDRAPURAM',
-            sample: 'INDRAPURAM'
+            placeholder: 'SELECT OR TYPE CITY / VILLAGE',
+            sample: 'NANDED'
           },
           {
             id: 'postOffice',
             label: 'Post Office',
             type: 'boxes',
             boxes: 26,
-            placeholder: 'E.G. INDRAPURAM',
-            sample: 'INDRAPURAM'
-          },
-          {
-            id: 'district',
-            label: 'District',
-            type: 'boxes',
-            boxes: 18,
-            placeholder: 'E.G. GHAZIABAD',
-            sample: 'DELHI'
-          },
-          {
-            id: 'state',
-            label: 'State',
-            type: 'boxes',
-            boxes: 18,
-            placeholder: 'E.G. DELHI',
-            sample: 'DELHI'
-          },
-          {
-            id: 'subDistrict',
-            label: 'Sub-District (Renamed from blank row)',
-            type: 'boxes',
-            boxes: 18,
-            placeholder: 'E.G. PREET VIHAR',
-            sample: 'PREET VIHAR'
+            placeholder: 'E.G. ITWARA, NANDED',
+            sample: 'ITWARA, NANDED'
           },
           {
             id: 'pinCode',
@@ -902,15 +944,15 @@
             type: 'boxes',
             boxes: 6,
             numericOnly: true,
-            placeholder: '110001',
-            sample: '110001'
+            placeholder: '431604',
+            sample: '431604'
           },
           {
             id: 'dob',
             label: 'Date of Birth (DD/MM/YYYY)',
             type: 'date_split',
             placeholder: 'DD/MM/YYYY',
-            sample: '01/01/1990'
+            sample: '18/12/1968'
           }
         ]
       },
@@ -932,16 +974,16 @@
             hint: 'Renders inside the Resident Signature box.'
           },
           {
-            id: 'certifierSignature',
-            label: "3. Certifier's Signature",
+            id: 'officeStamp',
+            label: '3. Official Stamp (Photo Cross-Stamp + Single Stamp in Certifier Box)',
             type: 'image_upload',
-            hint: "Renders inside the Certifier's Signature & Stamp box."
+            hint: 'Renders large cross-stamp on Photo edge (Image 2 style) AND single stamp inside Certifier box.'
           },
           {
-            id: 'officeStamp',
-            label: '4. Official Stamp (Auto Cross-Stamps Photo + Full Stamp Below)',
+            id: 'certifierSignature',
+            label: "4. Certifier's Separate Signature (Optional — leave empty if stamp already includes sign)",
             type: 'image_upload',
-            hint: 'Renders straddling the photo edge (white background blended out) AND full-size in the Certifier box.'
+            hint: "Only upload if you want a separate signature image above the stamp."
           }
         ]
       },
@@ -954,16 +996,16 @@
             label: 'Name of the Certifier',
             type: 'boxes',
             boxes: 26,
-            placeholder: 'E.G. MANOJ TIWARI',
-            sample: 'MANOJ TIWARI'
+            placeholder: 'E.G. ABDUL GAFFAR ABDUL SATTAR',
+            sample: 'ABDUL GAFFAR ABDUL SATTAR'
           },
           {
             id: 'designation',
             label: 'Designation',
             type: 'boxes',
             boxes: 26,
-            placeholder: 'E.G. DEPUTY DIRECTOR',
-            sample: 'DEPUTY DIRECTOR'
+            placeholder: 'E.G. MUNICIPAL COUNCILLOR',
+            sample: 'MUNICIPAL COUNCILLOR'
           },
           {
             id: 'officeAddress',
@@ -971,8 +1013,8 @@
             type: 'boxes_multiline',
             rows: 2,
             boxesPerRow: 26,
-            placeholder: 'E.G. MINISTRY OF HEALTH, ROOM NO-305D, SHASTRI BHAWAN, NEW DELHI',
-            sample: 'MINISTRY OF HEALTH, ROOM NO-305D, SHASTRI BHAWAN, NEW DELHI'
+            placeholder: 'E.G. MADINA NAGAR CHOWPALA NANDED',
+            sample: 'MADINA NAGAR CHOWPALA NANDED'
           },
           {
             id: 'contactNumber',
@@ -980,8 +1022,8 @@
             type: 'boxes',
             boxes: 12,
             numericOnly: true,
-            placeholder: '01123061234',
-            sample: '01123061234'
+            placeholder: '9657576757',
+            sample: '9657576757'
           },
           {
             id: 'mobileNumber',
@@ -989,8 +1031,8 @@
             type: 'boxes',
             boxes: 10,
             numericOnly: true,
-            placeholder: '9876543210',
-            sample: '9876543210'
+            placeholder: '9657576757',
+            sample: '9657576757'
           },
           {
             id: 'certifierCategory',
@@ -1006,7 +1048,7 @@
               { value: 'warden', label: 'Superintendent/ Warden/ Matron/ Head of Institution of Recognized shelter homes/ Orphanages' },
               { value: 'epfo', label: 'EPFO Officer' }
             ],
-            sample: 'gazetted_a'
+            sample: 'mp_mla'
           },
           {
             id: 'checklist',
@@ -1133,7 +1175,92 @@
         section.fields.forEach(field => {
           const fieldDiv = document.createElement('div');
 
-          if (field.type === 'boxes' || field.type === 'boxes_multiline' || field.type === 'date_split') {
+          if (field.type === 'location_state') {
+            fieldDiv.innerHTML = `
+              <div class="flex justify-between items-baseline mb-1">
+                <label for="input-state" class="block text-xs font-semibold text-slate-700 dark:text-slate-200">
+                  ${field.label}
+                </label>
+                <span id="count-state" class="text-[10px] text-slate-400">0/18</span>
+              </div>
+              <div class="flex gap-1.5">
+                <select id="select-state" onchange="handleStateSelect(this.value)"
+                  class="w-1/2 px-2.5 py-2 text-xs font-semibold rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-red-600/40">
+                  <option value="MAHARASHTRA" selected>MAHARASHTRA</option>
+                  <option value="DELHI">DELHI</option>
+                  <option value="GUJARAT">GUJARAT</option>
+                  <option value="KARNATAKA">KARNATAKA</option>
+                  <option value="MADHYA PRADESH">MADHYA PRADESH</option>
+                  <option value="TELANGANA">TELANGANA</option>
+                  <option value="UTTAR PRADESH">UTTAR PRADESH</option>
+                  <option value="">-- OTHER / CUSTOM --</option>
+                </select>
+                <input type="text" id="input-state" maxlength="18" value="MAHARASHTRA"
+                  placeholder="STATE"
+                  oninput="handleTextInput('state', this.value, false, false)"
+                  class="w-1/2 px-2.5 py-2 text-xs rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-900 dark:text-white uppercase focus:outline-none focus:ring-2 focus:ring-red-600/40" />
+              </div>
+            `;
+          } else if (field.type === 'location_district') {
+            const districts = Object.keys(MAHARASHTRA_LOCATIONS).sort();
+            fieldDiv.innerHTML = `
+              <div class="flex justify-between items-baseline mb-1">
+                <label for="select-district" class="block text-xs font-semibold text-slate-700 dark:text-slate-200">
+                  ${field.label}
+                </label>
+                <span id="count-district" class="text-[10px] text-slate-400">0/18</span>
+              </div>
+              <div class="flex gap-1.5">
+                <select id="select-district" onchange="handleDistrictSelect(this.value)"
+                  class="w-1/2 px-2.5 py-2 text-xs font-semibold rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-red-600/40">
+                  <option value="">-- SELECT DISTRICT (36) --</option>
+                  ${districts.map(d => `<option value="${d}">${d}</option>`).join('')}
+                </select>
+                <input type="text" id="input-district" maxlength="18"
+                  placeholder="OR TYPE DISTRICT"
+                  oninput="handleTextInput('district', this.value, false, false)"
+                  class="w-1/2 px-2.5 py-2 text-xs rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-900 dark:text-white uppercase focus:outline-none focus:ring-2 focus:ring-red-600/40" />
+              </div>
+            `;
+          } else if (field.type === 'location_subdistrict') {
+            fieldDiv.innerHTML = `
+              <div class="flex justify-between items-baseline mb-1">
+                <label for="select-subDistrict" class="block text-xs font-semibold text-slate-700 dark:text-slate-200">
+                  ${field.label}
+                </label>
+                <span id="count-subDistrict" class="text-[10px] text-slate-400">0/18</span>
+              </div>
+              <div class="flex gap-1.5">
+                <select id="select-subDistrict" onchange="handleSubDistrictSelect(this.value)"
+                  class="w-1/2 px-2.5 py-2 text-xs font-semibold rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-red-600/40">
+                  <option value="">-- SELECT SUB-DISTRICT --</option>
+                </select>
+                <input type="text" id="input-subDistrict" maxlength="18"
+                  placeholder="OR TYPE TALUKA"
+                  oninput="handleTextInput('subDistrict', this.value, false, false)"
+                  class="w-1/2 px-2.5 py-2 text-xs rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-900 dark:text-white uppercase focus:outline-none focus:ring-2 focus:ring-red-600/40" />
+              </div>
+            `;
+          } else if (field.type === 'location_city') {
+            fieldDiv.innerHTML = `
+              <div class="flex justify-between items-baseline mb-1">
+                <label for="input-city" class="block text-xs font-semibold text-slate-700 dark:text-slate-200">
+                  ${field.label}
+                </label>
+                <span id="count-city" class="text-[10px] text-slate-400">0/26</span>
+              </div>
+              <div class="flex gap-1.5">
+                <select id="select-city" onchange="handleCitySelect(this.value)"
+                  class="w-2/5 px-2.5 py-2 text-xs font-semibold rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-red-600/40">
+                  <option value="">-- TALUKA / CITY --</option>
+                </select>
+                <input type="text" id="input-city" maxlength="26"
+                  placeholder="TYPE VILLAGE / TOWN / CITY"
+                  oninput="handleTextInput('city', this.value, false, false)"
+                  class="w-3/5 px-2.5 py-2 text-xs rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-900 dark:text-white uppercase focus:outline-none focus:ring-2 focus:ring-red-600/40" />
+              </div>
+            `;
+          } else if (field.type === 'boxes' || field.type === 'boxes_multiline' || field.type === 'date_split') {
             const maxLen = field.type === 'boxes'
               ? field.boxes
               : field.type === 'boxes_multiline'
@@ -1246,6 +1373,55 @@
     /* ==========================================================================
        4. LIVE INPUT HANDLERS & A4 SYNCHRONIZATION
        ========================================================================== */
+    function populateSubDistrictsForDistrict(districtName) {
+      const subSelect = document.getElementById('select-subDistrict');
+      const citySelect = document.getElementById('select-city');
+      const key = (districtName || '').toUpperCase().trim();
+      const talukas = MAHARASHTRA_LOCATIONS[key] || [];
+
+      if (subSelect) {
+        subSelect.innerHTML = `<option value="">-- SELECT SUB-DISTRICT (${talukas.length}) --</option>` +
+          talukas.map(t => `<option value="${t}">${t}</option>`).join('');
+      }
+      if (citySelect) {
+        citySelect.innerHTML = `<option value="">-- TALUKA / CITY --</option>` +
+          talukas.map(t => `<option value="${t}">${t}</option>`).join('');
+      }
+    }
+
+    function handleStateSelect(val) {
+      const input = document.getElementById('input-state');
+      if (input) input.value = val;
+      handleTextInput('state', val, false, false);
+    }
+
+    function handleDistrictSelect(val) {
+      const input = document.getElementById('input-district');
+      if (input) input.value = val;
+      handleTextInput('district', val, false, false);
+      populateSubDistrictsForDistrict(val);
+    }
+
+    function handleSubDistrictSelect(val) {
+      const input = document.getElementById('input-subDistrict');
+      if (input) input.value = val;
+      handleTextInput('subDistrict', val, false, false);
+
+      // Also sync city if city is currently empty
+      const cityInput = document.getElementById('input-city');
+      if (cityInput && !cityInput.value && val) {
+        cityInput.value = val;
+        handleTextInput('city', val, false, false);
+      }
+    }
+
+    function handleCitySelect(val) {
+      if (!val) return;
+      const input = document.getElementById('input-city');
+      if (input) input.value = val;
+      handleTextInput('city', val, false, false);
+    }
+
     function fillBoxGrid(containerId, text) {
       const container = document.getElementById(containerId);
       if (!container) return;
@@ -1317,6 +1493,10 @@
       }
 
       formState.textValues[fieldId] = val;
+
+      if (fieldId === 'district') {
+        populateSubDistrictsForDistrict(val);
+      }
 
       const counter = document.getElementById(`count-${fieldId}`);
       if (counter) {
@@ -1483,13 +1663,13 @@
       `);
 
       const stampSvg = 'data:image/svg+xml;utf8,' + encodeURIComponent(`
-        <svg xmlns="http://www.w3.org/2000/svg" width="140" height="140" viewBox="0 0 140 140">
-          <rect width="140" height="140" fill="#ffffff"/>
-          <circle cx="70" cy="70" r="58" fill="none" stroke="#1e3a8a" stroke-width="3"/>
-          <circle cx="70" cy="70" r="52" fill="none" stroke="#1e3a8a" stroke-width="1.2"/>
-          <text x="70" y="34" text-anchor="middle" font-family="Arial" font-size="9" font-weight="bold" fill="#1e3a8a">DEPUTY DIRECTOR</text>
-          <text x="70" y="73" text-anchor="middle" font-family="Arial" font-size="10" font-weight="bold" fill="#1e3a8a">OFFICE SEAL</text>
-          <text x="70" y="112" text-anchor="middle" font-family="Arial" font-size="8.5" font-weight="bold" fill="#1e3a8a">NEW DELHI - 110001</text>
+        <svg xmlns="http://www.w3.org/2000/svg" width="220" height="110" viewBox="0 0 220 110">
+          <rect width="220" height="110" fill="#ffffff"/>
+          <path d="M35 32 C65 8, 95 14, 110 26 C135 10, 175 12, 195 22" fill="none" stroke="#183ea3" stroke-width="2.2" stroke-linecap="round"/>
+          <text x="110" y="48" text-anchor="middle" font-family="Arial" font-size="13" font-weight="bold" fill="#183ea3">अ. गफ्फार अ. सत्तार</text>
+          <text x="110" y="64" text-anchor="middle" font-family="Arial" font-size="11" font-weight="bold" fill="#183ea3">नगरसेवक</text>
+          <text x="110" y="80" text-anchor="middle" font-family="Arial" font-size="11" font-weight="bold" fill="#183ea3">प्रभाग क्र. 13 ब</text>
+          <text x="110" y="96" text-anchor="middle" font-family="Arial" font-size="10.5" font-weight="bold" fill="#183ea3">मदीना नगर, चौफाळा नांदेड</text>
         </svg>
       `);
 
@@ -1508,11 +1688,15 @@
         section.fields.forEach(field => {
           if (field.sample === undefined) return;
 
-          if (field.type === 'boxes' || field.type === 'boxes_multiline' || field.type === 'date_split') {
+          if (field.type.startsWith('location_') || field.type === 'boxes' || field.type === 'boxes_multiline' || field.type === 'date_split') {
             const input = document.getElementById(`input-${field.id}`);
             if (input) {
               input.value = field.sample;
               handleTextInput(field.id, field.sample, Boolean(field.numericOnly), field.type === 'date_split');
+            }
+            const selectEl = document.getElementById(`select-${field.id}`);
+            if (selectEl) {
+              selectEl.value = field.sample;
             }
           } else if (field.type === 'radio' || field.type === 'radio_list') {
             const radio = document.querySelector(`input[name="radio-${field.id}"][value="${field.sample}"]`);
@@ -1533,14 +1717,14 @@
         });
       });
 
-      // Populate sample photo, signatures, and stamp
+      // Populate sample photo, resident signature, and single stamp (Image 2 style)
       const samples = generateSampleSVGAssets();
       applyImageToPreview('residentPhoto', samples.photoSvg);
       applyImageToPreview('residentSignature', samples.resSigSvg);
-      applyImageToPreview('certifierSignature', samples.certSigSvg);
+      applyImageToPreview('certifierSignature', '');
       applyImageToPreview('officeStamp', samples.stampSvg);
 
-      showToast('✨ Sample data & sample stamp/signatures loaded!');
+      showToast('✨ Sample data & Image-2 style stamp loaded!');
     }
 
     function saveTextToStorage() {
@@ -1578,11 +1762,15 @@
             const val = saved[field.id];
             if (val === undefined) return;
 
-            if (field.type === 'boxes' || field.type === 'boxes_multiline' || field.type === 'date_split') {
+            if (field.type.startsWith('location_') || field.type === 'boxes' || field.type === 'boxes_multiline' || field.type === 'date_split') {
               const input = document.getElementById(`input-${field.id}`);
               if (input) {
                 input.value = val;
                 handleTextInput(field.id, val, Boolean(field.numericOnly), field.type === 'date_split');
+              }
+              const selectEl = document.getElementById(`select-${field.id}`);
+              if (selectEl) {
+                selectEl.value = val;
               }
             } else if (field.type === 'radio' || field.type === 'radio_list') {
               const radio = document.querySelector(`input[name="radio-${field.id}"][value="${val}"]`);
@@ -1619,9 +1807,11 @@
 
       FORM_SCHEMA.forEach(section => {
         section.fields.forEach(field => {
-          if (field.type === 'boxes' || field.type === 'boxes_multiline' || field.type === 'date_split') {
+          if (field.type.startsWith('location_') || field.type === 'boxes' || field.type === 'boxes_multiline' || field.type === 'date_split') {
             const input = document.getElementById(`input-${field.id}`);
             if (input) input.value = '';
+            const selectEl = document.getElementById(`select-${field.id}`);
+            if (selectEl) selectEl.value = '';
             handleTextInput(field.id, '', Boolean(field.numericOnly), field.type === 'date_split');
           } else if (field.type === 'radio' || field.type === 'radio_list') {
             document.querySelectorAll(`input[name="radio-${field.id}"]`).forEach(r => (r.checked = false));
@@ -1724,6 +1914,8 @@
     window.addEventListener('DOMContentLoaded', () => {
       initA4FormGrids();
       renderLeftEditor();
+      // Default state to MAHARASHTRA on fresh load
+      handleStateSelect('MAHARASHTRA');
       loadSavedTextFromStorage();
       scaleA4ForViewport();
 
@@ -1737,4 +1929,3 @@
   </script>
 </body>
 </html>
-```
