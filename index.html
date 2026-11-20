@@ -1,2215 +1,1739 @@
-
+```html
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Packs_n_Bakes By Saleha | Ultra-Luxury 3D Confectionery Experience</title>
-  
-  <!-- Tailwind CSS -->
+  <title>Certificate for Aadhaar Enrolment / Update — Side-by-Side Auto-Filler</title>
+  <!-- Tailwind CSS for responsive UI controls -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts: Inter for UI, Patrick Hand & Kalam for authentic neat blue pen handwriting -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Kalam:wght@400;700&family=Patrick+Hand&display=swap" rel="stylesheet" />
+
   <script>
     tailwind.config = {
+      darkMode: 'class',
       theme: {
         extend: {
-          colors: {
-            brand: {
-              void: '#fff0f5',       /* Dreamy Light Baby Pink Canvas */
-              blush: '#ffe4ee',      /* Soft Powder Blush */
-              petal: '#ffd6e5',      /* Light Rose Petal */
-              velvet: '#fce7f1',     /* Baby Pink Tint */
-              crimson: '#e0538a',    /* Vibrant Rose Accent */
-              berry: '#3b0d27',      /* Imperial Royal Berry Text */
-              berryLight: '#6d234d', /* Plum contrast text */
-              gold: '#b8860b',       /* Patisserie French Gold */
-              goldDeep: '#8c6200',
-              goldLight: '#fef3c7',
-              rose: '#f472b6',
-              ivory: '#ffffff'
-            }
-          },
           fontFamily: {
-            cinzel: ['"Cinzel Decorative"', 'Cinzel', 'serif'],
-            serif: ['"Playfair Display"', 'Georgia', 'serif'],
-            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
-            script: ['"Great Vibes"', 'cursive']
-          },
-          boxShadow: {
-            'royal-glow': '0 0 35px -5px rgba(244, 114, 182, 0.35)',
-            'royal-glow-lg': '0 0 55px -5px rgba(212, 175, 55, 0.38)',
-            'glass-inset': 'inset 0 1px 2px 0 rgba(255, 255, 255, 0.95)',
+            sans: ['Inter', 'sans-serif'],
+            hand: ['Patrick Hand', 'Kalam', 'cursive'],
           }
         }
       }
-    }
+    };
   </script>
 
-  <!-- Google Web Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;600;700;800&family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-  <!-- Lucide Icons -->
-  <script src="https://unpkg.com/lucide@latest"></script>
-
-  <!-- Three.js (WebGL 3D Engine) -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-
   <style>
-    /* Custom Scrollbar */
-    ::-webkit-scrollbar {
-      width: 7px;
-    }
-    ::-webkit-scrollbar-track {
-      background: #fff0f5;
-    }
-    ::-webkit-scrollbar-thumb {
-      background: linear-gradient(to bottom, #f472b6, #d4af37);
-      border-radius: 9999px;
-    }
-    ::-webkit-scrollbar-thumb:hover {
-      background: #e0538a;
+    /* ==========================================================================
+       CUSTOM STYLES FOR EXACT A4 REPLICA & HANDWRITING RENDERING
+       ========================================================================== */
+    :root {
+      --pen-blue: #183ea3;
+      --form-crimson: #9e1b24;
+      --form-border: #333333;
+      --grid-dash: #9ca3af;
     }
 
-    /* Luxury Baby Pink & White Glass */
-    .royal-glass {
-      background: radial-gradient(130% 100% at 50% 0%, rgba(255, 255, 255, 0.95) 0%, rgba(255, 240, 247, 0.90) 100%);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border: 1px solid rgba(244, 114, 182, 0.35);
-      box-shadow: 0 12px 35px rgba(224, 83, 138, 0.12), inset 0 1px 2px rgba(255, 255, 255, 0.95);
-    }
-    .royal-glass-hover {
-      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    .royal-glass-hover:hover {
-      border-color: rgba(212, 175, 55, 0.85);
-      transform: translateY(-5px);
-      box-shadow: 0 20px 45px rgba(244, 114, 182, 0.28), inset 0 1px 3px rgba(255, 255, 255, 1);
+    * {
+      box-sizing: border-box;
     }
 
-    /* Metallic Gold Shimmer Gradients for Baby Pink Palette */
-    .gold-shimmer-text {
-      background: linear-gradient(120deg, #996d00 0%, #d4af37 25%, #f472b6 50%, #8c6200 75%, #996d00 100%);
-      background-size: 200% auto;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      animation: shineText 7s linear infinite;
-    }
-    @keyframes shineText {
-      to { background-position: 200% center; }
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
     }
 
-    .bg-palace-pattern {
-      background-image: 
-        radial-gradient(circle at 50% 5%, rgba(255, 192, 215, 0.45) 0%, transparent 60%),
-        radial-gradient(circle at 10% 45%, rgba(255, 224, 238, 0.55) 0%, transparent 50%),
-        radial-gradient(circle at 90% 65%, rgba(254, 236, 195, 0.35) 0%, transparent 55%),
-        radial-gradient(circle at 50% 95%, rgba(255, 205, 225, 0.45) 0%, transparent 60%);
-    }
-
-    /* Golden & Rose Stardust Cursor Trail */
-    .stardust {
-      position: fixed;
-      pointer-events: none;
-      width: 6px;
-      height: 6px;
-      background: #f472b6;
-      border-radius: 50%;
-      box-shadow: 0 0 12px #f472b6, 0 0 20px #ffd700;
-      z-index: 99999;
-      transform: translate(-50%, -50%);
-      transition: opacity 0.5s ease-out, transform 0.5s ease-out;
-    }
-
-    @keyframes pulseGlow {
-      0%, 100% { opacity: 0.8; transform: scale(1); }
-      50% { opacity: 1; transform: scale(1.04); }
-    }
-    .animate-pulse-glow {
-      animation: pulseGlow 4s ease-in-out infinite;
-    }
-
-    /* Royal Entrance Curtain & Reveal */
-    #royalCurtain {
-      transition: opacity 1.1s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1), visibility 1.2s;
-    }
-    #royalCurtain.curtain-hidden {
-      opacity: 0;
-      transform: scale(1.08);
-      pointer-events: none;
-      visibility: hidden;
-    }
-
-    @keyframes floatButterfly {
-      0%, 100% { transform: translateY(0px) rotate(3deg) scale(1); }
-      50% { transform: translateY(-16px) rotate(-6deg) scale(1.08); }
-    }
-    .butterfly-float {
-      animation: floatButterfly 6s ease-in-out infinite;
-    }
-
-    /* Click / Touch Sparkle & Blossom Burst */
-    .burst-particle {
-      position: fixed;
-      pointer-events: none;
-      z-index: 999999;
+    /* Handwritten Blue Ballpoint Pen Effect */
+    .pen-text {
+      font-family: 'Patrick Hand', 'Kalam', cursive;
+      color: var(--pen-blue);
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
       user-select: none;
-      animation: burstFly 1s cubic-bezier(0.1, 0.8, 0.2, 1) forwards;
     }
-    @keyframes burstFly {
-      0% {
-        opacity: 1;
-        transform: translate(-50%, -50%) scale(0.4) rotate(0deg);
-      }
-      100% {
-        opacity: 0;
-        transform: translate(calc(-50% + var(--dx)), calc(-50% + var(--dy))) scale(1.35) rotate(var(--rot));
+
+    .pen-check {
+      font-family: 'Kalam', cursive;
+      color: var(--pen-blue);
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    /* Exact A4 Paper Sheet Dimensions (210mm x 297mm) */
+    .a4-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 20px;
+      min-height: 100%;
+    }
+
+    .a4-sheet {
+      width: 210mm;
+      min-width: 210mm;
+      height: 297mm;
+      min-height: 297mm;
+      background-color: #ffffff !important;
+      color: #111111 !important;
+      padding: 8.5mm 10mm 7mm 10mm;
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
+      position: relative;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 8.5pt;
+      line-height: 1.25;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transform-origin: top center;
+    }
+
+    /* Section Banners (Matches the crimson/maroon header bands in the form) */
+    .form-banner {
+      background-color: var(--form-crimson);
+      color: #ffffff;
+      font-weight: 700;
+      text-align: center;
+      padding: 3.5px 8px;
+      font-size: 10pt;
+      letter-spacing: 0.3px;
+      border: 1px solid #7f141c;
+    }
+
+    .form-sub-banner {
+      background-color: var(--form-crimson);
+      color: #ffffff;
+      font-weight: 700;
+      text-align: center;
+      padding: 2.5px 8px;
+      font-size: 9pt;
+      letter-spacing: 0.2px;
+    }
+
+    /* Individual Character Box Grid */
+    .char-grid {
+      display: inline-flex;
+      border-top: 1px solid var(--form-border);
+      border-bottom: 1px solid var(--form-border);
+      border-left: 1px solid var(--form-border);
+      height: 18px;
+      background: #fff;
+    }
+
+    .char-box {
+      width: 17.6px;
+      height: 100%;
+      border-right: 1px dashed var(--grid-dash);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12.5pt;
+      font-weight: 500;
+      line-height: 1;
+      padding-top: 1px;
+    }
+
+    .char-box:last-child {
+      border-right: 1px solid var(--form-border);
+    }
+
+    /* Solid border boxes for Date / PIN / Aadhaar digits */
+    .char-grid.solid-boxes .char-box {
+      border-right: 1px solid var(--form-border);
+      width: 18.5px;
+    }
+
+    /* Tick Box Square */
+    .tick-square {
+      width: 14px;
+      height: 14px;
+      border: 1px solid #222222;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: #ffffff;
+      flex-shrink: 0;
+      font-size: 13pt;
+      position: relative;
+    }
+
+    .tick-square span {
+      position: relative;
+      top: -1px;
+      left: 1px;
+    }
+
+    /* Form Row Alignment */
+    .f-row {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 4.5px;
+    }
+
+    .f-label {
+      width: 124px;
+      min-width: 124px;
+      font-weight: 700;
+      font-size: 8pt;
+      color: #1a1a1a;
+      padding-top: 2px;
+      line-height: 1.15;
+    }
+
+    .f-label small {
+      display: block;
+      font-weight: 400;
+      font-size: 6.8pt;
+      color: #333;
+    }
+
+    .f-boxes-col {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    /* Photo Box & Cross-Stamp Overlay */
+    .photo-box {
+      width: 35mm;
+      height: 45mm;
+      border: 1px solid #222222;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 4px;
+      background: #ffffff;
+      overflow: visible; /* Critical so cross-stamp bleeds outside the border */
+    }
+
+    .photo-box img.resident-photo {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 2;
+    }
+
+    /* Cross-Stamp straddling the photo box border */
+    .cross-stamp-overlay {
+      position: absolute;
+      bottom: -14px;
+      left: -34px;
+      width: 105px;
+      height: 105px;
+      object-fit: contain;
+      z-index: 10;
+      pointer-events: none;
+      mix-blend-mode: multiply;
+      transform: rotate(-12deg);
+      opacity: 0.92;
+    }
+
+    /* Resident Signature Box */
+    .resident-sig-box {
+      width: 44mm;
+      height: 23mm;
+      border: 1px solid #222222;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: center;
+      padding: 3px;
+      background: #ffffff;
+    }
+
+    .resident-sig-box img {
+      position: absolute;
+      top: 2px;
+      left: 50%;
+      transform: translateX(-50%);
+      max-width: 90%;
+      max-height: 15mm;
+      object-fit: contain;
+      mix-blend-mode: multiply;
+    }
+
+    /* Certifier Signature & Stamp Box */
+    .certifier-sig-box {
+      border: 1px solid #222222;
+      height: 29mm;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: center;
+      padding: 3px;
+      background: #ffffff;
+      margin-top: 4px;
+    }
+
+    .certifier-sig-img {
+      position: absolute;
+      top: 4px;
+      left: 16%;
+      max-width: 46%;
+      max-height: 20mm;
+      object-fit: contain;
+      mix-blend-mode: multiply;
+      z-index: 3;
+    }
+
+    .certifier-stamp-img {
+      position: absolute;
+      top: 2px;
+      right: 12%;
+      width: 24mm;
+      height: 24mm;
+      object-fit: contain;
+      mix-blend-mode: multiply;
+      z-index: 2;
+      opacity: 0.92;
+    }
+
+    /* Responsive Scaling for Small Screens */
+    @media (max-width: 1023px) {
+      .a4-wrapper {
+        padding: 12px 4px;
+        overflow-x: auto;
       }
     }
 
-    .polaroid-card {
-      background: #ffffff;
-      padding: 12px 12px 24px 12px;
-      box-shadow: 0 16px 36px rgba(224, 83, 138, 0.15);
-      position: relative;
-      border-radius: 16px;
-      border: 1px solid rgba(251, 207, 232, 0.85);
-    }
-    .washi-tape {
-      position: absolute;
-      top: -10px;
-      left: 50%;
-      transform: translateX(-50%) rotate(-2deg);
-      width: 90px;
-      height: 22px;
-      background: rgba(251, 207, 232, 0.9);
-      border: 1px dashed rgba(244, 114, 182, 0.5);
-      border-radius: 4px;
+    /* ==========================================================================
+       PRINT STYLES — EXACT A4 PORTRAIT, ZERO MARGINS, FORM ONLY
+       ========================================================================== */
+    @media print {
+      @page {
+        size: A4 portrait;
+        margin: 0;
+      }
+
+      html, body {
+        width: 210mm;
+        height: 297mm;
+        margin: 0 !important;
+        padding: 0 !important;
+        background: #ffffff !important;
+        overflow: hidden !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+
+      .no-print {
+        display: none !important;
+      }
+
+      #workspace-container {
+        display: block !important;
+        height: auto !important;
+        overflow: visible !important;
+      }
+
+      #preview-pane {
+        display: block !important;
+        width: 210mm !important;
+        height: 297mm !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        background: #ffffff !important;
+        overflow: visible !important;
+      }
+
+      .a4-wrapper {
+        padding: 0 !important;
+        margin: 0 !important;
+        display: block !important;
+      }
+
+      .a4-sheet {
+        width: 210mm !important;
+        height: 297mm !important;
+        margin: 0 !important;
+        box-shadow: none !important;
+        transform: none !important;
+        page-break-after: avoid;
+        break-after: avoid;
+      }
     }
   </style>
 </head>
+<body class="bg-slate-100 text-slate-900">
 
-<body class="bg-brand-void text-brand-berry font-sans selection:bg-brand-rose selection:text-white overflow-x-hidden antialiased bg-palace-pattern pb-16 lg:pb-0">
-
-  <!-- Royal Fairy-Tale Opening Ceremony Curtain -->
-  <div id="royalCurtain" class="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-gradient-to-b from-[#fff2f7] via-[#ffe3ed] to-[#ffd7e6] overflow-hidden px-4 text-center select-none">
-    <!-- Ambient Gilded Background Rings -->
-    <div class="absolute w-[340px] sm:w-[540px] h-[340px] sm:h-[540px] rounded-full border border-pink-300/60 animate-spin" style="animation-duration: 35s;"></div>
-    <div class="absolute w-[280px] sm:w-[440px] h-[280px] sm:h-[440px] rounded-full border border-dashed border-amber-300/80 animate-spin" style="animation-duration: 25s; animation-direction: reverse;"></div>
-    
-    <!-- Floating Ethereal Blooms & Butterflies inside Loader -->
-    <div class="absolute top-12 left-10 text-2xl butterfly-float opacity-75">🦋</div>
-    <div class="absolute bottom-16 right-12 text-3xl butterfly-float opacity-75" style="animation-delay: -2s;">🌸</div>
-    <div class="absolute top-24 right-14 text-2xl butterfly-float opacity-60" style="animation-delay: -3.5s;">✨</div>
-    <div class="absolute bottom-20 left-14 text-2xl butterfly-float opacity-75" style="animation-delay: -1.5s;">🍰</div>
-
-    <div class="relative z-10 flex flex-col items-center max-w-md mx-auto">
-      <!-- Royal Crest Badge -->
-      <div class="w-24 h-24 sm:w-28 sm:h-28 rounded-full border-2 border-brand-gold p-1 flex items-center justify-center mb-4 shadow-royal-glow bg-white/90 backdrop-blur-md animate-pulse-glow">
-        <div class="w-full h-full rounded-full border border-dashed border-brand-gold flex flex-col items-center justify-center bg-gradient-to-br from-pink-50 via-white to-pink-100">
-          <span class="font-cinzel text-2xl sm:text-3xl font-extrabold gold-shimmer-text">PB</span>
-          <span class="text-[8px] uppercase tracking-widest text-pink-600 font-bold -mt-1">By Saleha</span>
-        </div>
-      </div>
-
-      <div class="flex items-center gap-2 text-[10px] sm:text-xs uppercase tracking-[0.35em] text-pink-700 font-cinzel font-bold mb-2">
-        <span>🌸</span> Welcome To The Confectionery Palace <span>🌸</span>
-      </div>
-
-      <h2 class="font-cinzel text-2xl sm:text-3xl font-black text-brand-berry mb-2 tracking-tight">
-        Packs_n_Bakes <br />
-        <span class="font-serif italic font-normal gold-shimmer-text">Luxury 3D Studio</span>
-      </h2>
-
-      <p class="text-xs text-brand-berryLight/90 max-w-xs mb-6 font-normal leading-relaxed">
-        Handcrafting sweet moments, multi-tiered wedding cakes, and fairy-lit keepsakes in Nanded.
-      </p>
-
-      <!-- Entrance Action Button & Auto-progress -->
-      <button onclick="unveilPalace(true)" class="px-8 py-3.5 rounded-full bg-gradient-to-r from-pink-500 via-rose-500 to-amber-500 text-white font-cinzel font-bold text-xs uppercase tracking-[0.25em] shadow-xl hover:scale-105 transition transform flex items-center gap-2.5 cursor-pointer border border-white/80">
-        <span>Enter The Palace</span>
-        <span class="text-sm">✨</span>
+  <!-- Mobile Top Navigation Tabs (Visible only below 1024px) -->
+  <div class="no-print lg:hidden sticky top-0 z-40 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-700 shadow-sm">
+    <div class="flex items-center justify-between px-3 py-2 bg-red-800 text-white">
+      <span class="font-semibold text-sm truncate">Aadhaar Certificate Auto-Filler</span>
+      <button id="mobile-theme-btn" type="button" class="text-xs bg-white/15 hover:bg-white/25 px-2.5 py-1 rounded-md font-medium">
+        🌓 Theme
       </button>
-
-      <!-- Romantic Subtitle -->
-      <span class="text-[10px] text-pink-500/80 font-cinzel tracking-wider mt-4">Tasting happiness in every bite 🦋</span>
+    </div>
+    <div class="grid grid-cols-2 text-sm font-semibold">
+      <button id="tab-enter" type="button" onclick="switchMobileTab('enter')"
+        class="py-2.5 text-center border-b-2 border-red-700 text-red-700 dark:text-red-400 dark:border-red-400 bg-red-50/50 dark:bg-slate-800">
+        1. Enter details
+      </button>
+      <button id="tab-preview" type="button" onclick="switchMobileTab('preview')"
+        class="py-2.5 text-center border-b-2 border-transparent text-slate-600 dark:text-slate-400">
+        2. Filled form (A4)
+      </button>
     </div>
   </div>
 
-  <!-- Ambient Falling Petals Canvas -->
-  <canvas id="petalCanvas" class="fixed inset-0 pointer-events-none z-30 w-full h-full"></canvas>
+  <!-- Main Workspace Container -->
+  <div id="workspace-container" class="flex flex-col lg:flex-row h-screen lg:overflow-hidden">
 
-  <!-- Ambient Audio Chime & Petal Shower Floating Controls (Bottom Left) -->
-  <div class="fixed bottom-20 sm:bottom-6 left-4 sm:left-6 z-40 flex flex-col gap-2.5">
-    <button id="soundToggleBtn" onclick="toggleAudio()" class="royal-glass px-3.5 sm:px-4 py-2.5 rounded-full text-pink-700 hover:text-pink-900 transition duration-300 flex items-center gap-2 cursor-pointer shadow-royal-glow" title="Toggle Palace Ambient Music">
-      <i data-lucide="music" id="soundIcon" class="w-4 h-4 text-pink-500"></i>
-      <span id="soundText" class="text-[10px] sm:text-[11px] font-cinzel uppercase tracking-widest font-bold">Atmosphere: Off</span>
-    </button>
-    <button onclick="togglePetalRain()" id="petalRainBtn" class="royal-glass px-3.5 sm:px-4 py-2.5 rounded-full text-pink-700 hover:text-pink-900 transition duration-300 flex items-center gap-2 cursor-pointer shadow-royal-glow" title="Toggle Floating Rose Petals">
-      <span class="text-xs">🌸</span>
-      <span id="petalRainText" class="text-[10px] sm:text-[11px] font-cinzel uppercase tracking-widest font-bold">Petals: On</span>
-    </button>
-  </div>
+    <!-- ========================================================================
+         LEFT PANEL: FORM INPUT EDITOR (Supports Light & Dark Mode)
+         ======================================================================== -->
+    <aside id="editor-pane" class="no-print w-full lg:w-[440px] xl:w-[470px] flex-shrink-0 flex flex-col bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-100 border-r border-slate-200 dark:border-slate-800 lg:h-screen">
 
-  <!-- WhatsApp Floating Action (Desktop & Tablet) -->
-  <a href="https://wa.me/919999999999?text=Hello%20Saleha%20(Packs_n_Bakes)%20✨%20I%20visited%20your%20luxury%203D%20website%20and%20would%20love%20to%20place%20a%20bespoke%20order!" target="_blank" rel="noopener noreferrer" class="hidden sm:flex fixed bottom-6 right-6 z-40 bg-gradient-to-r from-pink-500 via-rose-500 to-amber-500 hover:from-pink-600 hover:to-amber-600 text-white px-5 py-3.5 rounded-full shadow-2xl items-center gap-3 transition transform hover:scale-105 border border-white/80 cursor-pointer" title="Chat Directly With Saleha">
-    <span class="relative flex h-3 w-3">
-      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-pink-200 opacity-75"></span>
-      <span class="relative inline-flex rounded-full h-3 w-3 bg-white"></span>
-    </span>
-    <i data-lucide="message-circle" class="w-5 h-5"></i>
-    <span class="text-xs font-bold uppercase tracking-wider font-cinzel">WhatsApp Saleha</span>
-  </a>
-
-  <!-- Mobile Bottom Sticky Navigation Bar -->
-  <div class="sm:hidden fixed bottom-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-xl border-t border-pink-200 px-4 py-2.5 flex items-center justify-around shadow-2xl">
-    <a href="#stage-3d" class="flex flex-col items-center text-pink-700 hover:text-pink-900">
-      <span class="text-base">✨</span>
-      <span class="text-[9px] font-cinzel font-bold uppercase tracking-wider mt-0.5">3D Studio</span>
-    </a>
-    <a href="#creations" class="flex flex-col items-center text-pink-700 hover:text-pink-900">
-      <span class="text-base">🌸</span>
-      <span class="text-[9px] font-cinzel font-bold uppercase tracking-wider mt-0.5">Catalog</span>
-    </a>
-    <button onclick="toggleCartDrawer()" class="flex flex-col items-center text-pink-700 relative">
-      <span class="text-base">🎀</span>
-      <span class="text-[9px] font-cinzel font-bold uppercase tracking-wider mt-0.5">My Tray</span>
-      <span id="mobileCartBadge" class="absolute -top-1 right-1 bg-pink-500 text-white text-[9px] font-bold rounded-full w-4 h-4 flex items-center justify-center">0</span>
-    </button>
-    <a href="https://wa.me/919999999999?text=Hello%20Saleha%20(Packs_n_Bakes)%20✨%20I%20love%20your%20cakes%20and%20want%20to%20order!" target="_blank" class="flex items-center gap-1.5 bg-gradient-to-r from-pink-500 to-rose-500 text-white px-3.5 py-1.5 rounded-full shadow-md text-[10px] font-cinzel font-bold">
-      <i data-lucide="message-circle" class="w-3.5 h-3.5"></i>
-      <span>Order</span>
-    </a>
-  </div>
-
-  <!-- Top Imperial Notice Bar -->
-  <div class="bg-gradient-to-r from-pink-100 via-rose-50 to-pink-100 border-b border-pink-200/80 py-2.5 px-4 text-center text-xs tracking-widest uppercase font-semibold text-brand-berryLight flex items-center justify-center gap-4">
-    <span class="flex items-center gap-1.5"><span class="text-pink-500">🌸</span> Artisanal Studio | Nanded 📍</span>
-    <span class="hidden md:inline text-pink-300">•</span>
-    <span class="hidden sm:inline">🚚 Pan-India Express Delivery on Monogram Chocolates & Hampers</span>
-    <span class="hidden md:inline text-pink-300">•</span>
-    <span class="text-pink-600 font-bold">✨ 100% Belgian Chocolate & Eggless Delicacies</span>
-  </div>
-
-  <header class="sticky top-0 z-50 backdrop-blur-xl bg-white/85 border-b border-pink-200/80 transition duration-300 shadow-sm">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 sm:h-24 flex items-center justify-between">
-      
-      <!-- Brand Logo & Imperial Monogram -->
-      <a href="#" class="flex items-center gap-3 group">
-        <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-full border-2 border-brand-gold p-0.5 flex items-center justify-center bg-gradient-to-br from-pink-100 via-pink-200 to-rose-100 shadow-royal-glow group-hover:scale-105 transition">
-          <div class="w-full h-full rounded-full border border-dashed border-brand-gold/70 flex items-center justify-center">
-            <span class="font-cinzel text-lg sm:text-xl font-bold gold-shimmer-text">PB</span>
-          </div>
-        </div>
-        <div>
-          <div class="font-cinzel text-lg sm:text-2xl font-bold tracking-wider gold-shimmer-text uppercase leading-none">
-            Packs_n_Bakes
-          </div>
-          <p class="text-[10px] tracking-[0.25em] text-pink-600 uppercase font-semibold flex items-center gap-1 mt-1">
-            <span>By Saleha</span>
-            <span>🦋✨</span>
-            <span class="hidden sm:inline text-brand-berryLight/70">| Nanded, MH</span>
-          </p>
-        </div>
-      </a>
-
-      <!-- Navigation Links -->
-      <nav class="hidden lg:flex items-center space-x-8 text-[11px] uppercase tracking-[0.22em] font-cinzel text-brand-berry font-bold">
-        <a href="#hero" class="hover:text-pink-600 transition duration-200">The Palace</a>
-        <a href="#stage-3d" class="hover:text-pink-600 transition duration-200 flex items-center gap-1.5">
-          <span>3D Studio</span>
-          <span class="text-[9px] bg-pink-100 text-pink-600 px-1.5 py-0.5 rounded-full border border-pink-300 font-bold">360° LIVE</span>
-        </a>
-        <a href="#creations" class="hover:text-pink-600 transition duration-200">Creations</a>
-        <a href="#about" class="hover:text-pink-600 transition duration-200">The Craft</a>
-        <a href="#custom-quote" class="hover:text-pink-600 transition duration-200">Reserve Slot</a>
-      </nav>
-
-      <!-- Right Controls -->
-      <div class="flex items-center gap-3 sm:gap-4">
-        <button onclick="toggleCartDrawer()" class="relative p-2.5 text-brand-berry hover:text-pink-600 transition royal-glass rounded-full border-pink-300 cursor-pointer" title="View Inquiry Tray">
-          <i data-lucide="shopping-bag" class="w-5 h-5 text-pink-600"></i>
-          <span id="cartCountBadge" class="absolute -top-1 -right-1 bg-gradient-to-r from-pink-500 to-rose-500 text-white text-[10px] font-extrabold w-5 h-5 rounded-full flex items-center justify-center shadow-md">0</span>
-        </button>
-
-        <a href="#custom-quote" class="hidden sm:inline-flex items-center gap-2 border-2 border-brand-gold bg-gradient-to-r from-pink-100 via-rose-50 to-amber-50 hover:from-brand-gold hover:to-brand-goldDeep px-5 py-2.5 rounded-full text-xs font-cinzel font-bold uppercase tracking-widest text-brand-gold hover:text-white transition duration-300 shadow-sm">
-          <span>Book Custom Cake</span>
-          <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
-        </a>
-
-        <button id="mobileNavToggle" onclick="toggleMobileMenu()" class="lg:hidden p-2.5 text-brand-berry hover:text-pink-600 royal-glass rounded-xl cursor-pointer">
-          <i data-lucide="menu" id="menuToggleIcon" class="w-6 h-6"></i>
-        </button>
-      </div>
-    </div>
-
-    <!-- Mobile Dropdown Navigation -->
-    <div id="mobileMenuPanel" class="hidden lg:hidden bg-white/95 backdrop-blur-2xl border-b border-pink-200 px-6 py-6 space-y-3 text-center font-cinzel shadow-xl">
-      <a href="#hero" onclick="toggleMobileMenu()" class="block text-sm uppercase tracking-widest text-brand-berry hover:text-pink-600 py-2 font-bold">The Palace</a>
-      <a href="#stage-3d" onclick="toggleMobileMenu()" class="block text-sm uppercase tracking-widest text-pink-600 hover:text-pink-700 py-2 font-bold">3D Interactive Studio ✨</a>
-      <a href="#creations" onclick="toggleMobileMenu()" class="block text-sm uppercase tracking-widest text-brand-berry hover:text-pink-600 py-2 font-bold">Signature Creations</a>
-      <a href="#about" onclick="toggleMobileMenu()" class="block text-sm uppercase tracking-widest text-brand-berry hover:text-pink-600 py-2 font-bold">Saleha's Craft</a>
-      <a href="#custom-quote" onclick="toggleMobileMenu()" class="block text-sm uppercase tracking-widest text-brand-berry hover:text-pink-600 py-2 font-bold">Book Order on WhatsApp</a>
-    </div>
-  </header>
-
-  <!-- Hero Section -->
-  <section id="hero" class="relative min-h-[85vh] flex items-center justify-center overflow-hidden px-4 sm:px-6">
-    <div class="relative z-10 max-w-5xl mx-auto text-center py-10 sm:py-16">
-      
-      <!-- Royal Crest Monogram -->
-      <div class="inline-flex flex-col items-center mb-5">
-        <div class="w-18 h-18 sm:w-20 sm:h-20 rounded-full border-2 border-brand-gold p-1 flex items-center justify-center mb-3 shadow-royal-glow bg-gradient-to-b from-white via-pink-100 to-rose-100 animate-pulse-glow">
-          <div class="w-full h-full rounded-full border border-dashed border-brand-gold/70 flex items-center justify-center">
-            <span class="font-cinzel text-2xl sm:text-3xl font-bold gold-shimmer-text">PB</span>
-          </div>
-        </div>
-        <div class="flex items-center gap-2 sm:gap-3 text-xs uppercase tracking-[0.35em] text-pink-700 font-cinzel font-bold">
-          <span class="h-[1px] w-6 sm:w-8 bg-pink-300"></span>
-          <span>Bespoke Confectionery & Wedding Gifting</span>
-          <span class="h-[1px] w-6 sm:w-8 bg-pink-300"></span>
-        </div>
-      </div>
-
-      <!-- Main Headline -->
-      <h1 class="font-cinzel text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight leading-[1.15] mb-5 text-brand-berry">
-        Baking Happiness <br />
-        <span class="font-serif italic font-normal gold-shimmer-text">In Every Royal Bite</span>
-      </h1>
-
-      <p class="text-brand-berryLight max-w-2xl mx-auto text-sm sm:text-base font-normal leading-relaxed mb-8">
-        From multi-tiered wedding cakes in Nanded with edible 24k gold leaf to acrylic fairy-lit anniversary hampers and monogram initials chocolates delivered across India.
-      </p>
-
-      <!-- Action Buttons -->
-      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-        <a href="#stage-3d" class="w-full sm:w-auto px-8 py-3.5 rounded-full bg-gradient-to-r from-pink-500 via-rose-400 to-amber-400 text-white font-cinzel font-bold text-xs uppercase tracking-[0.2em] hover:brightness-105 transition shadow-lg flex items-center justify-center gap-2.5 transform hover:-translate-y-0.5 cursor-pointer">
-          <span>Enter 3D Studio & Customize</span>
-          <i data-lucide="sparkles" class="w-4 h-4"></i>
-        </a>
-        <a href="#creations" class="w-full sm:w-auto px-7 py-3.5 rounded-full royal-glass hover:border-pink-400 text-brand-berry font-cinzel font-bold text-xs uppercase tracking-[0.2em] transition flex items-center justify-center gap-2 cursor-pointer">
-          <span>Explore Catalog</span>
-          <i data-lucide="chevron-down" class="w-4 h-4 text-pink-500"></i>
-        </a>
-      </div>
-
-      <!-- Live Prestige Metrics -->
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 mt-12 max-w-4xl mx-auto pt-8 border-t border-pink-200">
-        <div class="royal-glass p-4 rounded-2xl border-pink-200">
-          <p class="font-cinzel text-2xl sm:text-3xl font-bold text-brand-gold">750+</p>
-          <p class="text-[11px] uppercase tracking-wider text-brand-berryLight font-semibold mt-1">Bespoke Orders</p>
-        </div>
-        <div class="royal-glass p-4 rounded-2xl border-pink-200">
-          <p class="font-cinzel text-2xl sm:text-3xl font-bold text-pink-600">Nanded 📍</p>
-          <p class="text-[11px] uppercase tracking-wider text-brand-berryLight font-semibold mt-1">Artisanal Studio</p>
-        </div>
-        <div class="royal-glass p-4 rounded-2xl border-pink-200">
-          <p class="font-cinzel text-2xl sm:text-3xl font-bold text-brand-gold">Pan India 🚚</p>
-          <p class="text-[11px] uppercase tracking-wider text-brand-berryLight font-semibold mt-1">Hamper Logistics</p>
-        </div>
-        <div class="royal-glass p-4 rounded-2xl border-pink-200">
-          <p class="font-cinzel text-2xl sm:text-3xl font-bold text-pink-600">100% Pure</p>
-          <p class="text-[11px] uppercase tracking-wider text-brand-berryLight font-semibold mt-1">Eggless & Belgian</p>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- 3D Interactive Studio Section -->
-  <section id="stage-3d" class="py-16 sm:py-20 relative bg-gradient-to-b from-brand-void via-pink-100/40 to-brand-void border-t border-b border-pink-200">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <!-- Section Header -->
-      <div class="text-center max-w-3xl mx-auto mb-10">
-        <span class="text-xs uppercase tracking-[0.35em] text-pink-600 font-cinzel font-bold flex items-center justify-center gap-2">
-          <span>🌸</span> Interactive 360° Studio Turntable
-        </span>
-        <h2 class="font-cinzel text-3xl sm:text-5xl font-bold mt-2 text-brand-berry">
-          Customize Your <span class="font-serif italic font-normal gold-shimmer-text">Royal Creation</span>
-        </h2>
-        <p class="text-brand-berryLight text-xs sm:text-sm mt-2 max-w-xl mx-auto">
-          Rotate with mouse or touch. Switch between cakes, flower boxes, acrylic hampers, and chocolate tiers. Type couple initials to engrave in real-time gold foil!
-        </p>
-      </div>
-
-      <!-- Studio Layout Grid -->
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-        
-        <!-- Left Customizer Controls -->
-        <div class="lg:col-span-4 space-y-5 order-2 lg:order-1">
-          
-          <!-- Selected Item Information Card -->
-          <div class="royal-glass rounded-3xl p-6 relative overflow-hidden border-brand-gold/30">
-            <div class="flex items-center justify-between mb-3">
-              <span id="modelBadge" class="bg-pink-100 border border-pink-300 text-pink-700 px-3 py-1 rounded-full text-[10px] font-cinzel font-bold tracking-widest uppercase shadow-sm">
-                Grandeur Edition
-              </span>
-              <span class="text-[11px] text-pink-700 flex items-center gap-1.5 font-bold">
-                <span class="w-2 h-2 rounded-full bg-pink-500 animate-pulse"></span>
-                WebGL 3D Live
-              </span>
-            </div>
-
-            <h3 id="modelTitle" class="font-cinzel text-2xl font-bold text-brand-berry mb-1.5">
-              Royal 3-Tier Floral Cake
-            </h3>
-            <p id="modelDesc" class="text-brand-berryLight text-xs leading-relaxed mb-5 font-normal">
-              Architectural 3-tier celebration cake coated in rich velvet glaze, 24k gold leaf piping, sculpted sugar roses, handcrafted pearls, and crowned with Saleha’s golden fluttering butterfly.
-            </p>
-
-            <div class="pt-4 border-t border-pink-200 flex items-center justify-between">
-              <div>
-                <span class="text-[10px] uppercase tracking-widest text-brand-berryLight/80 block font-cinzel font-bold">Price</span>
-                <span id="modelPrice" class="font-cinzel text-2xl font-extrabold text-brand-gold">₹3,499</span>
-              </div>
-              <button onclick="addCurrent3DToCart()" class="bg-gradient-to-r from-pink-500 via-rose-500 to-amber-500 text-white hover:brightness-105 px-5 py-2.5 rounded-full text-xs font-cinzel font-bold uppercase tracking-wider transition shadow-md flex items-center gap-2 cursor-pointer">
-                <i data-lucide="plus" class="w-4 h-4"></i> Add To Tray
-              </button>
-            </div>
-          </div>
-
-          <!-- 3D Studio Customization Controls Panel -->
-          <div class="royal-glass rounded-3xl p-6 border-brand-gold/30 space-y-4">
-            <div>
-              <label class="text-xs uppercase tracking-[0.2em] text-pink-700 font-cinzel font-bold block mb-2 flex items-center justify-between">
-                <span>1. Select 3D Creation:</span>
-                <span class="text-[10px] text-pink-500 font-bold">4 Models</span>
-              </label>
-              <div class="grid grid-cols-2 sm:grid-cols-4 gap-2">
-                <button onclick="switch3DModel('wedding')" id="btn-wedding" class="px-2 py-2.5 rounded-xl text-[11px] font-cinzel font-bold border-2 border-pink-500 bg-pink-500 text-white transition shadow-md text-center cursor-pointer">
-                  🎂 Floral Cake
-                </button>
-                <button onclick="switch3DModel('flowerBox')" id="btn-flowerBox" class="px-2 py-2.5 rounded-xl text-[11px] font-cinzel font-bold border border-pink-200 hover:border-pink-400 bg-white/80 text-brand-berry transition text-center cursor-pointer">
-                  🌸 Rose Box
-                </button>
-                <button onclick="switch3DModel('hamper')" id="btn-hamper" class="px-2 py-2.5 rounded-xl text-[11px] font-cinzel font-bold border border-pink-200 hover:border-pink-400 bg-white/80 text-brand-berry transition text-center cursor-pointer">
-                  🎁 Fairy Hamper
-                </button>
-                <button onclick="switch3DModel('chocolates')" id="btn-chocolates" class="px-2 py-2.5 rounded-xl text-[11px] font-cinzel font-bold border border-pink-200 hover:border-pink-400 bg-white/80 text-brand-berry transition text-center cursor-pointer">
-                  🍫 Truffle Tier
-                </button>
-              </div>
-            </div>
-
-            <!-- Dynamic Monogram Live Engraving Input -->
-            <div class="pt-3 border-t border-pink-200">
-              <label class="text-xs uppercase tracking-[0.2em] text-pink-700 font-cinzel font-bold flex items-center justify-between mb-2">
-                <span>2. Couple Monogram Initials:</span>
-                <span class="text-[10px] text-pink-500 font-bold">Live 3D Gold Foil</span>
-              </label>
-              <div class="flex gap-2">
-                <input type="text" id="monogramInput" maxlength="6" value="S & A" placeholder="e.g. S & A" class="w-full bg-white/95 border border-pink-300 rounded-xl px-3 py-2 text-sm text-brand-gold font-cinzel font-bold focus:outline-none focus:border-pink-500 uppercase text-center shadow-inner" oninput="updateMonogramTexture(this.value)" />
-                <button onclick="randomizeMonogram()" class="px-3 py-2 royal-glass text-xs font-cinzel text-pink-700 hover:text-pink-900 rounded-xl border border-pink-300 cursor-pointer" title="Randomize Initials">
-                  🎲
-                </button>
-              </div>
-            </div>
-
-            <!-- Color Glaze Swatches -->
-            <div class="pt-3 border-t border-pink-200">
-              <label class="text-xs uppercase tracking-[0.2em] text-pink-700 font-cinzel font-bold block mb-2">
-                3. Velvet Glaze & Finish:
-              </label>
-              <div class="flex items-center justify-between">
-                <div class="flex items-center gap-2">
-                  <button onclick="change3DColor(0xfbcfe8, 'Baby Pink Velvet')" class="w-7 h-7 rounded-full bg-[#fbcfe8] border-2 border-pink-400 shadow-md hover:scale-110 transition cursor-pointer" title="Baby Pink Velvet"></button>
-                  <button onclick="change3DColor(0xf472b6, 'French Rose Blush')" class="w-7 h-7 rounded-full bg-[#f472b6] border-2 border-pink-500 shadow-md hover:scale-110 transition cursor-pointer" title="French Rose Blush"></button>
-                  <button onclick="change3DColor(0xffe4e6, 'Pastel Cherry Blossom')" class="w-7 h-7 rounded-full bg-[#ffe4e6] border-2 border-rose-300 shadow-md hover:scale-110 transition cursor-pointer" title="Cherry Blossom"></button>
-                  <button onclick="change3DColor(0xd4af37, '24K Imperial Gold')" class="w-7 h-7 rounded-full bg-[#d4af37] border-2 border-amber-400 shadow-md hover:scale-110 transition cursor-pointer" title="Imperial Gold"></button>
-                  <button onclick="change3DColor(0xfffdfa, 'Ivory Champagne')" class="w-7 h-7 rounded-full bg-[#fffdfa] border-2 border-amber-200 shadow-md hover:scale-110 transition cursor-pointer" title="Ivory Champagne"></button>
-                </div>
-                <span id="activeColorName" class="text-[10px] text-pink-700 font-cinzel font-bold">Baby Pink Velvet</span>
-              </div>
-            </div>
-
-            <!-- Toppings & Effects Toggles -->
-            <div class="pt-3 border-t border-pink-200 space-y-2">
-              <label class="text-xs uppercase tracking-[0.2em] text-pink-700 font-cinzel font-bold block">
-                4. Luxury Accents & Celebrations:
-              </label>
-              <div class="grid grid-cols-2 gap-2">
-                <button id="toggleSparklerBtn" onclick="toggleCelebrationFountain()" class="px-2.5 py-2 rounded-xl text-[11px] font-cinzel border border-pink-300 royal-glass text-brand-berry hover:text-pink-600 flex items-center justify-center gap-1.5 cursor-pointer font-bold">
-                  <i data-lucide="flame" class="w-3.5 h-3.5 text-amber-500"></i> Sparkler: <span id="sparklerLabel">OFF</span>
-                </button>
-                <button id="toggleSugarFlowerBtn" onclick="toggleSugarPetalShower()" class="px-2.5 py-2 rounded-xl text-[11px] font-cinzel border border-pink-300 royal-glass text-brand-berry hover:text-pink-600 flex items-center justify-center gap-1.5 cursor-pointer font-bold">
-                  <span>🌸</span> 3D Petals: <span id="sugarPetalLabel">ON</span>
-                </button>
-              </div>
-              <button onclick="fireCelebrationPetalCannon()" class="w-full py-2 px-3 rounded-xl text-[11px] font-cinzel font-bold bg-gradient-to-r from-pink-400 via-rose-400 to-amber-300 hover:brightness-105 text-white transition shadow flex items-center justify-center gap-2 cursor-pointer border border-white/60">
-                <span>🎉</span> Burst Celebration Petal Cannon!
-              </button>
-            </div>
-
-          </div>
-        </div>
-
-        <!-- Center 3D Stage Container -->
-        <div class="lg:col-span-8 order-1 lg:order-2 flex flex-col items-center">
-          <div class="relative w-full h-[400px] sm:h-[500px] md:h-[560px] rounded-3xl royal-glass overflow-hidden shadow-2xl border-2 border-brand-gold/40 group bg-gradient-to-b from-white/90 via-pink-50/80 to-rose-100/60">
-            
-            <!-- Three.js Canvas -->
-            <canvas id="threeCanvas" class="w-full h-full cursor-grab active:cursor-grabbing touch-none block"></canvas>
-
-            <!-- Top Left Status Pill -->
-            <div class="absolute top-4 left-4 sm:top-5 sm:left-5 royal-glass px-3.5 py-1.5 rounded-full border border-pink-300 text-[10px] sm:text-[11px] font-cinzel text-pink-700 font-bold flex items-center gap-2 pointer-events-none shadow-sm">
-              <i data-lucide="crown" class="w-3.5 h-3.5 text-brand-gold"></i>
-              <span>Packs_n_Bakes Royal Turntable</span>
-            </div>
-
-            <!-- Top Right Camera View Presets -->
-            <div class="absolute top-4 right-4 sm:top-5 sm:right-5 flex items-center gap-1.5 sm:gap-2">
-              <button onclick="setCameraPreset('front')" class="royal-glass hover:bg-pink-100 border border-pink-300 text-brand-berry text-[9px] sm:text-[10px] px-2 sm:px-2.5 py-1.5 rounded-lg transition font-cinzel font-bold cursor-pointer" title="Front Camera">Front</button>
-              <button onclick="setCameraPreset('isometric')" class="royal-glass hover:bg-pink-100 border border-pink-300 text-brand-berry text-[9px] sm:text-[10px] px-2 sm:px-2.5 py-1.5 rounded-lg transition font-cinzel font-bold cursor-pointer" title="Isometric 45°">45°</button>
-              <button onclick="setCameraPreset('top')" class="royal-glass hover:bg-pink-100 border border-pink-300 text-brand-berry text-[9px] sm:text-[10px] px-2 sm:px-2.5 py-1.5 rounded-lg transition font-cinzel font-bold cursor-pointer" title="Top Down View">Top</button>
-              
-              <button onclick="toggleAutoRotate()" id="rotateToggleBtn" class="royal-glass hover:bg-pink-100 border border-pink-300 text-pink-700 text-xs px-2.5 sm:px-3 py-1.5 rounded-lg transition flex items-center gap-1 cursor-pointer font-bold">
-                <i data-lucide="rotate-cw" class="w-3.5 h-3.5 text-pink-500"></i>
-                <span id="rotateStatus" class="font-cinzel text-[9px] sm:text-[10px]">Spin: ON</span>
-              </button>
-            </div>
-
-            <!-- Bottom Floating Guidance -->
-            <div class="absolute bottom-4 sm:bottom-5 left-1/2 transform -translate-x-1/2 royal-glass px-4 sm:px-5 py-2 rounded-full border border-pink-300 text-[10px] sm:text-xs text-brand-berry font-bold flex items-center gap-2 pointer-events-none backdrop-blur-md whitespace-nowrap shadow-md">
-              <i data-lucide="move" class="w-3.5 h-3.5 sm:w-4 sm:h-4 text-pink-500"></i>
-              <span class="font-cinzel">Drag 360° | Scroll to Zoom | Butterfly Flutters Live</span>
-            </div>
-
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- Creations Catalog Section -->
-  <section id="creations" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center max-w-3xl mx-auto mb-12">
-      <span class="text-xs uppercase tracking-[0.35em] text-pink-600 font-cinzel font-bold flex items-center justify-center gap-2">
-        <span class="text-pink-500">🌸</span>
-        Saleha's Signature Creations
-      </span>
-      <h2 class="font-cinzel text-3xl sm:text-5xl font-bold mt-2 text-brand-berry">
-        Crafted For <span class="font-serif italic font-normal gold-shimmer-text">Unforgettable Celebrations</span>
-      </h2>
-      <p class="text-brand-berryLight text-xs sm:text-sm mt-3">
-        From engagement party monogram chocolate boxes to transparent LED acrylic gift hampers, multi-tiered wedding cakes, and Lotus Biscoff fudge brownies.
-      </p>
-
-      <!-- Category Filter Pills -->
-      <div class="flex flex-wrap items-center justify-center gap-2 mt-8">
-        <button onclick="filterCategory('all', event)" class="cat-pill active px-5 py-2 rounded-full text-xs font-cinzel font-bold tracking-widest uppercase border-2 border-pink-500 bg-pink-500 text-white transition cursor-pointer shadow-sm">
-          All Collections
-        </button>
-        <button onclick="filterCategory('chocolates', event)" class="cat-pill px-5 py-2 rounded-full text-xs font-cinzel font-bold tracking-widest uppercase border border-pink-200 hover:border-pink-400 bg-white/80 text-brand-berry transition cursor-pointer">
-          Monogram Chocolates 🍪
-        </button>
-        <button onclick="filterCategory('hampers', event)" class="cat-pill px-5 py-2 rounded-full text-xs font-cinzel font-bold tracking-widest uppercase border border-pink-200 hover:border-pink-400 bg-white/80 text-brand-berry transition cursor-pointer">
-          Wedding Hampers 🎀
-        </button>
-        <button onclick="filterCategory('cakes', event)" class="cat-pill px-5 py-2 rounded-full text-xs font-cinzel font-bold tracking-widest uppercase border border-pink-200 hover:border-pink-400 bg-white/80 text-brand-berry transition cursor-pointer">
-          Custom Cakes 🌸
-        </button>
-        <button onclick="filterCategory('brownies', event)" class="cat-pill px-5 py-2 rounded-full text-xs font-cinzel font-bold tracking-widest uppercase border border-pink-200 hover:border-pink-400 bg-white/80 text-brand-berry transition cursor-pointer">
-          Brownies & Jars 🧁
-        </button>
-      </div>
-    </div>
-
-    <!-- Product Grid -->
-    <div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-      <!-- Injected via JavaScript -->
-    </div>
-  </section>
-
-  <!-- Sweetest Flavours & Fillings Palette -->
-  <section class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center max-w-2xl mx-auto mb-10">
-      <span class="text-xs uppercase tracking-[0.35em] text-pink-600 font-cinzel font-bold flex items-center justify-center gap-2">
-        <span>🧁</span> Gourmet Flavour Palette
-      </span>
-      <h3 class="font-cinzel text-3xl sm:text-4xl font-bold mt-2 text-brand-berry">
-        Wholesome Sponges & <span class="font-serif italic font-normal gold-shimmer-text">Melt-In-Mouth Fillings</span>
-      </h3>
-      <p class="text-brand-berryLight text-xs sm:text-sm mt-2 font-normal">
-        Every layer is crafted 100% fresh in Nanded using Belgian Callebaut chocolate, French fruit compotes, and silky buttercream.
-      </p>
-    </div>
-
-    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4">
-      <div class="royal-glass p-4 sm:p-5 rounded-2xl text-center border-pink-200 hover:scale-105 transition duration-300">
-        <div class="w-10 h-10 sm:w-12 sm:h-12 mx-auto mb-2 sm:mb-3 rounded-full bg-pink-100 flex items-center justify-center text-xl shadow-inner">🍓</div>
-        <h4 class="font-cinzel text-xs font-bold text-brand-berry">Strawberry Rose</h4>
-        <p class="text-[10px] text-pink-700 mt-1 font-medium">Fresh berry compote & rose cream</p>
-      </div>
-      <div class="royal-glass p-4 sm:p-5 rounded-2xl text-center border-pink-200 hover:scale-105 transition duration-300">
-        <div class="w-10 h-10 sm:w-12 sm:h-12 mx-auto mb-2 sm:mb-3 rounded-full bg-amber-100 flex items-center justify-center text-xl shadow-inner">🍫</div>
-        <h4 class="font-cinzel text-xs font-bold text-brand-berry">Belgian Truffle</h4>
-        <p class="text-[10px] text-pink-700 mt-1 font-medium">55% dark chocolate silk ganache</p>
-      </div>
-      <div class="royal-glass p-4 sm:p-5 rounded-2xl text-center border-pink-200 hover:scale-105 transition duration-300">
-        <div class="w-10 h-10 sm:w-12 sm:h-12 mx-auto mb-2 sm:mb-3 rounded-full bg-pink-100 flex items-center justify-center text-xl shadow-inner">🍪</div>
-        <h4 class="font-cinzel text-xs font-bold text-brand-berry">Lotus Biscoff</h4>
-        <p class="text-[10px] text-pink-700 mt-1 font-medium">Spiced caramel swirl & crumble</p>
-      </div>
-      <div class="royal-glass p-4 sm:p-5 rounded-2xl text-center border-pink-200 hover:scale-105 transition duration-300">
-        <div class="w-10 h-10 sm:w-12 sm:h-12 mx-auto mb-2 sm:mb-3 rounded-full bg-rose-100 flex items-center justify-center text-xl shadow-inner">✨</div>
-        <h4 class="font-cinzel text-xs font-bold text-brand-berry">Vanilla Bean</h4>
-        <p class="text-[10px] text-pink-700 mt-1 font-medium">Madagascar vanilla Chantilly</p>
-      </div>
-      <div class="royal-glass p-4 sm:p-5 rounded-2xl text-center border-pink-200 hover:scale-105 transition duration-300">
-        <div class="w-10 h-10 sm:w-12 sm:h-12 mx-auto mb-2 sm:mb-3 rounded-full bg-pink-100 flex items-center justify-center text-xl shadow-inner">🌸</div>
-        <h4 class="font-cinzel text-xs font-bold text-brand-berry">Pistachio Rose</h4>
-        <p class="text-[10px] text-pink-700 mt-1 font-medium">Roasted Iranian pistachio & petals</p>
-      </div>
-      <div class="royal-glass p-4 sm:p-5 rounded-2xl text-center border-pink-200 hover:scale-105 transition duration-300">
-        <div class="w-10 h-10 sm:w-12 sm:h-12 mx-auto mb-2 sm:mb-3 rounded-full bg-amber-100 flex items-center justify-center text-xl shadow-inner">🌰</div>
-        <h4 class="font-cinzel text-xs font-bold text-brand-berry">Ferrero Rocher</h4>
-        <p class="text-[10px] text-pink-700 mt-1 font-medium">Roasted hazelnuts & praline</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Customer Love Notes & Polaroid Keepsakes -->
-  <section class="py-16 bg-gradient-to-b from-brand-void via-pink-100/40 to-brand-void border-t border-pink-200">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center max-w-2xl mx-auto mb-12">
-        <span class="text-xs uppercase tracking-[0.35em] text-pink-600 font-cinzel font-bold flex items-center justify-center gap-2">
-          <span>💌</span> Bride & Client Love Notes
-        </span>
-        <h3 class="font-cinzel text-3xl sm:text-4xl font-bold mt-2 text-brand-berry">
-          Words From Our <span class="font-serif italic font-normal gold-shimmer-text">Princess Celebrations</span>
-        </h3>
-        <p class="text-brand-berryLight text-xs sm:text-sm mt-2">
-          Over 750+ smiles shared in Nanded and delivered to doorsteps across India.
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
-        <!-- Polaroid Card 1 -->
-        <div class="polaroid-card group hover:-translate-y-1.5 transition duration-300">
-          <div class="washi-tape"></div>
-          <div class="h-52 rounded-xl overflow-hidden mb-3">
-            <img src="https://images.unsplash.com/photo-1535141192574-5d4897c13136?q=80&w=800&auto=format&fit=crop" alt="Bridal Cake Review" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
-          </div>
-          <div class="flex items-center gap-1 text-amber-400 text-xs mb-2">★★★★★</div>
-          <p class="text-xs text-brand-berryLight font-normal leading-relaxed italic mb-3">
-            "Saleha made my dream wedding cake! The golden butterfly and pastel pink pearls looked straight out of a royal fairy tale. Everyone at the reception kept taking pictures!"
-          </p>
-          <div class="flex items-center justify-between border-t border-pink-100 pt-2.5">
-            <span class="font-cinzel text-xs font-bold text-pink-700">Ayesha & Zaid</span>
-            <span class="text-[10px] text-brand-berryLight/70 font-semibold">Nanded Wedding 💍</span>
-          </div>
-        </div>
-
-        <!-- Polaroid Card 2 -->
-        <div class="polaroid-card group hover:-translate-y-1.5 transition duration-300">
-          <div class="washi-tape"></div>
-          <div class="h-52 rounded-xl overflow-hidden mb-3">
-            <img src="https://images.unsplash.com/photo-1549007994-cb92caebd54b?q=80&w=800&auto=format&fit=crop" alt="Monogram Chocolates" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
-          </div>
-          <div class="flex items-center gap-1 text-amber-400 text-xs mb-2">★★★★★</div>
-          <p class="text-xs text-brand-berryLight font-normal leading-relaxed italic mb-3">
-            "The initial monogram chocolates arrived in Mumbai in pristine condition! Shockproof packing was so secure and the Belgian chocolate taste was super rich and authentic."
-          </p>
-          <div class="flex items-center justify-between border-t border-pink-100 pt-2.5">
-            <span class="font-cinzel text-xs font-bold text-pink-700">Sana Khan</span>
-            <span class="text-[10px] text-brand-berryLight/70 font-semibold">Mumbai Courier 🚚</span>
-          </div>
-        </div>
-
-        <!-- Polaroid Card 3 -->
-        <div class="polaroid-card group hover:-translate-y-1.5 transition duration-300">
-          <div class="washi-tape"></div>
-          <div class="h-52 rounded-xl overflow-hidden mb-3">
-            <img src="https://images.unsplash.com/photo-1513201099705-a9746e1e201f?q=80&w=800&auto=format&fit=crop" alt="Fairy Hamper Review" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
-          </div>
-          <div class="flex items-center gap-1 text-amber-400 text-xs mb-2">★★★★★</div>
-          <p class="text-xs text-brand-berryLight font-normal leading-relaxed italic mb-3">
-            "The acrylic LED hamper with fairy lights made my sister cry happy tears on her engagement! Saleha’s attention to ribbons, stickers and rose petals is simply unmatched."
-          </p>
-          <div class="flex items-center justify-between border-t border-pink-100 pt-2.5">
-            <span class="font-cinzel text-xs font-bold text-pink-700">Fariha Patel</span>
-            <span class="text-[10px] text-brand-berryLight/70 font-semibold">Hyderabad 🌸</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Story & Craftsmanship Section -->
-  <section id="about" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-      
-      <!-- Visual Frame -->
-      <div class="lg:col-span-6 relative">
-        <div class="aspect-[4/3] rounded-3xl overflow-hidden royal-glass border-2 border-brand-gold/40 shadow-xl relative group">
-          <img src="https://images.unsplash.com/photo-1535141192574-5d4897c13136?q=80&w=1200&auto=format&fit=crop" alt="Packs and Bakes Artistry" class="w-full h-full object-cover group-hover:scale-105 transition duration-700" onerror="this.src='https://images.unsplash.com/photo-1578985545062-69928b1d9587?q=80&w=1000&auto=format&fit=crop'" />
-          <div class="absolute inset-0 bg-gradient-to-t from-pink-950/70 via-transparent to-transparent"></div>
-          
-          <div class="absolute bottom-6 left-6 right-6">
-            <span class="bg-gradient-to-r from-pink-500 to-amber-500 text-white font-cinzel font-bold text-[10px] tracking-widest uppercase px-3.5 py-1 rounded-full mb-2 inline-block">
-              Nanded Artisanal Studio 🦋
-            </span>
-            <h4 class="font-cinzel text-xl sm:text-2xl font-bold text-white">Handcrafted With Supreme Love</h4>
-            <p class="text-xs text-pink-100 mt-1 font-light">Every sponge baked fresh and flower sculpted by Saleha personally.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Story Copy -->
-      <div class="lg:col-span-6 space-y-5">
-        <span class="text-xs uppercase tracking-[0.35em] text-pink-600 font-cinzel font-bold flex items-center gap-2">
-          <span>🌸</span> The Artisan Behind The Taste
-        </span>
-        <h2 class="font-cinzel text-3xl sm:text-4xl font-bold text-brand-berry leading-tight">
-          Where Sweetest Moments Turn Into <span class="font-serif italic font-normal gold-shimmer-text">Timeless Keepsakes</span>
-        </h2>
-        <p class="text-brand-berryLight text-xs sm:text-sm leading-relaxed">
-          Founded in Nanded by Saleha, <strong>Packs_n_Bakes</strong> celebrates life's most precious milestones with confectionery that is as visually enchanting as it is delicious.
-        </p>
-        <p class="text-brand-berryLight text-xs sm:text-sm leading-relaxed">
-          Whether it is an intimate Nikah ceremony, grand reception, or milestone birthday, every cake and fairy-lit acrylic hamper is custom tailored with bespoke couple monograms and fine ribbons.
-        </p>
-
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-2">
-          <div class="p-4 rounded-2xl royal-glass border-pink-200">
-            <div class="text-pink-600 mb-2"><i data-lucide="gift" class="w-5 h-5"></i></div>
-            <h4 class="text-xs font-cinzel font-bold text-brand-berry">Bridal Trousseau Packing</h4>
-            <p class="text-[11px] text-brand-berryLight mt-0.5">Engagement, wedding & trousseau hampers with acrylic fairy-lights.</p>
-          </div>
-          <div class="p-4 rounded-2xl royal-glass border-pink-200">
-            <div class="text-pink-600 mb-2"><i data-lucide="truck" class="w-5 h-5"></i></div>
-            <h4 class="text-xs font-cinzel font-bold text-brand-berry">Shockproof Pan-India Shipping</h4>
-            <p class="text-[11px] text-brand-berryLight mt-0.5">Multi-layer protective boxing ensuring safe arrival across India.</p>
-          </div>
-        </div>
-
-        <div class="pt-2">
-          <a href="https://www.instagram.com/packs_n_bakes" target="_blank" class="inline-flex items-center gap-2.5 border-2 border-brand-gold royal-glass px-6 py-3 rounded-full text-xs font-cinzel font-bold uppercase tracking-widest text-brand-gold hover:bg-brand-gold hover:text-white transition duration-300 shadow-md">
-            <i data-lucide="instagram" class="w-4 h-4 text-pink-500"></i>
-            <span>Follow @packs_n_bakes On Instagram</span>
-          </a>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- Custom Order & WhatsApp Quote Builder -->
-  <section id="custom-quote" class="py-20 max-w-4xl mx-auto px-4 sm:px-6">
-    <div class="royal-glass rounded-3xl p-6 sm:p-12 border-2 border-brand-gold/40 shadow-2xl relative overflow-hidden">
-      <!-- Glow Accents -->
-      <div class="absolute -top-24 -right-24 w-72 h-72 bg-pink-300/30 rounded-full blur-3xl pointer-events-none"></div>
-      <div class="absolute -bottom-24 -left-24 w-72 h-72 bg-amber-300/25 rounded-full blur-3xl pointer-events-none"></div>
-
-      <div class="text-center max-w-xl mx-auto mb-8">
-        <span class="text-xs uppercase tracking-[0.35em] text-pink-600 font-cinzel font-bold">Bespoke Concierge</span>
-        <h2 class="font-cinzel text-2xl sm:text-4xl font-bold mt-1.5 text-brand-berry">
-          Reserve Your <span class="font-serif italic font-normal gold-shimmer-text">Custom Creation</span>
-        </h2>
-        <p class="text-brand-berryLight text-xs sm:text-sm mt-2">
-          Specify your celebration requirements below. Submitting automatically opens WhatsApp with Saleha with your customized brief prepared!
-        </p>
-      </div>
-
-      <form id="customOrderForm" onsubmit="handleCustomOrderSubmit(event)" class="space-y-5">
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+      <!-- Desktop Sticky Header & Toolbar -->
+      <div class="p-3.5 border-b border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950 flex-shrink-0">
+        <div class="flex items-center justify-between gap-2 mb-2.5">
           <div>
-            <label class="block text-xs uppercase tracking-widest text-brand-berry font-cinzel font-bold mb-1.5">Your Name</label>
-            <input type="text" id="custName" required placeholder="e.g. Farhan Khan" class="w-full bg-white/95 border border-pink-300 rounded-2xl px-4 py-3 text-sm text-brand-berry placeholder-pink-300 focus:outline-none focus:border-pink-500 transition shadow-inner" />
-          </div>
-          <div>
-            <label class="block text-xs uppercase tracking-widest text-brand-berry font-cinzel font-bold mb-1.5">Celebration Occasion</label>
-            <select id="custOccasion" class="w-full bg-white/95 border border-pink-300 rounded-2xl px-4 py-3 text-sm text-brand-berry focus:outline-none focus:border-pink-500 transition shadow-inner">
-              <option value="Wedding / Reception Grand Cake">Wedding / Reception Grand Cake</option>
-              <option value="Engagement / Monogram Initials Chocolates">Engagement / Monogram Initials Chocolates</option>
-              <option value="Anniversary LED Fairy-Light Hamper">Anniversary LED Fairy-Light Hamper</option>
-              <option value="Birthday Celebration Cake">Birthday Celebration Cake</option>
-              <option value="Festival / Eid / Diwali Hamper">Festival / Eid / Diwali Hamper</option>
-              <option value="Bridal Trousseau Packing Set">Bridal Trousseau Packing Set</option>
-            </select>
-          </div>
-        </div>
-
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
-          <div>
-            <label class="block text-xs uppercase tracking-widest text-brand-berry font-cinzel font-bold mb-1.5">Design & Flavours</label>
-            <select id="custFlavor" class="w-full bg-white/95 border border-pink-300 rounded-2xl px-4 py-3 text-sm text-brand-berry focus:outline-none focus:border-pink-500 transition shadow-inner">
-              <option value="Baby Pink Velvet & Fresh Berries">Baby Pink Velvet & Fresh Berries</option>
-              <option value="Belgian Dark Chocolate Truffle & Gold Leaf">Belgian Dark Chocolate Truffle & Gold Leaf</option>
-              <option value="Custom Initials Monogram Chocolates (Gold Foil)">Custom Initials Monogram Chocolates (Gold Foil)</option>
-              <option value="Transparent Acrylic Box With Warm Fairy Lights">Transparent Acrylic Box With Warm Fairy Lights</option>
-              <option value="Lotus Biscoff & Roasted Walnut Brownie Tower">Lotus Biscoff & Roasted Walnut Brownie Tower</option>
-            </select>
-          </div>
-          <div>
-            <label class="block text-xs uppercase tracking-widest text-brand-berry font-cinzel font-bold mb-1.5">Delivery Destination</label>
-            <select id="custLocation" class="w-full bg-white/95 border border-pink-300 rounded-2xl px-4 py-3 text-sm text-brand-berry focus:outline-none focus:border-pink-500 transition shadow-inner">
-              <option value="Nanded (Local Studio Hand Delivery / Pickup)">Nanded (Local Studio Hand Delivery / Pickup)</option>
-              <option value="Pan-India Courier (Hampers & Chocolates)">Pan-India Courier (Hampers & Chocolates)</option>
-            </select>
-          </div>
-        </div>
-
-        <div>
-          <label class="block text-xs uppercase tracking-widest text-brand-berry font-cinzel font-bold mb-1.5">Personalized Initials / Event Date / Notes</label>
-          <textarea id="custNotes" rows="3" placeholder="e.g. Need monogram 'S & F' printed on chocolate wrappers with golden fairy lights for our engagement on 24th Oct..." class="w-full bg-white/95 border border-pink-300 rounded-2xl p-3.5 text-sm text-brand-berry placeholder-pink-300 focus:outline-none focus:border-pink-500 transition shadow-inner"></textarea>
-        </div>
-
-        <button type="submit" class="w-full py-4 rounded-2xl bg-gradient-to-r from-pink-500 via-rose-500 to-amber-500 text-white font-cinzel font-bold text-xs uppercase tracking-[0.22em] hover:brightness-105 transition shadow-lg flex items-center justify-center gap-2.5 cursor-pointer">
-          <i data-lucide="send" class="w-4 h-4"></i>
-          <span>Send Inquiries Directly on WhatsApp</span>
-        </button>
-      </form>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="bg-white border-t border-pink-200 pt-16 pb-12 shadow-inner">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-10 pb-12 border-b border-pink-200">
-        
-        <!-- Studio Brand Profile -->
-        <div class="space-y-3">
-          <div class="flex items-center gap-3">
-            <div class="w-11 h-11 rounded-full border border-brand-gold flex items-center justify-center bg-pink-100 text-brand-gold font-bold">
-              <span class="font-cinzel text-base">PB</span>
-            </div>
-            <div>
-              <span class="font-cinzel text-lg font-bold gold-shimmer-text uppercase">Packs_n_Bakes</span>
-              <p class="text-[10px] text-pink-600 uppercase tracking-widest font-semibold">By Saleha 🦋✨</p>
-            </div>
-          </div>
-          <p class="text-xs text-brand-berryLight leading-relaxed">
-            Baking happiness in every bite. Artisanal custom multi-tier wedding cakes, engagement monogram chocolates, and trousseau hampers from Nanded, Maharashtra.
-          </p>
-          <div class="pt-2 text-xs text-brand-berryLight space-y-1.5">
-            <p class="flex items-center gap-2">
-              <i data-lucide="map-pin" class="w-4 h-4 text-pink-500"></i>
-              <span>Nanded, Maharashtra, India 📍</span>
-            </p>
-            <p class="flex items-center gap-2">
-              <i data-lucide="clock" class="w-4 h-4 text-pink-500"></i>
-              <span>Monday – Saturday: 10:00 AM – 9:00 PM</span>
+            <h1 class="text-sm font-bold text-slate-900 dark:text-white leading-tight">
+              Aadhaar Enrolment / Update Certificate
+            </h1>
+            <p class="text-[11px] text-slate-500 dark:text-slate-400">
+              Live A4 Side-by-Side Auto-Filler
             </p>
           </div>
-        </div>
-
-        <!-- Studio Location Hub -->
-        <div class="royal-glass rounded-3xl p-5 border border-pink-200 flex flex-col justify-between">
-          <div>
-            <div class="flex items-center justify-between mb-2">
-              <span class="text-xs font-cinzel uppercase tracking-wider text-pink-700 font-bold">Bakery Studio Hub</span>
-              <span class="text-[10px] bg-emerald-100 text-emerald-700 px-3 py-0.5 rounded-full border border-emerald-300 font-bold">Pre-Orders Active</span>
-            </div>
-            <p class="text-xs text-brand-berryLight">Fresh bakes whipped against advance pre-orders. Pan-India safe shipping on gift hampers and monogram chocolate boxes.</p>
-          </div>
-
-          <div class="mt-4 rounded-2xl overflow-hidden border border-pink-300 h-36 bg-pink-50 relative flex items-center justify-center">
-            <div class="absolute inset-0 opacity-40 bg-[radial-gradient(#f472b6_1px,transparent_1px)] [background-size:16px_16px]"></div>
-            <div class="relative z-10 text-center p-3">
-              <i data-lucide="navigation" class="w-6 h-6 text-pink-600 mx-auto mb-1 animate-bounce"></i>
-              <span class="text-xs font-cinzel font-bold text-brand-berry block">Nanded Artisanal Studio</span>
-              <span class="text-[10px] text-pink-600 font-bold">Maharashtra, India</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Direct Connect -->
-        <div class="space-y-3">
-          <h4 class="font-cinzel text-base font-bold text-brand-berry">Direct Connect</h4>
-          <p class="text-xs text-brand-berryLight">Custom cake orders require 24 to 48 hours advance booking. Direct inquiry via WhatsApp or Instagram:</p>
-          
-          <div class="flex flex-col gap-2.5">
-            <a href="https://www.instagram.com/packs_n_bakes" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 p-3 rounded-2xl royal-glass hover:border-pink-400 text-xs text-brand-berry transition font-bold">
-              <i data-lucide="instagram" class="w-4 h-4 text-pink-500"></i>
-              <span class="font-cinzel">@packs_n_bakes (Instagram)</span>
-            </a>
-            <a href="https://wa.me/919999999999" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 p-3 rounded-2xl royal-glass hover:border-pink-400 text-xs text-brand-berry transition font-bold">
-              <i data-lucide="phone" class="w-4 h-4 text-emerald-600"></i>
-              <span class="font-cinzel">WhatsApp Concierge Desk</span>
-            </a>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- Copyright -->
-      <div class="pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-brand-berryLight gap-3 font-medium">
-        <p>© 2026 Packs_n_Bakes By Saleha. All Rights Reserved.</p>
-        <p class="text-[11px] text-pink-700 font-cinzel font-bold">The Royal Palace Baby Pink 3D Edition</p>
-      </div>
-
-    </div>
-  </footer>
-
-  <!-- Toast Notification Box -->
-  <div id="toastNotification" class="fixed top-6 right-6 z-50 transform translate-x-96 transition duration-300 royal-glass border border-pink-400 text-brand-berry px-6 py-3.5 rounded-2xl shadow-2xl flex items-center gap-3 font-bold">
-    <i data-lucide="check-circle" class="w-5 h-5 text-pink-600"></i>
-    <span id="toastMessage" class="text-xs font-cinzel font-medium">Item added to your quote tray!</span>
-  </div>
-
-  <!-- Cart / Inquiry Tray Drawer -->
-  <div id="cartDrawer" class="fixed inset-0 z-50 hidden">
-    <div onclick="toggleCartDrawer()" class="absolute inset-0 bg-pink-950/40 backdrop-blur-sm"></div>
-    <div class="absolute right-0 top-0 bottom-0 w-full max-w-md bg-white/95 border-l-2 border-pink-300 p-6 sm:p-8 flex flex-col justify-between shadow-2xl overflow-y-auto">
-      <div>
-        <div class="flex items-center justify-between pb-4 border-b border-pink-200">
-          <div class="flex items-center gap-2.5">
-            <i data-lucide="shopping-bag" class="w-5 h-5 text-pink-600"></i>
-            <h3 class="font-cinzel text-xl font-bold text-brand-berry">Your Inquiry Tray</h3>
-          </div>
-          <button onclick="toggleCartDrawer()" class="text-pink-400 hover:text-pink-600 p-1 cursor-pointer">
-            <i data-lucide="x" class="w-5 h-5"></i>
+          <!-- Left-panel-only Dark/Light Toggle -->
+          <button id="theme-toggle-btn" type="button" title="Toggle Dark/Light mode for editor panel"
+            class="hidden lg:inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-xs font-medium border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 transition">
+            <span id="theme-icon">🌙</span>
+            <span id="theme-label">Dark</span>
           </button>
         </div>
 
-        <!-- Items List -->
-        <div id="cartItemsContainer" class="py-6 space-y-3">
-          <p class="text-xs text-brand-berryLight text-center py-10 font-normal">Your inquiry tray is empty. Explore our 3D showroom or catalogue above!</p>
+        <!-- 4 Action Buttons -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-1.5">
+          <button type="button" onclick="fillSampleData()"
+            class="px-2.5 py-2 rounded-lg text-xs font-semibold bg-amber-500 hover:bg-amber-600 text-white shadow-sm transition cursor-pointer">
+            ✨ Sample Data
+          </button>
+          <button type="button" onclick="saveTextToStorage()"
+            class="px-2.5 py-2 rounded-lg text-xs font-semibold bg-emerald-600 hover:bg-emerald-700 text-white shadow-sm transition cursor-pointer">
+            💾 Save Text
+          </button>
+          <button type="button" onclick="clearAllFields()"
+            class="px-2.5 py-2 rounded-lg text-xs font-semibold bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 transition cursor-pointer">
+            🗑️ Clear All
+          </button>
+          <button type="button" onclick="printA4Form()"
+            class="px-2.5 py-2 rounded-lg text-xs font-semibold bg-red-700 hover:bg-red-800 text-white shadow-sm transition cursor-pointer">
+            🖨️ Print A4
+          </button>
+        </div>
+
+        <!-- Toast Feedback Banner -->
+        <div id="toast-msg" class="hidden mt-2 px-3 py-1.5 rounded-md text-xs font-medium bg-emerald-100 text-emerald-800 dark:bg-emerald-900/60 dark:text-emerald-200 border border-emerald-300 dark:border-emerald-700">
         </div>
       </div>
 
-      <div class="pt-5 border-t border-pink-200 space-y-3.5">
-        <div class="flex justify-between items-center">
-          <span class="text-xs uppercase tracking-wider font-cinzel text-brand-berry font-bold">Estimated Total:</span>
-          <span id="cartTotalSum" class="font-cinzel text-2xl font-bold text-brand-gold">₹0</span>
-        </div>
-        <p class="text-[10px] text-brand-berryLight font-normal">*Final quote confirmed based on custom weight, packaging and delivery location.</p>
-        <button onclick="sendTrayToWhatsApp()" class="w-full py-3.5 rounded-full bg-gradient-to-r from-pink-500 via-rose-500 to-emerald-500 text-white font-cinzel font-bold text-xs uppercase tracking-wider hover:brightness-105 transition shadow-xl flex items-center justify-center gap-2 cursor-pointer">
-          <i data-lucide="message-circle" class="w-4 h-4"></i>
-          <span>Send Tray to Saleha on WhatsApp</span>
-        </button>
+      <!-- Scrollable Dynamic Form Fields Container -->
+      <div id="dynamic-editor-fields" class="flex-1 overflow-y-auto p-4 space-y-5 pb-20 lg:pb-8">
+        <!-- Rendered dynamically from FORM_SCHEMA -->
       </div>
-    </div>
+    </aside>
+
+    <!-- ========================================================================
+         RIGHT PANEL: LIVE A4 DOCUMENT PREVIEW (Always White Paper & Dark Ink)
+         ======================================================================== -->
+    <main id="preview-pane" class="hidden lg:block flex-1 overflow-auto bg-slate-300/80 dark:bg-slate-950">
+      <div class="a4-wrapper">
+        <div id="a4-document" class="a4-sheet">
+
+          <!-- TOP SECTION: Header + Resident Details -->
+          <div>
+            <!-- Main Form Title Banner (No Govt Logos/Emblems) -->
+            <div class="form-banner">
+              CERTIFICATE FOR AADHAAR ENROLMENT/ UPDATE
+            </div>
+
+            <!-- Instructions & Issue Date Row -->
+            <div class="flex justify-between items-start mt-1.5 mb-1.5 text-[7.6pt]">
+              <div class="space-y-1">
+                <div><i>Instructions: <b>All details to be filled in Block Letters</b></i></div>
+                <div class="flex gap-8">
+                  <span><i>To be printed on plain <b>A4</b> paper size;</i></span>
+                  <span><i>Not required to print on letter head;</i></span>
+                </div>
+              </div>
+              <div class="flex flex-col items-end">
+                <div class="text-[7.2pt] italic mb-0.5">(To be valid for 3 months from date of issue)</div>
+                <div class="flex items-center gap-1.5">
+                  <div id="preview-issueDate-dd" class="char-grid solid-boxes"></div>
+                  <div id="preview-issueDate-mm" class="char-grid solid-boxes"></div>
+                  <div id="preview-issueDate-yyyy" class="char-grid solid-boxes"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Section 1 Banner -->
+            <div class="form-sub-banner">
+              Resident's Details
+            </div>
+
+            <!-- Residency & Request Type Checkboxes -->
+            <div class="flex items-center justify-between pl-[124px] pr-2 py-1.5 text-[8pt]">
+              <label class="inline-flex items-center gap-1.5">
+                <span id="chk-residency-Resident" class="tick-square"></span>
+                <span>Resident</span>
+              </label>
+              <label class="inline-flex items-center gap-1.5">
+                <span id="chk-residency-NRI" class="tick-square"></span>
+                <span>Non-Resident Indian (NRI)</span>
+              </label>
+              <label class="inline-flex items-center gap-1.5">
+                <span id="chk-requestType-New" class="tick-square"></span>
+                <span>New Enrolment</span>
+              </label>
+              <label class="inline-flex items-center gap-1.5">
+                <span id="chk-requestType-Update" class="tick-square"></span>
+                <span>Update Request</span>
+              </label>
+            </div>
+
+            <!-- Aadhaar Number Row (Can be hidden/optional via checkbox) -->
+            <div id="preview-row-aadhaarNumber" class="f-row">
+              <div class="f-label">
+                Aadhaar Number:
+                <small>(For update only)</small>
+              </div>
+              <div class="f-boxes-col">
+                <div id="preview-aadhaarNumber" class="char-grid"></div>
+              </div>
+            </div>
+
+            <!-- Full Name (2 rows of 26 boxes) -->
+            <div class="f-row">
+              <div class="f-label">Full Name:</div>
+              <div class="f-boxes-col">
+                <div id="preview-fullName-row1" class="char-grid"></div>
+                <div id="preview-fullName-row2" class="char-grid"></div>
+              </div>
+            </div>
+
+            <!-- C/o -->
+            <div class="f-row">
+              <div class="f-label">C/o:</div>
+              <div class="f-boxes-col">
+                <div id="preview-careOf" class="char-grid"></div>
+              </div>
+            </div>
+
+            <!-- House No./ Bldg./ Apt -->
+            <div class="f-row">
+              <div class="f-label">House No./ Bldg./ Apt:</div>
+              <div class="f-boxes-col">
+                <div id="preview-houseNo" class="char-grid"></div>
+              </div>
+            </div>
+
+            <!-- Street/ Road/ Lane -->
+            <div class="f-row">
+              <div class="f-label">Street/ Road/ Lane:</div>
+              <div class="f-boxes-col">
+                <div id="preview-street" class="char-grid"></div>
+              </div>
+            </div>
+
+            <!-- Landmark -->
+            <div class="f-row">
+              <div class="f-label">Landmark:</div>
+              <div class="f-boxes-col">
+                <div id="preview-landmark" class="char-grid"></div>
+              </div>
+            </div>
+
+            <!-- Area/ Locality/ Sector -->
+            <div class="f-row">
+              <div class="f-label">Area/ Locality/ Sector:</div>
+              <div class="f-boxes-col">
+                <div id="preview-area" class="char-grid"></div>
+              </div>
+            </div>
+
+            <!-- Village/ Town/ City -->
+            <div class="f-row">
+              <div class="f-label">Village/ Town/ City:</div>
+              <div class="f-boxes-col">
+                <div id="preview-city" class="char-grid"></div>
+              </div>
+            </div>
+
+            <!-- Post Office -->
+            <div class="f-row">
+              <div class="f-label">Post Office:</div>
+              <div class="f-boxes-col">
+                <div id="preview-postOffice" class="char-grid"></div>
+              </div>
+            </div>
+
+            <!-- Bottom Resident Split: Left (District, State, Sub-District, PIN, DOB) + Middle (Signature) + Right (Photo & Cross-Stamp) -->
+            <div class="flex justify-between items-start mt-0.5">
+              <!-- Left Column Fields -->
+              <div class="flex-1">
+                <div class="f-row">
+                  <div class="f-label">District:</div>
+                  <div id="preview-district" class="char-grid"></div>
+                </div>
+                <div class="f-row">
+                  <div class="f-label">State:</div>
+                  <div id="preview-state" class="char-grid"></div>
+                </div>
+                <!-- Renamed blank unlabeled field to Sub-District: -->
+                <div class="f-row">
+                  <div class="f-label">Sub-District:</div>
+                  <div id="preview-subDistrict" class="char-grid"></div>
+                </div>
+                <div class="f-row">
+                  <div class="f-label">PIN Code:</div>
+                  <div id="preview-pinCode" class="char-grid"></div>
+                </div>
+                <div class="f-row mb-0">
+                  <div class="f-label">Date of Birth:</div>
+                  <div class="flex items-center gap-1.5">
+                    <div id="preview-dob-dd" class="char-grid"></div>
+                    <div id="preview-dob-mm" class="char-grid"></div>
+                    <div id="preview-dob-yyyy" class="char-grid"></div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Middle: Resident Signature Box -->
+              <div class="flex flex-col justify-end self-end mr-2.5">
+                <div class="resident-sig-box">
+                  <img id="img-residentSignature" src="" alt="" class="hidden" />
+                  <div class="text-[6.5pt] text-center leading-tight text-slate-800 z-10 bg-white/80 px-1">
+                    Signature of the Resident/<br />Thumb/ Finger Impression
+                  </div>
+                </div>
+              </div>
+
+              <!-- Right: Resident Photograph Box + Cross-Stamp Overlay -->
+              <div class="photo-box flex-shrink-0">
+                <img id="img-residentPhoto" src="" alt="" class="resident-photo hidden" />
+                <img id="img-crossStamp" src="" alt="" class="cross-stamp-overlay hidden" />
+                <div id="photo-placeholder-text" class="text-[6.6pt] leading-snug text-slate-800 space-y-1.5">
+                  <div>
+                    Resident's Recent<br />
+                    Colour Photograph<br />
+                    <b class="text-[7.5pt]">3.5cm x 4.5 cm</b>
+                  </div>
+                  <div>
+                    Cross Signed and<br />
+                    Cross Stamped<br />
+                    by the Certifier.
+                  </div>
+                  <div class="text-[5.8pt] font-semibold">
+                    NB: DO NOT<br />
+                    OVERLAP WITH<br />
+                    TEXT BOXES
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- BOTTOM SECTION: Certifier's Details & Footer -->
+          <div class="mt-2">
+            <!-- Section 2 Banner -->
+            <div class="form-sub-banner mb-1.5">
+              Certifier's Details (To be filled by the certifier Only)
+            </div>
+
+            <!-- Name of the Certifier -->
+            <div class="f-row">
+              <div class="f-label">Name of the Certifier:</div>
+              <div id="preview-certifierName" class="char-grid"></div>
+            </div>
+
+            <!-- Designation -->
+            <div class="f-row">
+              <div class="f-label">Designation:</div>
+              <div id="preview-designation" class="char-grid"></div>
+            </div>
+
+            <!-- Office Address (2 rows) -->
+            <div class="f-row">
+              <div class="f-label">Office Address:</div>
+              <div class="f-boxes-col">
+                <div id="preview-officeAddress-row1" class="char-grid"></div>
+                <div id="preview-officeAddress-row2" class="char-grid"></div>
+              </div>
+            </div>
+
+            <!-- Contact Number & Added Mobile Number -->
+            <div class="flex items-center justify-between mb-1.5">
+              <div class="f-row mb-0">
+                <div class="f-label">Contact Number:</div>
+                <div id="preview-contactNumber" class="char-grid"></div>
+              </div>
+              <div class="flex items-center gap-1.5">
+                <span class="font-bold text-[8pt] text-[#1a1a1a]">Mobile Number:</span>
+                <div id="preview-mobileNumber" class="char-grid"></div>
+              </div>
+            </div>
+
+            <!-- Bottom Certifier Categories (Left) & Checklist + Stamp/Signature Box (Right) -->
+            <div class="grid grid-cols-12 gap-2.5 mt-1">
+              <!-- Left 5 Columns: Single-select Certifier Category List -->
+              <div class="col-span-5 text-[7.5pt]">
+                <div class="font-bold leading-tight mb-1.5 text-[7.7pt]">
+                  I hereby certify above mentioned details of the resident<br />
+                  and I am a.... <span class="font-normal">(Tick appropriate box below)</span>
+                </div>
+                <div id="preview-certifierCategory-list" class="space-y-1">
+                  <!-- Populated dynamically -->
+                </div>
+              </div>
+
+              <!-- Right 7 Columns: Checklist Box + Signature & Stamp Box -->
+              <div class="col-span-7 flex flex-col justify-between">
+                <!-- Checklist for Certifier -->
+                <div class="border border-[#222222] px-2 py-1.5 text-[7.2pt]">
+                  <div class="font-bold text-center text-[7.8pt] mb-1">Checklist for Certifier</div>
+                  <div class="flex flex-wrap items-center justify-between gap-y-1">
+                    <label class="inline-flex items-center gap-1">
+                      <span id="chk-checklist-noOverwriting" class="tick-square"></span>
+                      <span>No overwriting</span>
+                    </label>
+                    <label class="inline-flex items-center gap-1">
+                      <span id="chk-checklist-issueDateFilled" class="tick-square"></span>
+                      <span>Issue date is filled</span>
+                    </label>
+                    <label class="inline-flex items-center gap-1">
+                      <span id="chk-checklist-residentSig" class="tick-square"></span>
+                      <span>Resident's signature</span>
+                    </label>
+                    <label class="inline-flex items-center gap-1">
+                      <span id="chk-checklist-certifierDetails" class="tick-square"></span>
+                      <span>Certifier's details</span>
+                    </label>
+                  </div>
+                  <div class="mt-1">
+                    <label class="inline-flex items-center gap-1">
+                      <span id="chk-checklist-crossSigned" class="tick-square"></span>
+                      <span>Resident's Photo is cross signed and cross stamped <i>(paper to photo or photo to paper)</i></span>
+                    </label>
+                  </div>
+                </div>
+
+                <!-- Signature & Stamp of the Certifier Box (Full un-cropped stamp + certifier signature) -->
+                <div class="certifier-sig-box">
+                  <img id="img-certifierSignature" src="" alt="" class="certifier-sig-img hidden" />
+                  <img id="img-certifierStamp" src="" alt="" class="certifier-stamp-img hidden" />
+                  <div class="text-[7pt] text-center text-slate-800 z-10 bg-white/80 px-1.5">
+                    Signature &amp; Stamp of the Certifier
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Statutory Footer Note -->
+            <div class="mt-1.5 text-[6.4pt] leading-tight text-slate-800">
+              NOTE: This format is applicable for POI documents at Sl. Nos. 17, 20, 21, 22, 31 &amp; 32; POA documents at Sl. Nos. 23, 24, 37, 38, 44 &amp; 45; POR documents at Sl. Nos. 13 &amp; 14 DOB documents at Sl. Nos. 4, 5, 14 &amp; 15 of Schedule II of the Aadhaar (Enrolment and Update) Regulations, 2016, as amended from time to time.
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </main>
   </div>
 
   <script>
-    const productsData = [
+    /* ==========================================================================
+       1. EDITABLE FORM CONFIGURATION SCHEMA
+       Edit labels, box counts, options, or add/remove fields right here!
+       ========================================================================== */
+    const FORM_SCHEMA = [
       {
-        id: 'prod-1',
-        title: 'Engagement Monogram Chocolates',
-        category: 'chocolates',
-        price: 1499,
-        badge: 'Trending ✨',
-        desc: 'Custom couple initials printed & gold-foil wrapped Belgian chocolate pieces placed in a luxury presentation keepsake box.',
-        img: 'https://images.unsplash.com/photo-1549007994-cb92caebd54b?q=80&w=800&auto=format&fit=crop'
+        sectionId: 'header_meta',
+        sectionTitle: 'Certificate Header & Request Type',
+        fields: [
+          {
+            id: 'issueDate',
+            label: 'Date of Issue (DD/MM/YYYY)',
+            type: 'date_split',
+            placeholder: 'DD/MM/YYYY',
+            sample: '14/10/2020'
+          },
+          {
+            id: 'residency',
+            label: 'Residency Status (Single-Select)',
+            type: 'radio',
+            options: [
+              { value: 'Resident', label: 'Resident' },
+              { value: 'NRI', label: 'Non-Resident Indian (NRI)' }
+            ],
+            sample: 'Resident'
+          },
+          {
+            id: 'requestType',
+            label: 'Request Type (Single-Select)',
+            type: 'radio',
+            options: [
+              { value: 'New', label: 'New Enrolment' },
+              { value: 'Update', label: 'Update Request' }
+            ],
+            sample: 'Update'
+          }
+        ]
       },
       {
-        id: 'prod-2',
-        title: 'Illuminated Fairy-Light Anniversary Hamper',
-        category: 'hampers',
-        price: 2499,
-        badge: 'Best Seller 🎀',
-        desc: 'Crystal-clear acrylic box with warm LED micro fairy lights, preserved floral arrangement, personalized messages & treats.',
-        img: 'https://images.unsplash.com/photo-1513201099705-a9746e1e201f?q=80&w=800&auto=format&fit=crop'
+        sectionId: 'resident_details',
+        sectionTitle: "Resident's Details",
+        fields: [
+          {
+            id: 'aadhaarNumber',
+            label: 'Aadhaar Number (12 Digits — For Update Only)',
+            type: 'boxes',
+            boxes: 12,
+            numericOnly: true,
+            optionalToggle: {
+              id: 'hideAadhaar',
+              label: 'Hide Aadhaar Number on form (Optional for New Enrolment)'
+            },
+            placeholder: '123456789012',
+            sample: '123456789012'
+          },
+          {
+            id: 'fullName',
+            label: 'Full Name (Block Letters)',
+            type: 'boxes_multiline',
+            rows: 2,
+            boxesPerRow: 26,
+            placeholder: 'E.G. MOHAN KUMAR',
+            sample: 'MOHAN KUMAR'
+          },
+          {
+            id: 'careOf',
+            label: 'C/o (Care of)',
+            type: 'boxes',
+            boxes: 26,
+            placeholder: 'E.G. MAHESH KUMAR',
+            sample: 'MAHESH KUMAR'
+          },
+          {
+            id: 'houseNo',
+            label: 'House No./ Bldg./ Apt',
+            type: 'boxes',
+            boxes: 26,
+            placeholder: 'E.G. A-312/5',
+            sample: 'A-312/5'
+          },
+          {
+            id: 'street',
+            label: 'Street/ Road/ Lane',
+            type: 'boxes',
+            boxes: 26,
+            placeholder: 'E.G. BLOCK-D4',
+            sample: 'BLOCK-D4'
+          },
+          {
+            id: 'landmark',
+            label: 'Landmark',
+            type: 'boxes',
+            boxes: 26,
+            placeholder: 'E.G. NEAR OXFORD LIBRARY',
+            sample: 'NEAR OXFORD LIBRARY'
+          },
+          {
+            id: 'area',
+            label: 'Area/ Locality/ Sector',
+            type: 'boxes',
+            boxes: 26,
+            placeholder: 'E.G. MOHAN NAGAR',
+            sample: 'MOHAN NAGAR'
+          },
+          {
+            id: 'city',
+            label: 'Village/ Town/ City',
+            type: 'boxes',
+            boxes: 26,
+            placeholder: 'E.G. INDRAPURAM',
+            sample: 'INDRAPURAM'
+          },
+          {
+            id: 'postOffice',
+            label: 'Post Office',
+            type: 'boxes',
+            boxes: 26,
+            placeholder: 'E.G. INDRAPURAM',
+            sample: 'INDRAPURAM'
+          },
+          {
+            id: 'district',
+            label: 'District',
+            type: 'boxes',
+            boxes: 18,
+            placeholder: 'E.G. GHAZIABAD',
+            sample: 'DELHI'
+          },
+          {
+            id: 'state',
+            label: 'State',
+            type: 'boxes',
+            boxes: 18,
+            placeholder: 'E.G. DELHI',
+            sample: 'DELHI'
+          },
+          {
+            id: 'subDistrict',
+            label: 'Sub-District (Renamed from blank row)',
+            type: 'boxes',
+            boxes: 18,
+            placeholder: 'E.G. PREET VIHAR',
+            sample: 'PREET VIHAR'
+          },
+          {
+            id: 'pinCode',
+            label: 'PIN Code (6 Digits)',
+            type: 'boxes',
+            boxes: 6,
+            numericOnly: true,
+            placeholder: '110001',
+            sample: '110001'
+          },
+          {
+            id: 'dob',
+            label: 'Date of Birth (DD/MM/YYYY)',
+            type: 'date_split',
+            placeholder: 'DD/MM/YYYY',
+            sample: '01/01/1990'
+          }
+        ]
       },
       {
-        id: 'prod-3',
-        title: 'Berry Chantilly Velvet Cake',
-        category: 'cakes',
-        price: 1899,
-        badge: 'Signature 🌸',
-        desc: 'Layers of moist sponge infused with fresh strawberry compote, chantilly cream, edible gold leaf, and handpicked berries.',
-        img: 'https://images.unsplash.com/photo-1565958011703-44f9829ba187?q=80&w=800&auto=format&fit=crop'
+        sectionId: 'uploads_section',
+        sectionTitle: 'Photo, Signatures & Office Stamp Uploads',
+        isUploadSection: true,
+        fields: [
+          {
+            id: 'residentPhoto',
+            label: '1. Resident Colour Photograph (3.5cm × 4.5cm)',
+            type: 'image_upload',
+            hint: 'Fills the photograph box on the right.'
+          },
+          {
+            id: 'residentSignature',
+            label: '2. Resident Signature / Thumb Impression',
+            type: 'image_upload',
+            hint: 'Renders inside the Resident Signature box.'
+          },
+          {
+            id: 'certifierSignature',
+            label: "3. Certifier's Signature",
+            type: 'image_upload',
+            hint: "Renders inside the Certifier's Signature & Stamp box."
+          },
+          {
+            id: 'officeStamp',
+            label: '4. Official Stamp (Auto Cross-Stamps Photo + Full Stamp Below)',
+            type: 'image_upload',
+            hint: 'Renders straddling the photo edge (white background blended out) AND full-size in the Certifier box.'
+          }
+        ]
       },
       {
-        id: 'prod-4',
-        title: 'Belgian Truffle Fudge Drip Cake',
-        category: 'cakes',
-        price: 2199,
-        badge: 'Chocoholic 🍫',
-        desc: 'Dark 55% Belgian chocolate sponge with silky chocolate truffle ganache, drip glaze, and artisanal French macarons.',
-        img: 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?q=80&w=800&auto=format&fit=crop'
-      },
-      {
-        id: 'prod-5',
-        title: 'Bridal Trousseau & Petals Hamper',
-        category: 'hampers',
-        price: 3299,
-        badge: 'Wedding Luxe 💍',
-        desc: 'Exquisite trousseau packing for wedding giveaways, embellished with satin ribbons, butterflies, and gourmet sweets.',
-        img: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?q=80&w=800&auto=format&fit=crop'
-      },
-      {
-        id: 'prod-6',
-        title: 'Fudgy Walnut & Lotus Biscoff Brownies',
-        category: 'brownies',
-        price: 799,
-        badge: 'Box of 6 🧁',
-        desc: 'Ultra-crinkly top, gooey dark chocolate center loaded with roasted walnuts and creamy Lotus Biscoff swirl.',
-        img: 'https://images.unsplash.com/photo-1606313564200-e75d5e30476c?q=80&w=800&auto=format&fit=crop'
+        sectionId: 'certifier_details',
+        sectionTitle: "Certifier's Details",
+        fields: [
+          {
+            id: 'certifierName',
+            label: 'Name of the Certifier',
+            type: 'boxes',
+            boxes: 26,
+            placeholder: 'E.G. MANOJ TIWARI',
+            sample: 'MANOJ TIWARI'
+          },
+          {
+            id: 'designation',
+            label: 'Designation',
+            type: 'boxes',
+            boxes: 26,
+            placeholder: 'E.G. DEPUTY DIRECTOR',
+            sample: 'DEPUTY DIRECTOR'
+          },
+          {
+            id: 'officeAddress',
+            label: 'Office Address',
+            type: 'boxes_multiline',
+            rows: 2,
+            boxesPerRow: 26,
+            placeholder: 'E.G. MINISTRY OF HEALTH, ROOM NO-305D, SHASTRI BHAWAN, NEW DELHI',
+            sample: 'MINISTRY OF HEALTH, ROOM NO-305D, SHASTRI BHAWAN, NEW DELHI'
+          },
+          {
+            id: 'contactNumber',
+            label: 'Contact Number (Landline / Office)',
+            type: 'boxes',
+            boxes: 12,
+            numericOnly: true,
+            placeholder: '01123061234',
+            sample: '01123061234'
+          },
+          {
+            id: 'mobileNumber',
+            label: 'Mobile Number (10 Digits — Added Field)',
+            type: 'boxes',
+            boxes: 10,
+            numericOnly: true,
+            placeholder: '9876543210',
+            sample: '9876543210'
+          },
+          {
+            id: 'certifierCategory',
+            label: 'Certifier Category (Single-Select)',
+            type: 'radio_list',
+            options: [
+              { value: 'gazetted_a', label: 'Gazetted Officer - Group A' },
+              { value: 'panchayat', label: 'Village Panchayat Head or Mukhiya' },
+              { value: 'gazetted_b', label: 'Gazetted Officer - Group B' },
+              { value: 'mp_mla', label: 'MP/ MLA/ MLC/ Municipal Councilor' },
+              { value: 'tehsildar', label: 'Tehsildar' },
+              { value: 'edu_head', label: 'Head of Recognized Educational Institution' },
+              { value: 'warden', label: 'Superintendent/ Warden/ Matron/ Head of Institution of Recognized shelter homes/ Orphanages' },
+              { value: 'epfo', label: 'EPFO Officer' }
+            ],
+            sample: 'gazetted_a'
+          },
+          {
+            id: 'checklist',
+            label: 'Checklist for Certifier (Multi-Select)',
+            type: 'checkbox_group',
+            options: [
+              { value: 'noOverwriting', label: 'No overwriting' },
+              { value: 'issueDateFilled', label: 'Issue date is filled' },
+              { value: 'residentSig', label: "Resident's signature" },
+              { value: 'certifierDetails', label: "Certifier's details" },
+              { value: 'crossSigned', label: "Resident's Photo is cross signed and cross stamped" }
+            ],
+            sample: ['noOverwriting', 'issueDateFilled', 'residentSig', 'certifierDetails', 'crossSigned']
+          }
+        ]
       }
     ];
 
-    let cart = [];
+    /* ==========================================================================
+       2. APPLICATION STATE (Text values + Session-only In-Memory Images)
+       ========================================================================== */
+    const STORAGE_KEY = 'aadhaar_cert_autofiller_text_v1';
 
-    function renderProducts(items) {
-      const grid = document.getElementById('productGrid');
-      if (!grid) return;
-      grid.innerHTML = items.map(p => `
-        <div class="royal-glass royal-glass-hover rounded-3xl overflow-hidden flex flex-col justify-between transition duration-300">
-          <div class="relative h-56 sm:h-60 overflow-hidden">
-            <img src="${p.img}" alt="${p.title}" class="w-full h-full object-cover transition duration-700 hover:scale-105" onerror="this.src='https://images.unsplash.com/photo-1588195538326-c5b1e9f80a1b?q=80&w=800&auto=format&fit=crop'" />
-            <span class="absolute top-3 left-3 bg-white/95 backdrop-blur-md border border-pink-300 text-pink-700 text-[10px] font-cinzel font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-sm">
-              ${p.badge}
-            </span>
-          </div>
+    let formState = {
+      textValues: {},
+      toggles: {
+        hideAadhaar: false
+      },
+      // Session-only memory store for uploaded images (never written to localStorage)
+      sessionImages: {
+        residentPhoto: '',
+        residentSignature: '',
+        certifierSignature: '',
+        officeStamp: ''
+      }
+    };
 
-          <div class="p-5 sm:p-6 flex-1 flex flex-col justify-between">
-            <div>
-              <h3 class="font-cinzel text-base sm:text-lg font-bold text-brand-berry mb-1">${p.title}</h3>
-              <p class="text-brand-berryLight text-xs font-normal line-clamp-2 leading-relaxed mb-4">${p.desc}</p>
-            </div>
+    /* ==========================================================================
+       3. INITIALIZE GRID BOXES ON THE A4 REPLICA & BUILD LEFT EDITOR UI
+       ========================================================================== */
+    function buildCharBoxes(containerId, count) {
+      const el = document.getElementById(containerId);
+      if (!el) return;
+      el.innerHTML = '';
+      for (let i = 0; i < count; i++) {
+        const box = document.createElement('div');
+        box.className = 'char-box pen-text';
+        el.appendChild(box);
+      }
+    }
 
-            <div class="pt-3 border-t border-pink-200 flex items-center justify-between">
-              <div>
-                <span class="text-[9px] uppercase tracking-widest text-brand-berryLight/80 block font-cinzel font-bold">Price</span>
-                <span class="font-cinzel text-lg sm:text-xl font-bold text-brand-gold">₹${p.price.toLocaleString('en-IN')}</span>
-              </div>
-              <button onclick="addToCart('${p.id}')" class="bg-pink-100 hover:bg-pink-500 border border-pink-300 text-pink-700 hover:text-white p-2.5 rounded-full transition shadow-md cursor-pointer" title="Add To Tray">
-                <i data-lucide="plus" class="w-4 h-4"></i>
-              </button>
-            </div>
-          </div>
+    function initA4FormGrids() {
+      // Split dates: DD (2), MM (2), YYYY (4)
+      buildCharBoxes('preview-issueDate-dd', 2);
+      buildCharBoxes('preview-issueDate-mm', 2);
+      buildCharBoxes('preview-issueDate-yyyy', 4);
+
+      buildCharBoxes('preview-dob-dd', 2);
+      buildCharBoxes('preview-dob-mm', 2);
+      buildCharBoxes('preview-dob-yyyy', 4);
+
+      // Single & Multi-row grids matching the blank form
+      buildCharBoxes('preview-aadhaarNumber', 12);
+      buildCharBoxes('preview-fullName-row1', 26);
+      buildCharBoxes('preview-fullName-row2', 26);
+      buildCharBoxes('preview-careOf', 26);
+      buildCharBoxes('preview-houseNo', 26);
+      buildCharBoxes('preview-street', 26);
+      buildCharBoxes('preview-landmark', 26);
+      buildCharBoxes('preview-area', 26);
+      buildCharBoxes('preview-city', 26);
+      buildCharBoxes('preview-postOffice', 26);
+
+      buildCharBoxes('preview-district', 18);
+      buildCharBoxes('preview-state', 18);
+      buildCharBoxes('preview-subDistrict', 18);
+      buildCharBoxes('preview-pinCode', 6);
+
+      buildCharBoxes('preview-certifierName', 26);
+      buildCharBoxes('preview-designation', 26);
+      buildCharBoxes('preview-officeAddress-row1', 26);
+      buildCharBoxes('preview-officeAddress-row2', 26);
+      buildCharBoxes('preview-contactNumber', 12);
+      buildCharBoxes('preview-mobileNumber', 10);
+
+      // Build Certifier Category List on A4 sheet
+      const catField = FORM_SCHEMA.find(s => s.sectionId === 'certifier_details')
+        .fields.find(f => f.id === 'certifierCategory');
+      const listContainer = document.getElementById('preview-certifierCategory-list');
+      listContainer.innerHTML = catField.options.map(opt => `
+        <div class="flex items-start gap-1.5 leading-tight">
+          <span id="chk-certCat-${opt.value}" class="tick-square mt-[0.5px]"></span>
+          <span>${opt.label}</span>
         </div>
       `).join('');
-
-      if (window.lucide) lucide.createIcons();
     }
 
-    function filterCategory(cat, ev) {
-      document.querySelectorAll('.cat-pill').forEach(btn => {
-        btn.classList.remove('bg-pink-500', 'text-white', 'border-2', 'border-pink-500');
-        btn.classList.add('bg-white/80', 'text-brand-berry', 'border', 'border-pink-200');
-      });
-      if (ev && ev.currentTarget) {
-        ev.currentTarget.classList.remove('bg-white/80', 'text-brand-berry', 'border', 'border-pink-200');
-        ev.currentTarget.classList.add('bg-pink-500', 'text-white', 'border-2', 'border-pink-500');
-      }
+    function renderLeftEditor() {
+      const container = document.getElementById('dynamic-editor-fields');
+      container.innerHTML = '';
 
-      if (cat === 'all') {
-        renderProducts(productsData);
-      } else {
-        const filtered = productsData.filter(p => p.category === cat);
-        renderProducts(filtered);
-      }
-    }
+      FORM_SCHEMA.forEach(section => {
+        const card = document.createElement('section');
+        card.className = 'rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50/70 dark:bg-slate-800/40 p-3.5 shadow-sm';
 
-    function addToCart(productId) {
-      const product = productsData.find(p => p.id === productId);
-      if (product) {
-        cart.push(product);
-        updateCartUI();
-        showToast(`Added "${product.title}" to inquiry tray!`);
-      }
-    }
-
-    function addCurrent3DToCart() {
-      const title = document.getElementById('modelTitle').innerText;
-      const priceText = document.getElementById('modelPrice').innerText.replace('₹', '').replace(',', '');
-      const currentMonogram = document.getElementById('monogramInput').value.trim() || 'Custom';
-      const customItem = {
-        id: '3d-' + Date.now(),
-        title: `${title} (${currentMonogram})`,
-        price: parseInt(priceText) || 3499,
-        desc: `3D Configured with ${document.getElementById('activeColorName').innerText} glaze`
-      };
-      cart.push(customItem);
-      updateCartUI();
-      showToast(`Added custom 3D "${customItem.title}" to your tray!`);
-    }
-
-    function removeFromCart(index) {
-      cart.splice(index, 1);
-      updateCartUI();
-    }
-
-    function updateCartUI() {
-      document.getElementById('cartCountBadge').innerText = cart.length;
-      const mobileBadge = document.getElementById('mobileCartBadge');
-      if (mobileBadge) mobileBadge.innerText = cart.length;
-
-      const list = document.getElementById('cartItemsContainer');
-      if (cart.length === 0) {
-        list.innerHTML = `<p class="text-xs text-brand-berryLight text-center py-10 font-normal">Your inquiry tray is empty. Explore our 3D showroom or catalogue above!</p>`;
-        document.getElementById('cartTotalSum').innerText = '₹0';
-        return;
-      }
-
-      let total = 0;
-      list.innerHTML = cart.map((item, index) => {
-        total += item.price;
-        return `
-          <div class="flex items-center justify-between p-3.5 rounded-2xl bg-pink-50 border border-pink-200 text-xs">
-            <div>
-              <p class="font-cinzel font-bold text-brand-berry">${item.title}</p>
-              <p class="text-brand-gold font-cinzel text-sm mt-0.5 font-bold">₹${item.price.toLocaleString('en-IN')}</p>
-            </div>
-            <button onclick="removeFromCart(${index})" class="text-rose-500 hover:text-rose-700 p-1.5 cursor-pointer">
-              <i data-lucide="trash-2" class="w-4 h-4"></i>
-            </button>
-          </div>
+        let headerHtml = `
+          <h2 class="text-xs font-bold uppercase tracking-wider text-red-700 dark:text-red-400 mb-3 flex items-center justify-between">
+            <span>${section.sectionTitle}</span>
+          </h2>
         `;
-      }).join('');
 
-      document.getElementById('cartTotalSum').innerText = `₹${total.toLocaleString('en-IN')}`;
-      if (window.lucide) lucide.createIcons();
-    }
-
-    function toggleCartDrawer() {
-      document.getElementById('cartDrawer').classList.toggle('hidden');
-    }
-
-    function toggleMobileMenu() {
-      document.getElementById('mobileMenuPanel').classList.toggle('hidden');
-    }
-
-    function sendTrayToWhatsApp() {
-      if (cart.length === 0) {
-        showToast('Please add items to your tray first!');
-        return;
-      }
-      let text = "Hello Saleha (Packs_n_Bakes By Saleha)! 🌸✨%0A%0AI would like to order / inquire about these bespoke creations:%0A";
-      let total = 0;
-      cart.forEach((it, i) => {
-        text += `${i + 1}. *${it.title}* - ₹${it.price}%0A`;
-        total += it.price;
-      });
-      text += `%0A*Estimated Total:* ₹${total}%0A*Delivery City:* Nanded / Other%0APlease let me know the availability and date slot!`;
-      window.open(`https://wa.me/919999999999?text=${text}`, '_blank');
-    }
-
-    function handleCustomOrderSubmit(e) {
-      e.preventDefault();
-      const name = document.getElementById('custName').value;
-      const occasion = document.getElementById('custOccasion').value;
-      const flavor = document.getElementById('custFlavor').value;
-      const location = document.getElementById('custLocation').value;
-      const notes = document.getElementById('custNotes').value || 'None';
-
-      const message = `Hello Saleha (Packs_n_Bakes By Saleha)! ✨%0A%0A*Name:* ${encodeURIComponent(name)}%0A*Occasion:* ${encodeURIComponent(occasion)}%0A*Selection:* ${encodeURIComponent(flavor)}%0A*Location:* ${encodeURIComponent(location)}%0A*Notes/Initials:* ${encodeURIComponent(notes)}%0A%0APlease share quotation and availability!`;
-      
-      window.open(`https://wa.me/919999999999?text=${message}`, '_blank');
-    }
-
-    function showToast(msg) {
-      const toast = document.getElementById('toastNotification');
-      document.getElementById('toastMessage').innerText = msg;
-      toast.classList.remove('translate-x-96');
-      toast.classList.add('translate-x-0');
-      setTimeout(() => {
-        toast.classList.remove('translate-x-0');
-        toast.classList.add('translate-x-96');
-      }, 3400);
-    }
-
-    /* Ambient Web Audio Synthesizer */
-    let audioCtx = null;
-    let isAudioActive = false;
-    let harpInterval = null;
-
-    function toggleAudio() {
-      if (!audioCtx) {
-        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-      }
-      isAudioActive = !isAudioActive;
-      const soundIcon = document.getElementById('soundIcon');
-      const soundText = document.getElementById('soundText');
-
-      if (isAudioActive) {
-        if (audioCtx.state === 'suspended') {
-          audioCtx.resume();
-        }
-        playRoyalHarpChime();
-        harpInterval = setInterval(playRoyalHarpChime, 7000);
-        soundIcon.classList.add('text-pink-600');
-        soundText.innerText = "Atmosphere: On";
-        showToast('Palace Atmosphere: Playing 🎶');
-      } else {
-        clearInterval(harpInterval);
-        soundIcon.classList.remove('text-pink-600');
-        soundText.innerText = "Atmosphere: Off";
-        showToast('Atmosphere: Muted');
-      }
-    }
-
-    function playRoyalHarpChime() {
-      if (!audioCtx || !isAudioActive) return;
-      const chord = [293.66, 349.23, 440.00, 523.25, 659.25, 880.00];
-      chord.forEach((freq, index) => {
-        setTimeout(() => {
-          if (!isAudioActive) return;
-          const osc = audioCtx.createOscillator();
-          const gain = audioCtx.createGain();
-          osc.type = index % 2 === 0 ? 'sine' : 'triangle';
-          osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
-
-          gain.gain.setValueAtTime(0.001, audioCtx.currentTime);
-          gain.gain.exponentialRampToValueAtTime(0.035, audioCtx.currentTime + 0.12);
-          gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 3.0);
-
-          osc.connect(gain);
-          gain.connect(audioCtx.destination);
-
-          osc.start();
-          osc.stop(audioCtx.currentTime + 3.1);
-        }, index * 240);
-      });
-    }
-
-    /* Falling Petals Background Canvas */
-    let petalCanvas, petalCtx;
-    let petals = [];
-    let isPetalRainActive = true;
-
-    function initPetalCanvas() {
-      petalCanvas = document.getElementById('petalCanvas');
-      if (!petalCanvas) return;
-      petalCtx = petalCanvas.getContext('2d');
-
-      function resize() {
-        petalCanvas.width = window.innerWidth;
-        petalCanvas.height = window.innerHeight;
-      }
-      window.addEventListener('resize', resize);
-      resize();
-
-      const petalCount = window.innerWidth < 768 ? 22 : 40;
-      petals = [];
-      for (let i = 0; i < petalCount; i++) {
-        petals.push({
-          x: Math.random() * petalCanvas.width,
-          y: Math.random() * petalCanvas.height,
-          size: 7 + Math.random() * 10,
-          speedY: 0.6 + Math.random() * 1.3,
-          speedX: -0.4 + Math.random() * 0.8,
-          rotation: Math.random() * 360,
-          rotationSpeed: (Math.random() - 0.5) * 1.6,
-          color: ['#fbcfe8', '#ffd6e7', '#f472b6', '#ffe4ee'][Math.floor(Math.random() * 4)],
-          opacity: 0.45 + Math.random() * 0.4
-        });
-      }
-
-      function drawPetals() {
-        if (!isPetalRainActive) {
-          petalCtx.clearRect(0, 0, petalCanvas.width, petalCanvas.height);
-          requestAnimationFrame(drawPetals);
-          return;
+        // Session-only privacy notice for image uploads
+        if (section.isUploadSection) {
+          headerHtml += `
+            <div class="mb-3 p-2.5 rounded-lg bg-blue-50 dark:bg-blue-950/60 border border-blue-200 dark:border-blue-800 text-[11px] text-blue-800 dark:text-blue-200 leading-relaxed">
+              🔒 <strong>Session-Only Privacy:</strong> Uploaded photos, signatures, and stamps stay strictly in your browser's temporary memory for this session. They are <strong>never</strong> uploaded to any server or saved permanently.
+            </div>
+          `;
         }
 
-        petalCtx.clearRect(0, 0, petalCanvas.width, petalCanvas.height);
-        petals.forEach(p => {
-          petalCtx.save();
-          petalCtx.translate(p.x, p.y);
-          petalCtx.rotate((p.rotation * Math.PI) / 180);
-          petalCtx.beginPath();
-          petalCtx.ellipse(0, 0, p.size * 0.55, p.size, Math.PI / 4, 0, Math.PI * 2);
-          petalCtx.fillStyle = p.color;
-          petalCtx.globalAlpha = p.opacity;
-          petalCtx.fill();
-          petalCtx.restore();
+        const fieldsWrapper = document.createElement('div');
+        fieldsWrapper.className = 'space-y-3';
 
-          p.y += p.speedY;
-          p.x += p.speedX;
-          p.rotation += p.rotationSpeed;
+        section.fields.forEach(field => {
+          const fieldDiv = document.createElement('div');
 
-          if (p.y > petalCanvas.height + 20) {
-            p.y = -20;
-            p.x = Math.random() * petalCanvas.width;
+          if (field.type === 'boxes' || field.type === 'boxes_multiline' || field.type === 'date_split') {
+            const maxLen = field.type === 'boxes'
+              ? field.boxes
+              : field.type === 'boxes_multiline'
+                ? field.rows * field.boxesPerRow
+                : 10;
+
+            let optionalHtml = '';
+            if (field.optionalToggle) {
+              optionalHtml = `
+                <label class="mt-1.5 inline-flex items-center gap-2 text-xs text-slate-600 dark:text-slate-300 cursor-pointer select-none">
+                  <input type="checkbox" id="toggle-${field.optionalToggle.id}"
+                    class="rounded border-slate-300 text-red-600 focus:ring-red-500"
+                    onchange="handleToggleChange('${field.optionalToggle.id}', this.checked)" />
+                  <span>${field.optionalToggle.label}</span>
+                </label>
+              `;
+            }
+
+            fieldDiv.innerHTML = `
+              <div class="flex justify-between items-baseline mb-1">
+                <label for="input-${field.id}" class="block text-xs font-semibold text-slate-700 dark:text-slate-200">
+                  ${field.label}
+                </label>
+                ${field.type !== 'date_split' ? `<span id="count-${field.id}" class="text-[10px] text-slate-400">0/${maxLen}</span>` : ''}
+              </div>
+              <input
+                type="text"
+                id="input-${field.id}"
+                maxlength="${maxLen}"
+                placeholder="${field.placeholder || ''}"
+                oninput="handleTextInput('${field.id}', this.value, ${Boolean(field.numericOnly)}, ${field.type === 'date_split'})"
+                class="w-full px-3 py-2 text-sm rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-900 dark:text-white uppercase tracking-wide focus:outline-none focus:ring-2 focus:ring-red-600/40 focus:border-red-600 transition"
+              />
+              ${optionalHtml}
+            `;
+          } else if (field.type === 'radio') {
+            fieldDiv.innerHTML = `
+              <span class="block text-xs font-semibold text-slate-700 dark:text-slate-200 mb-1.5">${field.label}</span>
+              <div class="grid grid-cols-2 gap-2">
+                ${field.options.map(opt => `
+                  <label class="flex items-center gap-2 p-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 cursor-pointer hover:border-red-500 transition text-xs">
+                    <input type="radio" name="radio-${field.id}" value="${opt.value}"
+                      onchange="handleRadioChange('${field.id}', '${opt.value}')"
+                      class="text-red-600 focus:ring-red-500" />
+                    <span class="font-medium">${opt.label}</span>
+                  </label>
+                `).join('')}
+              </div>
+            `;
+          } else if (field.type === 'radio_list') {
+            fieldDiv.innerHTML = `
+              <span class="block text-xs font-semibold text-slate-700 dark:text-slate-200 mb-1.5">${field.label}</span>
+              <div class="space-y-1.5">
+                ${field.options.map(opt => `
+                  <label class="flex items-start gap-2 p-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 cursor-pointer hover:border-red-500 transition text-xs">
+                    <input type="radio" name="radio-${field.id}" value="${opt.value}"
+                      onchange="handleRadioChange('${field.id}', '${opt.value}')"
+                      class="mt-0.5 text-red-600 focus:ring-red-500" />
+                    <span class="leading-snug">${opt.label}</span>
+                  </label>
+                `).join('')}
+              </div>
+            `;
+          } else if (field.type === 'checkbox_group') {
+            fieldDiv.innerHTML = `
+              <span class="block text-xs font-semibold text-slate-700 dark:text-slate-200 mb-1.5">${field.label}</span>
+              <div class="space-y-1.5">
+                ${field.options.map(opt => `
+                  <label class="flex items-center gap-2 p-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 cursor-pointer hover:border-red-500 transition text-xs">
+                    <input type="checkbox" id="chk-input-${field.id}-${opt.value}"
+                      onchange="handleCheckboxGroupChange('${field.id}', '${opt.value}', this.checked)"
+                      class="rounded text-red-600 focus:ring-red-500" />
+                    <span>${opt.label}</span>
+                  </label>
+                `).join('')}
+              </div>
+            `;
+          } else if (field.type === 'image_upload') {
+            fieldDiv.innerHTML = `
+              <div class="p-2.5 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900">
+                <div class="flex items-center justify-between gap-2 mb-1">
+                  <label for="file-${field.id}" class="text-xs font-semibold text-slate-800 dark:text-slate-100">
+                    ${field.label}
+                  </label>
+                  <button type="button" id="clear-img-${field.id}" onclick="clearSingleImage('${field.id}')"
+                    class="hidden text-[11px] font-medium text-red-600 hover:underline">
+                    Remove
+                  </button>
+                </div>
+                <p class="text-[11px] text-slate-500 dark:text-slate-400 mb-2">${field.hint}</p>
+                <input type="file" id="file-${field.id}" accept="image/*"
+                  onchange="handleImageUpload('${field.id}', this)"
+                  class="block w-full text-xs text-slate-500 dark:text-slate-400
+                  file:mr-3 file:py-1.5 file:px-3 file:rounded-md file:border-0
+                  file:text-xs file:font-semibold file:bg-red-50 file:text-red-700
+                  dark:file:bg-red-950 dark:file:text-red-300 hover:file:bg-red-100 cursor-pointer" />
+              </div>
+            `;
           }
-          if (p.x > petalCanvas.width + 20) p.x = -20;
-          if (p.x < -20) p.x = petalCanvas.width + 20;
+
+          fieldsWrapper.appendChild(fieldDiv);
         });
 
-        requestAnimationFrame(drawPetals);
-      }
-      drawPetals();
+        card.innerHTML = headerHtml;
+        card.appendChild(fieldsWrapper);
+        container.appendChild(card);
+      });
     }
 
-    function togglePetalRain() {
-      isPetalRainActive = !isPetalRainActive;
-      document.getElementById('petalRainText').innerText = `Petals: ${isPetalRainActive ? 'On' : 'Off'}`;
-      showToast(isPetalRainActive ? 'Petal Shower: Blooming 🌸' : 'Petal Shower: Hidden');
-    }
-
-    /* Royal Opening Curtain Unveil Logic */
-    let isCurtainOpen = false;
-    function unveilPalace(playChime = false) {
-      if (isCurtainOpen) return;
-      isCurtainOpen = true;
-
-      const curtain = document.getElementById('royalCurtain');
-      if (curtain) {
-        curtain.classList.add('curtain-hidden');
-      }
-
-      // Trigger celebratory burst on opening
-      for (let i = 0; i < 28; i++) {
-        setTimeout(() => {
-          const rx = window.innerWidth * (0.2 + Math.random() * 0.6);
-          const ry = window.innerHeight * (0.2 + Math.random() * 0.6);
-          spawnTouchParticles(rx, ry, 3);
-        }, i * 45);
-      }
-
-      if (playChime && !isAudioActive) {
-        toggleAudio();
+    /* ==========================================================================
+       4. LIVE INPUT HANDLERS & A4 SYNCHRONIZATION
+       ========================================================================== */
+    function fillBoxGrid(containerId, text) {
+      const container = document.getElementById(containerId);
+      if (!container) return;
+      const boxes = container.children;
+      const clean = (text || '').toUpperCase();
+      for (let i = 0; i < boxes.length; i++) {
+        boxes[i].textContent = clean[i] || '';
       }
     }
 
-    /* Interactive Click / Touch Blossom Burst */
-    const burstEmojis = ['🌸', '✨', '🦋', '💖', '🎀', '🍰', '⭐'];
-    function spawnTouchParticles(x, y, count = 6) {
-      for (let i = 0; i < count; i++) {
-        const span = document.createElement('span');
-        span.className = 'burst-particle';
-        span.textContent = burstEmojis[Math.floor(Math.random() * burstEmojis.length)];
-        span.style.left = `${x}px`;
-        span.style.top = `${y}px`;
+    function fillMultilineGrid(row1Id, row2Id, text, colsPerRow = 26) {
+      const clean = (text || '').toUpperCase();
+      let row1Text = '';
+      let row2Text = '';
 
-        const angle = Math.random() * Math.PI * 2;
-        const dist = 40 + Math.random() * 85;
-        const dx = Math.cos(angle) * dist;
-        const dy = Math.sin(angle) * dist - 25;
-        const rot = (Math.random() - 0.5) * 120;
-
-        span.style.setProperty('--dx', `${dx}px`);
-        span.style.setProperty('--dy', `${dy}px`);
-        span.style.setProperty('--rot', `${rot}deg`);
-        span.style.fontSize = `${12 + Math.random() * 16}px`;
-
-        document.body.appendChild(span);
-        setTimeout(() => span.remove(), 1000);
+      if (clean.length <= colsPerRow) {
+        row1Text = clean;
+      } else {
+        // Smart word wrap at spaces if possible so words don't split awkwardly
+        const lastSpace = clean.lastIndexOf(' ', colsPerRow);
+        if (lastSpace > Math.floor(colsPerRow * 0.5)) {
+          row1Text = clean.slice(0, lastSpace);
+          row2Text = clean.slice(lastSpace + 1);
+        } else {
+          row1Text = clean.slice(0, colsPerRow);
+          row2Text = clean.slice(colsPerRow);
+        }
       }
+
+      fillBoxGrid(row1Id, row1Text);
+      fillBoxGrid(row2Id, row2Text);
     }
 
-    window.addEventListener('pointerdown', (e) => {
-      // Don't burst on input or button to avoid UI clutter
-      if (e.target.closest('button') || e.target.closest('input') || e.target.closest('select') || e.target.closest('textarea')) {
+    function formatAndSyncDate(fieldId, rawValue) {
+      // Auto-format digits into DD/MM/YYYY as user types
+      const digits = (rawValue || '').replace(/\D/g, '').slice(0, 8);
+      let formatted = digits;
+      if (digits.length > 4) {
+        formatted = `${digits.slice(0, 2)}/${digits.slice(2, 4)}/${digits.slice(4)}`;
+      } else if (digits.length > 2) {
+        formatted = `${digits.slice(0, 2)}/${digits.slice(2)}`;
+      }
+
+      const inputEl = document.getElementById(`input-${fieldId}`);
+      if (inputEl && inputEl.value !== formatted) {
+        inputEl.value = formatted;
+      }
+
+      formState.textValues[fieldId] = formatted;
+
+      fillBoxGrid(`preview-${fieldId}-dd`, digits.slice(0, 2));
+      fillBoxGrid(`preview-${fieldId}-mm`, digits.slice(2, 4));
+      fillBoxGrid(`preview-${fieldId}-yyyy`, digits.slice(4, 8));
+    }
+
+    function handleTextInput(fieldId, rawValue, numericOnly, isDate) {
+      if (isDate) {
+        formatAndSyncDate(fieldId, rawValue);
         return;
       }
-      spawnTouchParticles(e.clientX, e.clientY, 5);
+
+      let val = rawValue.toUpperCase();
+      if (numericOnly) {
+        val = val.replace(/\D/g, '');
+        const inputEl = document.getElementById(`input-${fieldId}`);
+        if (inputEl && inputEl.value !== val) {
+          inputEl.value = val;
+        }
+      }
+
+      formState.textValues[fieldId] = val;
+
+      const counter = document.getElementById(`count-${fieldId}`);
+      if (counter) {
+        const max = counter.textContent.split('/')[1];
+        counter.textContent = `${val.length}/${max}`;
+      }
+
+      if (fieldId === 'fullName') {
+        fillMultilineGrid('preview-fullName-row1', 'preview-fullName-row2', val, 26);
+      } else if (fieldId === 'officeAddress') {
+        fillMultilineGrid('preview-officeAddress-row1', 'preview-officeAddress-row2', val, 26);
+      } else {
+        fillBoxGrid(`preview-${fieldId}`, val);
+      }
+    }
+
+    function handleToggleChange(toggleId, isChecked) {
+      formState.toggles[toggleId] = isChecked;
+      if (toggleId === 'hideAadhaar') {
+        const row = document.getElementById('preview-row-aadhaarNumber');
+        const input = document.getElementById('input-aadhaarNumber');
+        if (row) {
+          row.style.opacity = isChecked ? '0.2' : '1';
+          if (isChecked) {
+            fillBoxGrid('preview-aadhaarNumber', '');
+          } else {
+            fillBoxGrid('preview-aadhaarNumber', formState.textValues.aadhaarNumber || '');
+          }
+        }
+        if (input) {
+          input.disabled = isChecked;
+          input.classList.toggle('opacity-50', isChecked);
+        }
+      }
+    }
+
+    function handleRadioChange(fieldId, selectedValue) {
+      formState.textValues[fieldId] = selectedValue;
+
+      if (fieldId === 'residency') {
+        ['Resident', 'NRI'].forEach(opt => {
+          const box = document.getElementById(`chk-residency-${opt}`);
+          if (box) box.innerHTML = opt === selectedValue ? '<span class="pen-check">✓</span>' : '';
+        });
+      } else if (fieldId === 'requestType') {
+        ['New', 'Update'].forEach(opt => {
+          const box = document.getElementById(`chk-requestType-${opt}`);
+          if (box) box.innerHTML = opt === selectedValue ? '<span class="pen-check">✓</span>' : '';
+        });
+      } else if (fieldId === 'certifierCategory') {
+        const catField = FORM_SCHEMA.find(s => s.sectionId === 'certifier_details')
+          .fields.find(f => f.id === 'certifierCategory');
+        catField.options.forEach(opt => {
+          const box = document.getElementById(`chk-certCat-${opt.value}`);
+          if (box) box.innerHTML = opt.value === selectedValue ? '<span class="pen-check">✓</span>' : '';
+        });
+      }
+    }
+
+    function handleCheckboxGroupChange(fieldId, optionVal, isChecked) {
+      if (!Array.isArray(formState.textValues[fieldId])) {
+        formState.textValues[fieldId] = [];
+      }
+      const list = formState.textValues[fieldId];
+      if (isChecked && !list.includes(optionVal)) {
+        list.push(optionVal);
+      } else if (!isChecked) {
+        formState.textValues[fieldId] = list.filter(v => v !== optionVal);
+      }
+
+      const box = document.getElementById(`chk-${fieldId}-${optionVal}`);
+      if (box) {
+        box.innerHTML = isChecked ? '<span class="pen-check">✓</span>' : '';
+      }
+    }
+
+    /* ==========================================================================
+       5. SESSION-ONLY IMAGE UPLOADS (PHOTO, SIGNATURES, CROSS-STAMP)
+       ========================================================================== */
+    function handleImageUpload(imageKey, inputEl) {
+      const file = inputEl.files && inputEl.files[0];
+      if (!file) return;
+
+      const reader = new FileReader();
+      reader.onload = function (e) {
+        applyImageToPreview(imageKey, e.target.result);
+      };
+      reader.readAsDataURL(file);
+    }
+
+    function applyImageToPreview(imageKey, dataUrl) {
+      formState.sessionImages[imageKey] = dataUrl || '';
+      const clearBtn = document.getElementById(`clear-img-${imageKey}`);
+      if (clearBtn) {
+        clearBtn.classList.toggle('hidden', !dataUrl);
+      }
+
+      if (imageKey === 'residentPhoto') {
+        const img = document.getElementById('img-residentPhoto');
+        const placeholder = document.getElementById('photo-placeholder-text');
+        if (dataUrl) {
+          img.src = dataUrl;
+          img.classList.remove('hidden');
+          placeholder.classList.add('opacity-0');
+        } else {
+          img.src = '';
+          img.classList.add('hidden');
+          placeholder.classList.remove('opacity-0');
+        }
+      } else if (imageKey === 'residentSignature') {
+        const img = document.getElementById('img-residentSignature');
+        img.src = dataUrl || '';
+        img.classList.toggle('hidden', !dataUrl);
+      } else if (imageKey === 'certifierSignature') {
+        const img = document.getElementById('img-certifierSignature');
+        img.src = dataUrl || '';
+        img.classList.toggle('hidden', !dataUrl);
+      } else if (imageKey === 'officeStamp') {
+        // Render stamp TWICE:
+        // 1) Cross-stamping straddling the edge of the Resident Photograph box
+        const crossImg = document.getElementById('img-crossStamp');
+        crossImg.src = dataUrl || '';
+        crossImg.classList.toggle('hidden', !dataUrl);
+
+        // 2) Full un-cropped stamp inside the Certifier's Signature & Stamp box
+        const certStampImg = document.getElementById('img-certifierStamp');
+        certStampImg.src = dataUrl || '';
+        certStampImg.classList.toggle('hidden', !dataUrl);
+      }
+    }
+
+    function clearSingleImage(imageKey) {
+      const fileInput = document.getElementById(`file-${imageKey}`);
+      if (fileInput) fileInput.value = '';
+      applyImageToPreview(imageKey, '');
+    }
+
+    /* ==========================================================================
+       6. SAMPLE DATA, LOCALSTORAGE SAVE/LOAD, CLEAR ALL & PRINT A4
+       ========================================================================== */
+    function generateSampleSVGAssets() {
+      // Clean inline SVG illustrations for instant sample preview (no external URLs)
+      const photoSvg = 'data:image/svg+xml;utf8,' + encodeURIComponent(`
+        <svg xmlns="http://www.w3.org/2000/svg" width="140" height="180" viewBox="0 0 140 180">
+          <rect width="140" height="180" fill="#dbeafe"/>
+          <circle cx="70" cy="64" r="30" fill="#94a3b8"/>
+          <path d="M22 175 C22 125, 118 125, 118 175 Z" fill="#475569"/>
+        </svg>
+      `);
+
+      const resSigSvg = 'data:image/svg+xml;utf8,' + encodeURIComponent(`
+        <svg xmlns="http://www.w3.org/2000/svg" width="180" height="60" viewBox="0 0 180 60">
+          <path d="M20 42 C32 14, 42 14, 46 38 C52 20, 62 24, 66 38 C76 26, 94 28, 112 36 C125 40, 145 34, 160 36"
+            fill="none" stroke="#183ea3" stroke-width="2.6" stroke-linecap="round"/>
+        </svg>
+      `);
+
+      const certSigSvg = 'data:image/svg+xml;utf8,' + encodeURIComponent(`
+        <svg xmlns="http://www.w3.org/2000/svg" width="200" height="75" viewBox="0 0 200 75">
+          <path d="M15 48 C28 12, 42 15, 45 45 C54 18, 68 22, 74 44 C88 28, 108 32, 128 42 C142 46, 165 36, 182 32"
+            fill="none" stroke="#183ea3" stroke-width="2.5" stroke-linecap="round"/>
+          <path d="M35 58 L155 52" fill="none" stroke="#183ea3" stroke-width="1.6" stroke-linecap="round"/>
+        </svg>
+      `);
+
+      const stampSvg = 'data:image/svg+xml;utf8,' + encodeURIComponent(`
+        <svg xmlns="http://www.w3.org/2000/svg" width="140" height="140" viewBox="0 0 140 140">
+          <rect width="140" height="140" fill="#ffffff"/>
+          <circle cx="70" cy="70" r="58" fill="none" stroke="#1e3a8a" stroke-width="3"/>
+          <circle cx="70" cy="70" r="52" fill="none" stroke="#1e3a8a" stroke-width="1.2"/>
+          <text x="70" y="34" text-anchor="middle" font-family="Arial" font-size="9" font-weight="bold" fill="#1e3a8a">DEPUTY DIRECTOR</text>
+          <text x="70" y="73" text-anchor="middle" font-family="Arial" font-size="10" font-weight="bold" fill="#1e3a8a">OFFICE SEAL</text>
+          <text x="70" y="112" text-anchor="middle" font-family="Arial" font-size="8.5" font-weight="bold" fill="#1e3a8a">NEW DELHI - 110001</text>
+        </svg>
+      `);
+
+      return { photoSvg, resSigSvg, certSigSvg, stampSvg };
+    }
+
+    function fillSampleData() {
+      // Ensure Aadhaar is visible for sample data
+      const hideChk = document.getElementById('toggle-hideAadhaar');
+      if (hideChk) {
+        hideChk.checked = false;
+        handleToggleChange('hideAadhaar', false);
+      }
+
+      FORM_SCHEMA.forEach(section => {
+        section.fields.forEach(field => {
+          if (field.sample === undefined) return;
+
+          if (field.type === 'boxes' || field.type === 'boxes_multiline' || field.type === 'date_split') {
+            const input = document.getElementById(`input-${field.id}`);
+            if (input) {
+              input.value = field.sample;
+              handleTextInput(field.id, field.sample, Boolean(field.numericOnly), field.type === 'date_split');
+            }
+          } else if (field.type === 'radio' || field.type === 'radio_list') {
+            const radio = document.querySelector(`input[name="radio-${field.id}"][value="${field.sample}"]`);
+            if (radio) {
+              radio.checked = true;
+              handleRadioChange(field.id, field.sample);
+            }
+          } else if (field.type === 'checkbox_group') {
+            field.options.forEach(opt => {
+              const checked = field.sample.includes(opt.value);
+              const chk = document.getElementById(`chk-input-${field.id}-${opt.value}`);
+              if (chk) {
+                chk.checked = checked;
+                handleCheckboxGroupChange(field.id, opt.value, checked);
+              }
+            });
+          }
+        });
+      });
+
+      // Populate sample photo, signatures, and stamp
+      const samples = generateSampleSVGAssets();
+      applyImageToPreview('residentPhoto', samples.photoSvg);
+      applyImageToPreview('residentSignature', samples.resSigSvg);
+      applyImageToPreview('certifierSignature', samples.certSigSvg);
+      applyImageToPreview('officeStamp', samples.stampSvg);
+
+      showToast('✨ Sample data & sample stamp/signatures loaded!');
+    }
+
+    function saveTextToStorage() {
+      try {
+        // Explicitly save ONLY textValues and toggles (never sessionImages)
+        const payload = {
+          textValues: formState.textValues,
+          toggles: formState.toggles
+        };
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(payload));
+        showToast('💾 Text fields saved to browser storage (images excluded).');
+      } catch (err) {
+        showToast('⚠️ Could not save text to localStorage: ' + err.message);
+      }
+    }
+
+    function loadSavedTextFromStorage() {
+      try {
+        const raw = localStorage.getItem(STORAGE_KEY);
+        if (!raw) return;
+        const parsed = JSON.parse(raw);
+        if (!parsed || typeof parsed !== 'object') return;
+
+        if (parsed.toggles && typeof parsed.toggles.hideAadhaar === 'boolean') {
+          const hideChk = document.getElementById('toggle-hideAadhaar');
+          if (hideChk) {
+            hideChk.checked = parsed.toggles.hideAadhaar;
+            handleToggleChange('hideAadhaar', parsed.toggles.hideAadhaar);
+          }
+        }
+
+        const saved = parsed.textValues || {};
+        FORM_SCHEMA.forEach(section => {
+          section.fields.forEach(field => {
+            const val = saved[field.id];
+            if (val === undefined) return;
+
+            if (field.type === 'boxes' || field.type === 'boxes_multiline' || field.type === 'date_split') {
+              const input = document.getElementById(`input-${field.id}`);
+              if (input) {
+                input.value = val;
+                handleTextInput(field.id, val, Boolean(field.numericOnly), field.type === 'date_split');
+              }
+            } else if (field.type === 'radio' || field.type === 'radio_list') {
+              const radio = document.querySelector(`input[name="radio-${field.id}"][value="${val}"]`);
+              if (radio) {
+                radio.checked = true;
+                handleRadioChange(field.id, val);
+              }
+            } else if (field.type === 'checkbox_group' && Array.isArray(val)) {
+              field.options.forEach(opt => {
+                const checked = val.includes(opt.value);
+                const chk = document.getElementById(`chk-input-${field.id}-${opt.value}`);
+                if (chk) {
+                  chk.checked = checked;
+                  handleCheckboxGroupChange(field.id, opt.value, checked);
+                }
+              });
+            }
+          });
+        });
+      } catch (err) {
+        console.warn('Unable to read saved form text:', err);
+      }
+    }
+
+    function clearAllFields() {
+      formState.textValues = {};
+      formState.toggles.hideAadhaar = false;
+
+      const hideChk = document.getElementById('toggle-hideAadhaar');
+      if (hideChk) {
+        hideChk.checked = false;
+        handleToggleChange('hideAadhaar', false);
+      }
+
+      FORM_SCHEMA.forEach(section => {
+        section.fields.forEach(field => {
+          if (field.type === 'boxes' || field.type === 'boxes_multiline' || field.type === 'date_split') {
+            const input = document.getElementById(`input-${field.id}`);
+            if (input) input.value = '';
+            handleTextInput(field.id, '', Boolean(field.numericOnly), field.type === 'date_split');
+          } else if (field.type === 'radio' || field.type === 'radio_list') {
+            document.querySelectorAll(`input[name="radio-${field.id}"]`).forEach(r => (r.checked = false));
+            handleRadioChange(field.id, '');
+          } else if (field.type === 'checkbox_group') {
+            field.options.forEach(opt => {
+              const chk = document.getElementById(`chk-input-${field.id}-${opt.value}`);
+              if (chk) chk.checked = false;
+              handleCheckboxGroupChange(field.id, opt.value, false);
+            });
+          } else if (field.type === 'image_upload') {
+            clearSingleImage(field.id);
+          }
+        });
+      });
+
+      try {
+        localStorage.removeItem(STORAGE_KEY);
+      } catch (e) {}
+
+      showToast('🗑️ All fields and uploaded images cleared.');
+    }
+
+    function printA4Form() {
+      // Ensure preview pane is visible on mobile before invoking print
+      if (window.innerWidth < 1024) {
+        switchMobileTab('preview');
+      }
+      setTimeout(() => {
+        window.print();
+      }, 100);
+    }
+
+    function showToast(message) {
+      const toast = document.getElementById('toast-msg');
+      if (!toast) return;
+      toast.textContent = message;
+      toast.classList.remove('hidden');
+      clearTimeout(window.__toastTimer);
+      window.__toastTimer = setTimeout(() => {
+        toast.classList.add('hidden');
+      }, 3200);
+    }
+
+    /* ==========================================================================
+       7. MOBILE TAB SWITCHER, RESPONSIVE A4 SCALING & LEFT-PANEL THEME TOGGLE
+       ========================================================================== */
+    function switchMobileTab(tab) {
+      const editorPane = document.getElementById('editor-pane');
+      const previewPane = document.getElementById('preview-pane');
+      const tabEnter = document.getElementById('tab-enter');
+      const tabPreview = document.getElementById('tab-preview');
+
+      if (tab === 'enter') {
+        editorPane.classList.remove('hidden');
+        previewPane.classList.add('hidden');
+        tabEnter.className = 'py-2.5 text-center border-b-2 border-red-700 text-red-700 dark:text-red-400 dark:border-red-400 bg-red-50/50 dark:bg-slate-800';
+        tabPreview.className = 'py-2.5 text-center border-b-2 border-transparent text-slate-600 dark:text-slate-400';
+      } else {
+        editorPane.classList.add('hidden');
+        previewPane.classList.remove('hidden');
+        tabPreview.className = 'py-2.5 text-center border-b-2 border-red-700 text-red-700 dark:text-red-400 dark:border-red-400 bg-red-50/50 dark:bg-slate-800';
+        tabEnter.className = 'py-2.5 text-center border-b-2 border-transparent text-slate-600 dark:text-slate-400';
+        scaleA4ForViewport();
+      }
+    }
+
+    function scaleA4ForViewport() {
+      const sheet = document.getElementById('a4-document');
+      const previewPane = document.getElementById('preview-pane');
+      if (!sheet || !previewPane) return;
+
+      // Reset scale during print
+      if (window.matchMedia('print').matches) {
+        sheet.style.transform = 'none';
+        return;
+      }
+
+      const availableWidth = previewPane.clientWidth - 24;
+      const a4WidthPx = 793.7; // 210mm at 96dpi
+      if (availableWidth > 0 && availableWidth < a4WidthPx) {
+        const scale = availableWidth / a4WidthPx;
+        sheet.style.transform = `scale(${scale})`;
+        sheet.style.marginBottom = `-${(1 - scale) * 1122.5}px`;
+      } else {
+        sheet.style.transform = 'none';
+        sheet.style.marginBottom = '0px';
+      }
+    }
+
+    function toggleLeftPanelTheme() {
+      const htmlEl = document.documentElement;
+      const isDark = htmlEl.classList.toggle('dark');
+      const icon = document.getElementById('theme-icon');
+      const label = document.getElementById('theme-label');
+      if (icon) icon.textContent = isDark ? '☀️' : '🌙';
+      if (label) label.textContent = isDark ? 'Light' : 'Dark';
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      initA4FormGrids();
+      renderLeftEditor();
+      loadSavedTextFromStorage();
+      scaleA4ForViewport();
+
+      const desktopThemeBtn = document.getElementById('theme-toggle-btn');
+      const mobileThemeBtn = document.getElementById('mobile-theme-btn');
+      if (desktopThemeBtn) desktopThemeBtn.addEventListener('click', toggleLeftPanelTheme);
+      if (mobileThemeBtn) mobileThemeBtn.addEventListener('click', toggleLeftPanelTheme);
     });
 
-    /* Celebration Petal Cannon inside 3D Studio */
-    function fireCelebrationPetalCannon() {
-      // Spawn burst around the 3D turntable
-      const canvasEl = document.getElementById('threeCanvas');
-      if (canvasEl) {
-        const rect = canvasEl.getBoundingClientRect();
-        const centerX = rect.left + rect.width / 2;
-        const centerY = rect.top + rect.height / 2;
-        for (let i = 0; i < 35; i++) {
-          setTimeout(() => {
-            const rx = centerX + (Math.random() - 0.5) * (rect.width * 0.7);
-            const ry = centerY + (Math.random() - 0.5) * (rect.height * 0.7);
-            spawnTouchParticles(rx, ry, 2);
-          }, i * 30);
-        }
-      }
-
-      // Add extra velocity to 3D sugar petals
-      if (sugarPetalsArray.length > 0) {
-        sugarPetalsArray.forEach(p => {
-          p.speedY = 0.035 + Math.random() * 0.04;
-        });
-        setTimeout(() => {
-          sugarPetalsArray.forEach(p => {
-            p.speedY = 0.005 + Math.random() * 0.008;
-          });
-        }, 3200);
-      }
-      showToast('🎉 Celebratory Petal Cannon Fired!');
-    }
-
-    /* THREE.JS ULTRA-LUXURY 3D STUDIO ENGINE */
-    let scene, camera, renderer, currentGroup, sparkleParticles, studioPedestal;
-    let autoRotate = true;
-    let isDragging = false;
-    let previousMousePosition = { x: 0, y: 0 };
-    let currentModelType = 'wedding';
-    let currentColorHex = 0xfbcfe8; // Default Baby Pink Velvet
-    let butterflyWings = [];
-    let fairyLightsArray = [];
-    let sugarPetalsArray = [];
-    let isSugarPetalActive = true;
-    let sparklerParticles = null;
-    let isSparklerActive = false;
-    let monogramTexture = null;
-
-    /* Procedural Carrara Rose Marble Texture */
-    function createMarbleTexture() {
-      const canvas = document.createElement('canvas');
-      canvas.width = 512;
-      canvas.height = 512;
-      const ctx = canvas.getContext('2d');
-
-      ctx.fillStyle = '#fff6f9';
-      ctx.fillRect(0, 0, 512, 512);
-
-      ctx.lineWidth = 3;
-      for (let i = 0; i < 24; i++) {
-        ctx.strokeStyle = i % 2 === 0 ? 'rgba(212, 175, 55, 0.35)' : 'rgba(244, 114, 182, 0.28)';
-        ctx.beginPath();
-        let x = Math.random() * 512;
-        let y = Math.random() * 512;
-        ctx.moveTo(x, y);
-        for (let j = 0; j < 5; j++) {
-          x += (Math.random() - 0.5) * 140;
-          y += (Math.random() - 0.5) * 140;
-          ctx.lineTo(x, y);
-        }
-        ctx.stroke();
-      }
-      return new THREE.CanvasTexture(canvas);
-    }
-
-    function createMonogramCanvasTexture(text) {
-      const canvas = document.createElement('canvas');
-      canvas.width = 512;
-      canvas.height = 256;
-      const ctx = canvas.getContext('2d');
-
-      ctx.clearRect(0, 0, 512, 256);
-
-      // Gold & Rose Filigree Border
-      ctx.strokeStyle = '#d4af37';
-      ctx.lineWidth = 6;
-      ctx.strokeRect(20, 20, 472, 216);
-
-      ctx.lineWidth = 2;
-      ctx.strokeRect(28, 28, 456, 200);
-
-      // Corner Ornaments
-      ctx.fillStyle = '#d4af37';
-      ctx.font = '28px serif';
-      ctx.fillText('✦', 36, 56);
-      ctx.fillText('✦', 450, 56);
-      ctx.fillText('✦', 36, 212);
-      ctx.fillText('✦', 450, 212);
-
-      // Monogram Text
-      ctx.textAlign = 'center';
-      ctx.textBaseline = 'middle';
-      ctx.font = 'bold 54px "Cinzel Decorative", Cinzel, serif';
-
-      const grad = ctx.createLinearGradient(100, 0, 400, 0);
-      grad.addColorStop(0, '#fef08a');
-      grad.addColorStop(0.5, '#d4af37');
-      grad.addColorStop(1, '#a16207');
-      ctx.fillStyle = grad;
-      ctx.shadowColor = 'rgba(212, 175, 55, 0.7)';
-      ctx.shadowBlur = 10;
-
-      ctx.fillText((text || 'PB').toUpperCase(), 256, 128);
-
-      const texture = new THREE.CanvasTexture(canvas);
-      texture.needsUpdate = true;
-      return texture;
-    }
-
-    function updateMonogramTexture(text) {
-      monogramTexture = createMonogramCanvasTexture(text || 'PB');
-      if (currentModelType === 'wedding') buildWeddingCake(currentColorHex);
-      else if (currentModelType === 'flowerBox') buildFlowerBox(currentColorHex);
-      else if (currentModelType === 'hamper') buildHamperBox(currentColorHex);
-      else if (currentModelType === 'chocolates') buildChocolateTier(currentColorHex);
-    }
-
-    function randomizeMonogram() {
-      const pairs = ['S & A', 'R & F', 'Z & M', 'A & K', 'N & H', 'PB ✨'];
-      const pick = pairs[Math.floor(Math.random() * pairs.length)];
-      document.getElementById('monogramInput').value = pick;
-      updateMonogramTexture(pick);
-      showToast(`Engraved initials: "${pick}"`);
-    }
-
-    function createSugarRose(scale = 0.22, color = 0xf472b6) {
-      const flowerGroup = new THREE.Group();
-      const petalMat = new THREE.MeshStandardMaterial({
-        color: color,
-        roughness: 0.4,
-        metalness: 0.1,
-        side: THREE.DoubleSide
-      });
-      const centerMat = new THREE.MeshStandardMaterial({
-        color: 0xfde047,
-        roughness: 0.3,
-        metalness: 0.3
-      });
-
-      const core = new THREE.Mesh(new THREE.SphereGeometry(scale * 0.45, 12, 12), centerMat);
-      flowerGroup.add(core);
-
-      const petalCount = 7;
-      for (let i = 0; i < petalCount; i++) {
-        const angle = (i / petalCount) * Math.PI * 2;
-        const petalGeo = new THREE.CircleGeometry(scale * 0.7, 12, 0, Math.PI);
-        const petal = new THREE.Mesh(petalGeo, petalMat);
-        petal.position.set(Math.cos(angle) * scale * 0.4, 0.05, Math.sin(angle) * scale * 0.4);
-        petal.rotation.x = Math.PI / 2 + 0.35;
-        petal.rotation.z = angle + Math.PI / 2;
-        flowerGroup.add(petal);
-      }
-
-      for (let i = 0; i < 9; i++) {
-        const angle = (i / 9) * Math.PI * 2;
-        const petalGeo = new THREE.CircleGeometry(scale * 0.95, 12, 0, Math.PI);
-        const petal = new THREE.Mesh(petalGeo, petalMat);
-        petal.position.set(Math.cos(angle) * scale * 0.75, 0.02, Math.sin(angle) * scale * 0.75);
-        petal.rotation.x = Math.PI / 2 + 0.55;
-        petal.rotation.z = angle + Math.PI / 2;
-        flowerGroup.add(petal);
-      }
-      return flowerGroup;
-    }
-
-    function clearCurrentGroup() {
-      if (!currentGroup) return;
-      while (currentGroup.children.length > 0) {
-        const obj = currentGroup.children[0];
-        if (obj.geometry) obj.geometry.dispose();
-        if (obj.material) {
-          if (Array.isArray(obj.material)) obj.material.forEach(m => m.dispose());
-          else obj.material.dispose();
-        }
-        currentGroup.remove(obj);
-      }
-    }
-
-    function buildWeddingCake(colorHex) {
-      clearCurrentGroup();
-      butterflyWings = [];
-      fairyLightsArray = [];
-      sugarPetalsArray = [];
-
-      const goldMat = new THREE.MeshStandardMaterial({
-        color: 0xd4af37,
-        metalness: 0.95,
-        roughness: 0.18
-      });
-
-      const velvetCakeMat = new THREE.MeshStandardMaterial({
-        color: colorHex,
-        roughness: 0.35,
-        metalness: 0.1
-      });
-
-      const creamPearlMat = new THREE.MeshStandardMaterial({
-        color: 0xfffdfa,
-        roughness: 0.2,
-        metalness: 0.1
-      });
-
-      // Bottom Tier
-      const tier1 = new THREE.Mesh(new THREE.CylinderGeometry(2.1, 2.1, 1.15, 64), velvetCakeMat);
-      tier1.position.y = -1.0;
-      currentGroup.add(tier1);
-
-      // Middle Tier with Engraved Monogram Plaque
-      const tier2 = new THREE.Mesh(new THREE.CylinderGeometry(1.5, 1.5, 0.98, 64), velvetCakeMat);
-      tier2.position.y = 0.05;
-      currentGroup.add(tier2);
-
-      // Monogram Curvature Plaque on Middle Tier
-      const plaqueMat = new THREE.MeshBasicMaterial({
-        map: monogramTexture,
-        transparent: true,
-        side: THREE.DoubleSide
-      });
-      const plaque = new THREE.Mesh(new THREE.CylinderGeometry(1.52, 1.52, 0.65, 32, 1, true, -Math.PI / 4, Math.PI / 2), plaqueMat);
-      plaque.position.y = 0.05;
-      currentGroup.add(plaque);
-
-      // Top Tier
-      const tier3 = new THREE.Mesh(new THREE.CylinderGeometry(0.95, 0.95, 0.88, 64), velvetCakeMat);
-      tier3.position.y = 0.98;
-      currentGroup.add(tier3);
-
-      // 24K Gold Tier Piping Ribbons
-      [ -0.42, 0.54, 1.42 ].forEach((yPos, i) => {
-        const radius = [2.12, 1.52, 0.97][i];
-        const rim = new THREE.Mesh(new THREE.TorusGeometry(radius, 0.05, 16, 64), goldMat);
-        rim.rotation.x = Math.PI / 2;
-        rim.position.y = yPos;
-        currentGroup.add(rim);
-      });
-
-      // Sculpted Pearl Beading Around Rim
-      for (let i = 0; i < 16; i++) {
-        const angle = (i / 16) * Math.PI * 2;
-        const pearl = new THREE.Mesh(new THREE.SphereGeometry(0.08, 16, 16), creamPearlMat);
-        pearl.position.set(Math.cos(angle) * 1.51, 0.55, Math.sin(angle) * 1.51);
-        currentGroup.add(pearl);
-      }
-
-      // Sculpted 3D Sugar Roses Cascading Down the Tier
-      const rosePositions = [
-        { x: 1.42, y: 0.65, z: 0.5, scale: 0.22, color: 0xf472b6 },
-        { x: 1.55, y: 0.45, z: 0.25, scale: 0.18, color: 0xfbcfe8 },
-        { x: 1.62, y: 0.18, z: 0.05, scale: 0.24, color: 0xffe4e6 },
-        { x: 1.88, y: -0.35, z: 0.4, scale: 0.26, color: 0xf472b6 },
-        { x: 1.95, y: -0.65, z: 0.65, scale: 0.20, color: 0xfbcfe8 }
-      ];
-      rosePositions.forEach(p => {
-        const rose = createSugarRose(p.scale, p.color);
-        rose.position.set(p.x, p.y, p.z);
-        rose.lookAt(p.x * 2, p.y, p.z * 2);
-        currentGroup.add(rose);
-      });
-
-      // Golden Butterfly Topper
-      const butterflyGroup = new THREE.Group();
-      butterflyGroup.position.y = 1.55;
-
-      const body = new THREE.Mesh(new THREE.CylinderGeometry(0.03, 0.03, 0.25, 12), goldMat);
-      body.rotation.z = Math.PI / 2;
-      butterflyGroup.add(body);
-
-      const wingGeo = new THREE.CircleGeometry(0.28, 24, 0, Math.PI);
-      const wingMat = new THREE.MeshStandardMaterial({
-        color: 0xfde047,
-        metalness: 0.9,
-        roughness: 0.2,
-        side: THREE.DoubleSide
-      });
-
-      const leftWing = new THREE.Mesh(wingGeo, wingMat);
-      leftWing.rotation.x = Math.PI / 2;
-      leftWing.position.x = 0.03;
-      butterflyGroup.add(leftWing);
-
-      const rightWing = new THREE.Mesh(wingGeo, wingMat);
-      rightWing.rotation.x = Math.PI / 2;
-      rightWing.rotation.z = Math.PI;
-      rightWing.position.x = -0.03;
-      butterflyGroup.add(rightWing);
-
-      butterflyWings.push({ left: leftWing, right: rightWing });
-      currentGroup.add(butterflyGroup);
-
-      // Floating Sugar Petals
-      if (isSugarPetalActive) {
-        for (let i = 0; i < 24; i++) {
-          const petalGeo = new THREE.CircleGeometry(0.08, 8);
-          const petalMat = new THREE.MeshBasicMaterial({
-            color: i % 2 === 0 ? 0xf472b6 : 0xfbcfe8,
-            side: THREE.DoubleSide,
-            transparent: true,
-            opacity: 0.8
-          });
-          const petal = new THREE.Mesh(petalGeo, petalMat);
-          petal.position.set(
-            (Math.random() - 0.5) * 3.6,
-            -1.3 + Math.random() * 2.8,
-            (Math.random() - 0.5) * 3.6
-          );
-          petal.rotation.set(Math.random() * Math.PI, Math.random() * Math.PI, Math.random() * Math.PI);
-          currentGroup.add(petal);
-          sugarPetalsArray.push({ mesh: petal, speedY: 0.005 + Math.random() * 0.008, rotSpeed: 0.02 });
-        }
-      }
-
-      if (isSparklerActive) createCelebrationSparkler();
-    }
-
-    function buildFlowerBox(colorHex) {
-      clearCurrentGroup();
-      butterflyWings = [];
-      fairyLightsArray = [];
-      sugarPetalsArray = [];
-
-      const boxMat = new THREE.MeshStandardMaterial({ color: colorHex, roughness: 0.35 });
-      const goldMat = new THREE.MeshStandardMaterial({ color: 0xd4af37, metalness: 0.95, roughness: 0.15 });
-
-      const box = new THREE.Mesh(new THREE.CylinderGeometry(2.0, 2.0, 1.4, 64), boxMat);
-      box.position.y = -0.7;
-      currentGroup.add(box);
-
-      const rim = new THREE.Mesh(new THREE.TorusGeometry(2.02, 0.06, 16, 64), goldMat);
-      rim.rotation.x = Math.PI / 2;
-      currentGroup.add(rim);
-
-      const plaqueMat = new THREE.MeshBasicMaterial({ map: monogramTexture, transparent: true });
-      const plaque = new THREE.Mesh(new THREE.CylinderGeometry(2.03, 2.03, 0.6, 32, 1, true, -Math.PI / 4, Math.PI / 2), plaqueMat);
-      plaque.position.y = -0.65;
-      currentGroup.add(plaque);
-
-      for (let i = 0; i < 9; i++) {
-        const angle = (i / 9) * Math.PI * 2;
-        const dist = 0.95 + (i % 2) * 0.45;
-        const rose = createSugarRose(0.24, i % 2 === 0 ? 0xf472b6 : 0xfbcfe8);
-        rose.position.set(Math.cos(angle) * dist, 0.18, Math.sin(angle) * dist);
-        rose.rotation.y = angle;
-        currentGroup.add(rose);
-      }
-
-      const centerRose = createSugarRose(0.3, 0xd4af37);
-      centerRose.position.set(0, 0.28, 0);
-      currentGroup.add(centerRose);
-
-      const macaronMat = new THREE.MeshStandardMaterial({ color: 0xffdfeb, roughness: 0.3 });
-      for (let i = 0; i < 4; i++) {
-        const angle = (i / 4) * Math.PI * 2 + 0.4;
-        const mac = new THREE.Mesh(new THREE.CylinderGeometry(0.2, 0.2, 0.14, 16), macaronMat);
-        mac.position.set(Math.cos(angle) * 1.5, 0.15, Math.sin(angle) * 1.5);
-        currentGroup.add(mac);
-      }
-    }
-
-    function buildHamperBox(colorHex) {
-      clearCurrentGroup();
-      butterflyWings = [];
-      fairyLightsArray = [];
-      sugarPetalsArray = [];
-
-      const boxMat = new THREE.MeshPhysicalMaterial({
-        color: 0xffffff,
-        transparent: true,
-        opacity: 0.45,
-        roughness: 0.05,
-        transmission: 0.9,
-        thickness: 0.6
-      });
-      const box = new THREE.Mesh(new THREE.BoxGeometry(2.8, 2.5, 2.8), boxMat);
-      box.position.y = -0.35;
-      currentGroup.add(box);
-
-      const goldMat = new THREE.MeshStandardMaterial({ color: 0xd4af37, metalness: 0.95, roughness: 0.15 });
-      const baseTray = new THREE.Mesh(new THREE.BoxGeometry(2.9, 0.18, 2.9), goldMat);
-      baseTray.position.y = -1.6;
-      currentGroup.add(baseTray);
-
-      const ribbonMat = new THREE.MeshStandardMaterial({ color: colorHex, roughness: 0.35 });
-      const ribbonV = new THREE.Mesh(new THREE.BoxGeometry(0.35, 2.52, 2.84), ribbonMat);
-      ribbonV.position.y = -0.35;
-      currentGroup.add(ribbonV);
-
-      const ribbonH = new THREE.Mesh(new THREE.BoxGeometry(2.84, 2.52, 0.35), ribbonMat);
-      ribbonH.position.y = -0.35;
-      currentGroup.add(ribbonH);
-
-      const cardMat = new THREE.MeshBasicMaterial({ map: monogramTexture });
-      const card = new THREE.Mesh(new THREE.PlaneGeometry(1.6, 0.8), cardMat);
-      card.position.set(0, -0.4, 0.4);
-      card.rotation.x = -0.2;
-      currentGroup.add(card);
-
-      for (let i = 0; i < 22; i++) {
-        const lightOrb = new THREE.Mesh(
-          new THREE.SphereGeometry(0.05, 12, 12),
-          new THREE.MeshBasicMaterial({ color: 0xffe28a })
-        );
-        lightOrb.position.set(
-          (Math.random() - 0.5) * 2.1,
-          -1.2 + Math.random() * 1.8,
-          (Math.random() - 0.5) * 2.1
-        );
-        currentGroup.add(lightOrb);
-        fairyLightsArray.push(lightOrb);
-      }
-    }
-
-    function buildChocolateTier(colorHex) {
-      clearCurrentGroup();
-      butterflyWings = [];
-      fairyLightsArray = [];
-      sugarPetalsArray = [];
-
-      const chocoMat = new THREE.MeshStandardMaterial({ color: 0x2e0d1e, roughness: 0.3, metalness: 0.15 });
-      const goldMat = new THREE.MeshStandardMaterial({ color: 0xd4af37, metalness: 0.95, roughness: 0.15 });
-
-      const cake = new THREE.Mesh(new THREE.CylinderGeometry(1.9, 2.0, 1.45, 64), chocoMat);
-      cake.position.y = -0.8;
-      currentGroup.add(cake);
-
-      const drip = new THREE.Mesh(new THREE.TorusGeometry(1.92, 0.12, 16, 64), goldMat);
-      drip.rotation.x = Math.PI / 2;
-      drip.position.y = -0.08;
-      currentGroup.add(drip);
-
-      const plaqueMat = new THREE.MeshBasicMaterial({ map: monogramTexture, transparent: true });
-      const plaque = new THREE.Mesh(new THREE.CylinderGeometry(1.93, 1.93, 0.6, 32, 1, true, -Math.PI / 4, Math.PI / 2), plaqueMat);
-      plaque.position.y = -0.8;
-      currentGroup.add(plaque);
-
-      for (let i = 0; i < 8; i++) {
-        const angle = (i / 8) * Math.PI * 2;
-        const square = new THREE.Mesh(new THREE.BoxGeometry(0.42, 0.22, 0.42), goldMat);
-        square.position.set(Math.cos(angle) * 1.25, 0.12, Math.sin(angle) * 1.25);
-        square.rotation.y = angle;
-        currentGroup.add(square);
-      }
-
-      const centerTruffle = new THREE.Mesh(new THREE.SphereGeometry(0.45, 32, 32), chocoMat);
-      centerTruffle.position.y = 0.4;
-      currentGroup.add(centerTruffle);
-    }
-
-    function switch3DModel(type) {
-      currentModelType = type;
-      ['wedding', 'flowerBox', 'hamper', 'chocolates'].forEach(t => {
-        const btn = document.getElementById(`btn-${t}`);
-        if (btn) {
-          btn.classList.remove('bg-pink-500', 'text-white', 'border-2', 'border-pink-500');
-          btn.classList.add('bg-white/80', 'text-brand-berry', 'border', 'border-pink-200');
-        }
-      });
-      const activeBtn = document.getElementById(`btn-${type}`);
-      if (activeBtn) {
-        activeBtn.classList.remove('bg-white/80', 'text-brand-berry', 'border', 'border-pink-200');
-        activeBtn.classList.add('bg-pink-500', 'text-white', 'border-2', 'border-pink-500');
-      }
-
-      if (type === 'wedding') {
-        buildWeddingCake(currentColorHex);
-        document.getElementById('modelBadge').innerText = 'Grandeur Edition';
-        document.getElementById('modelTitle').innerText = 'Royal 3-Tier Floral Cake';
-        document.getElementById('modelDesc').innerText = 'Architectural 3-tier celebration cake coated in rich velvet glaze, 24k gold leaf piping, sculpted sugar roses, handcrafted pearls, and crowned with Saleha’s signature fluttering butterfly.';
-        document.getElementById('modelPrice').innerText = '₹3,499';
-      } else if (type === 'flowerBox') {
-        buildFlowerBox(currentColorHex);
-        document.getElementById('modelBadge').innerText = 'Bridal Keepsake 🌸';
-        document.getElementById('modelTitle').innerText = 'Rose & Macaron Floral Box';
-        document.getElementById('modelDesc').innerText = 'Parisian round keepsake box filled with freshly sculpted pink sugar roses, edible gold blooms, French macarons, and personalized couple initials engraved on the front.';
-        document.getElementById('modelPrice').innerText = '₹2,899';
-      } else if (type === 'hamper') {
-        buildHamperBox(currentColorHex);
-        document.getElementById('modelBadge').innerText = 'Trousseau & Gifting';
-        document.getElementById('modelTitle').innerText = 'Illuminated Acrylic Hamper';
-        document.getElementById('modelDesc').innerText = 'Crystal-clear luxury acrylic keepsake box with glowing micro fairy lights, custom couple name envelopes, artisanal truffles, and satin floral ties. Pan-India shipping safe.';
-        document.getElementById('modelPrice').innerText = '₹2,499';
-      } else if (type === 'chocolates') {
-        buildChocolateTier(currentColorHex);
-        document.getElementById('modelBadge').innerText = 'Belgian Craft';
-        document.getElementById('modelTitle').innerText = 'Monogram Truffle Drip';
-        document.getElementById('modelDesc').innerText = 'Gourmet 55% dark chocolate drip cake adorned with individual personalized initial chocolates. Ideal for intimate engagements, Nikah giveaways, and anniversary dinners.';
-        document.getElementById('modelPrice').innerText = '₹2,199';
-      }
-    }
-
-    function change3DColor(hex, label) {
-      currentColorHex = hex;
-      document.getElementById('activeColorName').innerText = label;
-      if (currentModelType === 'wedding') buildWeddingCake(hex);
-      else if (currentModelType === 'flowerBox') buildFlowerBox(hex);
-      else if (currentModelType === 'hamper') buildHamperBox(hex);
-      else if (currentModelType === 'chocolates') buildChocolateTier(hex);
-      showToast(`Switched finish to ${label}!`);
-    }
-
-    function toggleSugarPetalShower() {
-      isSugarPetalActive = !isSugarPetalActive;
-      document.getElementById('sugarPetalLabel').innerText = isSugarPetalActive ? 'ON' : 'OFF';
-      if (currentModelType === 'wedding') buildWeddingCake(currentColorHex);
-      else if (currentModelType === 'flowerBox') buildFlowerBox(currentColorHex);
-      showToast(isSugarPetalActive ? '3D Sugar Petals: Flowing 🌸' : '3D Sugar Petals: Paused');
-    }
-
-    function toggleCelebrationFountain() {
-      isSparklerActive = !isSparklerActive;
-      const btn = document.getElementById('sparklerLabel');
-      if (isSparklerActive) {
-        btn.innerText = 'ON';
-        createCelebrationSparkler();
-        showToast('Sparkler Fountain: Sparking! ✨');
-      } else {
-        btn.innerText = 'OFF';
-        removeCelebrationSparkler();
-        showToast('Sparkler: Extinguished');
-      }
-    }
-
-    function createCelebrationSparkler() {
-      removeCelebrationSparkler();
-      const sparkCount = 80;
-      const sparkGeo = new THREE.BufferGeometry();
-      const sparkPos = new Float32Array(sparkCount * 3);
-      for (let i = 0; i < sparkCount * 3; i += 3) {
-        sparkPos[i] = (Math.random() - 0.5) * 0.4;
-        sparkPos[i + 1] = 1.6 + Math.random() * 0.8;
-        sparkPos[i + 2] = (Math.random() - 0.5) * 0.4;
-      }
-      sparkGeo.setAttribute('position', new THREE.BufferAttribute(sparkPos, 3));
-      const sparkMat = new THREE.PointsMaterial({
-        size: 0.12,
-        color: 0xffd700,
-        transparent: true,
-        opacity: 0.95
-      });
-      sparklerParticles = new THREE.Points(sparkGeo, sparkMat);
-      currentGroup.add(sparklerParticles);
-    }
-
-    function removeCelebrationSparkler() {
-      if (sparklerParticles && currentGroup) {
-        currentGroup.remove(sparklerParticles);
-        sparklerParticles.geometry.dispose();
-        sparklerParticles.material.dispose();
-        sparklerParticles = null;
-      }
-    }
-
-    function setCameraPreset(view) {
-      if (!camera) return;
-      if (view === 'front') {
-        camera.position.set(0, 0.4, 7.2);
-      } else if (view === 'isometric') {
-        camera.position.set(3.5, 3.2, 6.8);
-      } else if (view === 'top') {
-        camera.position.set(0, 7.5, 3.2);
-      }
-      camera.lookAt(0, 0, 0);
-    }
-
-    function toggleAutoRotate() {
-      autoRotate = !autoRotate;
-      document.getElementById('rotateStatus').innerText = `Spin: ${autoRotate ? 'ON' : 'OFF'}`;
-    }
-
-    function initThreeJS() {
-      const container = document.getElementById('threeCanvas');
-      if (!container) return;
-      const width = container.clientWidth || 700;
-      const height = container.clientHeight || 550;
-
-      scene = new THREE.Scene();
-      camera = new THREE.PerspectiveCamera(42, width / height, 0.1, 1000);
-      camera.position.set(0, 2.6, 7.8);
-
-      renderer = new THREE.WebGLRenderer({ canvas: container, alpha: true, antialias: true });
-      renderer.setSize(width, height);
-      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-      renderer.toneMapping = THREE.ACESFilmicToneMapping;
-      renderer.toneMappingExposure = 1.25;
-
-      const ambientLight = new THREE.AmbientLight(0xfff5f8, 1.8);
-      scene.add(ambientLight);
-
-      const mainSpot = new THREE.SpotLight(0xffecd2, 2.6);
-      mainSpot.position.set(5, 12, 8);
-      mainSpot.angle = Math.PI / 3.5;
-      mainSpot.penumbra = 0.6;
-      scene.add(mainSpot);
-
-      const rimLight = new THREE.PointLight(0xf472b6, 2.0, 25);
-      rimLight.position.set(-6, 5, -5);
-      scene.add(rimLight);
-
-      const secondaryLight = new THREE.DirectionalLight(0xd4af37, 1.0);
-      secondaryLight.position.set(0, -5, 5);
-      scene.add(secondaryLight);
-
-      // Pedestal
-      studioPedestal = new THREE.Group();
-      const marbleTex = createMarbleTexture();
-      
-      const pedestalGeo = new THREE.CylinderGeometry(2.7, 3.0, 0.38, 64);
-      const pedestalMat = new THREE.MeshStandardMaterial({
-        map: marbleTex,
-        roughness: 0.2,
-        metalness: 0.25
-      });
-      const pedestal = new THREE.Mesh(pedestalGeo, pedestalMat);
-      pedestal.position.y = -1.8;
-      studioPedestal.add(pedestal);
-
-      const goldMat = new THREE.MeshStandardMaterial({
-        color: 0xd4af37,
-        metalness: 0.95,
-        roughness: 0.15
-      });
-      const ringTop = new THREE.Mesh(new THREE.TorusGeometry(2.72, 0.06, 16, 64), goldMat);
-      ringTop.rotation.x = Math.PI / 2;
-      ringTop.position.y = -1.61;
-      studioPedestal.add(ringTop);
-
-      scene.add(studioPedestal);
-
-      // Ambient Gold & Rose Sparkle Particles
-      const particleGeo = new THREE.BufferGeometry();
-      const count = 160;
-      const positions = new Float32Array(count * 3);
-      for (let i = 0; i < count * 3; i += 3) {
-        positions[i] = (Math.random() - 0.5) * 10;
-        positions[i + 1] = (Math.random() - 0.2) * 7;
-        positions[i + 2] = (Math.random() - 0.5) * 10;
-      }
-      particleGeo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
-      const particleMat = new THREE.PointsMaterial({
-        size: 0.09,
-        color: 0xf472b6,
-        transparent: true,
-        opacity: 0.8
-      });
-      sparkleParticles = new THREE.Points(particleGeo, particleMat);
-      scene.add(sparkleParticles);
-
-      currentGroup = new THREE.Group();
-      scene.add(currentGroup);
-
-      monogramTexture = createMonogramCanvasTexture('S & A');
-      buildWeddingCake(currentColorHex);
-
-      const canvas = renderer.domElement;
-
-      canvas.addEventListener('mousedown', (e) => {
-        isDragging = true;
-        autoRotate = false;
-        document.getElementById('rotateStatus').innerText = 'Spin: OFF';
-        previousMousePosition = { x: e.clientX, y: e.clientY };
-      });
-
-      window.addEventListener('mouseup', () => { isDragging = false; });
-
-      canvas.addEventListener('mousemove', (e) => {
-        if (!isDragging) return;
-        const deltaX = e.clientX - previousMousePosition.x;
-        const deltaY = e.clientY - previousMousePosition.y;
-        currentGroup.rotation.y += deltaX * 0.009;
-        currentGroup.rotation.x += deltaY * 0.004;
-        currentGroup.rotation.x = Math.max(-0.4, Math.min(0.4, currentGroup.rotation.x));
-        previousMousePosition = { x: e.clientX, y: e.clientY };
-      });
-
-      canvas.addEventListener('touchstart', (e) => {
-        if (e.touches.length === 1) {
-          isDragging = true;
-          autoRotate = false;
-          document.getElementById('rotateStatus').innerText = 'Spin: OFF';
-          previousMousePosition = { x: e.touches[0].clientX, y: e.touches[0].clientY };
-        }
-      }, { passive: true });
-
-      canvas.addEventListener('touchmove', (e) => {
-        if (!isDragging || e.touches.length !== 1) return;
-        const deltaX = e.touches[0].clientX - previousMousePosition.x;
-        const deltaY = e.touches[0].clientY - previousMousePosition.y;
-        currentGroup.rotation.y += deltaX * 0.012;
-        currentGroup.rotation.x += deltaY * 0.005;
-        currentGroup.rotation.x = Math.max(-0.4, Math.min(0.4, currentGroup.rotation.x));
-        previousMousePosition = { x: e.touches[0].clientX, y: e.touches[0].clientY };
-      }, { passive: true });
-
-      canvas.addEventListener('touchend', () => { isDragging = false; });
-
-      canvas.addEventListener('wheel', (e) => {
-        e.preventDefault();
-        camera.position.z += e.deltaY * 0.003;
-        camera.position.z = Math.max(5.0, Math.min(10.5, camera.position.z));
-      }, { passive: false });
-
-      window.addEventListener('resize', onWindowResize);
-    }
-
-    function onWindowResize() {
-      const container = document.getElementById('threeCanvas');
-      if (!container || !camera || !renderer) return;
-      const width = container.clientWidth;
-      const height = container.clientHeight;
-      camera.aspect = width / height;
-      camera.updateProjectionMatrix();
-      renderer.setSize(width, height);
-    }
-
-    // Cursor Trail
-    if (window.innerWidth > 1024) {
-      let lastTime = 0;
-      window.addEventListener('mousemove', (e) => {
-        const now = Date.now();
-        if (now - lastTime > 45) {
-          lastTime = now;
-          const dust = document.createElement('div');
-          dust.className = 'stardust';
-          dust.style.left = e.clientX + 'px';
-          dust.style.top = e.clientY + 'px';
-          document.body.appendChild(dust);
-          setTimeout(() => {
-            dust.style.opacity = '0';
-            dust.style.transform = 'translate(-50%, -50%) scale(0.2)';
-          }, 50);
-          setTimeout(() => dust.remove(), 600);
-        }
-      });
-    }
-
-    let clock = 0;
-    function animate() {
-      requestAnimationFrame(animate);
-      clock += 0.025;
-
-      if (currentGroup && autoRotate) {
-        currentGroup.rotation.y += 0.007;
-      }
-
-      if (studioPedestal && autoRotate) {
-        studioPedestal.rotation.y -= 0.002;
-      }
-
-      if (sparkleParticles) {
-        sparkleParticles.rotation.y += 0.0015;
-        sparkleParticles.rotation.x += 0.0008;
-      }
-
-      if (butterflyWings.length > 0) {
-        butterflyWings.forEach(w => {
-          const flutter = Math.sin(clock * 10) * 0.45;
-          w.left.rotation.y = flutter;
-          w.right.rotation.y = -flutter;
-        });
-      }
-
-      if (fairyLightsArray.length > 0) {
-        fairyLightsArray.forEach((light, i) => {
-          light.scale.setScalar(0.8 + Math.sin(clock * 3 + i) * 0.35);
-        });
-      }
-
-      if (sparklerParticles) {
-        const pos = sparklerParticles.geometry.attributes.position.array;
-        for (let i = 1; i < pos.length; i += 3) {
-          pos[i] += (Math.random() - 0.4) * 0.04;
-          if (pos[i] > 2.6) pos[i] = 1.5;
-        }
-        sparklerParticles.geometry.attributes.position.needsUpdate = true;
-      }
-
-      if (sugarPetalsArray.length > 0) {
-        sugarPetalsArray.forEach(p => {
-          p.mesh.position.y -= p.speedY;
-          p.mesh.rotation.x += p.rotSpeed;
-          p.mesh.rotation.y += p.rotSpeed * 0.6;
-          if (p.mesh.position.y < -1.7) {
-            p.mesh.position.y = 1.6;
-            p.mesh.position.x = (Math.random() - 0.5) * 3.6;
-            p.mesh.position.z = (Math.random() - 0.5) * 3.6;
-          }
-        });
-      }
-
-      if (renderer && scene && camera) {
-        renderer.render(scene, camera);
-      }
-    }
-
-    window.onload = function() {
-      initThreeJS();
-      animate();
-      initPetalCanvas();
-      renderProducts(productsData);
-      if (window.lucide) lucide.createIcons();
-
-      // Auto unveil if visitor doesn't click after 4.5 seconds
-      setTimeout(() => {
-        if (!isCurtainOpen) {
-          unveilPalace(false);
-        }
-      }, 4500);
-    };
+    window.addEventListener('resize', scaleA4ForViewport);
   </script>
 </body>
 </html>
