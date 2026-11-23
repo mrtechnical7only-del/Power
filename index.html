@@ -1171,17 +1171,17 @@
               <div class="flex gap-1.5">
                 <select id="select-state" onchange="handleStateSelect(this.value)"
                   class="w-1/2 px-2.5 py-2 text-xs font-semibold rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-red-600/40">
-                  <option value="MAHARASHTRA" selected>MAHARASHTRA</option>
+                  <option value="" selected>-- SELECT STATE --</option>
+                  <option value="MAHARASHTRA">MAHARASHTRA</option>
                   <option value="DELHI">DELHI</option>
                   <option value="GUJARAT">GUJARAT</option>
                   <option value="KARNATAKA">KARNATAKA</option>
                   <option value="MADHYA PRADESH">MADHYA PRADESH</option>
                   <option value="TELANGANA">TELANGANA</option>
                   <option value="UTTAR PRADESH">UTTAR PRADESH</option>
-                  <option value="">-- OTHER / CUSTOM --</option>
                 </select>
-                <input type="text" id="input-state" maxlength="18" value="MAHARASHTRA"
-                  placeholder="STATE"
+                <input type="text" id="input-state" maxlength="18" value=""
+                  placeholder=""
                   oninput="handleTextInput('state', this.value, false, false)"
                   class="w-1/2 px-2.5 py-2 text-xs rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-900 dark:text-white uppercase focus:outline-none focus:ring-2 focus:ring-red-600/40" />
               </div>
@@ -1202,7 +1202,7 @@
                   ${districts.map(d => `<option value="${d}">${d}</option>`).join('')}
                 </select>
                 <input type="text" id="input-district" maxlength="18"
-                  placeholder="OR TYPE DISTRICT"
+                  placeholder=""
                   oninput="handleTextInput('district', this.value, false, false)"
                   class="w-1/2 px-2.5 py-2 text-xs rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-900 dark:text-white uppercase focus:outline-none focus:ring-2 focus:ring-red-600/40" />
               </div>
@@ -1221,7 +1221,7 @@
                   <option value="">-- SELECT SUB-DISTRICT --</option>
                 </select>
                 <input type="text" id="input-subDistrict" maxlength="18"
-                  placeholder="OR TYPE TALUKA"
+                  placeholder=""
                   oninput="handleTextInput('subDistrict', this.value, false, false)"
                   class="w-1/2 px-2.5 py-2 text-xs rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-900 dark:text-white uppercase focus:outline-none focus:ring-2 focus:ring-red-600/40" />
               </div>
@@ -1240,7 +1240,7 @@
                   <option value="">-- TALUKA / CITY --</option>
                 </select>
                 <input type="text" id="input-city" maxlength="26"
-                  placeholder="TYPE VILLAGE / TOWN / CITY"
+                  placeholder=""
                   oninput="handleTextInput('city', this.value, false, false)"
                   class="w-3/5 px-2.5 py-2 text-xs rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-900 dark:text-white uppercase focus:outline-none focus:ring-2 focus:ring-red-600/40" />
               </div>
@@ -1275,7 +1275,7 @@
                 type="text"
                 id="input-${field.id}"
                 maxlength="${maxLen}"
-                placeholder="${field.placeholder || ''}"
+                placeholder=""
                 oninput="handleTextInput('${field.id}', this.value, ${Boolean(field.numericOnly)}, ${field.type === 'date_split'})"
                 class="w-full px-3 py-2 text-sm rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-900 dark:text-white uppercase tracking-wide focus:outline-none focus:ring-2 focus:ring-red-600/40 focus:border-red-600 transition"
               />
@@ -1894,9 +1894,6 @@
     window.addEventListener('DOMContentLoaded', () => {
       initA4FormGrids();
       renderLeftEditor();
-      // Default state to MAHARASHTRA on fresh load
-      handleStateSelect('MAHARASHTRA');
-      loadSavedTextFromStorage();
       scaleA4ForViewport();
 
       const desktopThemeBtn = document.getElementById('theme-toggle-btn');
